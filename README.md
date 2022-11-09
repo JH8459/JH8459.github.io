@@ -1,5 +1,5 @@
 <h1 align="center">
-  Zoomkoding Gatsby Blog
+  Github Action Test
 </h1>
 
 <p align="center">
