@@ -9,7 +9,6 @@ services:
       - 8000:8000
     volumes:
       - ./src:/myfolder/src
-    # env_file:
-    #   - ./.env
+      - ./assets:/myfolder/assets
     environment:
       - TZ=Asia/Seoul
