@@ -9,7 +9,7 @@ module.exports = {
       repo: `JH8459/JH8459.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
     },
   },
-  ga: '0', // Google Analytics Tracking ID
+  ga: 'G-B02DJ4ZW5E', // Google Analytics Tracking ID
   author: {
     name: `김정현`,
     bio: {
@@ -47,8 +47,8 @@ module.exports = {
         activity: '개발 시작 & 개인 블로그 운영',
         links: {
           post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
+          github: 'https://github.com/JH8459/JH8459.github.io',
+          demo: 'https://blog.jh8459.com',
         },
       },
       {
@@ -56,8 +56,6 @@ module.exports = {
         activity: '(주) ACG 백엔드 개발자 포지션 입사',
         links: {
           post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
         },
       },
     ],
