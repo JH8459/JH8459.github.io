@@ -1,26 +1,26 @@
 module.exports = {
-  title: `zoomkoding.com`,
-  description: `줌코딩의 개발일기`,
+  title: `blog.jh8459.com`,
+  description: `JH 개발일기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
-  siteUrl: `https://www.zoomkoding.com`,
+  siteUrl: `https://blog.jh8459.com`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
-      repo: ``, // `zoomkoding/zoomkoding-gatsby-blog`,
+      repo: `JH8459/JH8459.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
     },
   },
   ga: '0', // Google Analytics Tracking ID
   author: {
-    name: `정진혁`,
+    name: `김정현`,
     bio: {
-      role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
+      role: `백엔드 개발자`,
+      description: ['노력에 가치를 두는', '능동적으로 일하는', '필요한 것을 만드는'],
       thumbnail: 'sample.png', // Path to the image in the 'asset' folder
     },
     social: {
-      github: ``, // `https://github.com/zoomKoding`,
-      linkedIn: ``, // `https://www.linkedin.com/in/jinhyeok-jeong-800871192`,
-      email: ``, // `zoomkoding@gmail.com`,
+      github: `https://github.com/JH8459`,
+      linkedIn: `https://www.linkedin.com/in/jeonghyun-kim-8b7a80237`,
+      email: `kk_ong2233@naver.com`,
     },
   },
 
@@ -43,8 +43,17 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        date: '2021.02 ~',
-        activity: '개인 블로그 개발 및 운영',
+        date: '2021.07 ~',
+        activity: '개발 시작 & 개인 블로그 운영',
+        links: {
+          post: '/gatsby-starter-zoomkoding-introduction',
+          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
+          demo: 'https://www.zoomkoding.com',
+        },
+      },
+      {
+        date: '2022.04 ~',
+        activity: '(주) ACG 백엔드 개발자 포지션 입사',
         links: {
           post: '/gatsby-starter-zoomkoding-introduction',
           github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
