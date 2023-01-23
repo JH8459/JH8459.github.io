@@ -23,6 +23,3 @@ public
 
 # Mac files
 .DS_Store
-
-#script shell
-script.sh
