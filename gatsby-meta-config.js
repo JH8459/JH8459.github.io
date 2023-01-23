@@ -15,7 +15,7 @@ module.exports = {
     bio: {
       role: `백엔드 개발자`,
       description: ['노력에 가치를 두는', '능동적으로 일하는', '필요한 것을 만드는'],
-      thumbnail: 'sample.png', // Path to the image in the 'asset' folder
+      thumbnail: 'sample.gif', // Path to the image in the 'asset' folder
     },
     social: {
       github: `https://github.com/JH8459`,
