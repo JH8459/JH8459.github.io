@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         date: '2022.04 ~',
-        activity: '(주) ACG 백엔드 개발자 포지션 입사',
+        activity: '(주)ACG / 백엔드 개발자 포지션 입사',
         links: {
           post: '/gatsby-starter-zoomkoding-introduction',
         },
@@ -79,15 +79,16 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        title: '개발 블로그 테마 개발',
+        title: '웨딩 청첩장 풀스택 프로젝트 개발',
         description:
-          '개발 블로그를 운영하는 기간이 조금씩 늘어나고 점점 많은 생각과 경험이 블로그에 쌓아가면서 제 이야기를 담고 있는 블로그를 직접 만들어보고 싶게 되었습니다. 그동안 여러 개발 블로그를 보면서 좋았던 부분과 불편했던 부분들을 바탕으로 레퍼런스를 참고하여 직접 블로그 테마를 만들게 되었습니다.',
-        techStack: ['gatsby', 'react'],
-        thumbnailUrl: 'blog.png',
+          '웹 프로그래밍 개발이 점점 익숙해지며 실제로 "내가 필요한걸 직접 구현해 보는건 어떨까?"라는 생각은 점점 부풀려져서 제 이야기를 담고 있는 청첩장 사이트를 직접 만들어보고 싶게 되었습니다.\n 그동안 여러 결혼식에 초대받았을 때 받았던 청첩장들을 돌아 보면서 좋았던 부분과 불편했던 부분들을 바탕으로 참고하여 직접 나만의 청접장을 만들게 되었습니다.',
+        techStack: ['react', 'nestjs', 'mysql'],
+        thumbnailUrl: 'wedding.jpg',
         links: {
           post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
+          github: 'https://github.com/JH8459/wedding-invitation-front.git',
+          github: 'https://github.com/JH8459/wedding-invitation-front.git',
+          demo: 'https://wedding.jh8459.com',
         },
       },
     ],
