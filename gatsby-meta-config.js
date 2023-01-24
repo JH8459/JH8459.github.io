@@ -46,7 +46,6 @@ module.exports = {
         date: '2021.07 ~',
         activity: '개발 시작 & 개인 블로그 운영',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
           github: 'https://github.com/JH8459/JH8459.github.io',
           demo: 'https://blog.jh8459.com',
         },
@@ -55,7 +54,7 @@ module.exports = {
         date: '2022.04 ~',
         activity: '(주)ACG / 백엔드 개발자 포지션 입사',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
+          post: '/',
         },
       },
     ],
@@ -85,7 +84,7 @@ module.exports = {
         techStack: ['react', 'nestjs', 'mysql'],
         thumbnailUrl: 'project-wedding.jpg',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
+          post: '/',
           github: 'https://github.com/JH8459/Wedding-Invitation',
           demo: 'https://wedding.jh8459.com',
         },
