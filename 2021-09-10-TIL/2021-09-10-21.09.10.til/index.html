@@ -95,6 +95,7 @@
 <hr>
 <br>
 <h3 id="1-corscross-origin-resource-sharing" style="position:relative;"><a href="#1-corscross-origin-resource-sharing" aria-label="1 corscross origin resource sharing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. CORS(Cross-Origin Resource Sharing)</h3>
+<hr>
 <ul>
 <li>
 <p><strong>교차 출처 리소스 공유</strong>라 불리는 CORS는 브라우저에서 다른 출처의 리소스를 공유하는 방법이다.</p>
@@ -107,6 +108,7 @@
 <br>
 <br>
 <h4 id="1-1-cors가-왜-필요한가" style="position:relative;"><a href="#1-1-cors%EA%B0%80-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80" aria-label="1 1 cors가 왜 필요한가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-1. CORS가 왜 필요한가?</h4>
+<hr>
 <ul>
 <li>
 <p>보안상의 이유로 자바스크립트 엔진 표준 스펙에는 동일 출처 정책(Same-Origin Policy)이 포함되어있다. (만약 다른 서버의 내용까지 읽을 수 있게된다면, 사용자의 키보드 입력을 가로채는 스크립트를 다른 페이지에 심을 수도 있으므로 보안 이슈가 발생할 수 있다.)</p>
@@ -123,6 +125,7 @@
 <br>
 <br>
 <h4 id="1-2-cors-동작-원리" style="position:relative;"><a href="#1-2-cors-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC" aria-label="1 2 cors 동작 원리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-2. CORS 동작 원리</h4>
+<hr>
 <ul>
 <li>
 <p>CORS의 동작 원리는 세종류가 있다. 두가지 내용만 우선 언급하자면 서버에게 바로 본 요청을 직접 보내는 방법인 <strong>Simple request</strong>,</p>
@@ -137,6 +140,7 @@
 <br>
 <br>
 <h3 id="2-mini-node-server-http모듈" style="position:relative;"><a href="#2-mini-node-server-http%EB%AA%A8%EB%93%88" aria-label="2 mini node server http모듈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Mini Node Server (http모듈)</h3>
+<hr>
 <ul>
 <li>
 <p><code class="language-text">node.js</code>의 http모듈 혹은 Express를 이용하여 웹 서버를 만드는 <a href="https://github.com/JH8459/im-sprint-mini-node-server" target="_blank">예제</a>이다.</p>
@@ -146,6 +150,7 @@
 <br>
 <br>
 <h4 id="2-1-http-트랜잭션-해부" style="position:relative;"><a href="#2-1-http-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%ED%95%B4%EB%B6%80" aria-label="2 1 http 트랜잭션 해부 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-1. HTTP 트랜잭션 해부</h4>
+<hr>
 <ul>
 <li>우선 <code class="language-text">node.js</code> HTTP 처리 과정을 <a href="https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/" target="_blank">공식문서</a>를 참고로 학습하였다.</li>
 </ul>
@@ -190,6 +195,7 @@ request
 <br>
 <br>
 <h4 id="2-2-mini-node-server-구현" style="position:relative;"><a href="#2-2-mini-node-server-%EA%B5%AC%ED%98%84" aria-label="2 2 mini node server 구현 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-2. Mini Node Server 구현</h4>
+<hr>
 <ul>
 <li>
 <p>위 공식 문서를 토대로 작성하였다.</p>
@@ -237,6 +243,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <br>
 <br>
 <h3 id="3-mini-node-server-프레임워크-express" style="position:relative;"><a href="#3-mini-node-server-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-express" aria-label="3 mini node server 프레임워크 express permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Mini Node Server (프레임워크 Express)</h3>
+<hr>
 <ul>
 <li>
 <p>Express.js는 Node.js 환경에서 웹 서버, 또는 API 서버를 제작하기 위해 사용되는 인기 있는 프레임워크이다.</p>
@@ -269,6 +276,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <br>
 <br>
 <h4 id="3-1-express로-구현한-서버와-http-모듈로-작성돤-서버의-다른-점" style="position:relative;"><a href="#3-1-express%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%9C-%EC%84%9C%EB%B2%84%EC%99%80-http-%EB%AA%A8%EB%93%88%EB%A1%9C-%EC%9E%91%EC%84%B1%EB%8F%A4-%EC%84%9C%EB%B2%84%EC%9D%98-%EB%8B%A4%EB%A5%B8-%EC%A0%90" aria-label="3 1 express로 구현한 서버와 http 모듈로 작성돤 서버의 다른 점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3-1. Express로 구현한 서버와 http 모듈로 작성돤 서버의 다른 점</h4>
+<hr>
 <ol>
 <li>
 <p><strong>미들웨어 추가가 편리하다</strong> : 위 예제는 <code class="language-text">npm install cors</code> 로 미들웨어 설치 후 사용만 해주면 되기에 편리하게 <code class="language-text">cors</code>옵션을 설정할 수 있다.</p>
