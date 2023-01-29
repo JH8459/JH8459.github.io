@@ -115,7 +115,7 @@
 <hr>
 <ul>
 <li>
-<p><strong>Part1-Session</strong>의 <a href="https://jh8459.github.io/til/21.10.20.til2/#1-1-%EC%82%AC%EC%A0%84%EC%A4%80%EB%B9%84" target="_blank">준비단계</a>와 동일한 진행은 생략하였다.</p>
+<p><strong>Part1-Session</strong>의 <a href="https://blog.jh8459.com/2021-10-20-TIL-2/#1-1-%EC%82%AC%EC%A0%84-%EC%A4%80%EB%B9%84" target="_blank">준비단계</a>와 동일한 진행은 생략하였다.</p>
 </li>
 <li>
 <p><strong>ACCESS_SECRET</strong>와 <strong>REFRESH_SECRET</strong> 변수명으로 2가지의 JWT(Json Web Token)을 사용한다.</p>
@@ -144,21 +144,35 @@
 <p>또한 서버는 4000번 포트로 인증서가 존재할 때만 서버가 구동되는 코드 또한 <code class="language-text">server-token/index.js</code> 파일을 확인하면 볼 수 있다.</p>
 </li>
 </ul>
-<h5 id="post-login" style="position:relative;"><a href="#post-login" aria-label="post login permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST /login</h5>
+<br>
+<br>
+<h5 id="post-login" style="position:relative;"><a href="#post-login" aria-label="post login permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[POST] /login</h5>
 <hr>
 <ul>
 <li>
 <p><code class="language-text">controllers/login.js</code> 파일을 확인 후 다음과 같은 기능을 완성시켜야 한다.</p>
 <ul>
-<li><em>request로부터 받은 userId, password와 일치하는 유저가 DB에 존재하는지 확인합니다.</em></li>
-<li><em>일치하는 유저가 없을 경우: 로그인 요청을 거절합니다.</em></li>
-<li><em>일치하는 유저가 있을 경우:</em>
+<li>
+<p><em>request로부터 받은 userId, password와 일치하는 유저가 DB에 존재하는지 확인합니다.</em></p>
+</li>
+<li>
+<p><em>일치하는 유저가 없을 경우: 로그인 요청을 거절합니다.</em></p>
+</li>
+<li>
+<p><em>일치하는 유저가 있을 경우:</em></p>
 <ul>
-<li><em>필요한 데이터를 담은 두 종류의 JWT(access, refresh)를 생성합니다.</em></li>
-<li><em>생성한 JWT를 적절한 방법으로 반환합니다.</em>
+<li>
+<p><em>필요한 데이터를 담은 두 종류의 JWT(access, refresh)를 생성합니다.</em></p>
+</li>
+<li>
+<p><em>생성한 JWT를 적절한 방법으로 반환합니다.</em></p>
 <ul>
-<li><em>access token은 클라이언트에서 react state로 다루고 있습니다.</em></li>
-<li><em>refresh token은 클라이언트의 쿠키에서 다루고 있습니다.</em></li>
+<li>
+<p><em>access token은 클라이언트에서 react state로 다루고 있습니다.</em></p>
+</li>
+<li>
+<p><em>refresh token은 클라이언트의 쿠키에서 다루고 있습니다.</em></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -201,7 +215,9 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
-<h5 id="get-accesstokenrequest" style="position:relative;"><a href="#get-accesstokenrequest" aria-label="get accesstokenrequest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET /accesstokenrequest</h5>
+<br>
+<br>
+<h5 id="get-accesstokenrequest" style="position:relative;"><a href="#get-accesstokenrequest" aria-label="get accesstokenrequest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[GET] /accesstokenrequest</h5>
 <hr>
 <ul>
 <li>
@@ -232,7 +248,9 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
-<h5 id="get-refreshtokenrequest" style="position:relative;"><a href="#get-refreshtokenrequest" aria-label="get refreshtokenrequest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET /refreshtokenrequest</h5>
+<br>
+<br>
+<h5 id="get-refreshtokenrequest" style="position:relative;"><a href="#get-refreshtokenrequest" aria-label="get refreshtokenrequest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[GET] /refreshtokenrequest</h5>
 <hr>
 <ul>
 <li>
@@ -277,8 +295,12 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
+<br>
+<br>
 <h4 id="1-3-클라이언트-구현" style="position:relative;"><a href="#1-3-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EA%B5%AC%ED%98%84" aria-label="1 3 클라이언트 구현 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-3. 클라이언트 구현</h4>
 <hr>
+<br>
+<br>
 <h5 id="app" style="position:relative;"><a href="#app" aria-label="app permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App</h5>
 <hr>
 <ul>
@@ -313,6 +335,8 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
+<br>
+<br>
 <h5 id="login" style="position:relative;"><a href="#login" aria-label="login permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Login</h5>
 <hr>
 <ul>
@@ -338,6 +362,8 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
+<br>
+<br>
 <h5 id="mypage" style="position:relative;"><a href="#mypage" aria-label="mypage permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mypage</h5>
 <hr>
 <ul>
@@ -396,6 +422,8 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
+<br>
+<br>
 <h4 id="1-4-결과-확인" style="position:relative;"><a href="#1-4-%EA%B2%B0%EA%B3%BC-%ED%99%95%EC%9D%B8" aria-label="1 4 결과 확인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-4. 결과 확인</h4>
 <hr>
 <p>refreshToken은 쿠키에 담겨(암호화 되어서) 주고받는 걸 알 수 있으며, 클라이언트에서 서버로 보낸 accessToken이 유효한 토큰일 경우 <code class="language-text">jwt.veryfy</code>로 해독된 결과값이 응답 결과로 반환되어 클라이언트에서 해독된 결과 값을 볼 수 있게 되는 구조이다.</p>
@@ -411,12 +439,54 @@ Users<span class="token punctuation">.</span><span class="token function">findOn
 </ul>
 <br>
 <br>
-<h2 id="오늘-느낀-점" style="position:relative;"><a href="#%EC%98%A4%EB%8A%98-%EB%8A%90%EB%82%80-%EC%A0%90" aria-label="오늘 느낀 점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>오늘 느낀 점</h2>
-<p>이제 HTTPS 로그인 로직 개념이 잡힌다.. <del>어렵다 어려워</del></p>
-<p>axios 아직 미숙하다.. 스프린트는 끝났지만 공부할게 더 많이 남았다… 내일 oauth 인증/보안 방식까지 열심히 해야지</p>
-<br>
-<br>
-<h2 id="내일-할-일" style="position:relative;"><a href="#%EB%82%B4%EC%9D%BC-%ED%95%A0-%EC%9D%BC" aria-label="내일 할 일 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내일 할 일</h2>
+<h2 id="-understanding" style="position:relative;"><a href="#-understanding" aria-label=" understanding permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🤔 Understanding</h2>
+<hr>
 <ul>
-<li>[인증/보안] 기초</li>
-</ul></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/2021-10-20-TIL-2/"><div class="direction">이전 글</div><div class="title">Session</div></a></div><div class="post-navigator-card-wrapper"></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2023<!-- --> <a href="https://github.com/JH8459">김정현</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-10-21-TIL/";window.___webpackCompilationHash="b36e0687057413cbcffd";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c6994e07ca88ec5e3041.js"],"app":["/app-a85518c7595fe0c52777.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-12b5d8159c7e67968cd6.js"],"component---src-pages-404-js":["/component---src-pages-404-js-08cc50ffcb4acbdcdac0.js"],"component---src-pages-about-js":["/component---src-pages-about-js-c09ec7592f2af24d973b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-94aa106cb79c68e822b0.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5d9312e4166167080960.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-fc228455ea2130d2e015.js"]};/*]]>*/</script><script src="/polyfill-c6994e07ca88ec5e3041.js" nomodule=""></script><script src="/app-a85518c7595fe0c52777.js" async=""></script><script src="/framework-624450fa60bf625678af.js" async=""></script><script src="/webpack-runtime-975aa916525e8a2250d1.js" async=""></script></body></html>
+<li>
+<p>이제 HTTPS 로그인 로직 개념이 잡힌다.. <del>어렵다 어려워</del></p>
+</li>
+<li>
+<p>axios 아직 미숙하다.. 스프린트는 끝났지만 공부할게 더 많이 남았다… 내일 oauth 인증 / 보안 방식까지 열심히 해야지</p>
+</li>
+</ul>
+<br>
+<br>
+<div class="table-of-contents">
+<ul>
+<li>
+<p><a href="#%EF%B8%8F-today-i-learned">✍️ <strong>T</strong>oday <strong>I</strong> <strong>L</strong>earned</a></p>
+<ul>
+<li>
+<p><a href="#1-token">1. Token</a></p>
+<ul>
+<li>
+<p><a href="#1-1-%EC%82%AC%EC%A0%84-%EC%A4%80%EB%B9%84">1-1. 사전 준비</a></p>
+</li>
+<li>
+<p><a href="#1-2-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84">1-2. 서버 구현</a></p>
+<ul>
+<li><a href="#post-login">[POST] /login</a></li>
+<li><a href="#get-accesstokenrequest">[GET] /accesstokenrequest</a></li>
+<li><a href="#get-refreshtokenrequest">[GET] /refreshtokenrequest</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#1-3-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EA%B5%AC%ED%98%84">1-3. 클라이언트 구현</a></p>
+<ul>
+<li><a href="#app">App</a></li>
+<li><a href="#login">Login</a></li>
+<li><a href="#mypage">Mypage</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#1-4-%EA%B2%B0%EA%B3%BC-%ED%99%95%EC%9D%B8">1-4. 결과 확인</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#-understanding">🤔 Understanding</a></p>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/2021-10-20-TIL-2/"><div class="direction">이전 글</div><div class="title">Session</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/2021-10-22-TIL/"><div class="direction">다음 글</div><div class="title">OAuth</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2023<!-- --> <a href="https://github.com/JH8459">김정현</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-10-21-TIL/";window.___webpackCompilationHash="b36e0687057413cbcffd";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c6994e07ca88ec5e3041.js"],"app":["/app-a85518c7595fe0c52777.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-12b5d8159c7e67968cd6.js"],"component---src-pages-404-js":["/component---src-pages-404-js-08cc50ffcb4acbdcdac0.js"],"component---src-pages-about-js":["/component---src-pages-about-js-c09ec7592f2af24d973b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-94aa106cb79c68e822b0.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5d9312e4166167080960.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-fc228455ea2130d2e015.js"]};/*]]>*/</script><script src="/polyfill-c6994e07ca88ec5e3041.js" nomodule=""></script><script src="/app-a85518c7595fe0c52777.js" async=""></script><script src="/framework-624450fa60bf625678af.js" async=""></script><script src="/webpack-runtime-975aa916525e8a2250d1.js" async=""></script></body></html>
