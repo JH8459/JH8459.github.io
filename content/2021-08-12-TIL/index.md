@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. React SPA (Single Page Application)
 
+---
+
 - 과거의 브라우저는 웹사이트 페이지 전체를 로딩하였기 때문에 발생하는 리소스 손실이 컸다.
 
   하지만 **SPA**는 페이지 전환 전후에 중복되는 부분은 새로 불러오지 않으며 필요한 부분만 갱신하여 웹페이지를 새로 로딩한다.
@@ -30,6 +32,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-1. SPA 의 장단점
+
+---
 
 **1. 장점**
 
@@ -50,12 +54,18 @@ categories: CodeStates TIL
 <br>
 <br>
 
-#### 1-2. React SPA 실습. <a href="https://github.com/JH8459/im-sprint-react-twittler-spa" target="_blank"> 참조 : Github </a>
+#### 1-2. React SPA 실습
+
+---
+
+> <a href="https://github.com/JH8459/im-sprint-react-twittler-spa" target="_blank"> 참조 : Github </a>
 
 <br>
 <br>
 
 ### 2. React Router
+
+---
 
 - SPA는 하나의 페이지를 가지고 있지만, 한 종류의 화면만 사용하지는 않는다.
 
@@ -74,6 +84,8 @@ categories: CodeStates TIL
 
 #### 2-1. React Router란?
 
+---
+
 - React Router의 주요 컴포넌트는 크게 3가지 이다.
 
   1. router : `<BrowserRouter>`
@@ -87,7 +99,11 @@ categories: CodeStates TIL
 <br>
 <br>
 
-#### 2-2. React Router 실습. <a href="https://github.com/JH8459/CodeStates/tree/master/React/react-router" target="_blank"> 참조 : Github </a>
+#### 2-2. React Router 실습
+
+---
+
+> <a href="https://github.com/JH8459/CodeStates/tree/master/React/react-router" target="_blank"> 참조 : Github </a>
 
 <br>
 <br>

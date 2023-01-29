@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. 비동기 처리 (Asynchronous processing)
 
+---
+
 - 자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 행위를 말한다. 요청에 대한 결과가 동시에 일어나지 않는 특성을 가지고있다.
 
   ```javascript
@@ -41,6 +43,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-1. 콜백 함수를 통한 비동기 처리
+
+---
 
 - 위의 예시 처럼 비동기 처리는 고유의 처리 방식에 의해 야기될 수 있는 문제들이 존재함을 학습했다.
 
@@ -77,6 +81,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. Promise 객체를 이용한 비동기 처리
+
+---
 
 - 우선 `Promise`란 비동기 처리에 사용되는 객체이다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">참조 : MDN </a>
 
@@ -193,6 +199,8 @@ categories: CodeStates TIL
 
 #### 1-3. async와 await를 사용한 비동기 처리
 
+---
+
 - 비동기 처리를 위한 await 키워드는 **ECMAScript2017**에 추가되었다.
 
   자바스크립트의 비동기 처리 패턴 중 가장 최근에 나온 문법이기에 비동기 처리 방식인 콜백 함수와 프로미스의 단점을 보완하고 개발자가 읽기 좋은 코드를 작성할 수 있게 도와준다.
@@ -243,6 +251,8 @@ categories: CodeStates TIL
 
 ### 2. Node.js
 
+---
+
 - Node.js는 **"비동기 이벤트 기반 자바스크립트 런타임"** 이다.
 
   브라우저에서 사용할 수 있는 비동기 흐름은 타이머 혹은 DOM 이벤트와 관련된 상황으로 다소 한정적이다.
@@ -264,6 +274,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-1. Node.js 모듈 실습
+
+---
 
 - Callback, Promise, Async/awiat 비동기 처리 구현 실습 & Node.js 모듈을 이용한 비동기 처리 실습
 

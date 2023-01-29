@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. Spread / Reset 문법
 
+---
+
 <br>
 <br>
 
 #### 1-1. Spread 문법
+
+---
 
 - 주로 배열을 풀어서 인자로 전달하거나, 배열을 풀어서 각각의 요소로 넣을 때에 사용한다.
 
@@ -40,6 +44,8 @@ categories: CodeStates TIL
 
 #### 1-2. Rest 문법
 
+---
+
 - 파라미터(함수의 매개변수)를 배열의 형태로 받아서 사용할 수 있습니다. 파라미터 개수가 가변적일 때 유용합니다.
 
   ```javascript
@@ -57,6 +63,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-3. 배열에서의 Spread 문법
+
+---
 
 - Spread 문법은 배열에서 강력한 힘을 발휘한다.
 
@@ -91,6 +99,8 @@ categories: CodeStates TIL
 
 #### 1-4. 객체에서 사용하기
 
+---
+
 ```javascript
 let obj1 = { foo: 'bar', x: 42 };
 let obj2 = { foo: 'baz', y: 13 };
@@ -105,6 +115,8 @@ let mergedObj = { ...obj1, ...obj2 }; // {foo: "baz", x: 42, y: 13}
 <br>
 
 #### 1-5. 함수에서 나머지 파라미터 받아오기
+
+---
 
 ```javascript
 function myFun(a, b, ...manyMoreArgs) {
@@ -121,12 +133,16 @@ myFun('one', 'two', 'three', 'four', 'five', 'six');
 
 ### 2. 구조 분해 (Destructing)
 
+---
+
 - 구조 분해 할당은 Spread 문법을 이용하여 값을 해체한 후, 개별 값을 변수에 새로 할당하는 과정을 말한다.
 
 <br>
 <br>
 
 #### 2-1. 분해 후 새 변수에 할당
+
+---
 
 - 배열
 
@@ -171,6 +187,8 @@ myFun('one', 'two', 'three', 'four', 'five', 'six');
 <br>
 
 ### 3. JavaScript 문제풀이
+
+---
 
 - 풀이 코드는 <a href="https://github.com/JH8459/im-sprint-javascript-koans" target="_blank">Github 참조</a> 자바스크립트 핵심문법(클로저,스코프..등등) 문제풀이
 

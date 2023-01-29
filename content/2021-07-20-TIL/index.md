@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. 변수
 
+---
+
 - 변수를 이용하면 데이터를 편리하게 저장하고 꺼내 쓸 수 있게 한다.
 - 변수의 선언과 값의 할당에 대해서 학습하였다.
 
@@ -41,6 +43,8 @@ categories: CodeStates TIL
 
 ### 2. 타입
 
+---
+
 - 원시 자료형, 참조 자료형을 학습하였다.
 - typeof 연산자를 통하여 특정 갑의 타입을 확인할 수 있다.
 
@@ -48,6 +52,8 @@ categories: CodeStates TIL
 <br>
 
 ### 3. 함수
+
+---
 
 - 함수는 "작은 기능의 단위"이며 키워드(keyword), 이름(name), 매개변수(parameter), 몸통(body)로 구분된다
 
@@ -74,6 +80,8 @@ categories: CodeStates TIL
 <br>
 
 ### 4. 조건문
+
+---
 
 - 조건문은 어떠한 조건을 판별한다. 그렇기에 **비교 연산자**(comparison operator)가 필요하다.
 
@@ -103,6 +111,8 @@ categories: CodeStates TIL
 <br>
 
 ### 5. HTML
+
+---
 
 - 하이퍼텍스트를 (링크) 가장 중요한 특징으로 하는 마크업이라는 형식을 가진 컴퓨터 프로그래밍 언어.
 

@@ -1,6 +1,6 @@
 ---
 emoji: 📚
-title: Linux 사용권한, 2. Linux 환경변수
+title: Linux 사용권한, Linux 환경변수
 date: '2021-10-05'
 author: JH8459
 categories: CodeStates TIL
@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. Linux 사용권한
 
+---
+
 <br>
 <br>
 
 #### 1-1. 터미널 파일 및 폴더 생성 명령어
+
+---
 
 - `mkdir`명령어로 `linux`이름의 폴더를 생성하고 `nano` (리눅스 기반 오픈소스 편집 프로그램)를 통해 `helloworld.js` 파일을 생성 한 후 명령어 `ls -l` 을 프롬프트에 입력하고 Enter(엔터 키)를 누르면 다음과 같은 출력 결과를 얻을 수 있다.
 
@@ -40,6 +44,8 @@ categories: CodeStates TIL
 
 #### 1-2. User, Group, and Other
 
+---
+
 1. **User** : user는 파일의 소유자이다. 기본적으로 파일을 만든 사람이 소유자가 된다. 소유자(Owner)라 부르기도 한다.
 
 2. **Group** : group에는 여러 user가 포함될 수 있다. 그룹에 속한 모든 user는 파일에 대한 동일한 group 액세스 권한을 갖는다. 많은 사람이 파일에 액세스해야 하는 프로젝트가 있다고 가정하면, 각 user에게 일일이 권한을 할당하는 대신에 모든 user를 group에 추가하고, 파일에 group 권한을 할당할 수 있다.
@@ -50,6 +56,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-3. chmod
+
+---
 
 - 명령어 `chmod`는 폴더나 파일의 읽기, 쓰기, 실행 권한을 변경할 수 있다.
 
@@ -115,6 +123,8 @@ categories: CodeStates TIL
 
 ### 2. Linux 환경변수
 
+---
+
 - Linux 기반의 운영체제의 PC에는 시스템 자체에 전역변수를 설정할 수 있다. 그리고 시스템에 설정한 전역변수를 환경변수라고 한다.
 
   명령어를 이용해 환경변수를 설정및 활용할 수 있다.
@@ -129,6 +139,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-1. export: 환경변수 확인하기 && 환경변수 임시 적용
+
+---
 
 - Linux 운영체제에는 이미 많은 환경변수가 설정되어 있다.
 
@@ -149,6 +161,8 @@ categories: CodeStates TIL
 
 #### 2-2. dotenv: 자바스크립트에서 환경변수 사용하기
 
+---
+
 - npm 모듈 `dotenv`를 사용하면, 자바스크립트에서 환경변수를 사용할 수 있다. `npm init` 을 입력후 `npm i dotenv` 를 입력해 모듈을 설치한다.
 
   설치한 `dotenv` 모듈을 이용해 환경변수에 접근할 수 있다. Node.js의 내장 객체 `process.env`를 이용하면 명령어 `export` 로 확인한 내용과 동일한 내용을 객체로 출력한다.
@@ -159,6 +173,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-3. .env: Node.js에서 환경변수 영구 적용
+
+---
 
 - **2-1**에서 언급하였지만 명령어 `export` 로 적용한 환경변수는 현재 사용 중인 터미널에서만 임시로 사용이 가능하며 재시작시 초기화된다.
 

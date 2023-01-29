@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. React Props & State
 
+---
+
 <br>
 <br>
 
 #### 1-1. Props vs State
+
+---
 
 - 간단하게 언급하고 가자면, `props`는 외부로 부터 전달받은 값이며, `state`는 컴포넌트 내부에서 변화하는 값이다.
 
@@ -29,6 +33,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. Props
+
+---
 
 - 컴포넌트의 속성(property)을 뜻한다. `props`는 변하지 않는 **외부로부터 전달받은 값**으로, 웹 어플리케이션에서 해당 컴포넌트가 가진 속성에 해당된다.
 
@@ -82,6 +88,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-3. State
+
+---
 
 - 컴포넌트 내부에서 변할 수 있는 값, 즉 상태는 React State로 다뤄야 한다.
 
@@ -142,6 +150,8 @@ categories: CodeStates TIL
 
 ### 2. React 데이터 흐름
 
+---
+
 - React의 개발 방식의 가장 큰 특징은 페이지 단위가 아닌, **컴포넌트 단위**로 시작한다는 점이 가장 큰 특징이다.
 
 - 데이터의 흐름을 파악할 때에는 부모 컴포넌트에서 props를 이용하여 데이터를 함수의 인자(arguments) 혹은 속성(attributes)처럼 전달 받는 구조로 설계해야한다. 전달하는 주체는 부모이기 때문에 데이터 흐름 방식은 하향식 (top-down)임을 의미한다.
@@ -153,7 +163,11 @@ categories: CodeStates TIL
 <br>
 <br>
 
-### 3. React Props & States 실습. <a href="https://github.com/JH8459/im-sprint-react-twittler-state-props" target="_blank">참조 : Github</a>
+### 3. React Props & States 실습
+
+---
+
+> <a href="https://github.com/JH8459/im-sprint-react-twittler-state-props" target="_blank">참조 : Github</a>
 
 <br>
 <br>

@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. Git
 
+---
+
 - Git이란 분산형 버전 관리 시스템(Version Control System) 의 한 종류이며, 빠른 수행 속도에 중점을 둔다.
 
   - _"버전 관리 시스템"_ 이란 파일 변화를 시간에 따라 기록했다가 이후에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템이다.
@@ -29,6 +31,8 @@ categories: CodeStates TIL
 
 #### 1-1. GitHub
 
+---
+
 - Git을 통하여 버전관리를 한다 이미 언급을하였다.
 
   그렇다면 Github는 무엇일까? Github는 Git Repository를 관리할 수 있는 클라우드 기반 서비스이다.
@@ -39,6 +43,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. Git Repository
+
+---
 
 - 내가 작업하는 소스 코드 폴더가 버전 관리를 받게 하기 위해서는 내 폴더를 Git의 관리 아래에 두어야 한다. 이때 Git으로 관리되는 폴더를 Git repository 라고 부른다.
 
@@ -54,6 +60,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-3. Git을 통한 작업시 WorkFlow
+
+---
 
 ![gitflow](https://user-images.githubusercontent.com/83164003/128201584-6a5413c7-0150-4356-9cba-7c2b71827daf.png)
 

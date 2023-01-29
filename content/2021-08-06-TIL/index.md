@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. DOM
 
+---
+
 - **DOM( Document Object Model)** 은 HTML 요소를 Object(JavaScript Object)처럼 조작(Manipulation)할 수 있는 Model이다.
 
   즉, 자바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작할 수 있다.
@@ -26,6 +28,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-1. HTML에 JavaScript 적용하기
+
+---
 
 - HTML에 JavaScript를 적용하기 위해서는 `<script>` 태그를 이용한다. 웹 브라우저가 작성된 코드를 해석하는 과정에서 `<script>` 요소를 만나면, 웹 브라우저는 HTML 해석을 잠시 추고 `<script>` 요소를 **먼저** 실행한다.
 
@@ -37,6 +41,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. 부모&자식 엘리먼트 찾기
+
+---
 
 ```html
 <html>
@@ -109,7 +115,11 @@ categories: CodeStates TIL
 <br>
 <br>
 
-### 2. 유효성 검사 실습. <a href="https://github.com/JH8459/im-sprint-validation-check" target="_blank"> Github 참조 </a>
+### 2. 유효성 검사 실습
+
+---
+
+> <a href="https://github.com/JH8459/im-sprint-validation-check" target="_blank"> Github 참조 </a>
 
 ![스크린샷, 2021-08-06 20-32-56](https://user-images.githubusercontent.com/83164003/128504541-67ae5947-c43d-4e7d-9ac0-91c9a678e9c5.png)
 

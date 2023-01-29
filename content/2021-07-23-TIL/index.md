@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. CSS
 
+---
+
 - CSS 문법
 
   ![css문법](https://user-images.githubusercontent.com/83164003/127822567-a436423c-8884-48ff-8ccf-16009f5f2071.png)

@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. Component Driven Development (CDD)
 
+---
+
 - 부품 단위로 UI 컴포넌트를 만들어 나가는 개발이다.
 
   페이지 단위로 UI 개발이 이루어지는 것과는 반대로 UI 컴포넌트들부터 만들고 이를 기반으로 페이지를 구성하는걸 말한다.
@@ -31,10 +33,14 @@ categories: CodeStates TIL
 
 ### 2. CSS in JS 방법론
 
+---
+
 <br>
 <br>
 
 #### 2-1. 구조적인 CSS 작성 방법의 발전
+
+---
 
 - CSS 작성 방식도 꾸준히 진화해 오고 있다.
 
@@ -83,6 +89,8 @@ categories: CodeStates TIL
 
 #### 2-2. Styled-Component
 
+---
+
 - CSS-in-JS 관련 React 라이브러리 중에서 가장 인기 있는 Styled Component는 React 의 컴포넌트 기반 개발 환경에서 스타일링을 위한 CSS의 성능 향상을 위해 탄생하였다. 특징은 아래와 같다.
 
   - **Automatic critical CSS** : Styled Component 는 화면에 어떤 컴포넌트가 렌더링 되었는지 추적해서 해당하는 컴포넌트에 대한 스타일을 자동으로 삽입한다. 따라서 코드를 적절히 분배해 놓으면 사용자가 어플리케이션을 사용할 때 최소한의 코드만으로 화면이 띄워지도록 할 수 있다.
@@ -101,6 +109,8 @@ categories: CodeStates TIL
 <br>
 
 ### 3. React Custom Component
+
+---
 
 > 참조 : <a href="https://github.com/JH8459/im-sprint-react-custom-component" target="_blank">Github</a>
 

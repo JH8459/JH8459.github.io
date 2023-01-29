@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. 배열
 
+---
+
 - 배열은 순서가 있는 값이다. 순서는 인덱스(index)라고 부르며, 1이 아닌 0부터 매긴다.
 
   - 배열의 값 접근은 인덱스를 이용하여 값에 접근한다.
@@ -41,6 +43,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-1. 배열의 기초 메소드
+
+---
 
 - Array.isArray : 배열의 기본 type은 "object"이다. 그래서 특정 값이 배열인지 아닌지 `typeof()`로 판별할 수 없다. `Array.isArray()`는 배열인지 아닌지 판별할 수 있는 메소드이다. 반환값은 `boolean` 이다.
 
@@ -70,6 +74,8 @@ categories: CodeStates TIL
 
 ### 2. 객체
 
+---
+
 - 객체란 키(key)와 값(value)으로 구성된 프로퍼티(property)의 정렬되지 않은 집합이다.
 
   - 중괄호를 이용하여 객체를 만드며 그 내부에 키와 값은 쌍으로 구성되며 (key-value paor), 키-값 쌍은 쉼표(comma)로 구분해준다.
@@ -80,6 +86,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-1. 객체의 사용
+
+---
 
 - 객체의 값을 사용하는 방법은 두 가지가 있다.
 
@@ -126,6 +134,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-2 객체의 추가/삭제 및 확인
+
+---
 
 - dot/bracket notation을 이용해 값을 **추가할** 수 있다.
 

@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. 다양한 CSS 셀렉터
 
+---
+
 ```javascript
 h1 {  }  // 셀렉터
 div {  }
@@ -65,6 +67,8 @@ input[type="text"]:invalid { }
 <br>
 
 ### 2-1 . CSS layout
+
+---
 
 ![스크린샷, 2021-08-03 10-54-00](https://user-images.githubusercontent.com/83164003/127945320-113288ab-1eee-41b8-b76e-52b3528d1b7d.png)
 
@@ -117,6 +121,8 @@ body {
 <br>
 
 ### 2-2. CSS layout (flexbox)
+
+---
 
 - flexbox로 레이아웃을 구성한다는 것은, 박스를 유연하게 늘리거나 줄여 레이아웃을 잡는 방법이다.
 
@@ -198,6 +204,8 @@ body {
 
 ### 2-3. CSS layout (flexbox 콘텐츠 정렬 방법)
 
+---
+
 - Flexbox를 원하는대로 제어하기 위해서는 axis(축)의 개념에 대한 이해가 필요하다. axis는 `main axis` 와 `cross axis`로 구분된다.
   - `main axis`는 flex-direction 속성에 의해서 결정된다. flex-direction의 기본 값인 row 인 상태일 때 main axis 는 가로축(가로축이 default)이 된다.
   - `cross axis`는 여러 개의 main axis와 수직을 이루는 방향입니다. main axis가 가로일 때 cross axis는 세로가 됩니다.
@@ -272,6 +280,8 @@ body {
 <br>
 
 ### 3. HTML/CSS 목업 와이어프레임 실습
+
+---
 
 - 실습결과 코드는 <a href="https://github.com/JH8459/im-sprint-twittler" target="_blank">GitHub 참조.</a>
 

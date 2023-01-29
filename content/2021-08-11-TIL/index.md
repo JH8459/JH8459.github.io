@@ -18,12 +18,16 @@ categories: CodeStates TIL
 
 ### 1. React
 
+---
+
 - 프론트앤드 개발을 위한 JavaScript 오픈소스 라이브러리.
 
 <br>
 <br>
 
 #### 1-1. 리액트의 3가지 특징
+
+---
 
 1. **선언형 (Declarative)**
 
@@ -54,6 +58,8 @@ categories: CodeStates TIL
 
 #### 1-2. JSX
 
+---
+
 - JSX는 JS와는 유사하며 JS를 확장한 문법이지만, 브라우저가 바로 실행할 수 있는 JavaScript 코드는 아니다.
 
   **"Babel"** 을 이용하여 JSX를 브라우저가 이해할 수 있는 JS로 컴파일하게 되며, 컴파일 된 JS를 통하여 브라우저가 읽고 화면에 렌더링 할 수 있다.
@@ -67,7 +73,11 @@ categories: CodeStates TIL
 <br>
 <br>
 
-### 2. React 기본 문법 실습 : <a href = "https://github.com/JH8459/im-sprint-react-twittler-intro" target="_blank">Github 참조</a>
+### 2. React 기본 문법 실습
+
+---
+
+> <a href = "https://github.com/JH8459/im-sprint-react-twittler-intro" target="_blank">Github 참조</a>
 
 ![스크린샷, 2021-08-12 00-19-37](https://user-images.githubusercontent.com/83164003/129056832-1bd66fa4-4693-4363-98ce-5cbf39f31c60.png)
 

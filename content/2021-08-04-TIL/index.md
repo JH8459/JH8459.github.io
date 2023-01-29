@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. 원시 자료형과 참조 자료형.
 
+---
+
 <br>
 <br>
 
 #### 1-1. 원시 자료형.
+
+---
 
 - 자바스크립트에서 원시 타입의 데이터(primitive data types; 원시 자료형)는 객체가 아니면서 method를 가지지 않는 6 가지의 타입
 
@@ -45,6 +49,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. 참조 자료형.
+
+---
 
 - 자바스크립트에서 원시 자료형이 아닌 모든 것은 참조 자료형이다. 이런 자료형을 자바스크립트에서는 참조 자료형(reference data type; 참조 타입)이라고도 부른다. 대표적인 참조 자료형으로는 배열([])과 객체({}), 함수(function(){})가 있다.
 
@@ -70,6 +76,8 @@ categories: CodeStates TIL
 <br>
 
 ### 2. 스코프
+
+---
 
 - 예제로 우선 스코프에 대해 알아보자.
 
@@ -99,6 +107,8 @@ categories: CodeStates TIL
 
 #### 2-1. 스코프 주요 규칙
 
+---
+
 - 첫번째 규칙은, "바깥쪽 스코프에서 선언한 변수는 안쪽 스코프에서 사용 가능한 반면에, 안쪽에서 선언한 변수는 바깥쪽 스코프에서는 사용할 수 없다"라는 점이다. 위의 예제를 통하여 확인해보았다.
 
 - 두번째 규칙은, "스코프는 중첩이 가능하다"는 것이다, 스코프는 마치 중첩된 울타리와 같다.
@@ -114,6 +124,8 @@ categories: CodeStates TIL
 
 #### 2-2. 스코프의 종류
 
+---
+
 - 블록 스코프(block scope) : 중괄호를 기준으로 범위가 구분된다.
 
 - 함수 스코프(function scope) : function 키워드가 등장하는 함수 선언식 및 함수 표현식은 함수 스코프를 만든다.
@@ -124,6 +136,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-3. let, const, var 변수 선언에서 주의할 점
+
+---
 
 - `var` 키워드로 정의한 변수는 블록 스코프를 무시하고, 함수 스코프만 따른다.
 
@@ -168,6 +182,8 @@ categories: CodeStates TIL
 
 ### 3. 클로저
 
+---
+
 - MDN에서의 클로저 정의에 따르면, 다음과 같다.
 
 > "함수와 함수가 선언된 어휘적(lexical) 환경의 조합을 말한다. 이 환경은 클로저가 생성된 시점의 유효 범위 내에 있는 모든 지역 변수로 구성된다."
@@ -178,6 +194,8 @@ categories: CodeStates TIL
 <br>
 
 #### 3-1. 클로저 함수의 특징
+
+---
 
 ```javascript
 // const adder = x => y => x + y;
@@ -227,6 +245,8 @@ typeof adder(5); // 'function', 리턴값이 함수의 형태이다.
 <br>
 
 #### 3-2. 클로저 함수의 활용 예시
+
+---
 
 ```javascript
 // const tagMaker = tag => content => `<${tag}>%{content}</${tag}>`

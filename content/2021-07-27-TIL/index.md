@@ -16,7 +16,11 @@ categories: CodeStates TIL
 
 <br>
 
-### 1. 계산기 실습 : <a href="https://github.com/JH8459/im-sprint-calculator" target="_blank">github repository</a>
+### 1. 계산기 실습
+
+---
+
+> <a href="https://github.com/JH8459/im-sprint-calculator" target="_blank">참조: Github</a>
 
 ![스크린샷, 2021-08-04 23-13-16](https://user-images.githubusercontent.com/83164003/128197509-0d4eb176-88a6-4b30-bc89-5c1e6fe2ee54.png)
 

@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. HTTP/네트워크
 
+---
+
 <br>
 <br>
 
 #### 1-1. 클라이언트-서버 아키텍처
+
+---
 
 - 클라이언트-서버 아키텍처는 리소스가 존재하는 곳과, 리소스를 사용하는 앱을 분리시킨 네트워크 모델이다.
 
@@ -42,6 +46,8 @@ categories: CodeStates TIL
 
 #### 1-2. HTTP 프로토콜이란?
 
+---
+
 - HTTP(Hypertext Transfer Protocol)는 웹을 개발하는 사람이라면 누구나 다 알아야 하는 통신 프로토콜이다.
 
   **프로토콜**이란 상호 간에 정의한 규칙을 의미하며 특정 기기 간에 데이터를 주고받기 위해 정의되어 있다.
@@ -61,6 +67,8 @@ categories: CodeStates TIL
 
 #### 1-3. URL와 URI
 
+---
+
 - URL은 Uniform Resource Locator의 줄임말로, 네트워크 상에서 웹 페이지, 이미지, 동영상 등의 파일이 위치한 정보를 나타낸다.
 
   URI는 **U**niform **R**esource **I**dentifier의 줄임말로, 일반적으로 URL의 기본 요소인 scheme, hosts, url-path에 더해 query, bookmark를 포함한다.
@@ -75,6 +83,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-4. HTTP Request & HTTP Response
+
+---
 
 - HTTP로 데이터를 주고받기 위해서는 아래와 같이 요청(Request)을 보내고 응답(Response)을 받아야 합니다.
 
@@ -105,6 +115,8 @@ categories: CodeStates TIL
 
 #### 1-5. HTTP 메세지 포맷
 
+---
+
 - 앞서서 말한 내용을 요약하면, HTTP는 특정 상태를 유지하지 않으며 웹 브라우저와 웹 서버의 소통을 위해 디자인되었으며 (1-2. HTTP 프로토콜이란?) 클라이언트-서버 모델에서 클라이언트가 HTTP messages 양식에 맞춰 요청을 보내면, 서버도 HTTP messages 양식에 맞춰 응답한다 배웠다. (1-4. HTTP Request & HTTP Response).
 
   HTTP messages는 요청(Requests)과 응답(Responses)에서 다음과 같은 구조를 지닌다.
@@ -129,6 +141,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-6. HTTP 요청 (Request)
+
+---
 
 - HTTP 요청은 서버가 특정 동작을 취하게끔 만들기 위해 클라이언트에서 전송하는 메시지라는걸 위에서 학습하였다. 이 메세지의 내용은 다음과 같이 이루어져 있다.
 
@@ -163,6 +177,8 @@ categories: CodeStates TIL
 
 #### 1-7. HTTP 응답(Responses)
 
+---
+
 - 전반적인 내용은 요청과 비슷하지만 다른점만 서술해보았다.
 
 - **시작줄**
@@ -194,10 +210,14 @@ categories: CodeStates TIL
 
 ### 2. SSR과 CSR
 
+---
+
 <br>
 <br>
 
 #### 2-1. SSR(Server Side Rendering)
+
+---
 
 - 웹 페이지를 브라우저에서 렌더링하는 대신에, 서버에서 렌더링하는 경우를 일컫는다.
 
@@ -218,6 +238,8 @@ categories: CodeStates TIL
 
 #### 2-2. CSR(Client Side Rendering)
 
+---
+
 - SSR이 서버 측에서 페이지를 렌더링한다면, CSR은 클라이언트에서 페이지를 렌더링한다.
 
   ![csr](https://user-images.githubusercontent.com/83164003/131885634-9f8422f1-7124-4df9-80a4-052dee53c0d5.png)
@@ -232,6 +254,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-3. SSR과 CSR의 차이점
+
+---
 
 - 우선 속도적인 측면을 보면, 웹 페이지 로딩의 종류는 두 가지로 나눌 수 있다. 하나는 웹 사이트의 가장 첫 페이지를 로딩하는 것 그리고, 다른 하나는 나머지를 로딩하는 것을 꼽을 수 있다.
 

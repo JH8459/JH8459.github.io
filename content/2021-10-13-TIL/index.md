@@ -6,16 +6,26 @@ author: JH8459
 categories: CodeStates TIL
 ---
 
-![TIL](https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg)
+![github-blog.png](../../assets/common/TIL.jpeg)
 
-## Today I Learnd
+<br>
+
+## ✍️ **T**oday **I** **L**earned
+
+---
+
+<br>
 
 ### 1. DataBase & SQL
+
+---
 
 <br>
 <br>
 
 #### 1-1. DataBase
+
+---
 
 데이터베이스는 **IN-MEMORY**, **FILE I/O** 방식의 한계와 관리하는 데이터의 양이 방대해짐에따라 효율적이고 데이터의 무결성을 지키기 위해 고안된 데이터에 특화된 서버이다.
 
@@ -27,6 +37,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-2. SQL
+
+---
 
 - 하나의 언어인 **Structured Query Language (SQL)** 은 데이터베이스 언어로, 주로 관계형 데이터베이스에서 사용한다.
 
@@ -45,6 +57,8 @@ categories: CodeStates TIL
 
 #### 1-3. ACID
 
+---
+
 **ACID(원자성, 일관성, 고립성, 지속성)** 는 데이터베이스 _트랜잭션_ 이 안전하게 수행된다는 것을 보장하기 위한 성질을 가리키는 약어이다.
 
 여기서 트랜잭션이란? 데이터베이스의 상태를 변환시키는 논리적 기능을 수행하기 위해 행해지는 하나 이상의 쿼리를 모아 놓은 작업의 단위 이다.
@@ -62,10 +76,14 @@ categories: CodeStates TIL
 
 ### 2. Schema design
 
+---
+
 <br>
 <br>
 
 #### 2-1. 스키마(Schema)
+
+---
 
 - 스키마는 데이터베이스의 구조와 제약 조건에 관한 전반적인 명세를 기술한 메타데이터의 집합이다.
 
@@ -77,6 +95,8 @@ categories: CodeStates TIL
 <br>
 
 #### 2-2. Schema design (인스타그램 예제)
+
+---
 
 ![instagram](https://user-images.githubusercontent.com/83164003/137158248-6e534292-0cc7-48d0-856d-57ced7a70396.png)
 
@@ -97,6 +117,8 @@ categories: CodeStates TIL
 
 ### 3. 관계형 데이터베이스
 
+---
+
 - 구조화된 데이터는 하나의 테이블로 표현할 수 있다. 사전에 정의된 테이블을 relation 이라고도 부르기 때문에, 테이블을 사용하는 데이터베이스를 관계형 데이터베이스(Relational database)라고 한다.
 
 - 관계의 종류는 다음과 같다.
@@ -113,6 +135,8 @@ categories: CodeStates TIL
 <br>
 
 ### 4. Node.js에서 데이터베이스 사용
+
+---
 
 - `.env` 환경변수 파일을 통하여 `dotenv` 패키지로 환경변수를 변수처럼 가져와 사용 할 수 있음을 이미 우리는 학습하였다.
 

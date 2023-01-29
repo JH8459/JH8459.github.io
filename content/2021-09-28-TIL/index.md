@@ -18,10 +18,14 @@ categories: CodeStates TIL
 
 ### 1. React 상태관리
 
+---
+
 <br>
 <br>
 
 #### 1-1. 프론트엔드 개발에서의 상태 관리
+
+---
 
 - 우선 상태란 컴포넌트 내부에서 변화되는 값이다.
 
@@ -52,6 +56,8 @@ categories: CodeStates TIL
 
 #### 1-2. 상태 관리를 위한 각종 툴
 
+---
+
 ![react상태관리](https://user-images.githubusercontent.com/83164003/135709190-62979f91-d525-4b9f-b02a-1a756dccf27b.png)
 
 - 상태 관리에 대해 전반적으로 알아보았다.
@@ -75,6 +81,8 @@ categories: CodeStates TIL
 
 #### 1-3. Redux
 
+---
+
 - React에서는 상태와 속성(props)을 이용한 컴포넌트 단위 개발 아키텍처를 배웠다면, Redux에서는 컴포넌트와 상태를 분리하여 관리한다. 상태 변경 로직을 컴포넌트로부터 분리하면, 표현에 집중한 보다 단순한 함수 컴포넌트를 만들 수 있게 된다.
 
   단순히 말하자면 React에서는 상태를 `Store`라는 별도의 오직하나뿐인 장소에서 관리하게되며, 해당 장소에서 **상태**를 관리하게 된다.
@@ -90,6 +98,8 @@ categories: CodeStates TIL
 
 #### 1-4. Cmarket (Hooks 버전)
 
+---
+
 ![컴포넌트 구조](https://user-images.githubusercontent.com/83164003/135710533-10497531-2270-4c8a-a2d5-7dd8b72b4caf.jpg)
 
 - 컴포넌트 구조를 감안하여 상태의 위치를 고려하여 코딩하였다.
@@ -104,6 +114,8 @@ categories: CodeStates TIL
 <br>
 
 #### 1-5. Cmarket (Redux 버전)
+
+---
 
 > 참조 : <a href="https://github.com/JH8459/im-sprint-cmarket-redux" target="_blank">Github</a> 링크
 

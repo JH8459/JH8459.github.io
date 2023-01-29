@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. Linux CLI
 
+---
+
 - 명령 줄 인터페이스(CLI, Command line interface) 또는 명령어 인터페이스는 텍스트 터미널을 통해 사용자와 컴퓨터가 상호 작용하는 방식을 뜻한다.
 
   즉, 작업 명령은 사용자가 컴퓨터 키보드 등을 통해 문자열의 형태로 입력하며, 컴퓨터로부터의 출력 역시 문자열의 형태로 주어진다.
@@ -27,7 +29,11 @@ categories: CodeStates TIL
 
 ### 2. 패키지와 패키지 매니저
 
+---
+
 #### 2-1. 패키지
+
+---
 
 - 리눅스에서 빈번하게 사용하는 **'패키지'** 란 커널 및 라이브러리 버전의 배포판 환경에 맞추어 빌드한 실행파일을 압축한 것이다.
 
@@ -38,12 +44,16 @@ categories: CodeStates TIL
 
 #### 2-2. 패키지 매니저
 
+---
+
 - **APT(Advanced Packaging Tool)** 는 데비안과 우분투를 포함하여 데비안 계열 리눅스 배포판들의 주 패키지 관리 도구이다.
 
 <br>
 <br>
 
 ### 3. Node.js
+
+---
 
 - 쉽게 말하면 JavaScript 런타임(Runtime)이다.
 
@@ -55,6 +65,8 @@ categories: CodeStates TIL
 <br>
 
 #### 3-1. Node.js를 왜 사용하나?
+
+---
 
 - Node.js 라이브러리 내의 API는 모두 비동기식이다.
 
@@ -71,6 +83,8 @@ categories: CodeStates TIL
 
 #### 3-2. nvm ?
 
+---
+
 - NVM(Node Version Manager)은 Node.js의 버전을 관리하기 위한 도구이다.
 
   개발툴들이 다양해 질수록 경우에 따라서 Node.js의 버전을 달리 사용해야 할 필요성이 생기게되었다.
@@ -86,6 +100,8 @@ categories: CodeStates TIL
 
 #### 3-3. npm ?
 
+---
+
 - 하나의 프로그램은 다양한 모듈이 합쳐져서 만들어진다.
 
   이때 개발자는 이 모듈을 모두 개발할 이유가 없다. 이미 만들어진 검증된 코드(모듈)을 잘 가져와서 효율적인 방법으로 쓰게끔 도와주는게 **npm(Node Package Manager)** 이다.
@@ -94,6 +110,8 @@ categories: CodeStates TIL
 <br>
 
 #### 3-4. package.json
+
+---
 
 - 프로젝트 전반에 관한 정보를 정의하고 의존하는 패키지 버전 정보를 명시해주는 파일이다.
 
@@ -105,6 +123,8 @@ categories: CodeStates TIL
 <br>
 
 ### 4. ~ 코딩애플 React 기초 3강
+
+---
 
 - 수강 완료
 

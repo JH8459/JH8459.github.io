@@ -18,6 +18,8 @@ categories: CodeStates TIL
 
 ### 1. 학습 툴 셋팅
 
+---
+
 - 리눅스(Ubuntu OS) 환경에 기본 개발환경 구축.
 
 <br>
