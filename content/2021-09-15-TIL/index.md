@@ -3,7 +3,7 @@ emoji: 📚
 title: CDD, CSS in JS 방법론, React Custom Component
 date: '2021-09-15'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

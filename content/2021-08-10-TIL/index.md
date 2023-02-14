@@ -3,7 +3,7 @@ emoji: 📚
 title: 고차함수
 date: '2021-08-10'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

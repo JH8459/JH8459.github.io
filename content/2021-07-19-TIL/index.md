@@ -3,7 +3,7 @@ emoji: 📚
 title: 코드스테이츠 1일차
 date: '2021-07-19'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

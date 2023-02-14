@@ -3,7 +3,7 @@ emoji: 📚
 title: 컴퓨터 공학 기초, 운영체제, 가비지 컬렉션, 캐시
 date: '2021-10-25'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

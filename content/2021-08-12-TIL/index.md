@@ -3,7 +3,7 @@ emoji: 📚
 title: React SPA, React Router
 date: '2021-08-12'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

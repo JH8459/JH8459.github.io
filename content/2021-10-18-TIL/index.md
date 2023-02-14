@@ -3,7 +3,7 @@ emoji: 📚
 title: ORM, Sequelize, Short.ly MVC
 date: '2021-10-18'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

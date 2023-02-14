@@ -3,7 +3,7 @@ emoji: 📚
 title: Amazon Web Service, AWS 배포 실습
 date: '2021-10-29'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

@@ -3,7 +3,7 @@ emoji: 📚
 title: Spread&Rest 문법, 구조분해, JavaScript 핵심문법(스코프, 클로저..) 문제풀이
 date: '2021-08-05'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

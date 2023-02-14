@@ -3,7 +3,7 @@ emoji: 📚
 title: 반복문 코플릿
 date: '2021-07-22'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

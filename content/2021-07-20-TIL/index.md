@@ -3,7 +3,7 @@ emoji: 📚
 title: 변수, 타입, 함수, 조건문, HTML
 date: '2021-07-20'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

@@ -3,7 +3,7 @@ emoji: 📚
 title: 문자열, 호이스팅, React
 date: '2021-07-21'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

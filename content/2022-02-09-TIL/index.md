@@ -3,7 +3,7 @@ emoji: 📚
 title: 'Node.js - code: ERR_HTTP_HEADERS_SENT 에러 핸들링'
 date: '2022-02-09'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

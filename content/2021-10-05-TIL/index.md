@@ -3,7 +3,7 @@ emoji: 📚
 title: Linux 사용권한, Linux 환경변수
 date: '2021-10-05'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

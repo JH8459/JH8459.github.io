@@ -3,7 +3,7 @@ emoji: 📚
 title: 자료구조, 자료구조의 종류
 date: '2021-08-26'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

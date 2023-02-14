@@ -3,7 +3,7 @@ emoji: 📚
 title: Sequelize Migration
 date: '2022-02-11'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

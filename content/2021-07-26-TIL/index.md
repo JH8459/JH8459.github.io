@@ -3,7 +3,7 @@ emoji: 📚
 title: 계산기 실습
 date: '2021-07-26'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

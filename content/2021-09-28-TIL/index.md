@@ -3,7 +3,7 @@ emoji: 📚
 title: React 상태관리
 date: '2021-09-28'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

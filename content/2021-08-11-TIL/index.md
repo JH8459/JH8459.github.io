@@ -3,7 +3,7 @@ emoji: 📚
 title: React
 date: '2021-08-11'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

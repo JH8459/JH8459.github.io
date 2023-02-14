@@ -3,7 +3,7 @@ emoji: 📚
 title: Docker, 컨테이너와 VM의 비교
 date: '2021-11-02'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

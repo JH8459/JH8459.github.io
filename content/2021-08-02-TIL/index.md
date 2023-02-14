@@ -3,7 +3,7 @@ emoji: 📚
 title: 객체 코플릿
 date: '2021-08-02'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

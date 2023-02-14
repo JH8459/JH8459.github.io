@@ -3,7 +3,7 @@ emoji: 📚
 title: Git Branch, 프로젝트 workflow
 date: '2021-10-27'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

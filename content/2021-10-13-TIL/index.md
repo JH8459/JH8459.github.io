@@ -3,7 +3,7 @@ emoji: 📚
 title: DataBase & SQL, Schema design, DataBase 설계, Node.js에서 데이터베이스 사용
 date: '2021-10-13'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

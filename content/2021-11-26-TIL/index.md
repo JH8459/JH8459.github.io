@@ -3,7 +3,7 @@ emoji: 📚
 title: 무료 도메인 주소를 이용한 AWS HTTPS 인증
 date: '2021-11-26'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

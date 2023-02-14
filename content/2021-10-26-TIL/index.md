@@ -3,7 +3,7 @@ emoji: 📚
 title: 인터넷 프로토콜, HTTP 헤더, 웹 캐시
 date: '2021-10-26'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

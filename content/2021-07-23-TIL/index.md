@@ -3,7 +3,7 @@ emoji: 📚
 title: 소비자들과 맞닿는 영역의 CSS
 date: '2021-07-23'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

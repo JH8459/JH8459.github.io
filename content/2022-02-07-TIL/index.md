@@ -3,7 +3,7 @@ emoji: 📚
 title: Crypto 모듈로 비밀번호 암호화하기
 date: '2022-02-07'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

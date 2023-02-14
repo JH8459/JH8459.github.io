@@ -3,7 +3,7 @@ emoji: 📚
 title: Git
 date: '2021-07-29'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

@@ -3,7 +3,7 @@ emoji: 📚
 title: 비동기 처리, Node.js
 date: '2021-09-01'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

@@ -3,7 +3,7 @@ emoji: 📚
 title: Linux CLI, 패키지와 패키지 매니저, Node.js, React
 date: '2021-07-28'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

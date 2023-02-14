@@ -3,7 +3,7 @@ emoji: 📚
 title: HTTP와 네트워크, SSR과 CSR
 date: '2021-09-02'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)

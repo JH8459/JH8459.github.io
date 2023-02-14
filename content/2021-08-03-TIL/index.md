@@ -3,7 +3,7 @@ emoji: 📚
 title: 다양한 CSS 셀렉터, CSS layout, HTML/CSS 목업 와이어프레임 실습
 date: '2021-08-03'
 author: JH8459
-categories: CodeStates TIL
+categories: TIL
 ---
 
 ![github-blog.png](../../assets/common/TIL.jpeg)
