@@ -250,21 +250,21 @@ categories: Retrospect
 
 <div markdown="1">
 
-- <a href="https://blog.jh8459.com/2022.02.07-PROJECT/" target="_blank">🛠️ 1일차 - 서버 리팩토링 우선순위 선정</a>
+- <a href="https://blog.jh8459.com/2022-02-07-PROJECT/" target="_blank">🛠️ 1일차 - 서버 리팩토링 우선순위 선정</a>
 
-- <a href="https://blog.jh8459.com/2022.02.08-PROJECT/" target="_blank">🛠️ 2일차 - 민감정보 암호화</a>
+- <a href="https://blog.jh8459.com/2022-02-08-PROJECT/" target="_blank">🛠️ 2일차 - 민감정보 암호화</a>
 
-- <a href="https://blog.jh8459.com/2022.02.09-PROJECT/" target="_blank">🛠️ 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</a>
+- <a href="https://blog.jh8459.com/2022-02-09-PROJECT/" target="_blank">🛠️ 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</a>
 
-- <a href="https://blog.jh8459.com/2022.02.10-PROJECT/" target="_blank">🛠️ 4일차 - 유효하지 않은 로그인 상태 검증</a>
+- <a href="https://blog.jh8459.com/2022-02-10-PROJECT/" target="_blank">🛠️ 4일차 - 유효하지 않은 로그인 상태 검증</a>
 
-- <a href="https://blog.jh8459.com/2022.02.11-PROJECT/" target="_blank">🛠️ 5일차 - Articles 테이블 스키마 수정(1)</a>
+- <a href="https://blog.jh8459.com/2022-02-11-PROJECT/" target="_blank">🛠️ 5일차 - Articles 테이블 스키마 수정(1)</a>
 
-- <a href="https://blog.jh8459.com/2022.02.14-PROJECT/" target="_blank">🛠️ 6일차 - Articles 테이블 스키마 수정(2)</a>
+- <a href="https://blog.jh8459.com/2022-02-14-PROJECT/" target="_blank">🛠️ 6일차 - Articles 테이블 스키마 수정(2)</a>
 
-- <a href="https://blog.jh8459.com/2022.02.15-PROJECT/" target="_blank">🛠️ 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</a>
+- <a href="https://blog.jh8459.com/2022-02-15-PROJECT/" target="_blank">🛠️ 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</a>
 
-- <a href="https://blog.jh8459.com/2022.02.16-PROJECT/" target="_blank">🛠️ 8일차 - Timezone 수정</a><br>
+- <a href="https://blog.jh8459.com/2022-02-16-PROJECT/" target="_blank">🛠️ 8일차 - Timezone 수정</a><br>
 
 </div>
 </details>
