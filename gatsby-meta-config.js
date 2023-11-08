@@ -100,7 +100,7 @@ module.exports = {
         description:
           '"개발자가 모바일 청첩장을 외부업체에 맡겨..??"라는 생각으로 시작하게된 모바일 청첩장은 (백엔드 개발자 에겐) 쉽지 않았습니다. 이 또한 추억이라 생각하며 아내와 함께 기획하여 개발을 완성하여 지인들에게 공유한 실제 모바일 청첩장 개발 히스토리를 소개합니다.',
         techStack: ['React', 'Kakao API'],
-        thumbnailUrl: 'project-wedding.png',
+        thumbnailUrl: 'project-wedding.jpg',
         links: {
           post: '/',
           github: 'https://github.com/JH8459/WEDDING-INVITATION-LETTER',
