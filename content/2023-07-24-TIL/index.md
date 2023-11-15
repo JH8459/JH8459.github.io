@@ -1,6 +1,6 @@
 ---
 emoji: 📚
-title: Github ISSUE Label Deafault Setting
+title: Github ISSUE Label Default Setting
 date: '2023-07-24'
 author: JH8459
 categories: TIL
