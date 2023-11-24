@@ -79,15 +79,15 @@ categories: Retrospect
 
 - 그리고 행사장 내부에는 Session이 진행되는 강연장 외에도 하드웨어 관련 (삼성헬스, SmartThings 등등..) 기술 전시부스가 상시로 운영되고 있었으며, 간단한 음료가 제공되는 서빙바가 있었다.
 
-<br>
+  <br>
 
-![booth.jpeg](./booth.jpeg)
+  ![booth.jpeg](./booth.jpeg)
 
-<br>
+  <br>
 
-<center>👏👏👏</center>
+  <center>👏👏👏</center>
 
-<br>
+  <br>
 
 - SDC23의 각 Session들은 2개의 트랙으로 나뉘어 운영되었다.
 
