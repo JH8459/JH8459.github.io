@@ -3,7 +3,7 @@ emoji: 📖
 title: Clean Code - 3
 date: '2023-04-09'
 author: JH8459
-categories: BOOK
+categories: Book
 ---
 
 ![book.jpeg](book.jpeg)
@@ -95,7 +95,7 @@ categories: BOOK
 
 도구 상자를 떠올려보자, 한가지의 도구는 한가지의 책임을 갖고 한가지의 일을 **잘** 해낸다.
 
-<a href="https://blog.jh8459.com/2023-03-20-BOOK/#3-%ED%95%A8%EC%88%98" target="_blank">3장 함수</a>에서 다룬 내용과 크게 다르지 않다 생각한다. 클래스도 마찬가지로 체계적인 정리 없이 쓰인다면 버그가 숨어들기 좋을 수 밖에 없다.
+<a href="https://blog.jh8459.com/2023-03-20-Book/#3-%ED%95%A8%EC%88%98" target="_blank">3장 함수</a>에서 다룬 내용과 크게 다르지 않다 생각한다. 클래스도 마찬가지로 체계적인 정리 없이 쓰인다면 버그가 숨어들기 좋을 수 밖에 없다.
 
 큰 클래스만으로 이뤄진 시스템보다는 작은 클래스 여럿으로 이뤄진 시스템이 더 바람직하다.
 

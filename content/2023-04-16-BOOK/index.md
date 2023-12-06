@@ -3,7 +3,7 @@ emoji: 📖
 title: Clean Code - 4
 date: '2023-04-16'
 author: JH8459
-categories: BOOK
+categories: Book
 ---
 
 ![book.jpeg](book.jpeg)
