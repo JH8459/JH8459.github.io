@@ -7,12 +7,6 @@ module.exports = {
 
   plugins: [
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: `ca-pub-5947324447654662`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
@@ -50,9 +44,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: metaConfig.ga,
+        trackingId: metaConfig.trakingId,
         head: true,
         anonymize: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: metaConfig.publisherId,
       },
     },
     {

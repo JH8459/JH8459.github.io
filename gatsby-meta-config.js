@@ -9,7 +9,8 @@ module.exports = {
       repo: `JH8459/JH8459.github.io`,
     },
   },
-  ga: 'G-B02DJ4ZW5E', // Google Analytics Tracking ID
+  trakingId: 'G-B02DJ4ZW5E', // Google Analytics Tracking ID
+  publisherId: 'ca-pub-2620372849415569', // Google Adsense Publisher ID
   author: {
     name: `김정현`,
     bio: {
