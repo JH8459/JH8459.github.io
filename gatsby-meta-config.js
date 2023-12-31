@@ -20,7 +20,7 @@ module.exports = {
     },
     social: {
       github: `https://github.com/JH8459`,
-      linkedIn: `https://www.linkedin.com/in/jeonghyun-kim-8b7a80237`,
+      linkedIn: `https://www.linkedin.com/in/%EC%A0%95%ED%98%84-%EA%B9%80-8b7a80237/`,
       email: `kk_ong2233@naver.com`,
     },
   },
@@ -58,13 +58,13 @@ module.exports = {
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
         },
       },
-      {
-        date: '2023.03 ~',
-        activity: '코드스테이츠 수료생 멘토 활동',
-        links: {
-          post: '/',
-        },
-      },
+      // {
+      //   date: '2023.03 ~',
+      //   activity: '코드스테이츠 수료생 멘토 활동',
+      //   links: {
+      //     post: '/',
+      //   },
+      // },
     ],
 
     projects: [
@@ -103,7 +103,6 @@ module.exports = {
         techStack: ['React', 'Kakao API'],
         thumbnailUrl: 'project-wedding.jpg',
         links: {
-          post: '/',
           github: 'https://github.com/JH8459/WEDDING-INVITATION-LETTER',
           demo: 'https://wedding.jh8459.com/',
         },
