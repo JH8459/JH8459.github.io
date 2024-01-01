@@ -37,6 +37,37 @@ categories: TIL
 
 ---
 
+- 우선 프로젝트 환경설정에 앞서서 사전 준비물을 구성해주어야한다.
+  - Java: **Java 21 LTS (23.12.06 기준)**
+  - IDE: **IntelliJ**
+
+  위 두가지 개발 도구들을 미리 설치하고 강의 수강을 진행하자.
+
+  <br>
+
+- 우선 Java를 선행해서 설치해 주어야 한다. 강의에서는 11버전을 언급하였으나, [강의자료]를 참조하면 자바 17 이상을 사용해달라 권고한다.
+
+  17 버전은 공식문서에 따르면 2024년 9월까지 업데이트 지원이 예정되어있으며, 21 버전은 2026년 9월까지 업데이트 지원이 예정되어 있었다.
+
+  이왕이면 사후관리가 조금 더 긴 21 LTS 버전을 선택하여 <a href="https://www.oracle.com/java/technologies/downloads/#java17" target="_blank">Oracle 공식 홈페이지</a>를 통하여 설치해주었다.
+
+  ![java.png](java.png)
+
+  MAC 환경의 유저라면 DMG 설치 마법사 패키지를 통하여 쉽게 설치할 수 있다.
+
+  ![terminal.png](terminal.png)
+
+  Java 설치 후 `java --version` 명령어를 통해 설치 여부를 확인해주자.
+
+  <br>
+
+- IDE는 <a href="https://www.jetbrains.com/ko-kr/idea/download/?section=mac" target="_blank">IntelliJ 공식 홈페이지</a>를 통하여 설치해주었다.
+
+  ![intellij.png](intellij.png)
+
+  **Community Edition**을 설치해주어야 무료로 사용 가능하니 이점 참고해서 설치를 해주자.
+
+
   <br>
   <br>
 
@@ -44,9 +75,44 @@ categories: TIL
 
 ---
 
-- Java를 선행해서 설치해 주어야 한다. 강의에서는 11버전을 언급하였으나, [강의자료]를 참조하면 자바 17 이상을 사용해달라 권고한다.
+- 기본 개발 환경이 구성되었다면, 🔗 <a href="https://start.spring.io/" target="_blank">Spring Boot 스타터 사이트</a>를 통해 아래와 같은 세팅으로 프로젝트를 생성해준다.
 
-- (작성중)
+  ![boot.png](boot.png)
+
+  - **Project: Gradle - Kotlin**
+
+    > 🔗 https://github.com/gradle/gradle 참조
+    > 
+    > Gradle 은 빌드 자동화 및 다국어 개발 지원에 중점을 둔 빌드 도구입니다.
+    > 어떤 플랫폼에서든 소프트웨어를 구축, 테스트, 게시 및 배포하는 경우 Gradle은 코드 컴파일 및 패키징부터 웹 사이트 게시까지 전체 개발 수명주기를 지원할 수 있는 유연한 모델을 제공합니다.
+    >
+    > Gradle은 Java, Scala, Android, Kotlin, C/C++, Groovy를 포함한 여러 언어 및 플랫폼에서 빌드 자동화를 지원하도록 설계되었으며 Eclipse, IntelliJ, Jenkins를 포함한 개발 도구 및 지속적인 통합 서버와 긴밀하게 통합됩니다.
+
+    Gradle을 선택한 뒤 Groovy / Kotlin는 크게 중요하지 않은 듯 하다.
+
+    다만, Kotlin을 사용시 추후 확장성(?)에서 조금 유리하지 않을까 싶어서 선택하였다.
+
+  - **Language: Java**
+
+  - **Spring boot: 3.2.1**
+
+    SNAPSHOT은 아직 개발중인 버전이다. 또한, M1등은 아직 정식 릴리즈 버전이 아니므로 괄호로 쌓여있는 버전이 아닌 LTS 버전을 택해주자.
+
+  - **Project Metadata**
+
+    - **Group**: 기업명 등을 적어준다. (개인 프로젝트이므로 깃허브 계정을 적었다.)
+    - **Artifact**: Build 결과물. (프로젝트명을 적어주었다.)
+    
+  - **Dependencies**
+
+    Spring Boot 기반으로 프로젝트 생성시 기본으로 가져올 외부 라이브러리 모음
+
+    - **Spring Web**: Spring MVC 패턴을 가진 RESTful한 웹 서버를 만들때 사용한다.
+    - **Thymeleaf**: html 템플릿 엔진이 필요한 경우 사용한다.
+
+  위 설정 세팅 후 **GENERATE** 버튼을 눌러 프로젝트를 생성해준다.
+
+
 
   <br>
   <br>
