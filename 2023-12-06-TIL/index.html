@@ -326,6 +326,102 @@
 </ul>
 <p>위 설정 세팅 후 <strong>GENERATE</strong> 버튼을 눌러 프로젝트를 생성해준다.</p>
 <br>
+</li>
+<li>
+<p>위 과정을 거쳐 생성된 프로젝트 .zip 파일을 압축을 푼 뒤 IntelliJ에서 열기를 실행해주면 아래와 같은 폴더 구조를 가진 프로젝트가 생성되어있음을 확인할 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 113.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsTAAALEwEAmpwYAAACb0lEQVQ4y5VUyZKbMBT0x6TMohUwxoABG2yx2DPJVG45pSaVa/7/1qkn7x6Pxz50PSRBq1/T0iiOa6zqLeaZwSQoMAlKi0gXCHWOQGfQagalEkgZQ8gJuAihgymEisBlACa0ra4vMNLxHKbvMU0zjD0fLuNnEPAIXFr4FsoiTjLoMIbUEwgVQuoIni8x8pmE1FNUdYdueEEQTRFOZogIcWrHjCur4hweu9yA3vFIYawclInAOtV46yv8GGpkoYMsdPdwMNPjD0iDE2ichWNo9g0jKQS0EshnUwx9hzxLIZgHJTmUYDvQ8z0IDi05fM/DyOcaTEZIiwam/46qbuEyDV+ED8OjKiOMXY4RC0uI6g+qzV/Ub/+gFu8Q5e+nIat3OCLBiMkJWFAiTGoUq5/oXn9BT2v4eg4elqANWVB8CR5WcHxFLUv4TIBxDhHMkFU95vMCrsfgM34E42L/LG5gt+64jAhPkSA/k2yBdTvAdBvUqxaLem1z5rGP0Tl+R1UGcMjDS0LKk4SMaxTLHqYd0PZbmG6Lark6vXNNuJ+7UEiVkl8tllg0LRrTI4pnx1NA9RbZTUKCVCHyyqAftlDB6YzuToTC+cbXxDcJ07yE6V6w7jZI0rkl+kzJXYWM71TkeY1+eLWeNesOy8bYVj8juUnoUbD3bRVlA9NujhfEV6puEbr2tqFbgkkkWWHjQqC40A86tH3LtzseatAVppMGjdnYVsnDR7y762FGgTYbq3BleqzMgHLR2L/9FCENdu1ujx6SSpo/ROdJQokoKTBftFibDqu9hwffzvP3sEImdlf4YeG6zadbvl58RNVnhP8BKX7XuGI2cMsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="directory.png"
+        title="directory.png"
+        src="/static/2163a465542a03fc8923abc7d8a1fc6c/37523/directory.png"
+        srcset="/static/2163a465542a03fc8923abc7d8a1fc6c/e9ff0/directory.png 180w,
+/static/2163a465542a03fc8923abc7d8a1fc6c/f21e7/directory.png 360w,
+/static/2163a465542a03fc8923abc7d8a1fc6c/37523/directory.png 720w,
+/static/2163a465542a03fc8923abc7d8a1fc6c/84a90/directory.png 982w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>차례대로 <code class="language-text">.idea</code> 폴더는 IntelliJ 개발 환경에 관련된 폴더이고 <code class="language-text">gradle</code>은 빌드 도구 관련 폴더이다.</p>
+<p>여타 프레임워크와 마찬가지로 <code class="language-text">src</code> 폴더에 주요 소스코드들이 자리잡고있다.</p>
+</li>
+<li>
+<p>이 중 중요한 파일은 <code class="language-text">build.gradle.kts</code> 파일이다.</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">plugins <span class="token punctuation">{</span>
+  java
+  <span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"org.springframework.boot"</span><span class="token punctuation">)</span> version <span class="token string">"3.2.1"</span>
+  <span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"io.spring.dependency-management"</span><span class="token punctuation">)</span> version <span class="token string">"1.1.4"</span>
+<span class="token punctuation">}</span>
+
+group <span class="token operator">=</span> <span class="token string">"jh8459"</span>
+version <span class="token operator">=</span> <span class="token string">"0.0.1-SNAPSHOT"</span>
+
+java <span class="token punctuation">{</span>
+  sourceCompatibility <span class="token operator">=</span> <span class="token class-name">JavaVersion</span><span class="token punctuation">.</span><span class="token constant">VERSION_21</span>
+<span class="token punctuation">}</span>
+
+repositories <span class="token punctuation">{</span>
+  <span class="token function">mavenCentral</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+dependencies <span class="token punctuation">{</span>
+  <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token string">"org.springframework.boot:spring-boot-starter-thymeleaf"</span><span class="token punctuation">)</span>
+  <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token string">"org.springframework.boot:spring-boot-starter-web"</span><span class="token punctuation">)</span>
+  <span class="token function">testImplementation</span><span class="token punctuation">(</span><span class="token string">"org.springframework.boot:spring-boot-starter-test"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+tasks<span class="token punctuation">.</span>withType<span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Test</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+  <span class="token function">useJUnitPlatform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Spring Boot를 통해 선택한 여러 설정값들이 위 파일에 모두 녹아있음을 확인 할 수 있다.</p>
+</li>
+<li>
+<p>이 외에 <code class="language-text">.gitignore</code> 등 여러 프로젝트에 필요한 필수 요소 혹은 유용한 파일들이 자동적으로 생성된다.</p>
+</li>
+<li>
+<p><code class="language-text">src/main/java</code> 폴더 안의 프로젝트 파일을 실행해보면 아래와 같은 화면을 확인할 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1ElEQVQ4y52TWY7bMBBEdY9YKymuojZqsSXZngUTIMB85AC5/zUqaFqTIE6MIPl4oEQ2i+zqZvTl+g1Py1dcl3f47oyqntD1M9pugtIOpTR3aEjt0LQD3Ohx2SasroWwNXo/IlqPHXxXoW0supo2OEjjod2EjGnEcYY4yX/jU5wiTQqkSQ6lDHzr4RqP6HkZMXZVEPONRVlyiKJExQQUl8iLMggcdu6FD0kGzgSMcTC2RjTOG4ZpgakamKpFKS2kUKikgrYeyvYQQkFxBcUkylJDKItS6ADjCknKcIgzSF0h8uOCt8/veHl5wzgt4EIjzYpAknGkOUeWMeQ79J3R3D6fZgxJWgQUCa7nZ5y2K6q6g2t6FEz+0bO/8avgegkpW9ei4PJHwL8SBLfLK9btunvYoGDiv25IBMH5tGGcF/TDDD8eoW0NIU0wniCjJY2P0NWtSNKEvdF8XHB+esWy+0in0AK1AAUyLsFL9RBap7iun4JlERVimE7o/ARlXGgDSpvzWzBV8/CguUMfHtIQN59udYhIhND7jT5SobRpJHESvCeO0/CKPv5zJn7esG4HNN0QUrauD09IKRvSp+al1MLB+na40DW47lGqJnhI/hnbhP3fAa6rfLbbwcCrAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="start.png"
+        title="start.png"
+        src="/static/c5300c3d80337c5ed604f2c682d2eac7/37523/start.png"
+        srcset="/static/c5300c3d80337c5ed604f2c682d2eac7/e9ff0/start.png 180w,
+/static/c5300c3d80337c5ed604f2c682d2eac7/f21e7/start.png 360w,
+/static/c5300c3d80337c5ed604f2c682d2eac7/37523/start.png 720w,
+/static/c5300c3d80337c5ed604f2c682d2eac7/302a4/start.png 1080w,
+/static/c5300c3d80337c5ed604f2c682d2eac7/07a9c/start.png 1440w,
+/static/c5300c3d80337c5ed604f2c682d2eac7/2c960/start.png 2870w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>실행 로그를 확인하면 <code class="language-text">Tomcat started on port 8080 (http) with context path ''</code> 라는 문구를 확인할 수 있다.</p>
+<blockquote>
+<p>Spring Boot에 내장된 Tomcat 웹서버가 8080번 포트로 올라갔다라는 의미이므로 localhost:8080 으로 진입하여 Error 페이지를 확인해보자.</p>
+</blockquote>
+<br>
+<p>정상적으로 Error 페이지가 랜딩된다면 프로젝트 환경 설정은 성공적인 것이다.</p>
+<br>
 <br>
 </li>
 </ul>
