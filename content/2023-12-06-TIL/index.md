@@ -112,6 +112,64 @@ categories: TIL
 
   위 설정 세팅 후 **GENERATE** 버튼을 눌러 프로젝트를 생성해준다.
 
+  <br>
+
+- 위 과정을 거쳐 생성된 프로젝트 .zip 파일을 압축을 푼 뒤 IntelliJ에서 열기를 실행해주면 아래와 같은 폴더 구조를 가진 프로젝트가 생성되어있음을 확인할 수 있다.
+
+  ![directory.png](directory.png)
+
+  차례대로 `.idea` 폴더는 IntelliJ 개발 환경에 관련된 폴더이고 `gradle`은 빌드 도구 관련 폴더이다.
+
+  여타 프레임워크와 마찬가지로 `src` 폴더에 주요 소스코드들이 자리잡고있다.
+
+- 이 중 중요한 파일은 `build.gradle.kts` 파일이다.
+
+  ```java
+  plugins {
+    java
+    id("org.springframework.boot") version "3.2.1"
+    id("io.spring.dependency-management") version "1.1.4"
+  }
+
+  group = "jh8459"
+  version = "0.0.1-SNAPSHOT"
+
+  java {
+    sourceCompatibility = JavaVersion.VERSION_21
+  }
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+  }
+
+  tasks.withType<Test> {
+    useJUnitPlatform()
+  }
+  ```
+
+  Spring Boot를 통해 선택한 여러 설정값들이 위 파일에 모두 녹아있음을 확인 할 수 있다.
+
+- 이 외에 `.gitignore` 등 여러 프로젝트에 필요한 필수 요소 혹은 유용한 파일들이 자동적으로 생성된다.
+
+- `src/main/java` 폴더 안의 프로젝트 파일을 실행해보면 아래와 같은 화면을 확인할 수 있다.
+
+  ![start.png](start.png)
+
+  실행 로그를 확인하면 `Tomcat started on port 8080 (http) with context path ''` 라는 문구를 확인할 수 있다.
+
+  
+
+  > Spring Boot에 내장된 Tomcat 웹서버가 8080번 포트로 올라갔다라는 의미이므로 localhost:8080 으로 진입하여 Error 페이지를 확인해보자.
+
+  <br>
+
+  정상적으로 Error 페이지가 랜딩된다면 프로젝트 환경 설정은 성공적인 것이다.
 
 
   <br>
