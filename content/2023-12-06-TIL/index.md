@@ -165,7 +165,7 @@ categories: TIL
 
   
 
-  > Spring Boot에 내장된 Tomcat 웹서버가 8080번 포트로 올라갔다라는 의미이므로 localhost:8080 으로 진입하여 Error 페이지를 확인해보자.
+  > Spring Boot에 내장된 tomcat 웹서버가 8080번 포트로 올라갔다라는 의미이므로 localhost:8080 으로 진입하여 Error 페이지를 확인해보자.
 
   <br>
 
@@ -179,6 +179,14 @@ categories: TIL
 
 ---
 
+- Gradle 혹은 Maven 툴을 사용하게 되면 의존 관계에 얽힌 모든 외부 라이브러리들을 자동으로 관리해준다.
+
+  예를 들면 Spring Boot 초기 설정에서 설정한 **Spring Web** 라이브러리에 필요한 의존성 모듈들을 Gradle이 알아서 관리를 해주는 모습을 아래 사진에서 볼 수 있다.
+
+  ![dependencies.png](dependencies.png)
+
+  따라서, 아까 실행시 나왔던 `tomcat` 웹 서버가 어떻게 설치되어 실행되었는지 알 수 있다.
+
   <br>
   <br>
 
@@ -186,12 +194,120 @@ categories: TIL
 
 ---
 
+- Welcome Page를 만들어보았다.
+
+  간단한 뷰만 원한다면 `src/main/resouces/static` 폴더 내부에 정적 파일로 `index.html` 파일을 만들어주면 된다.
+
+  ```html
+  <!DOCTYPE HTML>
+  <html>
+    <head>
+      <title>Hello</title>
+      <meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+      Hello
+      <a href="/hello">hello</a>
+    </body>
+  </html>
+  ```
+
+  해당 내용에 대한 설명은 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.servlet.spring-mvc.welcome-page" target="_blank">Spring.io</a>에 기재되어 있다.
+
+- 단순한 정적 파일이며, hello 문자열을 누르면 `/hello`로 라우팅되는 구조이다.
+
+  <br>
+
+- 하지만 위 내용대로 기재된 페이지는 그저 정적 페이지를 띄운 뒤 라우팅을 하는 것에 불과하기 때문에 프로그래밍이라 보긴 어렵다.
+  제대로된 웹 페이지 뷰를 구현하기 위해서는 템플릿 엔진을 사용해야한다.
+
+  우리는 Spring Boot 프로젝트 설정시 **Thymeleaf**라는 외부 라이브러리를 사용하겠다 설정하였다.
+
+  이번 챕터에서는 해당 템플릿 엔진을 통해 동적으로 작동하는 Welcome Page를 만드는게 목적이다.
+
+  <br>
+
+- 우선 `Controller`를 만들어 주었다.
+
+  ```java
+  package jh8459.Lottery.controller;
+
+  import org.springframework.stereotype.Controller;
+  import org.springframework.ui.Model;
+  import org.springframework.web.bind.annotation.GetMapping;
+
+  @Controller
+  public class LotteryController {
+
+    @GetMapping("hello")
+    public String hello(Model model){
+      model.addAttribute("data", "hello!!");
+
+      return "hello";
+    }
+  }
+  ```
+  
+  그리고 `src/main/resouces/template` 폴더 내부에 아래와 같은 `hello.html` 파일을 만들어 주었다.
+
+  ```html
+  <!DOCTYPE HTML>
+  <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+      <title>Hello</title>
+      <meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+      <p th:text="'안녕하세요. ' + ${data}" >안녕하세요. 손님</p>
+    </body>
+  </html>
+  ```
+
+- 작동 원리는 아래와 같다.
+
+  ![controller.png](controller.png)
+
+  컨트롤러에서 리턴 값으로 문자를 반환하면 `viewResolver`가 화면을 찾아서 처리한다.
+
+  > Spring Boot 템플릿 엔진 기본 `viewName` 매핑 공식은 아래와 같다.
+  > 
+  > `src/main/resouces/template` + `viewName` + `.html`
+  
+
   <br>
   <br>
 
 #### 1-4. 빌드하고 실행하기
 
 ---
+
+- 빌드는 간단하다.
+
+  프로젝트 폴더로 이동한 뒤 `./gradlew build` 명령어를 실행해주면 필요시 라이브러리를 다운로드 받으며 빌드가 실행된다.
+
+  > 빌드가 잘 안되는 경우?
+  > 
+  > `./gradlew clean build` 명령어를 사용해보자. 기존 build 폴더를 삭제한 뒤 다시 빌드해주는 명령어이다.
+
+  ![build.png](build.png)
+
+  <br>
+
+  몇초 기다리면 빌드가 완성되며 `cd build/libs` 명령어로 빌드된 파일을 확인해보면 21MB 가량의 `.jar` 확장자 파일을 확인할 수 있다.
+
+  > **.jar**
+  >
+  > JAR(Java Archive, 자바 아카이브)는 여러개의 자바 클래스 파일과, 클래스들이 이용하는 관련 리소스(텍스트, 그림 등) 및 메타데이터를 하나의 파일로 모아서 자바 플랫폼에 응용 소프트웨어나 라이브러리를 배포하기 위한 소프트웨어 패키지 파일 포맷이다.
+
+  <br>
+
+  실행을 시켜보면 IDE 도구에서 실행했을 떄와 마찬가지로 8080 포트로 진입이 가능하다.
+
+  ![build-start.png](build-start.png)
+
+  <br>
+
+- Spring Boot를 이용하면 서버 배포시 여러 과정을 거치지 않고 빌드 결과물인 `.jar` 확장자 파일만 EC2등 서버에 넣어준 뒤 실행시켜주면 간단하게 스프링 기반의 웹 서버를 구동시킬 수 있다.
 
   <br>
   <br>
