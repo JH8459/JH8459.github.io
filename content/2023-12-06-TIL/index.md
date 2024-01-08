@@ -316,12 +316,27 @@ categories: TIL
 
 ---
 
+  - 웹 개발에는 크게 3가지 방식이 존재한다.
+
+    - **정적 컨텐츠**: HTML 파일 따위 등을 웹 브라우저에 내려주는 방식.
+    - **MVC와 템플릿 엔진**: HTML을 서버에서 프로그래밍을 한 뒤 동적인 컨텐츠로 서버에 내려주는 방식.
+    - **API**: JSON 데이터 포맷으로 클라이언트에게 데이터를 전달하는 웹 서버 방식. (보통, 화면을 그리는건 클라이언트 단에서 처리한다.)
+
   <br>
   <br>
 
 #### 2-1. 정적 컨텐츠
 
 ---
+
+- 일전에 보았던 `index.html` 방식이 정적 컨텐츠이다.
+
+  ![static.png](static.png)
+
+  공식문서에도 `/static` 폴더를 기본으로 탐색한다 기재되어있다.
+
+- 구체적으로 정적 컨텐츠 방식은 `index` 관련 컨트롤러를 찾은 뒤, 해당 컨트롤러가 존재하지 않는다면 `/static` 폴더 내부에 위치한 `index.html` 파일을 찾은 뒤 반환해준다.
+
 
   <br>
   <br>
@@ -330,12 +345,103 @@ categories: TIL
 
 ---
 
+- MVC는 **Model**, **View**, **Controller**의 약자이다.
+
+  과거 JSP가 주요 기술이었던 시절에는 **모델1** 방식이라 하여 따로 분리되어있지 않았다.
+
+  하지만 요즘 프로그래밍 기법은 관심사를 최대한 분리하고, 책임과 역할에 따라 그 기능을 수행하는 단위를 분리하는 MVC 디자인 패턴을 주로 사용한다.
+
+- 동작 구조는 다음과 같다.
+
+  `Controller` 파일에 다음과 같은 내용을 작성한다.
+
+  ```java
+  @GetMapping("hello-mvc")
+  public String helloMvc(@RequestParam("name") String name, Model model){
+    model.addAttribute("name", name);
+
+    return "hello-template";
+  }
+  ```
+
+  그리고 `/resources/templates` 폴더 내부에 `hello-template.html` 파일을 작성한다.
+
+  ```html
+  <html xmlns:th="http://www.thymeleaf.org">
+    <body>
+      <p th:text="'hello ' + ${name}" >hello! empty</p>
+    </body>
+  </html>
+  ```
+
+- URL에 `http://localhost:8080/hello-mvc?name=kjh` 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.
+
+  ![mvc.png](mvc.png)
+
   <br>
   <br>
 
 #### 2-3. API
 
 ---
+
+- 위 두가지 방식과 다르게, HTML 등 `View`에 관련된 방식이 아니다.
+
+  화면을 그리는 것에 집중하지 않고, 데이터를 전달하는 목적에 적합한 방식이다.
+
+- 동작 구조는 다음과 같다.
+
+  `Controller` 파일에 다음과 같은 내용을 작성한다.
+
+  ```java
+  @GetMapping("hello-string")
+  @ResponseBody
+    public String helloString(@RequestParam("name") String name){
+
+    return "hello " + name;
+  }
+  ```
+
+  여기서 `@ResponseBody`란 HTTP Body 부분에 위 응답 결과를 넣어서 반환하겠다라는 의미이다.
+
+- URL에 `http://localhost:8080/hello-string?name=kjh` 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.
+
+  ![api.png](api.png)
+
+  얼핏 보기엔 같은 결과라고 생각할 수 있지만, API 방식은 템플릿을 그리는게 아니라 데이터를 그대로 전달해준다는 차이점이 있다.
+
+  <br>
+
+- 위는 예시이고 보통 API 방식은 아래와 같은 방식으로 동작한다.
+
+  `Controller` 파일에 다음과 같은 내용을 작성한다.
+
+  ```java
+  @GetMapping("hello-api")
+  @ResponseBody
+  public Hello helloApi(@RequestParam("name") String name){
+    Hello hello = new Hello();
+    hello.setName(name);
+
+    return hello;
+  }
+
+  static class Hello {
+    private String name;
+    public String getName() {
+      return name;
+    }
+    public void setName(String name) {
+      this.name = name;
+    }
+  }
+  ```
+
+- URL에 `http://localhost:8080/hello-api?name=kjh` 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.
+
+  ![json.png](json.png)
+
+- 위 결과 받은 데이터는 **key**, **value**로 이뤄진 객체 구조이며, 스프링에서는 응답 결과로 객체 구조가 오면 json(**JsonConverter**) 형태로 변환해서 반환한다.
 
   <br>
   <br>
