@@ -629,20 +629,208 @@ tasks<span class="token punctuation">.</span>withType<span class="token generics
 </ul>
 <h3 id="2-스프링-웹-개발-기초" style="position:relative;"><a href="#2-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9B%B9-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EC%B4%88" aria-label="2 스프링 웹 개발 기초 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 스프링 웹 개발 기초</h3>
 <hr>
+<ul>
+<li>
+<p>웹 개발에는 크게 3가지 방식이 존재한다.</p>
+<ul>
+<li><strong>정적 컨텐츠</strong>: HTML 파일 따위 등을 웹 브라우저에 내려주는 방식.</li>
+<li><strong>MVC와 템플릿 엔진</strong>: HTML을 서버에서 프로그래밍을 한 뒤 동적인 컨텐츠로 서버에 내려주는 방식.</li>
+<li><strong>API</strong>: JSON 데이터 포맷으로 클라이언트에게 데이터를 전달하는 웹 서버 방식. (보통, 화면을 그리는건 클라이언트 단에서 처리한다.)</li>
+</ul>
+</li>
+</ul>
   <br>
   <br>
 <h4 id="2-1-정적-컨텐츠" style="position:relative;"><a href="#2-1-%EC%A0%95%EC%A0%81-%EC%BB%A8%ED%85%90%EC%B8%A0" aria-label="2 1 정적 컨텐츠 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-1. 정적 컨텐츠</h4>
 <hr>
-  <br>
-  <br>
+<ul>
+<li>
+<p>일전에 보았던 <code class="language-text">index.html</code> 방식이 정적 컨텐츠이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 27.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAklEQVQY04VR2W6DMBDk/z+jivJQofxL0zRPTYEUH2DMKQ5xTbXTpK+1NFrweGfH46Dvexhj0LYt1nWFLKlVVSHLMjjnsCwL9/d9x38rkMOF92z0ZUkxQZwkRHK/c2CW57BZBm0Mq0D2U6X4LcYoOIwjPq5XvJ3PeL9cSA7DgO805WGtNXLn6Jioa3jvUT7+xcQ8z3/uA5nycjjgcDziNQwRnk5QStExRdMUSmsKW2vRNA3jeda6rjGOI2PZtg2BqEtjURQknhlGcYyvKMLn7UbeFQXdi1vJ1lj7C2MI4aQvmJeFhDSJ/WmaOE3cSF68cp5TSEQlS0HXdYxGspM6Px7uB+qdxF+YhoYAAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="static.png"
+        title="static.png"
+        src="/static/f9b8c8d0c87ce27e514efa8d90358646/37523/static.png"
+        srcset="/static/f9b8c8d0c87ce27e514efa8d90358646/e9ff0/static.png 180w,
+/static/f9b8c8d0c87ce27e514efa8d90358646/f21e7/static.png 360w,
+/static/f9b8c8d0c87ce27e514efa8d90358646/37523/static.png 720w,
+/static/f9b8c8d0c87ce27e514efa8d90358646/302a4/static.png 1080w,
+/static/f9b8c8d0c87ce27e514efa8d90358646/07a9c/static.png 1440w,
+/static/f9b8c8d0c87ce27e514efa8d90358646/34431/static.png 1539w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>공식문서에도 <code class="language-text">/static</code> 폴더를 기본으로 탐색한다 기재되어있다.</p>
+</li>
+<li>
+<p>구체적으로 정적 컨텐츠 방식은 <code class="language-text">index</code> 관련 컨트롤러를 찾은 뒤, 해당 컨트롤러가 존재하지 않는다면 <code class="language-text">/static</code> 폴더 내부에 위치한 <code class="language-text">index.html</code> 파일을 찾은 뒤 반환해준다.</p>
+<br>
+<br>
+</li>
+</ul>
 <h4 id="2-2-mvc와-템플릿-엔진" style="position:relative;"><a href="#2-2-mvc%EC%99%80-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%97%94%EC%A7%84" aria-label="2 2 mvc와 템플릿 엔진 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-2. MVC와 템플릿 엔진</h4>
 <hr>
-  <br>
-  <br>
+<ul>
+<li>
+<p>MVC는 <strong>Model</strong>, <strong>View</strong>, <strong>Controller</strong>의 약자이다.</p>
+<p>과거 JSP가 주요 기술이었던 시절에는 <strong>모델1</strong> 방식이라 하여 따로 분리되어있지 않았다.</p>
+<p>하지만 요즘 프로그래밍 기법은 관심사를 최대한 분리하고, 책임과 역할에 따라 그 기능을 수행하는 단위를 분리하는 MVC 디자인 패턴을 주로 사용한다.</p>
+</li>
+<li>
+<p>동작 구조는 다음과 같다.</p>
+<p><code class="language-text">Controller</code> 파일에 다음과 같은 내용을 작성한다.</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"hello-mvc"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">helloMvc</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">Model</span> model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token string">"hello-template"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>그리고 <code class="language-text">/resources/templates</code> 폴더 내부에 <code class="language-text">hello-template.html</code> 파일을 작성한다.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.thymeleaf.org<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>hello ' + ${name}<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>hello! empty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+</li>
+<li>
+<p>URL에 <code class="language-text">http://localhost:8080/hello-mvc?name=kjh</code> 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 526px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 36.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAlklEQVQoz62O2wrCMBBE9/8/T1parEZE2mK0aTAhtLl0JIFA8E3twLDMLnsYklJiXVeEEKC1hhACSincHwLducehOqFuL2iPV1QNS7uO9SnXDcNtmDC/LJ7zgkkuIM45xnFMsKgIjvY+wDkP63ya7iPb8laYYqMINcYk4LZtyb+KylCCMvhbUxn+AeVfwk7KUNoTFhu+ARyZJiqCqKjpAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="mvc.png"
+        title="mvc.png"
+        src="/static/9d4420eff3822ad527ff73a1af4cda72/2d7ab/mvc.png"
+        srcset="/static/9d4420eff3822ad527ff73a1af4cda72/e9ff0/mvc.png 180w,
+/static/9d4420eff3822ad527ff73a1af4cda72/f21e7/mvc.png 360w,
+/static/9d4420eff3822ad527ff73a1af4cda72/2d7ab/mvc.png 526w"
+        sizes="(max-width: 526px) 100vw, 526px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<br>
+<br>
+</li>
+</ul>
 <h4 id="2-3-api" style="position:relative;"><a href="#2-3-api" aria-label="2 3 api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-3. API</h4>
 <hr>
-  <br>
-  <br>
+<ul>
+<li>
+<p>위 두가지 방식과 다르게, HTML 등 <code class="language-text">View</code>에 관련된 방식이 아니다.</p>
+<p>화면을 그리는 것에 집중하지 않고, 데이터를 전달하는 목적에 적합한 방식이다.</p>
+</li>
+<li>
+<p>동작 구조는 다음과 같다.</p>
+<p><code class="language-text">Controller</code> 파일에 다음과 같은 내용을 작성한다.</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"hello-string"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">helloString</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  <span class="token keyword">return</span> <span class="token string">"hello "</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>여기서 <code class="language-text">@ResponseBody</code>란 HTTP Body 부분에 위 응답 결과를 넣어서 반환하겠다라는 의미이다.</p>
+</li>
+<li>
+<p>URL에 <code class="language-text">http://localhost:8080/hello-string?name=kjh</code> 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgElEQVQoz82PwQ7CIBBE+f9/rIg1YlNb8QCLLMs0kDQ1Jt44uMnLvNNkR3nvUUpBzcqyvqDNhOFsMegb9GWCGWeczB3mOuPxJKwuYvmBstbCOQcRQc4MZgZRRKDYshHfCIGaMws4y5FfKCJCSgm9Tu1SZ/dA7fJZ2uXD7pP/tnADfLd3nI9N//wAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="api.png"
+        title="api.png"
+        src="/static/e9fa3e9809e3042ce192e99f650a88d9/37523/api.png"
+        srcset="/static/e9fa3e9809e3042ce192e99f650a88d9/e9ff0/api.png 180w,
+/static/e9fa3e9809e3042ce192e99f650a88d9/f21e7/api.png 360w,
+/static/e9fa3e9809e3042ce192e99f650a88d9/37523/api.png 720w,
+/static/e9fa3e9809e3042ce192e99f650a88d9/50383/api.png 740w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>얼핏 보기엔 같은 결과라고 생각할 수 있지만, API 방식은 템플릿을 그리는게 아니라 데이터를 그대로 전달해준다는 차이점이 있다.</p>
+<br>
+</li>
+<li>
+<p>위는 예시이고 보통 API 방식은 아래와 같은 방식으로 동작한다.</p>
+<p><code class="language-text">Controller</code> 파일에 다음과 같은 내용을 작성한다.</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"hello-api"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+<span class="token keyword">public</span> <span class="token class-name">Hello</span> <span class="token function">helloApi</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token class-name">Hello</span> hello <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  hello<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> hello<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+<li>
+<p>URL에 <code class="language-text">http://localhost:8080/hello-api?name=kjh</code> 를 넘겨주면 다음과 같은 결과를 얻을 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwElEQVQoz6WQyQ7CMBBD8/9fCWURLYJmnclulEhwaZsLlqxJDn7jRMQYUXIGM8N7j1UanC8LTtOje7oumK7PPl8rYdUBb+UPLYwxYPaYny9c7jOm26OfrSNoY+GIu9u9zZQySqkopexaaK0RQgBxgCWGsc0EYx3eUsOx/wHbghgTRhJSSrRnW2s7OBUGUIahWuuhhVKqAxuYiEBBIeUI1OPgF7rb0DmHlNJui6NGQ2BrlXPeBEeh4R/uAf/RBvivPlXFw+4bVVhGAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="json.png"
+        title="json.png"
+        src="/static/3e5c765a4cef3bb93d3bb8eef6658d74/37523/json.png"
+        srcset="/static/3e5c765a4cef3bb93d3bb8eef6658d74/e9ff0/json.png 180w,
+/static/3e5c765a4cef3bb93d3bb8eef6658d74/f21e7/json.png 360w,
+/static/3e5c765a4cef3bb93d3bb8eef6658d74/37523/json.png 720w,
+/static/3e5c765a4cef3bb93d3bb8eef6658d74/c8e86/json.png 758w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+</li>
+<li>
+<p>위 결과 받은 데이터는 <strong>key</strong>, <strong>value</strong>로 이뤄진 객체 구조이며, 스프링에서는 응답 결과로 객체 구조가 오면 json(<strong>JsonConverter</strong>) 형태로 변환해서 반환한다.</p>
+<br>
+<br>
+</li>
+</ul>
 <h3 id="3-회원-관리-예제---백엔드-개발" style="position:relative;"><a href="#3-%ED%9A%8C%EC%9B%90-%EA%B4%80%EB%A6%AC-%EC%98%88%EC%A0%9C---%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C" aria-label="3 회원 관리 예제   백엔드 개발 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 회원 관리 예제 - 백엔드 개발</h3>
 <hr>
   <br>
