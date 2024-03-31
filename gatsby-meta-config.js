@@ -58,13 +58,6 @@ module.exports = {
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
         },
       },
-      // {
-      //   date: '2023.03 ~',
-      //   activity: '코드스테이츠 수료생 멘토 활동',
-      //   links: {
-      //     post: '/',
-      //   },
-      // },
     ],
 
     projects: [
@@ -89,7 +82,7 @@ module.exports = {
         title: '슬랙 사내 도서 리스트 채팅 봇 개발',
         description:
           '웹 프로그래밍 개발이 점점 익숙해지며 실제로 "내가 필요한걸 직접 구현해 보는건 어떨까?"라는 생각은 점점 부풀려져서 업무하는 동안 자주 사용하는 슬랙 메신저와 노션을 활용해서 (주)ACG 사내 도서 리스트(노션DB 활용) 기능과 도서 대출 기록 기능을 제공하는 채팅 봇을 개발해보았습니다.',
-        techStack: ['NodeJS', 'Bolt', 'Slack API', 'Notion API'],
+        techStack: ['NodeJS', 'Express', 'Slack API', 'Notion API'],
         thumbnailUrl: 'project-slack.jpg',
         links: {
           post: 'https://blog.jh8459.com/2023-05-01-PROJECT/',
@@ -105,6 +98,16 @@ module.exports = {
         links: {
           github: 'https://github.com/JH8459/WEDDING-INVITATION-LETTER',
           demo: 'https://wedding.jh8459.com/',
+        },
+      },
+      {
+        title: 'LOTTERY 개발',
+        description:
+          '매주 반복되는 로또 당첨 정보를 단순화 할 수 없을까라는 생각으로 시작하게된 프로젝트입니다. 단순히 로또 당첨 번호 정보만을 제공하는 것이 아닌, 당첨 정보를 기반으로 한 통계 정보를 담은 뉴스레터를 간단한 구독 버튼 클릭만으로 제공합니다.',
+        techStack: ['NodeJS', 'Express', 'NestJS', 'MySQL', 'Redis'],
+        thumbnailUrl: 'project-lottery.png',
+        links: {
+          github: 'https://github.com/JH8459/LOTTERY',
         },
       },
     ],
