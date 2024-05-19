@@ -1,9 +1,9 @@
 {
-  "name": "zoomkoding.com",
+  "name": "jh8459.com",
   "private": false,
-  "description": "A neat blog theme for developers",
-  "version": "3.0.0",
-  "author": "zoomkoding <zoomkoding@gmail.com>",
+  "description": "개인 블로그",
+  "version": "1.0.0",
+  "author": "jh8459 <kk_ong2233@naver.com>",
   "dependencies": {
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
@@ -60,9 +60,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog"
+    "url": "https://github.com/JH8459/JH8459.github.io"
   },
   "bugs": {
-    "url": "https://github.com/zoomkoding/zoomkoding-gatsby-blog/issues"
+    "url": "https://github.com/JH8459/JH8459.github.io/issues"
   }
 }
