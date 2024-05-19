@@ -1,0 +1,718 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.24.4"/><meta data-react-helmet="true" property="og:title" content="AWS Summit Seoul 2024"/><meta data-react-helmet="true" property="og:site_title" content="AWS Summit Seoul 2024"/><meta data-react-helmet="true" name="description" content="AWS Summit Seoul 2024 작년 11월에 다녀온 SDC23 삼성 개발자 컨퍼런스이후로 오랜만에 남기는 컨퍼런스 참석 후기이다. 작년부터 회사에서도 이런 컨퍼런스 참석을 권장하고있으며, 올해 또한 참석하여 어느덧 사내 문화로 자리잡고 있다. 올해 많은 컨퍼런스 중 AWS Summit Seoul 2024를 선택한 이유는 국내 최대 규모의 개발 컨퍼런스이기 때문에 최신 기술에 대한 인사이트를 쉽게 얻을 수 있으며, AWS를 이용한 클라우딩 기반 인프라로 전환을 성공한 기업들의 귀중한 경험을 훌륭한 연사들을 통해 엿보기에 너무 좋은 기회라 생각했기 때문이었다. 5월 16일(목) / 5월 17일(금) 양일간 모두 참여하였으며, 컨퍼런스를 다녀 온 후기를 남겨보려한다. 신청 방법 너무도 간단하게 신청하였다. 특별한 제한사항(티켓팅, 추첨제 등등)도 없었으며, AWS 웹페이지 내 이벤트 탭을 통해 지원 신청을 완료하였다. 참가 신청 링크가 열린 뒤 팀 내부 회의를 통해 참석을 결정…"/><meta data-react-helmet="true" property="og:description" content="AWS Summit Seoul 2024 작년 11월에 다녀온 SDC23 삼성 개발자 컨퍼런스이후로 오랜만에 남기는 컨퍼런스 참석 후기이다. 작년부터 회사에서도 이런 컨퍼런스 참석을 권장하고있으며, 올해 또한 참석하여 어느덧 사내 문화로 자리잡고 있다. 올해 많은 컨퍼런스 중 AWS Summit Seoul 2024를 선택한 이유는 국내 최대 규모의 개발 컨퍼런스이기 때문에 최신 기술에 대한 인사이트를 쉽게 얻을 수 있으며, AWS를 이용한 클라우딩 기반 인프라로 전환을 성공한 기업들의 귀중한 경험을 훌륭한 연사들을 통해 엿보기에 너무 좋은 기회라 생각했기 때문이었다. 5월 16일(목) / 5월 17일(금) 양일간 모두 참여하였으며, 컨퍼런스를 다녀 온 후기를 남겨보려한다. 신청 방법 너무도 간단하게 신청하였다. 특별한 제한사항(티켓팅, 추첨제 등등)도 없었으며, AWS 웹페이지 내 이벤트 탭을 통해 지원 신청을 완료하였다. 참가 신청 링크가 열린 뒤 팀 내부 회의를 통해 참석을 결정…"/><meta data-react-helmet="true" property="og:author" content="김정현"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><style data-href="/styles.6d8ec507db86304312cd.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}.search-input-wrapper{align-items:center;display:none;margin-top:3px;width:180px}@media(min-width:768px){.search-input-wrapper{display:flex}}.search-icon{color:var(--primary-text-color);margin-right:2px}.search-input{height:100%;width:100%}.search-input .MuiAutocomplete-inputRoot{padding-right:0!important}.search-input .MuiInputBase-input{color:var(--primary-text-color)!important;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;padding-bottom:2px!important}.search-input .MuiInput-underline:before{border-bottom-width:1px}.search-input .MuiInput-underline:after,.search-input .MuiInput-underline:before{border-bottom-color:var(--primary-text-color)}.page-header-wrapper{display:flex;height:60px;justify-content:center;width:100%}.page-header-wrapper .page-header{align-items:center;display:flex;justify-content:space-between;max-width:720px;width:100%}.page-header-wrapper .page-header .link{color:var(--primary-text-color);font-size:17px;font-weight:700}@media(min-width:768px){.page-header-wrapper .page-header .link{font-size:20px;font-weight:700}}.page-header-wrapper .page-header .trailing-section{align-items:center;display:flex}.page-header-wrapper .page-header .trailing-section .link{margin-right:10px}@media(min-width:768px){.page-header-wrapper .page-header .trailing-section .link{margin-right:20px}}.page-footer-wrapper{align-items:center;display:flex;height:62px;justify-content:center;margin-top:auto;width:100%}.page-footer-wrapper .page-footer{max-width:720px;text-align:center;width:100%}.page-footer-wrapper .page-footer .link{color:var(--primary-text-color);font-size:20px;font-weight:700;margin-right:20px}.page-footer-wrapper .page-footer a{color:#3a95ff}.dark-mode-button-wrapper{align-items:center;bottom:20px;display:flex;justify-content:center;position:fixed;right:20px}.dark-mode-button{-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);background-color:#363f47!important;border-radius:50px;box-shadow:0 5px 25px rgba(0,0,0,.12);cursor:pointer;height:50px;width:50px;z-index:3}.dark-mode-icon{color:#fff}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}a{outline:none;text-decoration:none}html{--background-color:#fff;--primary-text-color:#000;--secondary-text-color:#9e9e9e;--content-text-color:#37352f;--button-background-color:#f3f3f4;--button-text-color:#363f47;--tab-text-color:#6e6d7a;--tab-hover-text-color:#0d0c22;--tab-selected-background-color:rgba(13,12,34,.05);--bio-link-icon-color:rgba(0,0,0,.54);--about-link-icon-color:#a8a8a8;--chip-background-color:#f3f3f4;--link-text-color:rgba(55,53,47,.7);--post-card-border-color:rgba(0,0,0,.12);--markdown-table-even-cell-background-color:#f6f8fa;--markdown-table-border-color:#dfe2e5;--markdown-blockquote-border-color:#dfe2e5;--markdown-border-color:#e1e4e8}html[data-theme=dark]{--background-color:#232326;--primary-text-color:#e6e6e6;--secondary-text-color:#768390;--content-text-color:#e6e6e6;--button-background-color:#444c56;--button-text-color:#363f47;--tab-text-color:#768390;--tab-hover-text-color:#acbac7;--tab-selected-background-color:#373e47;--chip-background-color:#323a42;--bio-link-icon-color:#e6e6e6;--about-link-icon-color:#a8a8a8;--link-text-color:#90b0ec;--post-card-border-color:#363f47;--markdown-table-even-cell-background-color:#2d333b;--markdown-table-border-color:#444c56;--markdown-blockquote-border-color:#4f5864;--markdown-border-color:#e1e4e8}*{-webkit-appearance:none;appearance:none;box-sizing:border-box}html{font-size:14px;height:100%;overflow-y:scroll;width:100%}body{background-color:var(--background-color)!important}a{color:var(--link-text-color)}.page-wrapper{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--primary-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;justify-content:center;min-height:100vh;padding-left:15px;padding-right:15px;word-break:keep-all}.page-wrapper,.page-wrapper .page-content{align-items:center;display:flex;flex-direction:column;width:100%}.page-wrapper .page-content{max-width:720px}.icon{color:var(--about-link-icon-color);font-size:20px}.social-links .icon{color:var(--bio-link-icon-color);font-size:30px}@-webkit-keyframes blinking-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}@keyframes blinking-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}.bio{color:var(--primary-text-color);display:flex;flex-direction:column;justify-content:space-between;margin-bottom:120px;margin-top:120px;width:100%}@media(min-width:768px){.bio{align-items:center;flex-direction:row}}.bio .introduction{display:flex;flex-direction:column;word-break:keep-all}.bio .introduction .react-rotating-text-cursor{-webkit-animation:blinking-cursor .8s cubic-bezier(.68,.01,.01,.99) 0s infinite;animation:blinking-cursor .8s cubic-bezier(.68,.01,.01,.99) 0s infinite}.bio .introduction strong{display:inline-block;font-weight:600}.bio .introduction.korean{font-size:32px;font-weight:100;line-height:1.2}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:35px;line-height:35px}@media(min-width:768px){.bio .introduction.korean{font-size:40px}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:45px;line-height:45px}}.bio .introduction.english{font-family:montserrat;font-size:25px;line-height:1.2}@media(min-width:768px){.bio .introduction.english{font-size:45px}}.bio .introduction.english .name{font-size:35px;font-weight:600}.bio .introduction.english .job{font-size:35px}.bio .introduction.english .description{font-size:20px;font-weight:200;margin-top:8px}.bio .introduction.english .social-links{display:flex;margin-top:20px}.bio .thumbnail-wrapper{display:none}@media(min-width:768px){.bio .thumbnail-wrapper{display:block}}.section-header-wrapper{display:flex;justify-content:center;margin-bottom:32px;width:100%}.section-header-wrapper .section-header{border-bottom:4px solid var(--primary-text-color);color:var(--primary-text-color);font-size:30px;font-weight:700;padding-bottom:5px}.timestamp-section{align-items:center;display:flex;flex-direction:column;justify-content:center;margin-bottom:50px;width:100%;word-break:keep-all}.timestamp-section .body{padding:0 10px;width:100%}.timestamp-section .body .timestamp{border-left:2px solid #bdbdbd;display:flex;font-size:18px;font-weight:400;justify-items:center;margin-left:5px;padding:10px 0;width:100%}.timestamp-section .body .timestamp:first-child{padding-top:7px}.timestamp-section .body .timestamp:last-child{padding-bottom:7px}.timestamp-section .body .timestamp:before{align-self:center;background-color:var(--background-color);border:2px solid #828282;border-radius:10px;content:"";height:10px;left:-1px;position:relative;-webkit-transform:translatex(-50%);transform:translatex(-50%);width:10px}.timestamp-section .body .timestamp .date{align-self:center;color:#828282;margin-left:5px;margin-right:5px;min-width:115px;width:115px}@media(min-width:768px){.timestamp-section .body .timestamp .date{min-width:200px;width:200px}}.timestamp-section .body .timestamp .activity{line-height:23px;width:100%}.project-section{align-items:center;justify-content:center}.project-section,.project-section .project{display:flex;flex-direction:column;width:100%}.project-section .project{margin-bottom:30px;padding:15px}.project-section .project .head{font-size:20px;font-weight:700;line-height:30px;margin-bottom:10px}.project-section .project .body{display:flex;flex-direction:column;width:100%}.project-section .project .body .thumbnail{margin-bottom:10px;width:100%}.project-section .project .body .tech-stack{display:flex;margin-bottom:10px}.project-section .project .body .tech-stack .tech{background-color:var(--chip-background-color);border-radius:10px;font-size:15px;font-weight:500;margin-right:5px;padding:5px 7px}.project-section .project .body .description{font-size:16px;font-weight:400;line-height:1.4}@media(min-width:768px){.project-section .project .body{flex-direction:column}.project-section .project .body .content{margin-top:0}}.post-header{border-bottom:1px solid var(--post-card-border-color);display:flex;flex-direction:column;justify-content:center;margin-bottom:40px;margin-top:20px;padding-bottom:10px;width:100%;word-break:keep-all}.post-header .emoji{font-size:78px;margin-bottom:20px}.post-header .categories{margin-bottom:5px}.post-header .categories .category{color:var(--primary-text-color);font-weight:600;margin-right:4px}.post-header .categories .category:hover{text-decoration:underline}.post-header .title{color:var(--primary-text-color);font-size:32px;font-weight:600;line-height:1.3;margin-bottom:6px}.post-header .info{color:var(--secondary-text-color);display:flex;flex-wrap:wrap;font-size:16px;font-weight:500;line-height:1.5;width:100%}.post-header .info .author{margin-right:4px}.post-header .info strong{color:var(--primary-text-color);font-weight:600}.post-navigator{-webkit-column-gap:1.4%;column-gap:1.4%;display:grid;grid-template-columns:49.3% 49.3%;width:100%}.post-navigator .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;padding:15px;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;width:100%}.post-navigator .post-card:hover .title{text-decoration:underline}.post-navigator .post-card.prev{margin-right:auto}.post-navigator .post-card.next{margin-left:auto}.post-navigator .post-card .direction{color:gray;font-size:14px;font-weight:500;margin-bottom:5px}.post-navigator .post-card .title{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:7px}.markdown .octicon{fill:currentColor;display:inline-block;vertical-align:text-bottom}.markdown .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown .anchor:focus{outline:none}.markdown h1 .octicon-link,.markdown h2 .octicon-link,.markdown h3 .octicon-link,.markdown h4 .octicon-link,.markdown h5 .octicon-link,.markdown h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown h1:hover .anchor,.markdown h2:hover .anchor,.markdown h3:hover .anchor,.markdown h4:hover .anchor,.markdown h5:hover .anchor,.markdown h6:hover .anchor{text-decoration:none}.markdown h1:hover .anchor .octicon-link,.markdown h2:hover .anchor .octicon-link,.markdown h3:hover .anchor .octicon-link,.markdown h4:hover .anchor .octicon-link,.markdown h5:hover .anchor .octicon-link,.markdown h6:hover .anchor .octicon-link{visibility:visible}.markdown h1:hover .anchor .octicon-link:before,.markdown h2:hover .anchor .octicon-link:before,.markdown h3:hover .anchor .octicon-link:before,.markdown h4:hover .anchor .octicon-link:before,.markdown h5:hover .anchor .octicon-link:before,.markdown h6:hover .anchor .octicon-link:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E");content:" ";display:inline-block;height:16px;width:16px}.markdown{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;color:var(--content-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;line-height:1.5}.markdown details{display:block}.markdown summary{display:list-item}.markdown a{background-color:initial}.markdown a:active,.markdown a:hover{outline-width:0}.markdown strong{font-weight:inherit;font-weight:bolder}.markdown h1{margin:.67em 0}.markdown img{border-style:none}.markdown code,.markdown kbd,.markdown pre{font-family:monospace,monospace;font-size:1em}.markdown hr{box-sizing:initial;overflow:visible}.markdown input{font:inherit;margin:0;overflow:visible}.markdown [type=checkbox]{box-sizing:border-box;padding:0}.markdown *{box-sizing:border-box}.markdown input{font-family:inherit;font-size:inherit;line-height:inherit}.markdown a{border-bottom:.05em solid;border-color:var(--link-text-color);color:var(--link-text-color);text-decoration:none}.markdown a.anchor{border-bottom:none}.markdown strong{font-weight:700}.markdown hr{background:transparent;border-bottom:1px solid var(--markdown-blockquote-border-color);height:0;margin:15px 0;overflow:hidden}.markdown hr:after,.markdown hr:before{content:"";display:table}.markdown hr:after{clear:both}.markdown table{border-collapse:collapse;border-spacing:0}.markdown td,.markdown th{padding:0}.markdown details summary{cursor:pointer}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{margin-bottom:0;margin-top:0}.markdown h1{font-size:32px}.markdown h1,.markdown h2{font-weight:600}.markdown h2{font-size:24px}.markdown h3{font-size:20px}.markdown h3,.markdown h4{font-weight:600}.markdown h4{font-size:16px}.markdown h5{font-size:14px}.markdown h5,.markdown h6{font-weight:600}.markdown h6{font-size:12px}.markdown p{margin-bottom:10px;margin-top:0}.markdown blockquote{margin:0}.markdown ol,.markdown ul{margin-bottom:0;margin-top:0;padding-left:0}.markdown ol ol,.markdown ul ol{list-style-type:lower-roman}.markdown ol ol ol,.markdown ol ul ol,.markdown ul ol ol,.markdown ul ul ol{list-style-type:lower-alpha}.markdown dd{margin-left:0}.markdown code,.markdown pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}.markdown code.language-text{border-radius:3px;font-size:85%;padding:.2em .4em}.markdown :not(pre)>code.language-text{background:hsla(44,6%,50%,.15);color:#eb5757;overflow-wrap:break-word}.markdown pre{margin-bottom:0;margin-top:0}.markdown input::-webkit-inner-spin-button,.markdown input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}.markdown :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}.markdown .border{border:1px solid var(--markdown-border-color)!important}.markdown .border-0{border:0!important}.markdown .border-bottom{border-bottom:1px solid var(--markdown-border-color)!important}.markdown .rounded-1{border-radius:3px!important}.markdown .bg-white{background-color:transparent!important}.markdown .bg-gray-light{background-color:#fafbfc!important}.markdown .text-gray-light{color:#6a737d!important}.markdown .pl-3,.markdown .px-3{padding-left:16px!important}.markdown .px-3{padding-right:16px!important}.markdown .f6{font-size:12px!important}.markdown .lh-condensed{line-height:1.25!important}.markdown .text-bold{font-weight:600!important}.markdown .pl-c{color:#6a737d}.markdown .pl-c1,.markdown .pl-s .pl-v{color:#005cc5}.markdown .pl-e,.markdown .pl-en{color:#6f42c1}.markdown .pl-s .pl-s1,.markdown .pl-smi{color:#24292e}.markdown .pl-ent{color:#22863a}.markdown .pl-k{color:#d73a49}.markdown .pl-pds,.markdown .pl-s,.markdown .pl-s .pl-pse .pl-s1,.markdown .pl-sr,.markdown .pl-sr .pl-cce,.markdown .pl-sr .pl-sra,.markdown .pl-sr .pl-sre{color:#032f62}.markdown .pl-smw,.markdown .pl-v{color:#e36209}.markdown .pl-bu{color:#b31d28}.markdown .pl-ii{background-color:#b31d28;color:#fafbfc}.markdown .pl-c2{background-color:#d73a49;color:#fafbfc}.markdown .pl-c2:before{content:"^M"}.markdown .pl-sr .pl-cce{color:#22863a;font-weight:700}.markdown .pl-ml{color:#735c0f}.markdown .pl-mh,.markdown .pl-mh .pl-en,.markdown .pl-ms{color:#005cc5;font-weight:700}.markdown .pl-mi{color:#24292e;font-style:italic}.markdown .pl-mb{color:#24292e;font-weight:700}.markdown .pl-md{background-color:#ffeef0;color:#b31d28}.markdown .pl-mi1{background-color:#f0fff4;color:#22863a}.markdown .pl-mc{background-color:#ffebda;color:#e36209}.markdown .pl-mi2{background-color:#005cc5;color:#f6f8fa}.markdown .pl-mdr{color:#6f42c1;font-weight:700}.markdown .pl-ba{color:#586069}.markdown .pl-sg{color:#959da5}.markdown .pl-corl{color:#032f62;text-decoration:underline}.markdown .mb-0{margin-bottom:0!important}.markdown .my-2{margin-bottom:8px!important;margin-top:8px!important}.markdown .pl-0{padding-left:0!important}.markdown .py-0{padding-bottom:0!important;padding-top:0!important}.markdown .pl-1{padding-left:4px!important}.markdown .pl-2{padding-left:8px!important}.markdown .py-2{padding-bottom:8px!important;padding-top:8px!important}.markdown .pl-3{padding-left:16px!important}.markdown .pl-4{padding-left:24px!important}.markdown .pl-5{padding-left:32px!important}.markdown .pl-6{padding-left:40px!important}.markdown .pl-7{padding-left:48px!important}.markdown .pl-8{padding-left:64px!important}.markdown .pl-9{padding-left:80px!important}.markdown .pl-10{padding-left:96px!important}.markdown .pl-11{padding-left:112px!important}.markdown .pl-12{padding-left:128px!important}.markdown hr{border-bottom-color:#eee}.markdown kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown:after,.markdown:before{content:"";display:table}.markdown:after{clear:both}.markdown>:first-child{margin-top:0!important}.markdown>:last-child{margin-bottom:0!important}.markdown a:not([href]){color:inherit;text-decoration:none}.markdown blockquote,.markdown details,.markdown dl,.markdown ol,.markdown p,.markdown pre,.markdown table,.markdown ul{margin-bottom:16px;margin-top:0}.markdown hr{background-color:var(--markdown-border-color);border:0;height:.25em;margin:24px 0;padding:0}.markdown blockquote{border-left:.25em solid var(--markdown-blockquote-border-color);color:#6a737d;padding:0 1em}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown h1{font-size:2em}.markdown h2{font-size:1.5em}.markdown h3{font-size:1.25em}.markdown h4{font-size:1em}.markdown h5{font-size:.875em}.markdown h6{color:#6a737d;font-size:.85em}.markdown ol,.markdown ul{padding-left:2em}.markdown ol ol,.markdown ol ul,.markdown ul ol,.markdown ul ul{margin-bottom:0;margin-top:0}.markdown ol{list-style-type:decimal}.markdown ul{list-style-type:disc}.markdown li{word-wrap:break-all;display:list-item;text-align:-webkit-match-parent}.markdown li>p{margin-top:16px}.markdown li+li{margin-top:.25em}.markdown dl{padding:0}.markdown dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}.markdown dl dd{margin-bottom:16px;padding:0 16px}.markdown table{display:block;overflow:auto;width:100%}.markdown table th{font-weight:600}.markdown table td,.markdown table th{border:1px solid var(--markdown-table-border-color);padding:6px 13px}.markdown table tr{border-top:1px solid var(--markdown-table-border-color)}.markdown table tr:nth-child(2n){background-color:var(--markdown-table-even-cell-background-color)}.markdown img{background-color:transparent;box-sizing:initial;display:block;margin:0 auto;max-width:100%}.markdown img[align=right]{padding-left:20px}.markdown img[align=left]{padding-right:20px}.markdown code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}.markdown pre{word-wrap:normal}.markdown pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown .highlight{margin-bottom:16px}.markdown .highlight pre{margin-bottom:0;word-break:normal}.markdown .highlight pre,.markdown pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown pre code{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%}.markdown .full-commit .btn-outline:not(:disabled):hover{border-color:#005cc5;color:#005cc5}.markdown .blob-wrapper{overflow-x:auto;overflow-y:hidden}.markdown .blob-wrapper-embedded{max-height:240px;overflow-y:auto}.markdown .blob-num{color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;-webkit-user-select:none;user-select:none;vertical-align:top;white-space:nowrap;width:1%}.markdown .blob-num:hover{color:rgba(27,31,35,.6)}.markdown .blob-num:before{content:attr(data-line-number)}.markdown .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}.markdown .blob-code-inner{word-wrap:normal;color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;overflow:visible;white-space:pre}.markdown .pl-token.active,.markdown .pl-token:hover{background:#ffea7f;cursor:pointer}.markdown .tab-size[data-tab-size="1"]{-o-tab-size:1;tab-size:1}.markdown .tab-size[data-tab-size="2"]{-o-tab-size:2;tab-size:2}.markdown .tab-size[data-tab-size="3"]{-o-tab-size:3;tab-size:3}.markdown .tab-size[data-tab-size="4"]{-o-tab-size:4;tab-size:4}.markdown .tab-size[data-tab-size="5"]{-o-tab-size:5;tab-size:5}.markdown .tab-size[data-tab-size="6"]{-o-tab-size:6;tab-size:6}.markdown .tab-size[data-tab-size="7"]{-o-tab-size:7;tab-size:7}.markdown .tab-size[data-tab-size="8"]{-o-tab-size:8;tab-size:8}.markdown .tab-size[data-tab-size="9"]{-o-tab-size:9;tab-size:9}.markdown .tab-size[data-tab-size="10"]{-o-tab-size:10;tab-size:10}.markdown .tab-size[data-tab-size="11"]{-o-tab-size:11;tab-size:11}.markdown .tab-size[data-tab-size="12"]{-o-tab-size:12;tab-size:12}.markdown .task-list-item{list-style-type:none}.markdown .task-list-item+.task-list-item{margin-top:3px}.markdown .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown .table-of-contents{align-items:flex-start;display:flex;flex-direction:column;font-size:10px;justify-content:center;position:fixed;right:0;top:75px;width:340px}@media(max-width:1300px){.markdown .table-of-contents{display:none}}.markdown .table-of-contents ul{cursor:pointer;list-style-type:none}.markdown .table-of-contents ul li a{border-bottom:none;color:var(--secondary-text-color);font-size:14px;height:30px;padding:6px 2px;width:100%}.markdown .table-of-contents ul p{margin:0}.markdown .gatsby-resp-image-wrapper{display:flex!important;justify-content:center!important;max-height:560px!important;width:100%!important}.markdown .gatsby-resp-image-wrapper img{height:auto!important;max-height:560px!important;max-width:100%!important;position:relative!important;width:auto!important}.markdown .gatsby-resp-image-wrapper+em{color:#6a737d;display:block;font-size:15px;font-style:italic;text-align:center}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.post-content{margin-bottom:20px;width:100%}.category-page-header-wrapper,.post-content{display:flex;flex-direction:column;justify-content:center}.category-page-header-wrapper{align-items:center;margin-bottom:30px;margin-top:30px}.category-page-header-wrapper .category-page-title{border-bottom:3px solid var(--primary-text-color);font-size:40px;font-weight:700;margin-bottom:15px;padding-bottom:7px;text-align:center;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.category-page-header-wrapper .category-page-subtitle{font-size:20px;font-weight:500;padding-bottom:10px;text-align:center}.post-card-wrapper{display:flex;justify-content:center;min-height:150px;width:100%}.post-card-wrapper .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;height:100%;margin-bottom:15px;max-width:720px;padding:15px;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;width:100%}.post-card-wrapper .post-card:hover .title{text-decoration:underline}@media(min-width:768px){.post-card-wrapper .post-card{margin-bottom:0}}.post-card-wrapper .post-card .title{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:7px}.post-card-wrapper .post-card .description{-webkit-line-clamp:3;-webkit-box-orient:vertical;color:var(--primary-text-color);display:-webkit-box;font-size:13px;line-height:20px;margin-bottom:10px;overflow:hidden;text-overflow:ellipsis}.post-card-wrapper .post-card .info{color:var(--about-link-icon-color);display:flex;font-size:14px;justify-content:space-between;margin-top:auto}.post-card-wrapper .post-card .info .categories{display:flex}.post-card-wrapper .post-card .info .categories .category{margin-left:4px}.post-card-wrapper .post-card .info .categories .category:hover{text-decoration:underline}.post-card-column-wrapper{display:flex;justify-content:center;width:100%}.post-card-column-wrapper .post-card-column{align-items:center;display:flex;flex-direction:column;width:100%}.post-card-column-wrapper .post-card-column .post-card-wrapper{margin-bottom:10px}.post-card-column-wrapper .post-card-column .more-post-card-button{background-color:var(--button-background-color);color:var(--tab-hover-text-color);font-size:15px;font-weight:500;height:40px}.post-tabs-wrapper{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;top:0;width:100%}.post-tabs-wrapper .post-tabs{display:flex;height:40px;justify-content:center;margin-bottom:12px;max-width:760px;width:100%}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root{color:var(--tab-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:17px;font-weight:500;height:40px;min-height:auto;min-width:auto;padding:10px 12px;transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected,.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root :hover{color:var(--tab-hover-text-color);transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected{background-color:var(--tab-selected-background-color);border-radius:8px;font-weight:600}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabScrollButton-root{height:40px;width:20px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-scrollable{height:40px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-indicator{display:none}</style><style data-emotion="css-global o6gwfi">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#fff;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#fff;}</style><style data-emotion="css-global 1prfaxn">@-webkit-keyframes mui-auto-fill{from{display:block;}}@keyframes mui-auto-fill{from{display:block;}}@-webkit-keyframes mui-auto-fill-cancel{from{display:block;}}@keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css xxees4 feqhe6 1yf1g2m mnn31 vubbuv 1yxmbwk 6flbmm">.css-xxees4.Mui-focused .MuiAutocomplete-clearIndicator{visibility:visible;}@media (pointer: fine){.css-xxees4:hover .MuiAutocomplete-clearIndicator{visibility:visible;}}.css-xxees4 .MuiAutocomplete-tag{margin:3px;max-width:calc(100% - 6px);}.css-xxees4 .MuiAutocomplete-inputRoot{-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.MuiAutocomplete-hasPopupIcon.css-xxees4 .MuiAutocomplete-inputRoot,.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiAutocomplete-inputRoot{padding-right:30px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiAutocomplete-inputRoot{padding-right:56px;}.css-xxees4 .MuiAutocomplete-inputRoot .MuiAutocomplete-input{width:0;min-width:30px;}.css-xxees4 .MuiInput-root{padding-bottom:1px;}.css-xxees4 .MuiInput-root .MuiInput-input{padding:4px 4px 4px 0px;}.css-xxees4 .MuiInput-root.MuiInputBase-sizeSmall .MuiInput-input{padding:2px 4px 3px 0;}.css-xxees4 .MuiOutlinedInput-root{padding:9px;}.MuiAutocomplete-hasPopupIcon.css-xxees4 .MuiOutlinedInput-root,.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiOutlinedInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiOutlinedInput-root{padding-right:65px;}.css-xxees4 .MuiOutlinedInput-root .MuiAutocomplete-input{padding:7.5px 4px 7.5px 6px;}.css-xxees4 .MuiOutlinedInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-xxees4 .MuiOutlinedInput-root.MuiInputBase-sizeSmall{padding-top:6px;padding-bottom:6px;padding-left:6px;}.css-xxees4 .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input{padding:2.5px 4px 2.5px 6px;}.css-xxees4 .MuiFilledInput-root{padding-top:19px;padding-left:8px;}.MuiAutocomplete-hasPopupIcon.css-xxees4 .MuiFilledInput-root,.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiFilledInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-xxees4 .MuiFilledInput-root{padding-right:65px;}.css-xxees4 .MuiFilledInput-root .MuiFilledInput-input{padding:7px 4px;}.css-xxees4 .MuiFilledInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-xxees4 .MuiFilledInput-root.MuiInputBase-sizeSmall{padding-bottom:1px;}.css-xxees4 .MuiFilledInput-root.MuiInputBase-sizeSmall .MuiFilledInput-input{padding:2.5px 4px;}.css-xxees4 .MuiInputBase-hiddenLabel{padding-top:8px;}.css-xxees4 .MuiAutocomplete-input{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;text-overflow:ellipsis;opacity:1;}.css-feqhe6{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;min-width:0;padding:0;margin:0;border:0;vertical-align:top;width:100%;}.css-1yf1g2m{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.4375em;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.87);box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;position:relative;}.css-1yf1g2m.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}label+.css-1yf1g2m{margin-top:16px;}.css-1yf1g2m:after{border-bottom:2px solid #1976d2;left:0;bottom:0;content:"";position:absolute;right:0;-webkit-transform:scaleX(0);-moz-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);-webkit-transition:-webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;pointer-events:none;}.css-1yf1g2m.Mui-focused:after{-webkit-transform:scaleX(1) translateX(0);-moz-transform:scaleX(1) translateX(0);-ms-transform:scaleX(1) translateX(0);transform:scaleX(1) translateX(0);}.css-1yf1g2m.Mui-error:after{border-bottom-color:#d32f2f;-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-1yf1g2m:before{border-bottom:1px solid rgba(0, 0, 0, 0.42);left:0;bottom:0;content:"\00a0";position:absolute;right:0;-webkit-transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;pointer-events:none;}.css-1yf1g2m:hover:not(.Mui-disabled):before{border-bottom:2px solid rgba(0, 0, 0, 0.87);}@media (hover: none){.css-1yf1g2m:hover:not(.Mui-disabled):before{border-bottom:1px solid rgba(0, 0, 0, 0.42);}}.css-1yf1g2m.Mui-disabled:before{border-bottom-style:dotted;}.css-mnn31{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;}.css-mnn31::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:focus{outline:0;}.css-mnn31:invalid{box-shadow:none;}.css-mnn31::-webkit-search-decoration{-webkit-appearance:none;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-webkit-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-moz-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-webkit-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-moz-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus:-ms-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-ms-input-placeholder{opacity:0.42;}.css-mnn31.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}.css-mnn31:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}.css-1yxmbwk{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-1yxmbwk::-moz-focus-inner{border-style:none;}.css-1yxmbwk.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1yxmbwk{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1yxmbwk:hover{background-color:rgba(0, 0, 0, 0.04);}@media (hover: none){.css-1yxmbwk:hover{background-color:transparent;}}.css-1yxmbwk.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}.css-6flbmm{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:2.1875rem;}</style><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B02DJ4ZW5E"></script><script>
+    window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
+      'G-B02DJ4ZW5E'
+    );
+    window.GATSBY_GTAG_PLUGIN_ANONYMIZE = true;
+
+    var options = {
+      send_page_view: false
+    };
+    if (true) {
+      options.anonymize_ip = true;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-B02DJ4ZW5E', options);
+  </script><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>            
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2620372849415569",
+                enable_page_level_ads: true
+              });
+          </script><link rel="icon" href="/favicon-32x32.png?v=4b5153b73664c4d219fa5c949fbf3960" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=4b5153b73664c4d219fa5c949fbf3960"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=4b5153b73664c4d219fa5c949fbf3960"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><title data-react-helmet="true">AWS Summit Seoul 2024</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">blog.jh8459.com</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-xxees4"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1yf1g2m"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" aria-expanded="false" autoCapitalize="none" spellcheck="false" role="combobox"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">🤔</div><div class="info"><div class="categories"><a class="category" href="/posts/Retrospect">Retrospect</a></div></div><h1 class="title">AWS Summit Seoul 2024</h1><div class="info"><div class="author">posted by <strong>JH8459</strong>,</div> <!-- -->May 17, 2024</div></header><div class="post-content"><div class="markdown"><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 26.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABk0lEQVQY0wXB20tTAQDA4fMXGEqY+GAqMZibujk3bZZHznQ6p6umYIRgF3IarhGK4PV4Q3PWvLDVgwWhPniYPoQ+WEznYiVlwpyhWNCTIJaooO8/v0+4apTJLBsnt+Y9mtoZ9PVB9A0fMTWuYGxaRdsYRueOYmj9jqlzC3NfjOKRbSRfHGtgh/JXezwY2Eb58Ib4dDtCYl4P2io/NpeC5ekCFS3L2DyfcHZEuN0SRv0wRI4rgs79DUPrDwq6NjENxDCM7JM/9hvj+B/M/j0sk3FcgRBCkr6X5MJRUsUprlunSbfNoHIG0dxfIqN2GVX9Z9RP1tA0fSHX8xXd8xgWzwbPuubxyWMsyi+Iyg386qvh72A1wpXsbtJFH3aXQob1HXl1CkWPlrhWEcTeFkFsXkftDFP6+CeiYxe3M8TuUDOnsshF/00uhm5xPlzM2UuJE28ZQoK2m5QCL5lSgOSit9ywzaKyK6RJCoX3VjDa18kqiWJ2bCKVbjFsneOg/y6Ho5UceSs5el3Fv4lq/k85OPbf4RLpb+0VH8GcyAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="title.png"
+        title="title.png"
+        src="/static/bddfbb94a42373db53bf848545e502d5/37523/title.png"
+        srcset="/static/bddfbb94a42373db53bf848545e502d5/e9ff0/title.png 180w,
+/static/bddfbb94a42373db53bf848545e502d5/f21e7/title.png 360w,
+/static/bddfbb94a42373db53bf848545e502d5/37523/title.png 720w,
+/static/bddfbb94a42373db53bf848545e502d5/302a4/title.png 1080w,
+/static/bddfbb94a42373db53bf848545e502d5/07a9c/title.png 1440w,
+/static/bddfbb94a42373db53bf848545e502d5/64289/title.png 2838w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<br>
+<h2 id="aws-summit-seoul-2024" style="position:relative;"><a href="#aws-summit-seoul-2024" aria-label="aws summit seoul 2024 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AWS Summit Seoul 2024</h2>
+<hr>
+<p>작년 11월에 다녀온 <strong><a href="https://blog.jh8459.com/2023-11-15-RETROSPECT/" target="_blank">SDC23 삼성 개발자 컨퍼런스</a></strong>이후로 오랜만에 남기는 컨퍼런스 참석 후기이다.</p>
+<p>작년부터 회사에서도 이런 컨퍼런스 참석을 권장하고있으며, 올해 또한 참석하여 어느덧 사내 문화로 자리잡고 있다.</p>
+<p>올해 많은 컨퍼런스 중 <strong>AWS Summit Seoul 2024</strong>를 선택한 이유는 국내 최대 규모의 개발 컨퍼런스이기 때문에 최신 기술에 대한 인사이트를 쉽게 얻을 수 있으며, AWS를 이용한 클라우딩 기반 인프라로 전환을 성공한 기업들의 귀중한 경험을 훌륭한 연사들을 통해 엿보기에 너무 좋은 기회라 생각했기 때문이었다.</p>
+<p><strong>5월 16일(목)</strong> / <strong>5월 17일(금)</strong> 양일간 모두 참여하였으며, 컨퍼런스를 다녀 온 후기를 남겨보려한다.</p>
+<br>
+<br>
+<h2 id="신청-방법" style="position:relative;"><a href="#%EC%8B%A0%EC%B2%AD-%EB%B0%A9%EB%B2%95" aria-label="신청 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>신청 방법</h2>
+<hr>
+<p>너무도 간단하게 신청하였다.</p>
+<p>특별한 제한사항(티켓팅, 추첨제 등등)도 없었으며, <a href="https://aws.amazon.com/ko/events/summits/seoul/" target="_blank">AWS 웹페이지</a> 내 이벤트 탭을 통해 지원 신청을 완료하였다.</p>
+<p>참가 신청 링크가 열린 뒤 팀 내부 회의를 통해 참석을 결정 후 일주일 정도 뒤에 모든 팀원들이 함께 참가 신청을 하였다. <del>조기마감이 되었단 소식은 들었지만 3월 말 ~ 4월 초까지 몇 주간은 유효하게 지원 신청을 받았던 걸로 기억한다..</del></p>
+<p>참가 신청이 완료되면 신청 완료 메일을 수신하였고, 행사 하루 전날 아래와 같은 리마인드 메일이 발송되었다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 166.1111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAhABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAEDBAL/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAgMB/9oADAMBAAIQAxAAAAHe2xcUtLLWKbFzYhx0AD//xAAdEAACAgEFAAAAAAAAAAAAAAAAAgERFBATICEx/9oACAEBAAEFAsVDFQ2F1gbxGZpK7qSOH//EABcRAAMBAAAAAAAAAAAAAAAAAAABEiD/2gAIAQMBAT8BhFPP/8QAGBEAAgMAAAAAAAAAAAAAAAAAABIBAiD/2gAIAQIBAT8BewsZ/8QAHBAAAAYDAAAAAAAAAAAAAAAAAAECAxExICEw/9oACAEBAAY/ArULPGYkbbNPD//EACAQAQABAwMFAAAAAAAAAAAAAAEAESExQWGRECBRgbH/2gAIAQEAAT8h0PlCtl9kN+JfXmW8PMwliCQYNY7DqZXpcrzeIKHZ/9oADAMBAAIAAwAAABB0wXwAD//EABgRAQADAQAAAAAAAAAAAAAAAAEAESBh/9oACAEDAQE/EAWwnfP/xAAYEQEBAQEBAAAAAAAAAAAAAAABEQAgYf/aAAgBAgEBPxBYl3nhJx//xAAhEAEAAwAABQUAAAAAAAAAAAABABEhMUFhcdEgUYGRof/aAAgBAQABPxCzWWcfCEDm5On5BnE/XiEbtfZDUteETotyywRGp6IYZWDovtAooi6tN6zkNPaYefHo/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="email.jpeg"
+        title="email.jpeg"
+        src="/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/80e3c/email.jpg"
+        srcset="/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/4ec73/email.jpg 180w,
+/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/158ba/email.jpg 360w,
+/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/80e3c/email.jpg 720w,
+/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/47311/email.jpg 1080w,
+/static/b1b14cd1f8b9f1d6c140b1dd8a6c15c4/ad68d/email.jpg 1170w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>행사 당일 아침에도 동일한 메일이 한번 더 발송된다!</center><br>
+<br>
+<p>컨퍼런스 참석 후 알게되었지만 29,000명 이상의 참가 신청이 수용되었다 들었다!!.. 실제로도 수많은 스태프들까지 고려하면 행사 규모와 크기가 대단하다라는 생각뿐이 안들었다. 👍</p>
+<p><strong>AWS Summit Seoul</strong> 참석을 고민중이시라면 우선 빠른 참가 신청 접수 후 고민은 나중에 하시는걸 추천한다.</p>
+<br>
+<br>
+<h2 id="1️⃣-day-1" style="position:relative;"><a href="#1%EF%B8%8F%E2%83%A3-day-1" aria-label="1️⃣ day 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1️⃣ Day-1</h2>
+<hr>
+<p>코엑스 컨벤션 센터 3층 D홀에 도착 후 등록대로 가서 사전에 지급받은 QR코드를 확인 후 네임카드(+선착순 식권)를 지급받았다.</p>
+<p>발급받은 네임카드는 NFC방식으로 동작(<del>추측!!..🥲</del>)하며 세션 입장시 혹은 EXPO 부스 방문시 태그 후 행사에 참여할 수 있었다.</p>
+<p>행사장에 도착하면 도착 순서에 따라 기조연설을 듣기 위한 자리를 배정받는데, 메인홀은 자리가 모두 찼는지 아래 사진과 같은 외부 부스로 자리를 배정받았다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQT/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAME/9oADAMBAAIQAxAAAAHkXV6hhAJZHcm5Ar//xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIQAxEhEv/aAAgBAQABBQJ8N0zgj0PJIU63X//EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8BjJv/xAAXEQADAQAAAAAAAAAAAAAAAAABAhEg/9oACAECAQE/AQgluP/EABcQAAMBAAAAAAAAAAAAAAAAAAAQITD/2gAIAQEABj8CULj/AP/EAB0QAAICAgMBAAAAAAAAAAAAAAABESEQMUFRYXH/2gAIAQEAAT8hbpB6FPKhr+Dw0SjQ24bkZ20V3vErvH//2gAMAwEAAgADAAAAEKMWj//EABgRAAMBAQAAAAAAAAAAAAAAAAABERCB/9oACAEDAQE/EKpRXosVn//EABgRAAMBAQAAAAAAAAAAAAAAAAABETFR/9oACAECAQE/EHKQVcKnpT//xAAdEAEAAgMAAwEAAAAAAAAAAAABABEhMUFRgdGh/9oACAEBAAE/EGytBdV2P5MOiAM1Lqmm/MTP64qcL7hiztXb8gQPDWAqcdy4CS0GlPcHQ2mwn//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="aws-1.jpeg"
+        title="aws-1.jpeg"
+        src="/static/6a54ac80bef99aa915a80ec49813d119/80e3c/aws-1.jpg"
+        srcset="/static/6a54ac80bef99aa915a80ec49813d119/4ec73/aws-1.jpg 180w,
+/static/6a54ac80bef99aa915a80ec49813d119/158ba/aws-1.jpg 360w,
+/static/6a54ac80bef99aa915a80ec49813d119/80e3c/aws-1.jpg 720w,
+/static/6a54ac80bef99aa915a80ec49813d119/47311/aws-1.jpg 1080w,
+/static/6a54ac80bef99aa915a80ec49813d119/644c5/aws-1.jpg 1440w,
+/static/6a54ac80bef99aa915a80ec49813d119/ac99c/aws-1.jpg 1536w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>실제로 보면 엄청 웅장했다! 👍</center><br>
+<br>
+<p>10주년이 된 <strong>AWS Summit</strong> 첫째날의 기조연설은 클라우딩 기반 인프라가 10년이라는 기간에 걸쳐 요즘 트렌드로 자리잡은 이유와 GenAI(생성형 AI)의 화두를 중점으로 컨퍼런스는 시작하였다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC8ElEQVQ4y1WT3U9cVRDA91ERq6ZJfTCRAjUqxFoVFiqrpSCSKtSkfrRoqsTXpg8+96EPvvvfGNMHmyJcusvusreVPtpK+Gj42vv9ee7dn5lzWbWTTObszNmZ35yZWzpz4jyDL45z+vlRrX3HVvT150Z485UK0+e+Yeb9BYZPfUJfT4X+E1MMvDzLwMnLnHn1Km+89iNvDf7E0NDPlN4++RHDpyaZfPdLJs9eYba8wNS5r/h09BoX3rnCzMg1Ln+8yFxlkamR76icvcrM2CKTHywyO3GDqfGbfDZ9iwsTt7l48RdKg73jTL/3NavVBk3zT2qNFs3WQ+rNB8dqYtxvYBg11pYMqksGaw2TevMhtYZJo7VB03xEff0R1cYGpf6eMnMfXqfdtlBZxlHbwg8C2lZhLdvGjyK8vT3cvzfxHz+mfXBAGEeEYUicJDiuS1dKA71jzE98j+f65J2cKIpJ05Q4jlFKoVJFkipiyybZ3iHd3iYOQl08SVKUyojjhE6no7XU/8KYJny6u0cYRRwdtQnDSJN6nl8Q+z6u52l/FMd4fqDPEvd8X/8ny7IioUzyUvlbXMcjz3NdTYKaTilNWhAXflFpU8eS/3zPtlz5gZ2dpwRhyMHhkaaRd5HfjuPi+wG27Wgr72ZZtiaTu0KaJIlWOZf6espcGv4Cb3OL/GCfJAxJldJUonKxa4VS0x4Tyvt1u5CC2zu7lAZfmmB+aJ7Dv56Q7e4S2g6ptBXHWl3XIwhCTdSllbeT5OKXQkL8b8v9vWPMlRc43NwilRXxfT0caTlRiiTLNHGXUCYr6yRnPaSoKJpleZHwdM8on5+/zv5hmyhNcRxPU1i2Q9i2CPb2iXSRWBN1E0RRpO+Jz7Ic3X6edyRhWe+hkInILhbSAccm9z3wnONYMU2VK/4vKkuenbJ8enfvrLBmtDDurVEz1jF+v0/t17us/rZE/c4yjfoG1eUm1ZUWy/fqVFdMVv8wqa1usLz0gPXmE0xzi38AI8ac6xM5TEcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="day1.png"
+        title="day1.png"
+        src="/static/2778d096865db2d432f09b63e66df8b6/37523/day1.png"
+        srcset="/static/2778d096865db2d432f09b63e66df8b6/e9ff0/day1.png 180w,
+/static/2778d096865db2d432f09b63e66df8b6/f21e7/day1.png 360w,
+/static/2778d096865db2d432f09b63e66df8b6/37523/day1.png 720w,
+/static/2778d096865db2d432f09b63e66df8b6/302a4/day1.png 1080w,
+/static/2778d096865db2d432f09b63e66df8b6/07a9c/day1.png 1440w,
+/static/2778d096865db2d432f09b63e66df8b6/92a6b/day1.png 2334w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center><del>표로 보니 열심히 안들었..🥲</del></center><br>
+<br>
+<p><strong>Day-1</strong>에는 위와 같은 일정(+기조연설)으로 세션에 참여하였다. 참석한 세션들을 타이틀만 요약하자면 아래와 같다.</p>
+<ul>
+<li><strong>스타벅스 인공지능 챗봇 더사이렌포탈</strong></li>
+<li><strong>센드버드의 생성형 AI 기반 글로벌 Chatbot 서비스</strong></li>
+<li><strong>케이뱅크의 클라우드 도입 여정: 빅데이터, 채널, MSA, AI/ML</strong></li>
+</ul>
+<p>선택 기준은 행사 전 민주적인 절차로 진행되었다. 팀원들 모두 투표로 원하는 세션을 선택하였고 시간대 별 최다 득표 세션들을 골라서 참석하였다.</p>
+<p>내가 세운 기준은 현재 우리 회사에 적용해보면 좋은 기술 세션과 클라우드 도입을 성공시킨 기업의 성공 사례를 통해 인사이트를 얻을 수 있는 세션을 우선 순위로 꼽아 투표를 하였다.</p>
+<p>각 세션마다 참석 후기는 아래에 남겨보았다.</p>
+<br>
+<br>
+<h3 id="스타벅스-인공지능-챗봇-더사이렌포탈" style="position:relative;"><a href="#%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4-%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EC%B1%97%EB%B4%87-%EB%8D%94%EC%82%AC%EC%9D%B4%EB%A0%8C%ED%8F%AC%ED%83%88" aria-label="스타벅스 인공지능 챗봇 더사이렌포탈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스타벅스 인공지능 챗봇 더사이렌포탈</h3>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwEC/9oADAMBAAIQAxAAAAHHDLwTj3//xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIQERL/2gAIAQEAAQUC4Y4tVtaf/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPwHUU//EABcRAAMBAAAAAAAAAAAAAAAAAAABEQL/2gAIAQIBAT8BmRw//8QAFRABAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQEABj8CY//EABwQAAMAAgMBAAAAAAAAAAAAAAABESExUWFxsf/aAAgBAQABPyHEmlbwjaKDUHOVXhV2Y6+H/9oADAMBAAIAAwAAABBYP//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8QjiRr0//EABkRAQACAwAAAAAAAAAAAAAAAAEAESFBof/aAAgBAgEBPxA2vYLYZ//EAB4QAAIBAwUAAAAAAAAAAAAAAAERACExcUFhgaHh/9oACAEBAAE/EHiSnUiC8sxCEqHiERiAOmYT1JPI9mkIW7T/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="starbucks-1.jpeg"
+        title="starbucks-1.jpeg"
+        src="/static/c9adb8e9e02b7b6fede421a33711d30d/80e3c/starbucks-1.jpg"
+        srcset="/static/c9adb8e9e02b7b6fede421a33711d30d/4ec73/starbucks-1.jpg 180w,
+/static/c9adb8e9e02b7b6fede421a33711d30d/158ba/starbucks-1.jpg 360w,
+/static/c9adb8e9e02b7b6fede421a33711d30d/80e3c/starbucks-1.jpg 720w,
+/static/c9adb8e9e02b7b6fede421a33711d30d/72e01/starbucks-1.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>스타벅스 앱에 챗봇 기능이 있었나..? 라는 호기심으로 신청했던 세션.</center><br>
+<br>
+<p><strong>“더사이렌포탈”</strong>은 파트너들의 업무 효율 증강을 위한 챗봇 AI이었다. 이번 세션에서는 해당 서비스 개발과정과 아키텍쳐를 소개하고 어떤 결과물을 이뤄냈는지 설명을 들을 수 있는 시간이었다.</p>
+<p>전체적인 챗봇의 구성요소를 요약하자면 다음과 같았다.</p>
+<ol>
+<li>사내 문서부터 검색 가능한 인덱스까지 적재하는 <strong>인덱스 파이프라인</strong></li>
+<li>인덱스부터 프롬프트에 삽입될 컨텍스트까지 고도화 하는 <strong>검색 증강</strong></li>
+<li>프롬프트와 RAG의 품질을 수치로 측정하고 지속적으로 개선할 수 있는 <strong>평가 파이프라인</strong></li>
+<li>실제 사용자가 접근해서 사용하는 챗봇 <strong>어플리케이션</strong></li>
+</ol>
+<p>위 네가지 단계를 거쳐 서비스를 배포하는 과정에 대한 전반적인 기술적인 고민과 어려움을 공유하는 자리였다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQBAgMF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgME/9oADAMBAAIQAxAAAAHiaS1UoljYf//EABsQAAMAAgMAAAAAAAAAAAAAAAECAwARBCEx/9oACAEBAAEFAgu2rNp4F2J9PyXDYPP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAAhH/2gAIAQMBAT8BZT//xAAZEQACAwEAAAAAAAAAAAAAAAAAAwECERL/2gAIAQIBAT8BwopfMaf/xAAdEAACAgEFAAAAAAAAAAAAAAAAAQIRURASITFB/9oACAEBAAY/AkkLdXODsjiyNeaf/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARITFRgf/aAAgBAQABPyFmYq1pMY8I3MfIlzxZlmK67HVLqf/aAAwDAQACAAMAAAAQ7D//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAEDAQE/ENo6Yz//xAAYEQADAQEAAAAAAAAAAAAAAAAAARExUf/aAAgBAgEBPxBq7Bhmp0//xAAZEAADAQEBAAAAAAAAAAAAAAABETEAIUH/2gAIAQEAAT8QUQM4B4sFKBmEMwbzrOLTRbjIq6RVj9jqb//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="starbucks-2.jpeg"
+        title="starbucks-2.jpeg"
+        src="/static/43f938269e1604f59761cdbbb276ae37/80e3c/starbucks-2.jpg"
+        srcset="/static/43f938269e1604f59761cdbbb276ae37/4ec73/starbucks-2.jpg 180w,
+/static/43f938269e1604f59761cdbbb276ae37/158ba/starbucks-2.jpg 360w,
+/static/43f938269e1604f59761cdbbb276ae37/80e3c/starbucks-2.jpg 720w,
+/static/43f938269e1604f59761cdbbb276ae37/72e01/starbucks-2.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>파트너 직원 출산 관련 복리후생에 대한 챗봇 응답 결과 👀</center><br>
+<p>실제 개발 과정 중 이슈가 가장 많았던 분야는 기술적인 부분들보다는 문서 통합이 가장 어려웠다 말씀해주셨다. 통합 데이터를 구축을해야했는데, 문서기반 정보와 DB를 기반으로 한 정보들의 Format이 다르기에 정보를 합치는 과정이 제일 순탄치 않았다고 하셨다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBBP/aAAwDAQACEAMQAAABxVuoS5o5sP8A/8QAGRAAAwEBAQAAAAAAAAAAAAAAAAECAxIh/9oACAEBAAEFAvBkSmsr4K3XKZ//xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oACAEDAQE/AcY4o//EABkRAAIDAQAAAAAAAAAAAAAAAAECABESMf/aAAgBAgEBPwEqb5ERMi5//8QAHBAAAgEFAQAAAAAAAAAAAAAAAAEiAhARQXEh/9oACAEBAAY/At22PKTXCNMuHp//xAAaEAACAgMAAAAAAAAAAAAAAAABEQAhQWGB/9oACAEBAAE/IUxum4BdPsayeIdG2wxIBgSChbyJdT//2gAMAwEAAgADAAAAEDMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/ECkOjf/EABcRAAMBAAAAAAAAAAAAAAAAAAABEVH/2gAIAQIBAT8QYaDST//EABsQAQEAAgMBAAAAAAAAAAAAAAERACExQVFh/9oACAEBAAE/ECQBTdMIqBLsXIvGp4wFfqwFqnfOIc0KE78nmAuh64m/mf/Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="starbucks-3.jpeg"
+        title="starbucks-3.jpeg"
+        src="/static/d4b1228403fec2f100a33aed64139004/80e3c/starbucks-3.jpg"
+        srcset="/static/d4b1228403fec2f100a33aed64139004/4ec73/starbucks-3.jpg 180w,
+/static/d4b1228403fec2f100a33aed64139004/158ba/starbucks-3.jpg 360w,
+/static/d4b1228403fec2f100a33aed64139004/80e3c/starbucks-3.jpg 720w,
+/static/d4b1228403fec2f100a33aed64139004/72e01/starbucks-3.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>블라인드에서도 좋은 평가를 받는다고 한다. 👍</center><br>
+<p>위 일련의 과정들을 모두 거친거에 비해 단순한 내부 직원용 서비스를 우선 배포하였으며 실제로 내부 직원들 평가 또한 좋은 호응을 받았다고 한다.</p>
+<p>직원들의 생산성 향상이 곧, 브랜드의 평판까지 이어지기 때문에 성공적인 결과물이란 생각이 들었다.</p>
+<p>서비스를 출시 후 이 말씀을 강조하셨다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABYBAQEBAAAAAAAAAAAAAAAAAAQAAv/aAAwDAQACEAMQAAAB4rURULx//8QAGBABAQEBAQAAAAAAAAAAAAAAAQACESH/2gAIAQEAAQUCks56ckY8v//EABYRAAMAAAAAAAAAAAAAAAAAAAABEv/aAAgBAwEBPwGWQz//xAAYEQEAAwEAAAAAAAAAAAAAAAACAAERIf/aAAgBAgEBPwGxsIGdn//EABcQAQEBAQAAAAAAAAAAAAAAAABBECH/2gAIAQEABj8Cqq5v/8QAGxABAAICAwAAAAAAAAAAAAAAAQARIZExQVH/2gAIAQEAAT8hAWg3lRxJWuke6IjyYKn/2gAMAwEAAgADAAAAEEPP/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/EIVd2//EABcRAQEBAQAAAAAAAAAAAAAAAAERACH/2gAIAQIBAT8QVMNL4u//xAAeEAACAgICAwAAAAAAAAAAAAABEQAhMXFBUWGx4f/aAAgBAQABPxBkAvj4hznUSa9QHsM5VCuwG7gMMp0zM0b8T//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="starbucks-4.jpeg"
+        title="starbucks-4.jpeg"
+        src="/static/180bd1159b9045624c504fb9b424b77e/80e3c/starbucks-4.jpg"
+        srcset="/static/180bd1159b9045624c504fb9b424b77e/4ec73/starbucks-4.jpg 180w,
+/static/180bd1159b9045624c504fb9b424b77e/158ba/starbucks-4.jpg 360w,
+/static/180bd1159b9045624c504fb9b424b77e/80e3c/starbucks-4.jpg 720w,
+/static/180bd1159b9045624c504fb9b424b77e/72e01/starbucks-4.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<br>
+<p>실제로 챗봇 서비스를 개발하는 과정에서 부서마다 업무 관련 문서들을 검토하는 과정에서 발견된 오류와 오탈자 검수를 스스로 진행하는 모습을 보였으며, 이를 기반으로 노후화 된 정보를 스스로 갱신하는 현상이 벌어졌다 후일담을 공유해주셨다.</p>
+<p>모든 부서들의 협업으로 학습에 사용할 최신화 된 문서를 얻을 수 있게되었으며 이를 기반으로 문화를 바꿀 수 있다 하셨다.</p>
+<br>
+<blockquote>
+<p>입사시 파트너들에게 제공되던 업무 가이드 문서 철들을 이제는 링크 몇줄로 전달할 수 있게 되었다. 👍</p>
+</blockquote>
+<br>
+<p>앞으로 스타벅스의 생성형 AI가 어디까지 발전하는지 고객 입장으로도 기대가 된다.</p>
+<p>매달 새로이 출시하는 식음료 제품이 나의 구매내역을 기반으로 선호도를 미리 제공해준다던지.. 등등 생성형 AI를 탑재한 새로운 스타벅스의 미래가 궁금해진 세션이었다.</p>
+<br>
+<br>
+<h3 id="센드버드의-생성형-ai-기반-글로벌-chatbot-서비스" style="position:relative;"><a href="#%EC%84%BC%EB%93%9C%EB%B2%84%EB%93%9C%EC%9D%98-%EC%83%9D%EC%84%B1%ED%98%95-ai-%EA%B8%B0%EB%B0%98-%EA%B8%80%EB%A1%9C%EB%B2%8C-chatbot-%EC%84%9C%EB%B9%84%EC%8A%A4" aria-label="센드버드의 생성형 ai 기반 글로벌 chatbot 서비스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>센드버드의 생성형 AI 기반 글로벌 Chatbot 서비스</h3>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwT/2gAMAwEAAhADEAAAAeNeD6RnHIr/xAAaEAEBAAIDAAAAAAAAAAAAAAABAAISEBEi/9oACAEBAAEFAsRbQeOy3Lzf/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQIQQf/aAAgBAwEBPwGQ5X//xAAXEQADAQAAAAAAAAAAAAAAAAAAEiEj/9oACAECAQE/Ac1pD//EABgQAAIDAAAAAAAAAAAAAAAAAAAQATFR/9oACAEBAAY/AjHcr//EABsQAQEAAQUAAAAAAAAAAAAAAAEAEVFhgZHR/9oACAEBAAE/IeAZM4jnSDIHws7ur//aAAwDAQACAAMAAAAQq9//xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREx/9oACAEDAQE/EJO1P//EABkRAAMAAwAAAAAAAAAAAAAAAAABETFh8P/aAAgBAgEBPxBOSy7ZB//EABsQAQEAAgMBAAAAAAAAAAAAAAERACExUYHR/9oACAEBAAE/EKtBNhrFVCKwL5zgrceZOAlesLhBJx+4104f/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="sendbird-1.jpeg"
+        title="sendbird-1.jpeg"
+        src="/static/dc8f651a7c6577b595f8cd9900b108ec/80e3c/sendbird-1.jpg"
+        srcset="/static/dc8f651a7c6577b595f8cd9900b108ec/4ec73/sendbird-1.jpg 180w,
+/static/dc8f651a7c6577b595f8cd9900b108ec/158ba/sendbird-1.jpg 360w,
+/static/dc8f651a7c6577b595f8cd9900b108ec/80e3c/sendbird-1.jpg 720w,
+/static/dc8f651a7c6577b595f8cd9900b108ec/72e01/sendbird-1.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>어쩌다 보니 생성형 AI 기반 챗봇 서비스 세션만 골라듣는..</center><br>
+<p>이번 세션은 글로벌 기업으로 자리잡은 센드버드의 대표 서비스인 챗봇 서비스를 엿보고자 참석하였다. <del>사실 이번 세션은 큰 감흥은 없었다. 🥲 (지극히 주관적인 의견!!..)</del></p>
+<p>이번 세션을 요약하자면, AWS를 활용하여 어떻게 생성형 AI 서비스를 구축하는지에 대한 전반적인 아키텍쳐 설명과 함께 생성형 AI 서비스를 배포할 때 주의할 점들에 대한 전반적인 내용을 공유하는 시간이었다.</p>
+<p>AWS에서 어떤 인프라 서비스를 활용하여 구축하는지에 대한 내용은 매년 새로운 기술이 출시함에 따라 바뀔 수 있는 내용이라.. 아직 우리 회사는 이런 서비스 개발 출시를 염두해둔 회사가 아니므로 간단하게 듣고 넘겼다.</p>
+<p>이 중 흥미로운 점은 특정 주제 차단 또한 중요하며, 생성형 AI의 높은 자유도를 억누룰 수 있는 Rule-Base 챗봇의 결합 또한 필연적으로 진행해야한다는 주제였다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAACBf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAAB4qjq0At0/wD/xAAbEAACAQUAAAAAAAAAAAAAAAAAAgEEERITIv/aAAgBAQABBQKDS7KXUWoxXk//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAaEAABBQEAAAAAAAAAAAAAAAABAAIQERJx/9oACAEBAAY/AlprRU5BNcj/xAAaEAEAAwEBAQAAAAAAAAAAAAABABEhUTGR/9oACAEBAAE/IbXTPSMWbKeQ5RRCAhmLfL+T/9oADAMBAAIAAwAAABCXz//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EIf/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREh/9oACAECAQE/EJpj/8QAGxABAAMBAQEBAAAAAAAAAAAAAQARITFBYdH/2gAIAQEAAT8QaTt9yoHlObujHLi21ph9uPwhz5Cyh77DYV8x+z//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="sendbird-2.jpeg"
+        title="sendbird-2.jpeg"
+        src="/static/8d5fa5d8150debdd468cf21e1bfb49cd/80e3c/sendbird-2.jpg"
+        srcset="/static/8d5fa5d8150debdd468cf21e1bfb49cd/4ec73/sendbird-2.jpg 180w,
+/static/8d5fa5d8150debdd468cf21e1bfb49cd/158ba/sendbird-2.jpg 360w,
+/static/8d5fa5d8150debdd468cf21e1bfb49cd/80e3c/sendbird-2.jpg 720w,
+/static/8d5fa5d8150debdd468cf21e1bfb49cd/72e01/sendbird-2.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>챗봇의 높은 자유도 또한 문제가 될 수 있다.</center><br>
+<p>전반적인 내용이 AWS 인프라 서비스를 어떻게 사용하여 생성형 AI 서비스 구축하는지에 대한 흐름도를 소개해주는 세션이었기 때문에 생성형 AI 출시를 바로 앞둔 기업이라면 좋은 세션이었을거라 생각한다.</p>
+<br>
+<br>
+<h3 id="케이뱅크의-클라우드-도입-여정-빅데이터-채널-msa-aiml" style="position:relative;"><a href="#%EC%BC%80%EC%9D%B4%EB%B1%85%ED%81%AC%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%8F%84%EC%9E%85-%EC%97%AC%EC%A0%95-%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B1%84%EB%84%90-msa-aiml" aria-label="케이뱅크의 클라우드 도입 여정 빅데이터 채널 msa aiml permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>케이뱅크의 클라우드 도입 여정: 빅데이터, 채널, MSA, AI/ML</h3>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAWAQEBAQAAAAAAAAAAAAAAAAADAgT/2gAMAwEAAhADEAAAAct1RmwYFhX/AP/EABoQAAIDAQEAAAAAAAAAAAAAAAACAQMSEyL/2gAIAQEAAQUChDmpZ5bZFpY2m//EABkRAAMAAwAAAAAAAAAAAAAAAAABAiExQf/aAAgBAwEBPwG5fBayf//EABcRAAMBAAAAAAAAAAAAAAAAAAABERP/2gAIAQIBAT8BeZUf/8QAFxAAAwEAAAAAAAAAAAAAAAAAABARAf/aAAgBAQAGPwJTHT//xAAZEAACAwEAAAAAAAAAAAAAAAAAARFBUWH/2gAIAQEAAT8h5OBWJnGkMFKhEDD/2gAMAwEAAgADAAAAEK/P/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAERMUH/2gAIAQMBAT8QuuK4aP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAESEx/9oACAECAQE/EGjSWDjf/8QAGhABAQEBAQEBAAAAAAAAAAAAAREAIXExQf/aAAgBAQABPxCp2wvE18o93fykYl/NFo78mFBfuixkG//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kbank-1.jpeg"
+        title="kbank-1.jpeg"
+        src="/static/c981eb141f261e18597168edf7b92617/80e3c/kbank-1.jpg"
+        srcset="/static/c981eb141f261e18597168edf7b92617/4ec73/kbank-1.jpg 180w,
+/static/c981eb141f261e18597168edf7b92617/158ba/kbank-1.jpg 360w,
+/static/c981eb141f261e18597168edf7b92617/80e3c/kbank-1.jpg 720w,
+/static/c981eb141f261e18597168edf7b92617/72e01/kbank-1.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>개인적으로 <strong>Day-1</strong> 세션 중 가장 재밌었다. 👍</center><br>
+<p><strong>Day-1</strong> 중 마지막으로 선택한 세션이었고 케이뱅크는 평소에도 잘 쓰고 있는 뱅킹앱이기도 하고 우리나라 최초의 온라인 전용 은행이기에 신청한 세션이었다. 주제 또한 <strong>클라우드 도입</strong>, <strong>MSA</strong> 등 현재 우리 회사에서도 직면하고 있는 문제점이기도 하기에 세션 진행전부터 기대가 높았고, 생각 이상으로 내용 또한 훌륭해서 너무 재밌게 듣고왔다.</p>
+<p>기존에 서버 임대해서 잘 쓰고 있는데 <strong>“AWS를 왜 써야해?”</strong>라는 질문에 대하여 근거있는 해답을 제시하였으며, 그에 따라 결과 또한 시각화하여 잘 소개한 세션이었다.</p>
+<p>우선 첫번쨰로 꼽아주신 내용은 <strong>제품 출시속도 가속화</strong>였다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIDBf/EABYBAQEBAAAAAAAAAAAAAAAAAAADBP/aAAwDAQACEAMQAAAB46WyeiR//8QAGRABAAMBAQAAAAAAAAAAAAAAAAIREgEh/9oACAEBAAEFAqU7402lK3//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQMBAT8Bmo//xAAYEQADAQEAAAAAAAAAAAAAAAAAAQISUf/aAAgBAgEBPwF3JpdP/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERITFRwf/aAAgBAQABPyEI5p4awUCmTXD/2gAMAwEAAgADAAAAENAf/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8QFP/EABYRAAMAAAAAAAAAAAAAAAAAAAEQUf/aAAgBAgEBPxCkLf/EABsQAQACAwEBAAAAAAAAAAAAAAEAESFBUTGR/9oACAEBAAE/EEtIVjUB8H5AkAMXkR6uahdVypbw4DP/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kbank-2.jpeg"
+        title="kbank-2.jpeg"
+        src="/static/b5b5fbdd6231eeae13e70925e2e8932c/80e3c/kbank-2.jpg"
+        srcset="/static/b5b5fbdd6231eeae13e70925e2e8932c/4ec73/kbank-2.jpg 180w,
+/static/b5b5fbdd6231eeae13e70925e2e8932c/158ba/kbank-2.jpg 360w,
+/static/b5b5fbdd6231eeae13e70925e2e8932c/80e3c/kbank-2.jpg 720w,
+/static/b5b5fbdd6231eeae13e70925e2e8932c/72e01/kbank-2.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>원하는 만큼 쉬운 확장이 큰 장점 ✅</center><br>
+<p>온프레미스 환경에서는 서버 확장이 사측에서 결정이 되더라도 실제로 인프라를 구축하는 시간 소요, 혹은 원하는 장비 구매에 어려움이 있다면 예측 어려운 시간 소요 등이 발생한다.</p>
+<center>실제로 머신러닝을 위한 GPU 고성능 서버는 1년 이상의 구매 대기시간이 소요된다한다..👀</center><br>
+<p>반면 클라우드 기반으로 인프라를 구축할 시 클릭한번으로 의사결정을 바로 실현할 수 있기 떄문에 제품 출시를 가속화하는데 큰 도움이 되었다 하였다. (하드웨어 장비 노후화 등의 이슈에서도 탈출하는건 덤!..)</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMBBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAAB45Zzixu//8QAGxAAAgIDAQAAAAAAAAAAAAAAAAIRMQMSISL/2gAIAQEAAQUC4QUb+VzQz3//xAAVEQEBAAAAAAAAAAAAAAAAAAAQIf/aAAgBAwEBPwGn/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESMf/aAAgBAgEBPwFyLD//xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEABj8CZqf/xAAbEAADAAIDAAAAAAAAAAAAAAAAARExQVFhof/aAAgBAQABPyGdiNVjdyISJuRgmVB/J//aAAwDAQACAAMAAAAQb9//xAAXEQADAQAAAAAAAAAAAAAAAAAAATER/9oACAEDAQE/EKhjP//EABcRAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQIBAT8QHQx0X//EABsQAQADAAMBAAAAAAAAAAAAAAEAESExQVFh/9oACAEBAAE/EE8H7wibSTJkW72aObXcxfEV++8QUo9J/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kbank-3.jpeg"
+        title="kbank-3.jpeg"
+        src="/static/6c58912ff7ce9ac94f2acbe401f100ac/80e3c/kbank-3.jpg"
+        srcset="/static/6c58912ff7ce9ac94f2acbe401f100ac/4ec73/kbank-3.jpg 180w,
+/static/6c58912ff7ce9ac94f2acbe401f100ac/158ba/kbank-3.jpg 360w,
+/static/6c58912ff7ce9ac94f2acbe401f100ac/80e3c/kbank-3.jpg 720w,
+/static/6c58912ff7ce9ac94f2acbe401f100ac/47311/kbank-3.jpg 1080w,
+/static/6c58912ff7ce9ac94f2acbe401f100ac/644c5/kbank-3.jpg 1440w,
+/static/6c58912ff7ce9ac94f2acbe401f100ac/e1596/kbank-3.jpg 2048w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>한번에 한 발자국씩 👣</center><br>
+<p>실제로 케이뱅크도 한번에 모든 인프라를 클라우딩 기반으로 변경한건 아니고 2021년 09월 부터 클라우딩 기반 인프라 구축 의사 결정이 되었으며, 하이브리드 구조부터 시작하여 2023년 05월 기점으로 모든 인프라를 클라우딩 기반 인프라로 모든 서비스를 마이그레이션 완료하였다 한다. (2년도 안걸렸다.. 대단하다 👍👍👍)</p>
+<p>이런 유연한 인프라를 얻었기에 MSA 또한 자연스레 고민할 수 있었다 한다.</p>
+<p>클라우딩 인프라도입으로 인프라 스케일을 자유롭게 키우고 줄일 수 있게되어 서비스를 모듈화해서 배포할 수 있게 되었기에 기존 모놀리식을 탈피하고 단계적으로 MSA 방식으로 바뀔 수 있게되었다 설명해주셨다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/2gAMAwEAAhADEAAAAcia23DCiv/EABsQAAIBBQAAAAAAAAAAAAAAAAABEQIDEiEi/9oACAEBAAEFAoRA+TIVaRce/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAgBAgEBPwFSEv/EABUQAQEAAAAAAAAAAAAAAAAAABAx/9oACAEBAAY/AiEP/8QAGxAAAwACAwAAAAAAAAAAAAAAAAERIVFBYeH/2gAIAQEAAT8haNiXimaQR2ehEtZo/9oADAMBAAIAAwAAABC8/wD/xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QjIz/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAECAQE/ELamQaj/xAAYEAEBAQEBAAAAAAAAAAAAAAABEQAhMf/aAAgBAQABPxCcE075MsoV8syiV4PRyLUT5hhavvWaqk7/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kbank-4.jpeg"
+        title="kbank-4.jpeg"
+        src="/static/354dbfc4d23ccffd43f5d22192866827/80e3c/kbank-4.jpg"
+        srcset="/static/354dbfc4d23ccffd43f5d22192866827/4ec73/kbank-4.jpg 180w,
+/static/354dbfc4d23ccffd43f5d22192866827/158ba/kbank-4.jpg 360w,
+/static/354dbfc4d23ccffd43f5d22192866827/80e3c/kbank-4.jpg 720w,
+/static/354dbfc4d23ccffd43f5d22192866827/72e01/kbank-4.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<br>
+<p>이번 세션을 통해서 금융감독위원회에서도 이러한 클라우딩 기반 인프라에 대해서도 긍정적으로 바라본다는 후일담을 공유해주셨는데, 이 또한 케이뱅크가 얼마나 클라우딩 인프라에 대하여 진심인지 느낄 수 있었던 대목 중 하나였던것 같다.</p>
+<p>개인적으로 현재 재직 중인 회사에서 인프라 롤 모델을 잡자면 케이뱅크를 선택할 만큼 지금 우리 회사에서 직면하고 있는 문제를 모두 개편한 좋은 레퍼런스를 얻었다. 아주 유익한 세션이었다.</p>
+<br>
+<br>
+<h2 id="1️⃣-day-2" style="position:relative;"><a href="#1%EF%B8%8F%E2%83%A3-day-2" aria-label="1️⃣ day 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1️⃣ Day-2</h2>
+<hr>
+<p>어제 받은 네임카드는 다시 쓸 수 있었고 어제와 마찬가지로 코엑스 컨벤션 센터 3층 D홀에 도착 후 재입을 하니 식권을 다시 지급받았다. <del>이틀 모두 점식 식사 제공이라니!!..👍</del></p>
+<p>어제와 마찬가지로 기조연설을 듣기 위해 자리를 배정받았다. 어제와 마찬가지로 메인홀은 자리가 모두 찼는지 아래 사진과 같은 외부 부스로 자리를 배정받았다 🥲.</p>
+<p>이틀차 기조연설을 요약하자면 <strong>“비즈니스 모델에 맞는 아키텍쳐 구축, 그로인한 효율적인 비용 감축”</strong> 정도로 요약할 수 있을 것 같다.</p>
+<p>개발자들의 연예인 이동욱 CTO님도 참석하여 연사하셨는데 그 중 기억에 남는건 인프랩의 AWS 비용이 연 3억 가량..?? 인프라 비용 또한 무시할 요소가 아니라는 점을 강조하셨다.</p>
+<p>전반적으로 여러 연사님들의 공통된 의견은 집중해야할 부분은 투자와 기술을 집중하여 안정적으로 운영해야하며, 그 외에 부분들은 적절한 아키텍쳐로 구축하여 시스템을 효율적으로 운영하는데 초점을 맞춰야한다라고 말씀해주셨고 공감되었다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.22222222222221%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC5ElEQVQ4y22SXW8TRxSG9y6lKagSrbihhAQqlagtQnKaGDAlCSTpFzeUBCVUAi6IkBAS91wg8QP6kyogOMT2em1H0N5VpU1RYsef+zGzs+unOhOTUqkjjc6Zs7PnPO8545w8lOXEwSlGDkxw/MDEvpV9bCjDqY++Zub0InOZZcY/nmVk+Dyjh2YY+3CescNXOHlkiU+P3uazEw8YH3+Mc+pwjs+PTDN75hrTp6+yMLlsfbEXv7zKwtQKVy7c5IfcTS5PrJD7YpH57C2mM7f4JneP2bP3+e7SQy7mHjEz+zPO2AeTfJu9wfqGS9GtUCxXcb1NXK9md8mrUSh5FNwKpXKNYrlmbcnbZKNUpVx9iVt9Sbn6K271NxyRuDS3SqfTJTaG3WaLSCmCMERpjR8E+1visYnpdLvWb7XbhFGI7/uk/YQ0TXBGh7+yCVWkSJMUpTTGJGgdY4xBa22tiY21SZIQRcr68SCmBnfiOMY5/v4Ei3OrtFptS7W9Xafb7VnSIAjo9Xx8P7A7DENLFkYRURTRaOwSBKFVZ4sag3N0KMO17ArmzRv6jQaxECYJSqn96mmaWjKhFao9FXu0b+P7CUcPZlmeuk6n2SKu1wmENIqoD6oLbRhG1hcVQtxstiylpbakTQthE34ylOHHczfw/3iN3tlBK237J32SyiJNqGRgQi3flB2OIVaKpF5Hbf1N0mxi0hRnbHiS6wt3abc7tj8937dE3V7PEkif3iXc62uPSGvCTge9tUX3z79Itrcx/f5gKJfvWClSXX6Uab2dsvj2PLASE2qx8lx0p4svycLQynZG3suweOkOu42mnaIkFrmSWKSFQWgTvBuTOzIY6a8fRuzsttDx3hOzCZfmV9GxRpZJzH/s/60kTejTxySxPff7/951Rocn+f7sT6z9skEh75F/WqLw3OP5k6I9v3jmUi5sUnVfUVyvUnpRY/1ZmUK+Rn6tQnHjFfm1TSre71S81/wDynChSopaBzAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="day2.png"
+        title="day2.png"
+        src="/static/7fad75037d072ddf36ef6d1be3f21010/37523/day2.png"
+        srcset="/static/7fad75037d072ddf36ef6d1be3f21010/e9ff0/day2.png 180w,
+/static/7fad75037d072ddf36ef6d1be3f21010/f21e7/day2.png 360w,
+/static/7fad75037d072ddf36ef6d1be3f21010/37523/day2.png 720w,
+/static/7fad75037d072ddf36ef6d1be3f21010/302a4/day2.png 1080w,
+/static/7fad75037d072ddf36ef6d1be3f21010/07a9c/day2.png 1440w,
+/static/7fad75037d072ddf36ef6d1be3f21010/bf668/day2.png 2328w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>밀린 업무와 미팅까지 함께 병행해야 했기 때문에 오늘은 많은 세션을 참석하진 못하였다. 🥲</center><br>
+<br>
+<p><strong>Day-2</strong>에는 위와 같은 일정(+기조연설)으로 세션에 참여하였다. 참석한 세션들의 타이틀만 요약하자면 아래와 같다.</p>
+<ul>
+<li><strong>다양한 측면에서 보는 Observability</strong></li>
+<li><strong>Serverless 활용: 스타트업의 효율적 개발 환경 구축</strong></li>
+</ul>
+<p>각 세션마다 참석 후기는 아래에 남겨보았다.</p>
+<br>
+<br>
+<h3 id="다양한-측면에서-보는-observability" style="position:relative;"><a href="#%EB%8B%A4%EC%96%91%ED%95%9C-%EC%B8%A1%EB%A9%B4%EC%97%90%EC%84%9C-%EB%B3%B4%EB%8A%94-observability" aria-label="다양한 측면에서 보는 observability permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>다양한 측면에서 보는 Observability</h3>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAAB4uiDVCIxOv/EABoQAAMAAwEAAAAAAAAAAAAAAAABAhAREyH/2gAIAQEAAQUClHNVjaFSR4f/xAAXEQEAAwAAAAAAAAAAAAAAAAABAhBB/9oACAEDAQE/AZDlf//EABgRAAIDAAAAAAAAAAAAAAAAAAEQEhMh/9oACAECAQE/ARVHV//EABYQAAMAAAAAAAAAAAAAAAAAABAgMf/aAAgBAQAGPwJKP//EABoQAAIDAQEAAAAAAAAAAAAAAAABETFBocH/2gAIAQEAAT8hY7wWqBpzQlqPCm5HN3w//9oADAMBAAIAAwAAABAQH//EABcRAAMBAAAAAAAAAAAAAAAAAAABETH/2gAIAQMBAT8Qf2Rn/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERMf/aAAgBAgEBPxBoLREf/8QAHBABAQEAAgMBAAAAAAAAAAAAAREAIUExYbHB/9oACAEBAAE/EICiKRTnchFvQP7hKWV60gYLXPOl98fuTHs5/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="datadog-1.jpeg"
+        title="datadog-1.jpeg"
+        src="/static/2dd8ef8967d1179a5653afd94835865f/80e3c/datadog-1.jpg"
+        srcset="/static/2dd8ef8967d1179a5653afd94835865f/4ec73/datadog-1.jpg 180w,
+/static/2dd8ef8967d1179a5653afd94835865f/158ba/datadog-1.jpg 360w,
+/static/2dd8ef8967d1179a5653afd94835865f/80e3c/datadog-1.jpg 720w,
+/static/2dd8ef8967d1179a5653afd94835865f/72e01/datadog-1.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<br>
+<p>익숙한 기업인 Datadog에서 <strong>Observability</strong>의 중요성에 대해서 꼬집어 주는 세션이었다.</p>
+<p>이번 세션을 요약하자면, 웹 애플리케이션을 모니터링하는 4가지 요소인 골든 시그널(Golden Signals)을 모니터링 하는 기준에 대한 설명과 적절한 사례를 제품 홍보(?)와 약간 버무려 설명해주셨다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGQAAAQUAAAAAAAAAAAAAAAAAAAECAwQF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAECA//aAAwDAQACEAMQAAABxxXbKuSEH//EABkQAAIDAQAAAAAAAAAAAAAAAAACARARIv/aAAgBAQABBQJSdmtU1Dk//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFhEBAQEAAAAAAAAAAAAAAAAAACEi/9oACAECAQE/AcI//8QAFxAAAwEAAAAAAAAAAAAAAAAAARAxAP/aAAgBAQAGPwLQOlf/xAAcEAACAgIDAAAAAAAAAAAAAAAAAREhMUFR8PH/2gAIAQEAAT8ha5dw8aNRCIYl8o8gntH/2gAMAwEAAgADAAAAEC/f/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAEDAQE/EImv/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERIXH/2gAIAQIBAT8QTnU71FH/xAAeEAEBAAIBBQEAAAAAAAAAAAABEQAhMUFRYXGh8P/aAAgBAQABPxBgEyFSveLZtDoxeM530w6CHLBxnOG3v+4qu0/fOf/Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="datadog-2.jpeg"
+        title="datadog-2.jpeg"
+        src="/static/30ad3d3ec14c61f62872577e71e97f4c/80e3c/datadog-2.jpg"
+        srcset="/static/30ad3d3ec14c61f62872577e71e97f4c/4ec73/datadog-2.jpg 180w,
+/static/30ad3d3ec14c61f62872577e71e97f4c/158ba/datadog-2.jpg 360w,
+/static/30ad3d3ec14c61f62872577e71e97f4c/80e3c/datadog-2.jpg 720w,
+/static/30ad3d3ec14c61f62872577e71e97f4c/72e01/datadog-2.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>4가지 요소 LETS. 이미 업계에서는 많이 쓰이는 용어인듯하다!..👀</center><br>
+<br>
+<p>사실 이러한 모니터링 툴(Whatap, Sentry 등등)은 항상 좋다 생각한다. 다만, 지출되는 비용과 이러한 모니터링 도구에 대한 필요성을 개발팀이 아닌 경영진이 얼마나 필요로하는지에 대한 니즈가 부합해야 도입이 가능하더라..(경험상 🥲)</p>
+<p>그렇기에 오 좋구나.. 하는 시선으로 이번 세션을 참석하였다.</p>
+<br>
+<br>
+<h3 id="serverless-활용-스타트업의-효율적-개발-환경-구축" style="position:relative;"><a href="#serverless-%ED%99%9C%EC%9A%A9-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-%ED%9A%A8%EC%9C%A8%EC%A0%81-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95" aria-label="serverless 활용 스타트업의 효율적 개발 환경 구축 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Serverless 활용: 스타트업의 효율적 개발 환경 구축</h3>
+<hr>
+<p>마지막으로 참석한 세션은 스타트업에서 AWS 클라우딩 기반 인프라 서비스를 이용하며, 어떻게 효율적으로 개발 환경을 구축한지에 대한 사례를 두 기업의 개발자들이 나와서 설명해주셨다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/2gAMAwEAAhADEAAAAcWVtXbCw7//xAAZEAEBAAMBAAAAAAAAAAAAAAABAAIREiH/2gAIAQEAAQUCS5dDkW7F87b/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAEDAQE/AU5pT//EABgRAAIDAAAAAAAAAAAAAAAAAAABISIx/9oACAECAQE/AavCD//EABYQAAMAAAAAAAAAAAAAAAAAAAARIP/aAAgBAQAGPwIc/wD/xAAcEAADAAEFAAAAAAAAAAAAAAAAAREhMUFRgZH/2gAIAQEAAT8hxprcksYEsRXI2r0N008P/9oADAMBAAIAAwAAABDEP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAwEBPxAg4h3/xAAYEQACAwAAAAAAAAAAAAAAAAAAEQFBUf/aAAgBAgEBPxCVaQrn/8QAGRABAQEBAQEAAAAAAAAAAAAAAREAITFR/9oACAEBAAE/EOPEH3KOLYTVAh7mYdQhhmvBRd33gnM//9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="startup-1.jpeg"
+        title="startup-1.jpeg"
+        src="/static/56a3f54529324f79c13bc14887fb50da/80e3c/startup-1.jpg"
+        srcset="/static/56a3f54529324f79c13bc14887fb50da/4ec73/startup-1.jpg 180w,
+/static/56a3f54529324f79c13bc14887fb50da/158ba/startup-1.jpg 360w,
+/static/56a3f54529324f79c13bc14887fb50da/80e3c/startup-1.jpg 720w,
+/static/56a3f54529324f79c13bc14887fb50da/72e01/startup-1.jpg 1024w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>중요 포인트는 비용 최적화!!..💰</center><br>
+<br>
+<p>두 기업 모두 주제는 달랐지만 쟁점은 같았다.</p>
+<p>스타트업의 최대 고민인 어떻게하면 <strong>“허리띠를 졸라 맬 수 있을까?”</strong>라는 주제였다. 사실 이는 모든 기업의 공통된 쟁점이긴하지만 빠르게 매출을 내야하는 부담을 가진 스타트업 기업들은 이런 고민이 더욱 클 수 밖에 없다 생각한다.</p>
+<p><strong>Day-2</strong> 기조 연설 주제와도 유사했지만 조금 더 스타트업 기업의 관점에서 깊게 들어 볼 수 있었던 세션이었다.</p>
+<br>
+<br>
+<h2 id="후기" style="position:relative;"><a href="#%ED%9B%84%EA%B8%B0" aria-label="후기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>후기</h2>
+<hr>
+<p>너무 큰 행사장이었으며, 이런 큰 컨퍼런스 경험이 없어서 너무 헤맸다. <strong>Day-1</strong>은 길을 잃고 헤매다 듣고 싶었던 세션을 놓치는 어이없는 🥲 경험도 하였다.</p>
+<p>듣고 나서 생각이 많아지는 세션부터 쉽게 쉽게 듣고 나온 세션까지 다양한 경험을 돈 한푼 안들이고 쉽게 얻어온 좋은 기회였다.</p>
+<p>세션 후기만 남겼지만, EXPO에서도 다양한 기업들이 출범하여 자사 서비스들을 홍보하는 자리도 있었다.</p>
+<br>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAEWfRFAw//EABsQAAICAwEAAAAAAAAAAAAAAAABAhEDEBMh/9oACAEBAAEFAukID9KJUsqvX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAEEAwAAAAAAAAAAAAAAAAEAEBEiMUFh/9oACAEBAAY/ArFSMFj1Rpv/xAAbEAEAAwADAQAAAAAAAAAAAAABABEhEDFBUf/aAAgBAQABPyENQjErJ6vOFyrYu2a9GBQHyf/aAAwDAQACAAMAAAAQuC//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAADAQEAAwAAAAAAAAAAAAAAAREhMUFRYf/aAAgBAQABPxDQiclZV0LSpX2NbpTGeqnGsL2ymJ+BPhPdSQ//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="aws-2.jpeg"
+        title="aws-2.jpeg"
+        src="/static/f410f34b4ed2d0418032a88b783ed364/80e3c/aws-2.jpg"
+        srcset="/static/f410f34b4ed2d0418032a88b783ed364/4ec73/aws-2.jpg 180w,
+/static/f410f34b4ed2d0418032a88b783ed364/158ba/aws-2.jpg 360w,
+/static/f410f34b4ed2d0418032a88b783ed364/80e3c/aws-2.jpg 720w,
+/static/f410f34b4ed2d0418032a88b783ed364/47311/aws-2.jpg 1080w,
+/static/f410f34b4ed2d0418032a88b783ed364/644c5/aws-2.jpg 1440w,
+/static/f410f34b4ed2d0418032a88b783ed364/e1596/aws-2.jpg 2048w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<center>개인정보를 대가로 많은 경품을 얻어왔다..🥲</center><br>
+<br>
+<p>또한, AWS의 신규 생성형 AI기능들을 체험해볼 수 있는 공간들 또한 재밌게 모두 즐기고 왔다.</p>
+<p>컨퍼런스 기간 동안 몇몇 기업은 서비스 홍보를 하러나온건가..라는 의문이 들긴했지만, 새로운 트렌드에 관련한 인사이트와 같은 고민을 가진 기업들의 해결과정 그리고 성공사례를 눈으로 귀로 직접 들을 수 있는 좋은 기회임은 반박할 수 없었다.</p>
+<p>이번 컨퍼런스에서 경험한 일부분들을 접목해나갈 수 있게 된다면 또 다른 후기로도 남겨보도록하겠다.</p>
+<br>
+<br>
+<div class="table-of-contents">
+<ul>
+<li>
+<p><a href="#aws-summit-seoul-2024">AWS Summit Seoul 2024</a></p>
+</li>
+<li>
+<p><a href="#%EC%8B%A0%EC%B2%AD-%EB%B0%A9%EB%B2%95">신청 방법</a></p>
+</li>
+<li>
+<p><a href="#1%EF%B8%8F%E2%83%A3-day-1">1️⃣ Day-1</a></p>
+<ul>
+<li><a href="#%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4-%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EC%B1%97%EB%B4%87-%EB%8D%94%EC%82%AC%EC%9D%B4%EB%A0%8C%ED%8F%AC%ED%83%88">스타벅스 인공지능 챗봇 더사이렌포탈</a></li>
+<li><a href="#%EC%84%BC%EB%93%9C%EB%B2%84%EB%93%9C%EC%9D%98-%EC%83%9D%EC%84%B1%ED%98%95-ai-%EA%B8%B0%EB%B0%98-%EA%B8%80%EB%A1%9C%EB%B2%8C-chatbot-%EC%84%9C%EB%B9%84%EC%8A%A4">센드버드의 생성형 AI 기반 글로벌 Chatbot 서비스</a></li>
+<li><a href="#%EC%BC%80%EC%9D%B4%EB%B1%85%ED%81%AC%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%8F%84%EC%9E%85-%EC%97%AC%EC%A0%95-%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B1%84%EB%84%90-msa-aiml">케이뱅크의 클라우드 도입 여정: 빅데이터, 채널, MSA, AI/ML</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#1%EF%B8%8F%E2%83%A3-day-2">1️⃣ Day-2</a></p>
+<ul>
+<li><a href="#%EB%8B%A4%EC%96%91%ED%95%9C-%EC%B8%A1%EB%A9%B4%EC%97%90%EC%84%9C-%EB%B3%B4%EB%8A%94-observability">다양한 측면에서 보는 Observability</a></li>
+<li><a href="#serverless-%ED%99%9C%EC%9A%A9-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-%ED%9A%A8%EC%9C%A8%EC%A0%81-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95">Serverless 활용: 스타트업의 효율적 개발 환경 구축</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%9B%84%EA%B8%B0">후기</a></p>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/2024-04-24-BOOK/"><div class="direction">이전 글</div><div class="title">좋은 코드, 나쁜 코드 - 1</div></a></div><div class="post-navigator-card-wrapper"></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2024<!-- --> <a href="https://github.com/JH8459">JH8459</a> powered by<a href="https://github.com/JH8459/JH8459.github.io"> gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024-05-17-RETROSPECT/";window.___webpackCompilationHash="b30dd2eab3ccb5a1cd3e";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-16328b1efe2ceafda274.js"],"app":["/app-8f5d0e7524ea9116671a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-eebb8ff532a98701a69c.js"],"component---src-pages-404-js":["/component---src-pages-404-js-8ce3c19b7e7f1b21fd1b.js"],"component---src-pages-about-js":["/component---src-pages-about-js-02286b93baba24e650c5.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ce47c1a0977cb238d6df.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-a14ef9fa902e4d488498.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-8512139f590721266f42.js"]};/*]]>*/</script><script src="/polyfill-16328b1efe2ceafda274.js" nomodule=""></script><script src="/app-8f5d0e7524ea9116671a.js" async=""></script><script src="/framework-903d2456b5c87618e608.js" async=""></script><script src="/webpack-runtime-21a4c9e8f92f318f3aac.js" async=""></script></body></html>
