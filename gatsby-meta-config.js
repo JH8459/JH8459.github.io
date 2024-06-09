@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   trakingId: 'G-B02DJ4ZW5E', // Google Analytics Tracking ID
-  publisherId: 'ca-pub-2620372849415569', // Google Adsense Publisher ID
+  publisherId: 'ca-pub-5947324447654662', // Google Adsense Publisher ID
   author: {
     name: `김정현`,
     bio: {
