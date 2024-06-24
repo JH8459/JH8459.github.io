@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   title: `blog.jh8459.com`,
   description: `JH 개발일기`,
@@ -9,8 +11,15 @@ module.exports = {
       repo: `JH8459/JH8459.github.io`,
     },
   },
-  trakingId: 'G-B02DJ4ZW5E', // Google Analytics Tracking ID
-  publisherId: 'ca-pub-5947324447654662', // Google Adsense Publisher ID
+  googleTrakingId: process.env.GOOGLE_TRAKING_ID, // Google Analytics Tracking ID
+  googlePublisherId: process.env.GOOGLE_PUBLISHER_ID, // Google Adsense Publisher ID
+  firebaseApiKey: '<YOUR_FIREBASE_API_KEY>', // Firebase Web API Key
+  firebaseAuthDomain: '<YOUR_FIREBASE_AUTH_DOMAIN>', // Firebase Web Auth Domain
+  firebaseDatabaseURL: '<YOUR_FIREBASE_DATABASE_URL>', // Firebase Realtime Database URL
+  firebaseProjectId: '<YOUR_FIREBASE_PROJECT_ID>', // Firebase Project ID
+  firebaseStorageBucket: '<YOUR_FIREBASE_STORAGE_BUCKET>', // Firebase Storage Bucket
+  firebaseMessagingSenderId: '<YOUR_FIREBASE_MESSAGING_SENDER_ID>', // Firebase Messaging Sender ID
+  firebaseAppId: '<YOUR_FIREBASE_APP_ID>', // Firebase App ID
   author: {
     name: `김정현`,
     bio: {

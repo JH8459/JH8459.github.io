@@ -42,9 +42,23 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: metaConfig.firebaseApiKey,
+          authDomain: metaConfig.firebaseAuthDomain,
+          databaseURL: metaConfig.firebaseDatabaseURL,
+          projectId: metaConfig.firebaseProjectId,
+          storageBucket: metaConfig.firebaseStorageBucket,
+          messagingSenderId: metaConfig.firebaseMessagingSenderId,
+          appId: metaConfig.firebaseAppId,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: metaConfig.trakingId,
+        trackingId: metaConfig.googleTrakingId,
         head: true,
         anonymize: true,
       },
@@ -52,7 +66,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
-        publisherId: metaConfig.publisherId,
+        publisherId: metaConfig.googlePublisherId,
       },
     },
     {
