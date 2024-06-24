@@ -30,17 +30,22 @@ function BlogTemplate({ data }) {
     get(child(ref(database), `posts/${key}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          // key 값이 존재하면 기존 값에 + 1
           const currentViews = snapshot.val().views;
-          const updatedViews = currentViews + 1;
 
-          update(postRef, { views: updatedViews });
+          if (process.env.NODE_ENV !== 'development') {
+            const updatedViews = currentViews + 1;
 
-          setViewCount(updatedViews); // 상태 업데이트
+            update(postRef, { views: updatedViews });
+            setViewCount(updatedViews);
+          } else {
+            setViewCount(currentViews);
+          }
         } else {
-          // key 값이 존재하지 않으면 1으로 설정
-          set(postRef, { views: 1 });
-          setViewCount(1); // 상태 업데이트
+          if (process.env.NODE_ENV !== 'development') {
+            // key 값이 존재하지 않으면 1으로 설정
+            set(postRef, { views: 1 });
+            setViewCount(1); // 상태 업데이트
+          }
         }
       })
       .catch((error) => {
