@@ -1,5 +1,3 @@
-const { NODE_ENV, CONTEXT: NETLIFY_ENV = NODE_ENV } = process.env;
-
 const metaConfig = require('./gatsby-meta-config');
 
 module.exports = {
@@ -23,26 +21,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => NETLIFY_ENV,
-        env: {
-          production: {
-            policy: [{ userAgent: '*' }],
-          },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
-          },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
-          },
-        },
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
-      resolve: 'gatsby-plugin-firebase',
+      resolve: 'gatsby-plugin-firebase-v9.0',
       options: {
         credentials: {
           apiKey: metaConfig.firebaseApiKey,

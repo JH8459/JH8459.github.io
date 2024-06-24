@@ -13,13 +13,13 @@ module.exports = {
   },
   googleTrakingId: process.env.GOOGLE_TRAKING_ID, // Google Analytics Tracking ID
   googlePublisherId: process.env.GOOGLE_PUBLISHER_ID, // Google Adsense Publisher ID
-  firebaseApiKey: '<YOUR_FIREBASE_API_KEY>', // Firebase Web API Key
-  firebaseAuthDomain: '<YOUR_FIREBASE_AUTH_DOMAIN>', // Firebase Web Auth Domain
-  firebaseDatabaseURL: '<YOUR_FIREBASE_DATABASE_URL>', // Firebase Realtime Database URL
-  firebaseProjectId: '<YOUR_FIREBASE_PROJECT_ID>', // Firebase Project ID
-  firebaseStorageBucket: '<YOUR_FIREBASE_STORAGE_BUCKET>', // Firebase Storage Bucket
-  firebaseMessagingSenderId: '<YOUR_FIREBASE_MESSAGING_SENDER_ID>', // Firebase Messaging Sender ID
-  firebaseAppId: '<YOUR_FIREBASE_APP_ID>', // Firebase App ID
+  firebaseApiKey: process.env.FIREBASE_API_KEY, // Firebase Web API Key
+  firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN, // Firebase Web Auth Domain
+  firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL, // Firebase Realtime Database URL
+  firebaseProjectId: process.env.FIREBASE_PROJECT_ID, // Firebase Project ID
+  firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET, // Firebase Storage Bucket
+  firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID, // Firebase Messaging Sender ID
+  firebaseAppId: process.env.FIREBASE_APP_ID, // Firebase App ID
   author: {
     name: `김정현`,
     bio: {

@@ -10,6 +10,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 const createBlogPages = ({ createPage, results }) => {
   const blogPostTemplate = require.resolve(`./src/templates/blog-template.js`);
+
   results.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
