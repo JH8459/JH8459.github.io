@@ -1,3 +1,4 @@
 User-agent: *
+Allow: /
 Sitemap: https://blog.jh8459.com/sitemap/sitemap-index.xml
 Host: https://blog.jh8459.com
