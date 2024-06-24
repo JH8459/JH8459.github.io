@@ -22,7 +22,7 @@ function PostHeader({ post, viewCount }) {
           posted by <strong>{post.author}</strong>,
         </div>{' '}
         {post.date}
-        {viewCount && ` · ${viewCount} views`}
+        {` · ${viewCount} views`}
       </div>
     </header>
   );

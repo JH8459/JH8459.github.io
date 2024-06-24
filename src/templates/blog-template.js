@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import firebase from 'gatsby-plugin-firebase-v9.0';
+import { getDatabase, ref, set, get, child, update } from 'firebase/database';
 import { graphql } from 'gatsby';
 import Layout from '../layout';
 import Seo from '../components/seo';
@@ -9,7 +11,7 @@ import PostContent from '../components/post-content';
 import Utterances from '../components/utterances';
 
 function BlogTemplate({ data }) {
-  const [viewCount, setViewCount] = useState(null);
+  const [viewCount, setViewCount] = useState(0);
 
   const curPost = new Post(data.cur);
   const prevPost = data.prev && new Post(data.prev);
@@ -19,17 +21,31 @@ function BlogTemplate({ data }) {
 
   useEffect(() => {
     if (!siteUrl) return;
-    const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
+
     const key = curPost.slug.replace(/\//g, '');
 
-    fetch(
-      `https://api.countapi.xyz/${
-        process.env.NODE_ENV === 'development' ? 'get' : 'hit'
-      }/${namespace}/${key}`,
-    ).then(async (result) => {
-      const data = await result.json();
-      setViewCount(data.value);
-    });
+    const database = getDatabase(firebase);
+    const postRef = ref(database, 'posts/' + key);
+
+    get(child(ref(database), `posts/${key}`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          // key 값이 존재하면 기존 값에 + 1
+          const currentViews = snapshot.val().views;
+          const updatedViews = currentViews + 1;
+
+          update(postRef, { views: updatedViews });
+
+          setViewCount(updatedViews); // 상태 업데이트
+        } else {
+          // key 값이 존재하지 않으면 1으로 설정
+          set(postRef, { views: 1 });
+          setViewCount(1); // 상태 업데이트
+        }
+      })
+      .catch((error) => {
+        console.error('Firebase read failed: ', error);
+      });
   }, [siteUrl, curPost.slug]);
 
   return (
