@@ -1,12 +1,12 @@
-import { createFilePath } from `gatsby-source-filesystem`;
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-export function onCreateNode({ node, getNode, actions }) {
+exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `content` });
     createNodeField({ node, name: `slug`, value: slug });
   }
-}
+};
 
 const createBlogPages = ({ createPage, results }) => {
   const blogPostTemplate = require.resolve(`./src/templates/blog-template.js`);
@@ -55,7 +55,7 @@ const createPostsPages = ({ createPage, results }) => {
   });
 };
 
-export async function createPages({ actions, graphql, reporter }) {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const results = await graphql(`
@@ -97,4 +97,4 @@ export async function createPages({ actions, graphql, reporter }) {
 
   createBlogPages({ createPage, results });
   createPostsPages({ createPage, results });
-}
+};

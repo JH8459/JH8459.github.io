@@ -1,1 +1,1 @@
-import 'typeface-montserrat';
+require('typeface-montserrat');
