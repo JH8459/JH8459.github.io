@@ -73,7 +73,8 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 500, truncate: true)
       frontmatter {
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "MMMM DD, YYYY")
+
         title
         categories
         author
@@ -88,7 +89,8 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "MMMM DD, YYYY")
+
         title
         categories
         author
@@ -103,7 +105,8 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "MMMM DD, YYYY")
+
         title
         categories
         author
