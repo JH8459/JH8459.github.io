@@ -112,11 +112,12 @@ module.exports = {
       {
         title: 'LOTTERY 개발',
         description:
-          '매주 반복되는 로또 당첨 정보를 단순화 할 수 없을까라는 생각으로 시작하게된 프로젝트입니다. 단순히 로또 당첨 번호 정보만을 제공하는 것이 아닌, 당첨 정보를 기반으로 한 통계 정보를 담은 뉴스레터를 간단한 구독 버튼 클릭만으로 제공합니다.',
+          '반복되는 복권 당첨 정보를 손 쉽게 제공 할 수 없을까라는 생각으로 시작하게된 프로젝트입니다. 단순히 복권 당첨 결과만 제공하는 것이 아닌, 당첨 정보를 기반으로 한 통계 정보를 간단한 사용 방법으로 이메일 정기 구독 방식과 슬랙 앱 설치 방식으로 제공합니다.',
         techStack: ['NodeJS', 'Express', 'NestJS', 'MySQL', 'Redis'],
         thumbnailUrl: 'project-lottery.png',
         links: {
           github: 'https://github.com/JH8459/LOTTERY',
+          demo: 'https://lottery.jh8459.com/',
         },
       },
     ],
