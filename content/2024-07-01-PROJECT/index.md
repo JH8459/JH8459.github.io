@@ -1,7 +1,7 @@
 ---
 emoji: 🔥
 title: LOTTERY 🍀 (복권 당첨 정보 구독형 서비스)
-date: '2024-07-06'
+date: '2024-07-01'
 author: JH8459
 categories: Project
 ---
