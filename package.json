@@ -1,5 +1,5 @@
 {
-  "name": "jh8459.com",
+  "name": "blog.jh8459.com",
   "private": false,
   "description": "개인 블로그",
   "version": "1.0.0",
@@ -54,7 +54,7 @@
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "deploy": "gatsby clean && gatsby build && gh-pages -d public",
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public -x",
     "start": "gatsby clean && gatsby develop -p 3500",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
