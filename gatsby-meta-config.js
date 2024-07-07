@@ -116,6 +116,7 @@ module.exports = {
         techStack: ['NodeJS', 'Express', 'NestJS', 'MySQL', 'Redis'],
         thumbnailUrl: 'project-lottery.png',
         links: {
+          post: 'https://blog.jh8459.com/2024-07-01-PROJECT/',
           github: 'https://github.com/JH8459/LOTTERY',
           demo: 'https://lottery.jh8459.com/',
         },
