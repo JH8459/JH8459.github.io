@@ -1,6 +1,6 @@
 ---
 emoji: 🔥
-title: SLACK 챗봇 개발하기 (사내 도서관)
+title: SLACK 앱 개발하기 (사내 도서관)
 date: '2023-05-01'
 author: JH8459
 categories: Project
