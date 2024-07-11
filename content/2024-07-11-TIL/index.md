@@ -16,7 +16,7 @@ categories: TIL
 
 <br>
 
-백준 <a href="https://www.acmicpc.net/problem/2204" target="_blank">2204번</a>알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
+백준 <a href="https://www.acmicpc.net/problem/2204" target="_blank">2204번</a> 알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
 
 <br>
 <br>
