@@ -114,11 +114,15 @@ categories: TIL
     const sum = (a: number, b: number) => a + b;
 
     it('sum 함수가 정상적으로 작동하는가?', async () => {
-      expect(sum(1, 0)).toBe(0);
+      expect(sum(1, 0)).toBe(1);
+      // 1 + 0 = 1
+      // 1 - 0 = 1
     });
 
     it('sum 함수가 정상적으로 작동하는가?', async () => {
       expect(sum(0, 0)).toBe(0);
+      // 0 + 0 = 0
+      // 0 - 0 = 0
     });
   });
   ```
