@@ -47,8 +47,8 @@ categories: TIL
 
 크게 두가지 로직을 함수로 구현하여 알고리즘을 구현하였다.
 
-- `List`에 입력되는 단어를 담는다.
-- `compareToIgnoreCase` 메서드를 이용하여 정렬 후 첫번째 인자를 반환한다.
+> 1. `List`에 입력되는 단어를 담는다.
+> 2. `compareToIgnoreCase` 메서드를 이용하여 정렬 후 첫번째 인자를 반환한다.
 
 <br>
 
