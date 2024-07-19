@@ -110,7 +110,7 @@ categories: TIL
   }
 </style>
 
-<div class="responsive-iframe-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/jdlBu2vFv58?si=hn9E3KSIDO53WaKR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="responsive-iframe-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/jdlBu2vFv58?si=hn9E3KSIDO53WaKR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><br>
 
 위 영상은 테스트 커버리지 100%(인스트럭션 기준)까지 달성한 과정을 자세히 설명해주는 영상이며 요약하자면 아래와 같다.
 
