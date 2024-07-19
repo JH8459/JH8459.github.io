@@ -12,8 +12,6 @@ categories: Retrospect
 
 ## 🤔 Retrospect
 
----
-
 ![수료증1024_1](https://user-images.githubusercontent.com/83164003/151650800-00ba9a63-5827-462a-91d3-e453381cc515.jpg)
 
 <br>

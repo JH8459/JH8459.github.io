@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 백준 <a href="https://www.acmicpc.net/problem/2573" target="_blank">2573번</a>알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
@@ -320,8 +318,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - BFS / DFS 알고리즘 영역은 문제 풀이에 시간이 오래 걸린다.
 

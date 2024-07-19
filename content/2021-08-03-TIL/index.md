@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -289,8 +287,6 @@ body {
 <br>
 
 ## 🤔 Understanding
-
----
 
 - ` CSS 진짜로 너무너무너무 어렵다.`
 

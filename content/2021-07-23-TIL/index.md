@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -58,8 +56,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 질문의 중요성
 

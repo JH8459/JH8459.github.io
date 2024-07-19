@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 백준 <a href="https://www.acmicpc.net/problem/1874" target="_blank">11659번</a>알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
@@ -188,8 +186,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 버퍼의 특이점 덕분에 스택 공부는 제대로 하였다. 👍
 

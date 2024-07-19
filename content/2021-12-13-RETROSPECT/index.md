@@ -12,8 +12,6 @@ categories: Retrospect
 
 ## 🤔 Retrospect
 
----
-
 <br>
 
 - 우선 프로젝트가 아직 완성된게 아니라 회고는 아니고 시작 전 다짐 및 마음가짐을 적어보려 간단히 남긴다.

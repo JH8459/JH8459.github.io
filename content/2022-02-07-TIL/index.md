@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. 문제점
@@ -210,8 +208,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 신경을 안써도 너무 안썼다..
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. OAuth
@@ -199,8 +197,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 후~ 드디어 [인증/보안 ] 일정을 모두 마쳤다..
 

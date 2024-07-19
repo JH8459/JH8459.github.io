@@ -12,8 +12,6 @@ categories: Book
 
 ## 📓 독서후기
 
----
-
 **「좋은 코드, 나쁜 코드」** 독서 후기
 
 - **PART 1. 이론**
@@ -241,8 +239,6 @@ export enum GenderEnum {
 <br>
 
 ## 🤔 Understanding
-
----
 
 앞서 읽은 **「Clean Code」** 와 다르게 이번 **「좋은 코드, 나쁜 코드」** 는 거북하지 않고 쉽게 읽혔다.
 

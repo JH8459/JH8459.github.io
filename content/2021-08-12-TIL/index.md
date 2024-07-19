@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. React SPA (Single Page Application)
@@ -109,8 +107,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 라우터를 이용한 부분 페이지 전환 그로인한 SPA 설계 가능화를 이해했다.
 

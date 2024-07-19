@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. 비동기 처리 (Asynchronous processing)
@@ -285,8 +283,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 비동기 처리 방식의 구현 프로세스 자체는 이해는 갔다. 하지만 실제 코딩은 어떻게해..? 라는 막연함이 많이 들었다.
 

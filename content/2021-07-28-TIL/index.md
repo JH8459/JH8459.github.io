@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -132,8 +130,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 아직 CLI환경에서의 작업은 익숙하지 않다.
 

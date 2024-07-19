@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 프로젝트들을 진행하며 대용량 서비스를 염두하고 서버를 개발해본 경험이 아직없다.
@@ -119,8 +117,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 기본적인 내용만 우선 다루어보았다.
 

@@ -12,8 +12,6 @@ categories: Project
 
 ## ⚒️ Refactoring
 
----
-
 - 어제 발생한 `code: 'ERR_HTTP_HEADERS_SENT` 에러는 `userAuth` 미들웨어 함수를 수정하여 핸들링하였다.
 
   오늘은 전반적으로 유효하지 않은 로그인 상태를 검증하여 메인페이지로 이동 후 로그인을 유도하는 방향으로 프로젝트를 리팩토링해볼 예정이다.

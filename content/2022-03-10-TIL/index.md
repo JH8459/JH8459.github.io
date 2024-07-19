@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - **JWT** (JSON Web Token)을 알아보고 학습한 내용을 글로 남겨보려 한다.
@@ -117,8 +115,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - HTTP의 비상태성, 비연결성 두가지 특성으로 인해 로그인 정보를 유지시키기 위해 고안된 방법들이 굉장히 많구나라는걸 느꼈다.
 

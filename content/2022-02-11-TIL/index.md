@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - Sequelize ORM을 사용하며 가장 편리한 점을 꼽는다면 마이그레이션을 선택할 것 같다.
@@ -232,8 +230,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 서비스를 멈추거나 DB를 모두 삭제 후 스키마를 수정을 해야하는 번거로움 없이 `Sequelize` Migration은 DB 스키마 수정을 간편하게 도와준다.
 

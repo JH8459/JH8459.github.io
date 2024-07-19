@@ -23,8 +23,6 @@ categories: Project
 
 ### 문제점
 
----
-
 - 현재 로그인 방식은 `cookie`에 JWT Token을 담아 인증하는 방식으로 로그인검증이 이루어지고 있으며, 로그아웃시에는 로그인 여부를 검증한 뒤, 쿠키를 만료시키는 방식으로 로그아웃 처리를 구현하였다.
 
   > **controller/authentication/logout.js**

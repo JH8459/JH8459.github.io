@@ -12,8 +12,6 @@ categories: Retrospect
 
 ## 🤔 Retrospect
 
----
-
 <br>
 
 - 18시까지 Hiring Assessments 과제형을 마친 뒤 저녁식사 후 HA를 통과했다는 메일을 받았다.

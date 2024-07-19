@@ -12,8 +12,6 @@ categories: Retrospect
 
 ## 🤔 Retrospect
 
----
-
 <br>
 
 - 재수강을 하면서 같은 Section을 다시 진행하면서 간만에 새글을 쓰는 거 같다.

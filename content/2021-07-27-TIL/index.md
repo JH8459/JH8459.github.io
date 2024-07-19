@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -28,8 +26,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 점점.. 수업 내용을 한번에 따라잡기가 어렵다.
 

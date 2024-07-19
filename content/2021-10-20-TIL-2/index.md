@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### Session
@@ -293,8 +291,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 어렵다 어렵다 어렵다...
 

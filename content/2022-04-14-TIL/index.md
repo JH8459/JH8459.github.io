@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 인프런의 <a href="https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4" target="_blank">따라하며 배우는 NestJS</a>를 들으며 배운점을 남기고 기록해보려고 한다.
@@ -226,8 +224,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 사실 나는 node.js의 프레임워크로 express.js만 사용해왔기 때문에 구조가 다른부분은 아직 조금 더 학습해 나가며 이해해보려한다.
 

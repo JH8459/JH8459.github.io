@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - Repository를 생성할때 마다 생기는 기본값 Github ISSUE Label.. ~~(일단 참 못생김..!!)~~
@@ -161,8 +159,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 매번 Repository를 만들때마다 ISSUE Label 설정을 만지작거리다 열받아서 여기저기 찾아보고 내 로컬에 셋팅을 해두었다.
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 현재 운영중인 기술 블로그는 <a href="https://pages.github.com/" target="_blank">Github Pages</a>에서 공식적으로 지원하는 `Jekyll`을 사용하여 만들다가 현재는 `Gatsby`라는 프레임워크를 사용해서 기술 블로그를 운영하고 있다.
 
 아무래도 정적 웹이트이다 보니 한계점이 많았지만 `Gatsby`에서 제공하는 플러그인을 통해 `Firebase`의 서버리스 서비스를 연동하고 조회수(View)를 노출시킨 과정을 경험을 간략히 정리하고 공유하기 위해 글을 남긴다.
@@ -212,8 +210,6 @@ Realtime Database 생성이 완료되었다면, 프로젝트를 생성해준다.
 <br>
 
 ## 🤔 Understanding
-
----
 
 조회수 노출시키기 위해 먼 길을 돌아왔다. 하지만, 이런 맛에 기술 블로그를 운영하는거라 생각한다.
 

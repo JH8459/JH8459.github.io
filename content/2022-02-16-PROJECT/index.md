@@ -12,8 +12,6 @@ categories: Project
 
 ## ⚒️ Refactoring
 
----
-
 - 현재 ALL-CON 프로젝트의 DB 서버는 **AWS RDS**를 사용하고 있다.
 
   DB의 서버시간이 맞지 않는 문제가 계속 발생하고 있다.

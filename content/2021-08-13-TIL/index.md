@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. React Props & State
@@ -173,8 +171,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - React `props` 전달시 부모에서 자식으로 객체로 전달이된다..
 

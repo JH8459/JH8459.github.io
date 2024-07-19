@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Docker
@@ -102,8 +100,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 도커를 왜 쓰는지 이유는 확실히 알았다.
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 유지보수하는 과정에서 발생하는 Dead Code들을 쉽게 파악하고자 도입했던 개발 관련 도구들을 사용해본 경험에 대해서 간략히 정리하고 공유하기 위해 글을 남긴다.
 
 > **Dead Code** 란?
@@ -116,8 +114,6 @@ GPT부터 여러 관련 자료들을 찾아본 결과 몇가지 <strong>Dead Cod
 <br>
 
 ## 🤔 Understanding
-
----
 
 결론은 둘다 쓰기로 마음 먹었다. 👍
 

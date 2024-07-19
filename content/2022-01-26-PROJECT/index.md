@@ -29,8 +29,6 @@ categories: Project
 
 ## 🤔 <span style="color: #FFCE63;">ALL-CON</span>은 무슨 뜻인가요?
 
----
-
 <br>
 <center>
 "콘서트가 열리는 모든 날에 참석함"을 의미해요.<br><br>
@@ -42,8 +40,6 @@ categories: Project
 <br>
 
 ## 🤔 <span style="color: #FFCE63;">ALL-CON</span>에서는 무엇을 할 수 있나요?
-
----
 
 <br>
 <center>
@@ -71,8 +67,6 @@ categories: Project
 <br>
 
 ## 🎬 <span style="color: #FFCE63;">ALL-CON</span> 서비스 기능별 시연
-
----
 
 <br>
 <details>
@@ -388,16 +382,12 @@ categories: Project
 
 ## 🎥 <span style="color: #FFCE63;">ALL-CON</span> 서비스 발표 영상
 
----
-
 <iframe width=100% height="420" src="https://www.youtube.com/embed/1uK3QLF9TIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
 
 <br>
 <br>
 
 ## 🤔 <span style="color: #FFCE63;">ALL-CON</span>에서는 무엇을 담당하였나요?
-
----
 
 <br>
 <details>
@@ -591,8 +581,6 @@ categories: Project
 <br>
 
 ## 🎥 개인 기술 발표 영상
-
----
 
 <iframe width=100% height="420" src="https://www.youtube.com/embed/4Z4uoshjOQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br><br>
 

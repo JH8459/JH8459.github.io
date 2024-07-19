@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Spread / Reset 문법
@@ -196,8 +194,6 @@ myFun('one', 'two', 'three', 'four', 'five', 'six');
 <br>
 
 ## 🤔 Understanding
-
----
 
 - JavaScript 문제풀이중 _얕은 복사, 깊은 복사_ 개념이 머릿속에 들어오지않았다. 우선 해당 개념파악을 하려면 조금더 JS에서 필요한 학습내용이 뒤 따랐다. (Iterable, 재귀함수..등) 이 문제를 가지고 씨름하기보다는 check 해두기 위해 따로 포스팅 카테고리를 만들어두었다.
 

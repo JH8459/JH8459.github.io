@@ -12,8 +12,6 @@ categories: Retrospect
 
 ## SDC23 Korea (삼성 개발자 컨퍼런스)
 
----
-
 - 개발 관련 오프라인 컨퍼런스 참석을 올 한해동안 수차례 지원하였으나. 끊임없이 탈락하였다..
 
   <br>
@@ -40,8 +38,6 @@ categories: Retrospect
 <br>
 
 ## 행사장
-
----
 
 - 강남역 8번출구쪽으로 가다보면 삼성전자 서초사옥이 나온다.
 
@@ -111,8 +107,6 @@ categories: Retrospect
 <br>
 
 ## Sessions - 인상깊은 🤔
-
----
 
 - 일정이 끝나고 포스팅을 하는 이 순간 가장 인상 깊은 Session을 꼽으라 하면 2개가 떠오른다.
 
@@ -287,8 +281,6 @@ categories: Retrospect
 <br>
 
 ## 후기
-
----
 
 <center><br>"많이 배우고 스스로를 돌아보고 갑니다."</b></center><br>
 

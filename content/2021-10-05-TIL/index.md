@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Linux 사용권한
@@ -190,8 +188,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - Linux 환경에서의 환경변수를 사용하는 목적은 로컬PC에서만 사용되어야 하는 정보(ex. API Key, DB password...)를 프로그램 코드에 심지 않고 환경변수에 심은 뒤 해당 환경변수를 JS 환경에서 사용할 수 있게되는게 주된 목적이라 생각된다.
 

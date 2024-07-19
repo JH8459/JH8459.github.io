@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. ORM(Object-Relational Mapping)
@@ -322,8 +320,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - ORM을 통한 DB 작성과 백엔드 기능을 중점으로 다루었다.
 

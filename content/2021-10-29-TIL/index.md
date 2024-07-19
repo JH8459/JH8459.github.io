@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Amazon Web Service
@@ -548,8 +546,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 배포...생각보다 어렵다. 아직 AWS에서 무료로 제공하는 도메인에 호스팅만 해보았다.
 

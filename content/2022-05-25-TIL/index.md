@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.
@@ -124,8 +122,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 그냥 NestJS 공식 문서에서 쓰라해서 썼고, TypeORM에서 기본으로 지원해주니 쓰던 Repository Pattern을 그나마 조금 이해하고 써 볼 수 있게 되었다.
 

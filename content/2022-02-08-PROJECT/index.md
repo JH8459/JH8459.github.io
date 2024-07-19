@@ -12,8 +12,6 @@ categories: Project
 
 ## ⚒️ Refactoring
 
----
-
 - 어제 오후까지 프로젝트 리팩토링 우선순위를 정하여 각자 Task를 선별하였다.
 
 - 팀 프로젝트 Repository를 이제는 더이상 수강생이 아니기 때문에 Private ⮕ Public으로 전환을 하였다.

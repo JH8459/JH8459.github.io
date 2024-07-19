@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 **「Clean Code」** 9장(단위 테스트)에서 테스트 코드의 중요성을 읽고나서 막연히 이런 생각을 마음속 깊은 곳에 담아 두긴했었다.
 
 > <a href="https://blog.jh8459.com/2023-04-09-BOOK/" target="_blank">📌 <strong>「Clean Code」</strong> 단위 테스트 독서 후기</a>
@@ -148,8 +146,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 상반기에는 사이드 프로젝트의 "구현" 부분을 진행해보았다. 하반기 목표는 이 사이드 프로젝트 중 부족한 기술 영역을 하나씩 채워보고자 한다.
 

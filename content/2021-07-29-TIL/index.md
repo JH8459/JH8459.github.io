@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -87,8 +85,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 깃깃깃깃깃. 말로만 들었지 왜 협업에 유리하며, 분산관리에 유리하며.. 버전관리에 유리하며.. 많은 기업들이 해당 툴을 모두 사용하는지 짧은 시간이지만 크게 와닿았다.
 

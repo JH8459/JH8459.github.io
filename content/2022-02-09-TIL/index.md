@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Node.js - code: ERR_HTTP_HEADERS_SENT
@@ -100,8 +98,6 @@ categories: TIL
   <br>
 
 ## 🤔 Understanding
-
----
 
 - 기본에 충실하지 못하여서 발생한 에러라서 솔직히 부끄러운 에러라 생각이 든다.
 

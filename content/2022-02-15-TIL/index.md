@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 시퀄라이즈는 SQL문을 JavaScript 환경에서 객체로 작성할 수 있는 ORM(Object Relational Mapping)이다.
@@ -168,8 +166,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - ~~항상 느끼지만 시퀄라이즈 공식문서는 너무 불친절..~~
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 백준 <a href="https://www.acmicpc.net/problem/1764" target="_blank">1764번</a> 알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
@@ -178,8 +176,6 @@ public class Main {
 <br>
 
 ## 🤔 Understanding
-
----
 
 이런 유형의 문제가 많은데, 상황마다 적절한 자료구조를 사용하는 것이 알고리즘 문제를 잘 풀어낼 수 있는 가장 빠른 지름길이다. <del>(그러려면 많은 알고리즘을 알고있어야한다..🥲)</del>
 

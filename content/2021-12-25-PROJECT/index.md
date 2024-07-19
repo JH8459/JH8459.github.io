@@ -27,8 +27,6 @@ categories: Project
 
 ## 🤔 <span style="color: #6F777D;">6699</span>는 무슨 뜻인가요?
 
----
-
 <br>
 <center>
 <b>명언</b>은 동기부여를 일으키고<br>우리를 움직이게 만드는 불씨입니다. 🔥<br><br>
@@ -40,8 +38,6 @@ categories: Project
 <br>
 
 ## 🤔 <span style="color: #6F777D;">6699</span>에서는 무엇을 할 수 있나요?
-
----
 
 <br>
 <center>
@@ -68,8 +64,6 @@ categories: Project
 <br>
 
 ## 🎬 <span style="color: #6F777D;">6699</span> 서비스 기능별 시연
-
----
 
 <br>
 <details>
@@ -192,8 +186,6 @@ categories: Project
 <br>
 
 ## 🤔 <span style="color: #6F777D;">6699</span>에서는 무엇을 담당하였나요?
-
----
 
 <br>
 <details>

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. 인터넷 프로토콜
@@ -615,8 +613,6 @@ Pragma: no-cache
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 어제 배운보다 더욱 더 공학스러운.. 내용이었다. 짧은 학습과정에 OSI 7 Layer 라던지 TCP/IP 프로토콜을 모두 이해하며 HTTP 메시지를 패킷으로 주고받으며 .. 등등 내용을 모두 이해하긴 불가능에 가깝다 생각한다.
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 - 백준 <a href="https://www.acmicpc.net/problem/11659" target="_blank">11659번</a>알고리즘 문제 풀이 과정 중 학습한 내용을 간단히 포스팅으로 남기려한다.
@@ -186,8 +184,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 연산횟수에 제한이 있는 경우의 문제여서 풀이가 까다로웠다.
 

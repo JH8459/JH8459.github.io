@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 Bash Script를 통하여 Slack Incoming Webhook 알림 요청을 수행하고 이를 자동화 하는 과정을 간략히 정리하고 공유하기 위해 글을 남긴다.
 
 <br>
@@ -95,8 +93,6 @@ Script 구현 난이도 자체는 높지 않았기에 금방 작성할 수 있�
 <br>
 
 ## 🤔 Understanding
-
----
 
 작년엔 구현에 집중했다면, 올해는 불편한 부분들을 하나씩 개선하는데 집중해 볼 예정이다.
 

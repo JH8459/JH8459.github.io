@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. React 상태관리
@@ -123,8 +121,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 리액트 상태 관리에 대해 집중적으로 학습했다.
 

@@ -12,8 +12,6 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
----
-
 <br>
 
 ### 1. Component Driven Development (CDD)
@@ -118,8 +116,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - CSS 어렵다... 오늘 실습은 React 기술적인 구현은 어렵지 않았지만 CSS를 다루는게 아직 쉽지않다. 정답이 없는 느낌?
 

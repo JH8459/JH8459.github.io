@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -75,8 +73,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - ZOOM 협업은 어제보다 익숙하다, 확실히 조건문부터는 코드풀이 난이도가 급 상승하였다. 좀더 간결하게 코드를 짜보자는 pair 와 의견을 나누고나서 코드의 재사용화, 다양한 기존 함수나 메소드를 통하여 간결한 문장 생성을 하려고 pair와 소통하다보니 주어진시간이 짧게 느껴졌다.
 

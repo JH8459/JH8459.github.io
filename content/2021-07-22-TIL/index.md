@@ -10,9 +10,7 @@ categories: TIL
 
 <br>
 
-## ✍️ <b>T</b>oday <b>I</b> <b>L</b>earned
-
----
+## ✍️ **T**oday **I** **L**earned
 
 <br>
 
@@ -56,8 +54,6 @@ categories: TIL
 <br>
 
 ## 🤔 Understanding
-
----
 
 - 시간이 어디로 사라진거지?..
 
