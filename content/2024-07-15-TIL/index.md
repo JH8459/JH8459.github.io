@@ -93,7 +93,24 @@ categories: TIL
 
 여러 레퍼런스를 찾는 도중 <strong>SLASH21</strong>에서 토스뱅크 서버 개발자인 이응준님의 <a href="https://toss.im/slash-21/sessions/1-6" target="_blank">테스트 커버리지 100%</a> 영상을 보고 <strong>"충분한"</strong>의 기준을 결정하였다.
 
-<br><center><iframe width="560" height="315" src="https://www.youtube.com/embed/jdlBu2vFv58?si=hn9E3KSIDO53WaKR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center><br>
+<style>
+  .responsive-iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+
+  .responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
+<div class="responsive-iframe-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/jdlBu2vFv58?si=hn9E3KSIDO53WaKR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 위 영상은 테스트 커버리지 100%(인스트럭션 기준)까지 달성한 과정을 자세히 설명해주는 영상이며 요약하자면 아래와 같다.
 
