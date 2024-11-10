@@ -1,6 +1,6 @@
 ---
 emoji: 📚
-title: AWS Solution Architect Associate - Day 0
+title: AWS Solution Architect Associate (SAA-03 자격증 접수)
 date: '2024-11-07'
 author: JH8459
 categories: TIL
