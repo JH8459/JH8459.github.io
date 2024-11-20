@@ -12,7 +12,7 @@ categories: TIL
 
 ## ✍️ **T**oday **I** **L**earned
 
-SAA-03 합격 후기글을 찾아보면 덤프 문제를 많이 풀이해보는게 지름길이란건 금방 찾아볼 수 있다.
+<strong>SAA-03</strong> 자격증 합격 후기글을 찾아보면 덤프 문제를 많이 풀이해보는게 지름길이란건 금방 찾아볼 수 있다.
 
 다만, 아직 한달 반 가량 기간이 남은 시점이기 때문에 무작정 덤프 문항 반복 풀이를 시작하는거 보다는 AWS에서 제공하는 시험 준비 <a href="https://explore.skillbuilder.aws/learn/course/external/view/elearning/16410/exam-prep-aws-certified-solutions-architect-associate-saa-c03-na-hangug-eo-gang-ui?trk=120ebd7c-2290-47ba-8973-b7bb852aee18&sc_channel=el)%EC%9D%84" target="_blank">Skill Builder 강의</a>를 한번 따라가보자 생각하였다.
 
@@ -38,7 +38,7 @@ AWS에서 제공하는 SAA-03 Skil Builder 강의를 듣고 간략한 후기를 
 - 시험 문제 유형은 아래의 두가지 유형이 존재한다.
   - 다중 선택 (객관식) 및 다중 응답 (다답식)
 
-전반적으로 시험 개요에 대한 설명들로 구성되어 있었다. 영상을 꼼꼼히 시청하기 보다는 뒤에 나오는 <a href="https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1731398400/yeYMC-Tug8Knrzz6VSNqiw/item/71d8b2b92e965f9e59b8f39274f8249a39aa244669d68bd4bdf6947c55d67c7a.pdf?enhanced_signature=PE8wbjj16jr2HSXEjyRWk6iZRmV2hz35LUCfjJlv5ow" target="_blank">시험 안내서</a>를 한번 정독하는 걸 추천한다.
+전반적으로 시험 개요에 대한 설명들로 구성되어 있었다. 영상을 꼼꼼히 시청하기 보다는 뒤에 나오는 <a href="https://d1.awsstatic.com/ko_KR/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf" target="_blank">시험 안내서</a>를 한번 정독하는 걸 추천한다.
 
 <br>
 <br>
@@ -70,7 +70,7 @@ AWS에서 제공하는 공식 연습 문항 세트인 <strong>AWS Certified Solu
 - <a href="https://aws.amazon.com/ko/getting-started/cloud-essentials/" target="_blank">Getting Started: AWS Cloud Essentials</a>
 - <a href="https://explore.skillbuilder.aws/learn/course/internal/view/elearning/1851/aws-technical-essentials" target="_blank">AWS Technical Essentials</a>
 
-추가 리소스로 <a href="https://explore.skillbuilder.aws/learn/course/internal/view/elearning/7636/cloud-quest" target="_blank">AWS Cloud Quest</a>라는 AWS 서비스를 추천(?)한다. (그냥 둘러보기만하였다.)
+추가 리소스로 <a href="https://explore.skillbuilder.aws/learn/course/internal/view/elearning/7636/cloud-quest" target="_blank">AWS Cloud Quest</a>라는 AWS 서비스를 추천(?)한다. <del>(그냥 둘러보기만하였다.)</del>
 
 전반적으로 자격증 취득 시험 공부를 본격적으로 진행하기 전에 선행할 수 있는 학습 과정을 추천하고 있다. AWS 실무 능력을 향상시키는데는 큰 도움이 될 수 있겠지만 넘어가도록했다.
 
@@ -436,7 +436,7 @@ AWS에서 컴퓨팅은 크게 세가지 형태로 존재하며 대표적인 서�
 
 ---
 
-이미 <strong>4-4-1.</strong>에서 스토리지 솔루션 (객체 / 블록 / 파일) 에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다. 
+이미 [고성능 및 확장 가능한 스토리지 솔루션 결정](#4-4-1-고성능-및-확장-가능한-스토리지-솔루션-결정)에서 스토리지 솔루션 (객체 / 블록 / 파일) 에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다. 
 
 요약하자면 아래와 같다.
 
@@ -468,7 +468,7 @@ AWS에서 컴퓨팅은 크게 세가지 형태로 존재하며 대표적인 서�
 
 ---
 
-이미 <strong>4-4-2.</strong>에서 컴퓨팅 솔루션 (인스턴스 / 컨테이너 / 함수) 에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
+이미 [고성능의 탄력적인 컴퓨팅 솔루션 설계](#4-4-2-고성능의-탄력적인-컴퓨팅-솔루션-설계)에서 컴퓨팅 솔루션 (인스턴스 / 컨테이너 / 함수) 에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
 
 비용 최적화를 하기 위한 아래의 핵심 요소들을 설명한다.
 
@@ -501,7 +501,7 @@ AWS에서 컴퓨팅은 크게 세가지 형태로 존재하며 대표적인 서�
 
 ---
 
-이미 <strong>4-4-3.</strong>에서 데이터 유형에 따라 올바른 데이터베이스 솔루션을 선택하는 방법에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
+이미 [고성능 데이터베이스 솔루션 결정](#4-4-3-고성능-데이터베이스-솔루션-결정)에서 데이터 유형에 따라 올바른 데이터베이스 솔루션을 선택하는 방법에 대해서는 미리 간략히 학습하였다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
 
 비용 최적화를 하기 위한 아래의 핵심 요소들을 설명한다.
 
@@ -518,7 +518,7 @@ AWS에서 컴퓨팅은 크게 세가지 형태로 존재하며 대표적인 서�
 
 ---
 
-이미 <strong>4-4-4.</strong>에서 네트워크 아키텍처를 선택하는 방법에 대해서는 미리 간략히 학습하였다. AWS 클라우드 인프라에서 네트워크는 가상화되어 있으며 사용하는 만큼 비용을 지불하게 된다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
+이미 [고성능 및 확장 가능한 네트워크 아키텍처 결정](#4-4-4-고성능-및-확장-가능한-네트워크-아키텍처-결정)에서 네트워크 아키텍처를 선택하는 방법에 대해서는 미리 간략히 학습하였다. AWS 클라우드 인프라에서 네트워크는 가상화되어 있으며 사용하는 만큼 비용을 지불하게 된다. 이번 장에서는 비용을 최적화 할 수 있는 방안에 대해서 설명한다.
 
 - 네트워크에 적합한 NAT 게이트웨이 유형 구성
 - 적절한 제한 전략 선택
@@ -571,7 +571,7 @@ AWS에서 컴퓨팅은 크게 세가지 형태로 존재하며 대표적인 서�
 
 ## 🤔 Understanding
 
-<strong>5. 과정 마무리</strong>에 나온대로 자격증 시험에 필요한 내용들을 깊게 학습할 수 있었던 콘텐츠는 아니였다. 
+[과정 마무리](#5-과정-마무리)에 나온대로 자격증 시험에 필요한 내용들을 깊게 학습할 수 있었던 콘텐츠는 아니였다. 
 
 어떤 영역에 더 많은 시간을 투자해야하는지, 그리고 그 영역에서 가장 깊게 학습해야할 요소들은 무엇인지에 대해서 얕게나마 알아볼 수 있었던 시간이었다.
 
