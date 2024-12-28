@@ -182,6 +182,23 @@ categories: Project
 <br>
 <br>
 
+#### MINI
+
+![0](./bronze_mini.svg)
+
+![1](./silver_mini.svg)
+
+![2](./gold_mini.svg)
+
+![3](./platinum_mini.svg)
+
+![4](./diamond_mini.svg)
+
+![5](./ruby_mini.svg)
+
+<br>
+<br>
+
 ## 🤔 Understanding
 
 알고리즘 문제풀이에 동기부여도 되고 무엇보다 Boj 로고와 결을 같이하기 때문에 아래와 같이 어색함이 없이 깃허브 프로필에서 노출될 수 있다.
