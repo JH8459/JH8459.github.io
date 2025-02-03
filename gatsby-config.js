@@ -25,6 +25,62 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(({ node }) => {
+                return {
+                  title: node.frontmatter.title,
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  author: node.frontmatter.author,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }],
+                };
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                        author
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: '블로그 RSS Feed',
+            match: '^/content/', // content 경로를 사용하는 경우
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-firebase-v9.0',
       options: {
         credentials: {
