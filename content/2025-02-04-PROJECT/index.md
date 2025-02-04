@@ -201,7 +201,7 @@ function updateReadme(filePath, newPosts) {
   "type": "module", // 프로젝트 단위로 ES 모듈 적용
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node readme.js" // 작성한 파일명과 동일하게 수정
+    "start": "node readme.js" // 작성한 이벤트 함수 파일명과 동일하게 수정
   },
   "keywords": [],
   "author": "",
