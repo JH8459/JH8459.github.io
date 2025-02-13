@@ -72,30 +72,44 @@ categories: TIL
 import { S3Client, ListObjectsV2Command, DeleteObjectsCommand } from '@aws-sdk/client-s3';
 import https from 'https';
 
+// S3 클라이언트 초기화
 const s3 = new S3Client({ region: 'ap-northeast-2' }); // S3 리전 설정
-const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/sample1/sample2/sample3'; // Slack 웹훅 URL
+const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'; // Slack 웹훅 URL
 
 /**
  * Lambda 핸들러 함수
  */
 export const handler = async () => {
-  const bucketName = 'resource'; // S3 버킷 이름
-  const prefixes = ['서비스1/', '서비스2/', '서비스3/', '서비스4/']; // S3 접두어 목록
+  const bucketName = 'acg-rtc'; // S3 버킷 이름
+  const prefixes = ['NEW_ACG/', 'ACG/', 'SK/', 'CJ/', 'NEW_LG/', 'LG/']; // S3 접두어 목록
 
   // 오늘 기준 30일 전 날짜를 계산하여 cutoffDateString 생성 (YYYY-MM-DD 형식)
   const getCutoffDateString = () => {
     const now = new Date(); // 현재 날짜 가져오기
     now.setDate(now.getDate() - 30); // 30일 전으로 이동
-
     return now.toISOString().split('T')[0]; // YYYY-MM-DD 형식으로 변환
   };
 
   const cutoffDateString = getCutoffDateString(); // 기준 날짜 계산
 
+  console.log('Lambda function started.');
+  console.log('Processing bucket:', bucketName);
+  console.log('Prefixes to process:', prefixes);
+  console.log('Cutoff date (YYYY-MM-DD):', cutoffDateString);
+
   let totalDeletedSize = 0; // 총 삭제한 리소스 크기 합산
   const allDeletedKeys = []; // 삭제된 키 목록
-  const deletedClients = []; // 삭제된 접두어 목록 및 정보
+  const deletedClients = []; // 삭제된 고객사 목록 및 정보
 
+/**
+   * 숫자에 1,000 단위로 콤마 추가
+   * @param {number} number - 포맷할 숫자
+   * @returns {string} 콤마가 추가된 숫자 문자열
+   */
+  const formatNumberWithCommas = (number) => {
+    return new Intl.NumberFormat('ko-KR').format(number);
+  };
+  
   /**
    * 크기를 적절한 단위로 변환 (MB, GB, TB 등)
    * @param {number} sizeInBytes - 크기 (바이트)
@@ -120,43 +134,60 @@ export const handler = async () => {
   const deleteObjectsByDate = async (prefix, cutoffDateString) => {
     const deletedKeys = [];
     let prefixDeletedSize = 0; // 특정 prefix에서 삭제한 크기 합산
+    let continuationToken = null;
 
-    const response = await s3.send(
-      new ListObjectsV2Command({
-        Bucket: bucketName,
-        Prefix: prefix, // 탐색할 접두어
-        MaxKeys: 1000, // 한 번에 최대 1000개 객체 반환
-      })
-    );
+    console.log(`Fetching objects for prefix: ${prefix}`);
 
-    if (!response.Contents || response.Contents.length === 0) {
-      return { deletedKeys, prefixDeletedSize };
-    }
-
-    // 기준 날짜 이전의 객체 필터링
-    const objectsToDelete = response.Contents.filter((obj) => {
-      const keyParts = obj.Key.split('/');
-      const datePart = keyParts[1]; // 키에서 YYYYMMDD 추출
-
-      return /^\d{8}$/.test(datePart) && datePart < cutoffDateString.replace(/-/g, ''); // 날짜 조건 확인
-    });
-
-    // 삭제 요청 수행
-    if (objectsToDelete.length > 0) {
-      await s3.send(
-        new DeleteObjectsCommand({
+    do {
+      const response = await s3.send(
+        new ListObjectsV2Command({
           Bucket: bucketName,
-          Delete: {
-            Objects: objectsToDelete.map((obj) => ({ Key: obj.Key })),
-          },
+          Prefix: prefix, // 탐색할 접두어
+          MaxKeys: 1000, // 한 번에 최대 1000개 객체 반환
+          ContinuationToken: continuationToken, // 페이징 토큰
         })
       );
 
-      // 삭제된 객체 키 및 크기 합산
-      deletedKeys.push(...objectsToDelete.map((obj) => obj.Key));
-      prefixDeletedSize += objectsToDelete.reduce((sum, obj) => sum + obj.Size, 0);
-      totalDeletedSize += prefixDeletedSize; // 전체 삭제 크기 합산
-    }
+      console.log(`Fetched ${response.Contents?.length || 0} objects for prefix: ${prefix}`);
+
+      if (!response.Contents || response.Contents.length === 0) {
+        console.log(`No objects found for prefix: ${prefix}`);
+        break; // 더 이상 처리할 객체가 없음
+      }
+
+      // 기준 날짜 이전의 객체 필터링
+      const objectsToDelete = response.Contents.filter((obj) => {
+        const keyParts = obj.Key.split('/');
+        const datePart = keyParts[1]; // 키에서 YYYYMMDD 추출
+        return /^\d{8}$/.test(datePart) && datePart < cutoffDateString.replace(/-/g, ''); // 날짜 조건 확인
+      });
+
+      console.log(`Objects to delete: ${objectsToDelete.length} for prefix: ${prefix}`);
+
+      // 삭제 요청 수행 (1,000개 단위로 나누어서 삭제)
+      for (let i = 0; i < objectsToDelete.length; i += 1000) {
+        const batchToDelete = objectsToDelete.slice(i, i + 1000); // 1,000개씩 분할
+
+        await s3.send(
+          new DeleteObjectsCommand({
+            Bucket: bucketName,
+            Delete: {
+              Objects: batchToDelete.map((obj) => ({ Key: obj.Key })),
+            },
+          })
+        );
+
+        console.log(`Deleted ${batchToDelete.length} objects for prefix: ${prefix}`);
+
+        // 삭제된 객체 키 및 크기 합산
+        deletedKeys.push(...batchToDelete.map((obj) => obj.Key));
+        const batchDeletedSize = batchToDelete.reduce((sum, obj) => sum + obj.Size, 0);
+        prefixDeletedSize += batchDeletedSize;
+        totalDeletedSize += batchDeletedSize; // 전체 삭제 크기 합산
+      }
+
+      continuationToken = response.NextContinuationToken; // 다음 페이지를 위한 토큰 설정
+    } while (continuationToken); // 더 이상 페이지가 없을 때까지 반복
 
     return { deletedKeys, prefixDeletedSize };
   };
@@ -164,8 +195,8 @@ export const handler = async () => {
   // 모든 Prefix에 대해 삭제 작업 수행
   const deletePromises = prefixes.map(async (prefix) => {
     try {
+      console.log(`Processing prefix: ${prefix}`);
       const { deletedKeys, prefixDeletedSize } = await deleteObjectsByDate(prefix, cutoffDateString);
-
       allDeletedKeys.push(...deletedKeys);
 
       if (deletedKeys.length > 0) {
@@ -182,7 +213,11 @@ export const handler = async () => {
 
   await Promise.all(deletePromises);
 
+  console.log(`Total deleted keys: ${allDeletedKeys.length}`);
+  console.log(`Total deleted size: ${formatSize(totalDeletedSize)}`);
+
   if (allDeletedKeys.length === 0) {
+    console.log('No resources to delete. Exiting function.');
     return { statusCode: 200, body: JSON.stringify({ message: 'No resources to delete.' }) };
   }
 
@@ -208,17 +243,17 @@ export const handler = async () => {
 
   const totalS3UsageAfterDeletion = formatSize(await getTotalS3Usage());
 
-  // 삭제된 접두어 정보 내림차순 정렬 (크기 기준)
+  // 삭제된 리소스 정보 내림차순 정렬 (크기 기준)
   deletedClients.sort((a, b) => b.size - a.size);
 
   // 삭제 정보 문자열 생성
   const deletionDetails = deletedClients
-    .map((client) => `  - ${client.prefix}: ${client.count}건 / ${formatSize(client.size)}`)
+    .map((client) => `  - ${client.prefix}: ${formatNumberWithCommas(client.count)}건 / ${formatSize(client.size)}`)
     .join('\n');
 
   // Slack 알림 메시지 생성
   const message = {
-    channel: '#notice',
+    channel: '#rtc-notice',
     text: `===============================\n       ‼️ AWS S3 리소스 삭제 알림 ‼️\n------------------------------------------------\n1. S3 총 사용량: ${totalS3UsageAfterDeletion}\n2. 삭제한 리소스 크기: ${formatSize(
       totalDeletedSize
     )} (~ ${cutoffDateString})\n3. 삭제 정보:\n${deletionDetails}\n\n===============================`,
@@ -233,8 +268,9 @@ export const handler = async () => {
  * Slack 알림 전송 함수
  */
 const sendSlackNotification = (message) => {
-  // 생략
+  ...// 생략
 };
+
 
 ```
 
