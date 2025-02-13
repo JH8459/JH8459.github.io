@@ -74,7 +74,7 @@ import https from 'https';
 
 // S3 클라이언트 초기화
 const s3 = new S3Client({ region: 'ap-northeast-2' }); // S3 리전 설정
-const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'; // Slack 웹훅 URL
+const SLACK_WEBHOOK_URL = '...'; // Slack 웹훅 URL
 
 /**
  * Lambda 핸들러 함수
@@ -91,11 +91,6 @@ export const handler = async () => {
   };
 
   const cutoffDateString = getCutoffDateString(); // 기준 날짜 계산
-
-  console.log('Lambda function started.');
-  console.log('Processing bucket:', bucketName);
-  console.log('Prefixes to process:', prefixes);
-  console.log('Cutoff date (YYYY-MM-DD):', cutoffDateString);
 
   let totalDeletedSize = 0; // 총 삭제한 리소스 크기 합산
   const allDeletedKeys = []; // 삭제된 키 목록
@@ -136,8 +131,6 @@ export const handler = async () => {
     let prefixDeletedSize = 0; // 특정 prefix에서 삭제한 크기 합산
     let continuationToken = null;
 
-    console.log(`Fetching objects for prefix: ${prefix}`);
-
     do {
       const response = await s3.send(
         new ListObjectsV2Command({
@@ -148,10 +141,7 @@ export const handler = async () => {
         })
       );
 
-      console.log(`Fetched ${response.Contents?.length || 0} objects for prefix: ${prefix}`);
-
       if (!response.Contents || response.Contents.length === 0) {
-        console.log(`No objects found for prefix: ${prefix}`);
         break; // 더 이상 처리할 객체가 없음
       }
 
@@ -159,10 +149,9 @@ export const handler = async () => {
       const objectsToDelete = response.Contents.filter((obj) => {
         const keyParts = obj.Key.split('/');
         const datePart = keyParts[1]; // 키에서 YYYYMMDD 추출
+
         return /^\d{8}$/.test(datePart) && datePart < cutoffDateString.replace(/-/g, ''); // 날짜 조건 확인
       });
-
-      console.log(`Objects to delete: ${objectsToDelete.length} for prefix: ${prefix}`);
 
       // 삭제 요청 수행 (1,000개 단위로 나누어서 삭제)
       for (let i = 0; i < objectsToDelete.length; i += 1000) {
@@ -176,8 +165,6 @@ export const handler = async () => {
             },
           })
         );
-
-        console.log(`Deleted ${batchToDelete.length} objects for prefix: ${prefix}`);
 
         // 삭제된 객체 키 및 크기 합산
         deletedKeys.push(...batchToDelete.map((obj) => obj.Key));
@@ -195,7 +182,6 @@ export const handler = async () => {
   // 모든 Prefix에 대해 삭제 작업 수행
   const deletePromises = prefixes.map(async (prefix) => {
     try {
-      console.log(`Processing prefix: ${prefix}`);
       const { deletedKeys, prefixDeletedSize } = await deleteObjectsByDate(prefix, cutoffDateString);
       allDeletedKeys.push(...deletedKeys);
 
@@ -213,11 +199,7 @@ export const handler = async () => {
 
   await Promise.all(deletePromises);
 
-  console.log(`Total deleted keys: ${allDeletedKeys.length}`);
-  console.log(`Total deleted size: ${formatSize(totalDeletedSize)}`);
-
   if (allDeletedKeys.length === 0) {
-    console.log('No resources to delete. Exiting function.');
     return { statusCode: 200, body: JSON.stringify({ message: 'No resources to delete.' }) };
   }
 
