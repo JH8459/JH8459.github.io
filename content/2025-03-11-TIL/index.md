@@ -1,6 +1,6 @@
 ---
 emoji: 📚
-title: LeetCode 876번 - Middle of the Linked List
+title: LeetCode 876번 - Middle of the Linked List (JS)
 date: '2025-03-11'
 author: JH8459
 categories: TIL
