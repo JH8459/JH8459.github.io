@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 12 Mar 2025 05:30:06 GMT</lastBuildDate><item><title><![CDATA[프로그래머스 - 명예의 전당 (1) (JS)]]></title><description><![CDATA[✍️ Today I Learned 프로그래머스 명예의 전당 (1) 알고리즘 문제 풀이 과정 중 우선순위 큐를 직접 구현하여 풀이하며 느낀점을 간단히 포스팅으로 남기려한다. 1. 문제 문제 설명 “명예의 전당”이라는 TV 프로그램에서는 매일…]]></description><link>https://blog.jh8459.com/2025-03-12-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-12-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 12 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Mar 2025 13:12:38 GMT</lastBuildDate><item><title><![CDATA[프로그래머스 - 조이스틱 (JS)]]></title><description><![CDATA[✍️ Today I Learned 프로그래머스 조이스틱 알고리즘 문제 풀이 과정 중 그리디 알고리즘을 풀이하며 느낀점을 간단히 포스팅으로 남기려한다. 1. 문제 문제 설명 조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A…]]></description><link>https://blog.jh8459.com/2025-03-13-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-13-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Thu, 13 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EABUBAQEAAAAAAAAAAAAAAAAAAAAF/9oADAMBAAIQAxAAAAHSaSawD//EABYQAAMAAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQIU/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CIv8A/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERIDH/2gAIAQEAAT8hGb2Ff//aAAwDAQACAAMAAAAQHD//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAgQVH/2gAIAQEAAT8QjVhju1//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;github-blog.png&quot;
+        title=&quot;github-blog.png&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;️-today-i-learned&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot; aria-label=&quot;️ today i learned permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/h2&gt;
+&lt;p&gt;프로그래머스 &lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42860&quot; target=&quot;_blank&quot;&gt;조이스틱&lt;/a&gt; 알고리즘 문제 풀이 과정 중 그리디 알고리즘을 풀이하며 느낀점을 간단히 포스팅으로 남기려한다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-문제&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;1 문제 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 문제&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;문제 설명&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다. ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA&lt;/p&gt;
+&lt;p&gt;조이스틱을 각 방향으로 움직이면 아래와 같습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;▲ - 다음 알파벳
+▼ - 이전 알파벳 (A에서 아래쪽으로 이동하면 Z로)
+◀ - 커서를 왼쪽으로 이동 (첫 번째 위치에서 왼쪽으로 이동하면 마지막 문자에 커서)
+▶ - 커서를 오른쪽으로 이동 (마지막 위치에서 오른쪽으로 이동하면 첫 번째 문자에 커서)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;예를 들어 아래의 방법으로 “JAZ”를 만들 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 첫 번째 위치에서 조이스틱을 위로 9번 조작하여 J를 완성합니다.
+- 조이스틱을 왼쪽으로 1번 조작하여 커서를 마지막 문자 위치로 이동시킵니다.
+- 마지막 위치에서 조이스틱을 아래로 1번 조작하여 Z를 완성합니다. 따라서 11번 이동시켜 &quot;JAZ&quot;를 만들 수 있고, 이때가 최소 이동입니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만들고자 하는 이름 name이 매개변수로 주어질 때, 이름에 대해 조이스틱 조작 횟수의 최솟값을 return 하도록 solution 함수를 만드세요.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;제한사항&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name은 알파벳 대문자로만 이루어져 있습니다.&lt;/li&gt;
+&lt;li&gt;name의 길이는 1 이상 20 이하입니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;입출력 예&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;return&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;“JEROEN”&lt;/td&gt;
+&lt;td&gt;56&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;“JAN”&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;2-풀이&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%ED%92%80%EC%9D%B4&quot; aria-label=&quot;2 풀이 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 풀이&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;위아래(▲, ▼)로 조이스틱을 조작하는 경우와 좌우(◀, ▶)로 조작하는 경우를 각각 계산해서 합산하는 방식으로 구현하였다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; answer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; length &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 알파벳 변경 횟수 계산 함수&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;getUpDownCnt&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; upCnt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; char&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;A&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; downCnt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Z&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; char&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;upCnt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; downCnt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// ▲, ▼ 알파벳 변경 횟수 계산&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        answer &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getUpDownCnt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 이름에 &apos;A&apos;가 없는 경우 우측(▶)으로만 이동하는 기본 이동 횟수&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; minMove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;token comment&quot;&gt;// ◀, ▶ 커서 이동 최소 거리 계산&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; length &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;A&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            next&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;token comment&quot;&gt;// 좌, 우 어느쪽이 최소값 이동인지 판단&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; move &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; next&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        minMove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;minMove&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; move&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; answer &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; minMove&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위아래로 조작하는 경우는 간단히 구현하였으나 최소 커서 이동횟수를 구하는데 시간이 오래걸렸다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;현재 위치 &lt;code class=&quot;language-text&quot;&gt;i&lt;/code&gt; 이후에서 ‘A’가 아닌 첫번째 문자의 인덱스를 찾기 위한 변수 &lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt; 선언.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt;는 ‘A’를 건너 뛰며 ‘A’가 아닌 문자가 나올 때까지 증가한다.&lt;/li&gt;
+&lt;li&gt;마지막으로 두가지 이동 방식을 비교해야한다. (오른쪽 후 왼쪽, 왼쪽 후 오른쪽)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;JAZAAAZ&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;위 경우엔 처음 커서 위치에서 우로 2번 (▶, ▶) 이후 좌로 3번 (◀, ◀, ◀) 움직여서 마지막 Z로 도착하는 경우의 수가 가장 빠르다. (이 반례가 있다는걸 생각을 못했다.)&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-understanding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-understanding&quot; aria-label=&quot; understanding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🤔 Understanding&lt;/h2&gt;
+&lt;p&gt;단순해보였는데 꽤나 애를 먹었다. (기본 테스트 케이스는 반례를 고려하지 않아도 모두 통과했기 때문에..🥲)&lt;/p&gt;
+&lt;p&gt;반례를 찾은 뒤에야 풀이가 가능했다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot;&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EB%AC%B8%EC%A0%9C&quot;&gt;1. 문제&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%ED%92%80%EC%9D%B4&quot;&gt;2. 풀이&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-understanding&quot;&gt;🤔 Understanding&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 - 명예의 전당 (1) (JS)]]></title><description><![CDATA[✍️ Today I Learned 프로그래머스 명예의 전당 (1) 알고리즘 문제 풀이 과정 중 우선순위 큐를 직접 구현하여 풀이하며 느낀점을 간단히 포스팅으로 남기려한다. 1. 문제 문제 설명 “명예의 전당”이라는 TV 프로그램에서는 매일…]]></description><link>https://blog.jh8459.com/2025-03-12-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-12-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 12 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
     &gt;
@@ -13006,6 +13150,112 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기]]></title><description><![CDATA[⚒️ Refactoring 현재의 콘서트 정렬 방식은 조회수순, 임박예정순, 최신순…]]></description><link>https://blog.jh8459.com/2022-02-15-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-15-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Tue, 15 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABYBAQEBAAAAAAAAAAAAAAAAAAQAAf/aAAwDAQACEAMQAAAB71JJTVn/xAAWEAEBAQAAAAAAAAAAAAAAAAARACD/2gAIAQEAAQUCgz//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAEBAQAAAAAAAAAAAAAAAABBACD/2gAIAQEABj8CIz//xAAcEAACAgIDAAAAAAAAAAAAAAAAARExEEFRcZH/2gAIAQEAAT8hvadslZ+iyCFxj//aAAwDAQACAAMAAAAQsy//xAAWEQEBAQAAAAAAAAAAAAAAAAABEFH/2gAIAQMBAT8QEyf/xAAXEQADAQAAAAAAAAAAAAAAAAABEBFR/9oACAECAQE/EIdX/8QAHBABAAEFAQEAAAAAAAAAAAAAASEAETFBgRBh/9oACAEBAAE/EAW2tW2x52mcszEyhBcEHTSHIPKzQn55/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;github-blog.png&quot;
+        title=&quot;github-blog.png&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;️-refactoring&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot; aria-label=&quot;️ refactoring permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;⚒️ Refactoring&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;현재의 콘서트 정렬 방식은 &lt;strong&gt;조회수순&lt;/strong&gt;, &lt;strong&gt;임박예정순&lt;/strong&gt;, &lt;strong&gt;최신순&lt;/strong&gt; 3가지이다.&lt;/p&gt;
+&lt;p&gt;그 중, 임박예정순 경우 티켓오픈일이 가까운 순으로 정렬을 하고 있는데 모든 콘서트가 아닌, 티켓팅이 가능한 콘서트들로만 추려서 보여주는 방식으로 바꿔보려 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-보완이-필요한-사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot; aria-label=&quot;1 보완이 필요한 사항 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 보완이 필요한 사항&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154183554-665b74d4-52fb-4ad9-a5b4-46c601b2333b.gif&quot; alt=&quot;near&quot;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;현재는 티켓 오픈이 임박한 콘서트 외에도 너무 많은 콘서트 정보들이 불필요하게 보여지고 있다는 피드백을 전달 받았다.&lt;/p&gt;
+&lt;p&gt;현재 기준으로 티켓팅이 가능한 상태의 콘서트 데이터들로만 추려서 보여지게끔 바꾸어보려 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;2-문제-해결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot; aria-label=&quot;2 문제 해결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 문제 해결&lt;/h3&gt;
+&lt;h4 id=&quot;2-1-sequelize-op-연산자를-이용한-데이터-추출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-1-sequelize-op-%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C&quot; aria-label=&quot;2 1 sequelize op 연산자를 이용한 데이터 추출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-1. Sequelize Op 연산자를 이용한 데이터 추출&lt;/h4&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;우선 콘서트 DB 정보중 &lt;code class=&quot;language-text&quot;&gt;open_date&lt;/code&gt;는 아래와 같이 날짜객체로 저장하고 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154183947-f18974a6-c137-4ea6-8498-92644ddccaa9.png&quot; alt=&quot;스크린샷, 2022-02-16 11-19-24&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그렇기에 티켓 오픈일자가 지났는지 여부를 비교하려면 같은 날짜 객체끼리 비교해야 유의미한 비교 결과가 나온다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;비교를 위해서는 &lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;where&lt;/code&gt; 조건문을 통하여 필요한 데이터를 추릴 수 있으며, &lt;code class=&quot;language-text&quot;&gt;Sequelize.Op&lt;/code&gt;를 사용하면 보다 더 복잡한 조건문을 사용할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Op&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;gte&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;               &lt;span class=&quot;token comment&quot;&gt;// &gt;= 6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt; 공식 문서를 통해 위 연산자를 사용하였으며 날짜간의 대소 비교 또한 적절히 사용이 가능하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;3-결과&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;3 결과 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 결과&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;수정된 Controller 부분은 다음과 같다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154184798-af995973-9409-47f5-9e12-53fd327bc023.png&quot; alt=&quot;스크린샷, 2022-02-16 11-27-56&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Op.gte&lt;/code&gt; 메소드로 티켓 오픈일이 임박한 콘서트 들로만 추려서 데이터 값을 보내주고 있다.&lt;/p&gt;
+&lt;p&gt;정렬 또한 1순위는 임박예정순으로 보여지며, 티켓 오픈일시가 같은 콘서트 같은 경우에는 2순위로 조회수 순으로 정렬을 해주고 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;티켓 오픈일이 지난 콘서트들은 목록에서 보여지지 않기 때문에 임박이 예정된 콘서트 정보만 볼 수 있게 되었다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154185416-cbcac13f-38e4-4f15-851d-5a48752cf4ec.gif&quot; alt=&quot;near2&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;매번 조건식을 작성 할 때 마다 &lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt; 공식 문서에서 조건 비교를 위한 &lt;code class=&quot;language-text&quot;&gt;Op&lt;/code&gt; 연산자에 대해 검색하여 쓰고 있다.&lt;/p&gt;
+&lt;p&gt;이번 기회를 빌어 학습 한 내용을 정리한 뒤 블로그에 남겨보도록 해야겠다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot;&gt;⚒️ Refactoring&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot;&gt;1. 보완이 필요한 사항&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;2. 문제 해결&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#2-1-sequelize-op-%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C&quot;&gt;2-1. Sequelize Op 연산자를 이용한 데이터 추출&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot;&gt;3. 결과&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sequelize Op]]></title><description><![CDATA[✍️ Today I Learned 시퀄라이즈는 SQL문을 JavaScript 환경에서 객체로 작성할 수 있는 ORM(Object Relational Mapping)이다. 여러 문법중 Op…]]></description><link>https://blog.jh8459.com/2022-02-15-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-15-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Tue, 15 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -13213,112 +13463,6 @@ Foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;#-understanding&quot;&gt;🤔 Understanding&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기]]></title><description><![CDATA[⚒️ Refactoring 현재의 콘서트 정렬 방식은 조회수순, 임박예정순, 최신순…]]></description><link>https://blog.jh8459.com/2022-02-15-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-15-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Tue, 15 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABYBAQEBAAAAAAAAAAAAAAAAAAQAAf/aAAwDAQACEAMQAAAB71JJTVn/xAAWEAEBAQAAAAAAAAAAAAAAAAARACD/2gAIAQEAAQUCgz//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAEBAQAAAAAAAAAAAAAAAABBACD/2gAIAQEABj8CIz//xAAcEAACAgIDAAAAAAAAAAAAAAAAARExEEFRcZH/2gAIAQEAAT8hvadslZ+iyCFxj//aAAwDAQACAAMAAAAQsy//xAAWEQEBAQAAAAAAAAAAAAAAAAABEFH/2gAIAQMBAT8QEyf/xAAXEQADAQAAAAAAAAAAAAAAAAABEBFR/9oACAECAQE/EIdX/8QAHBABAAEFAQEAAAAAAAAAAAAAASEAETFBgRBh/9oACAEBAAE/EAW2tW2x52mcszEyhBcEHTSHIPKzQn55/9k=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog.png&quot;
-        title=&quot;github-blog.png&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;️-refactoring&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot; aria-label=&quot;️ refactoring permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;⚒️ Refactoring&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;현재의 콘서트 정렬 방식은 &lt;strong&gt;조회수순&lt;/strong&gt;, &lt;strong&gt;임박예정순&lt;/strong&gt;, &lt;strong&gt;최신순&lt;/strong&gt; 3가지이다.&lt;/p&gt;
-&lt;p&gt;그 중, 임박예정순 경우 티켓오픈일이 가까운 순으로 정렬을 하고 있는데 모든 콘서트가 아닌, 티켓팅이 가능한 콘서트들로만 추려서 보여주는 방식으로 바꿔보려 한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;1-보완이-필요한-사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot; aria-label=&quot;1 보완이 필요한 사항 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 보완이 필요한 사항&lt;/h3&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154183554-665b74d4-52fb-4ad9-a5b4-46c601b2333b.gif&quot; alt=&quot;near&quot;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;현재는 티켓 오픈이 임박한 콘서트 외에도 너무 많은 콘서트 정보들이 불필요하게 보여지고 있다는 피드백을 전달 받았다.&lt;/p&gt;
-&lt;p&gt;현재 기준으로 티켓팅이 가능한 상태의 콘서트 데이터들로만 추려서 보여지게끔 바꾸어보려 한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;2-문제-해결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot; aria-label=&quot;2 문제 해결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 문제 해결&lt;/h3&gt;
-&lt;h4 id=&quot;2-1-sequelize-op-연산자를-이용한-데이터-추출&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-1-sequelize-op-%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C&quot; aria-label=&quot;2 1 sequelize op 연산자를 이용한 데이터 추출 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-1. Sequelize Op 연산자를 이용한 데이터 추출&lt;/h4&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;우선 콘서트 DB 정보중 &lt;code class=&quot;language-text&quot;&gt;open_date&lt;/code&gt;는 아래와 같이 날짜객체로 저장하고 있다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154183947-f18974a6-c137-4ea6-8498-92644ddccaa9.png&quot; alt=&quot;스크린샷, 2022-02-16 11-19-24&quot;&gt;&lt;/p&gt;
-&lt;p&gt;그렇기에 티켓 오픈일자가 지났는지 여부를 비교하려면 같은 날짜 객체끼리 비교해야 유의미한 비교 결과가 나온다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;비교를 위해서는 &lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;where&lt;/code&gt; 조건문을 통하여 필요한 데이터를 추릴 수 있으며, &lt;code class=&quot;language-text&quot;&gt;Sequelize.Op&lt;/code&gt;를 사용하면 보다 더 복잡한 조건문을 사용할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Op&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;gte&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;               &lt;span class=&quot;token comment&quot;&gt;// &gt;= 6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt; 공식 문서를 통해 위 연산자를 사용하였으며 날짜간의 대소 비교 또한 적절히 사용이 가능하였다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;3-결과&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;3 결과 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 결과&lt;/h3&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;수정된 Controller 부분은 다음과 같다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154184798-af995973-9409-47f5-9e12-53fd327bc023.png&quot; alt=&quot;스크린샷, 2022-02-16 11-27-56&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Op.gte&lt;/code&gt; 메소드로 티켓 오픈일이 임박한 콘서트 들로만 추려서 데이터 값을 보내주고 있다.&lt;/p&gt;
-&lt;p&gt;정렬 또한 1순위는 임박예정순으로 보여지며, 티켓 오픈일시가 같은 콘서트 같은 경우에는 2순위로 조회수 순으로 정렬을 해주고 있다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;티켓 오픈일이 지난 콘서트들은 목록에서 보여지지 않기 때문에 임박이 예정된 콘서트 정보만 볼 수 있게 되었다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/154185416-cbcac13f-38e4-4f15-851d-5a48752cf4ec.gif&quot; alt=&quot;near2&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;매번 조건식을 작성 할 때 마다 &lt;code class=&quot;language-text&quot;&gt;Sequelize&lt;/code&gt; 공식 문서에서 조건 비교를 위한 &lt;code class=&quot;language-text&quot;&gt;Op&lt;/code&gt; 연산자에 대해 검색하여 쓰고 있다.&lt;/p&gt;
-&lt;p&gt;이번 기회를 빌어 학습 한 내용을 정리한 뒤 블로그에 남겨보도록 해야겠다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot;&gt;⚒️ Refactoring&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot;&gt;1. 보완이 필요한 사항&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;2. 문제 해결&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#2-1-sequelize-op-%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C&quot;&gt;2-1. Sequelize Op 연산자를 이용한 데이터 추출&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot;&gt;3. 결과&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)]]></title><description><![CDATA[⚒️ Refactoring ALL-CON…]]></description><link>https://blog.jh8459.com/2022-02-14-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-14-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Mon, 14 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
