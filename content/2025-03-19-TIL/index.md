@@ -76,10 +76,18 @@ CMD ["node", "./dist/main.js"]
 Nest CLI 명령으로 실행한 어플리케이션의 성능 저하 포인트들을 요약하자면 아래와 같다.
 
 1. NestJS 설정 파일 로드
-    - <strong>commandOptions</strong>에서 config 옵션을 찾고, 이를 기반으로 <strong>this.loader.load(configFileName)</strong>을 호출하여 NestJS 설정(nestjs-cli.json)파일을 불러온다.
+    - <strong>commandOptions</strong>에서 config 옵션을 찾고, 이를 기반으로 <strong>this.loader.load(configFileName)</strong>을 호출하여 `nestjs-cli.json` 파일을 로드한다.
+
+      ```json
+      {
+        "$schema": "https://json.schemastore.org/nest-cli",
+        "collection": "@nestjs/schematics",
+        "sourceRoot": "src"
+      }
+      ```
 
 2. TS 컴파일러 설정 로드
-    - <strong>getTscConfigPath()</strong>를 통해 tsconfig.json 경로를 찾고, tsOptions.outDir 값을 가져온다.
+    - <strong>getTscConfigPath()</strong>를 통해 `tsconfig.json` 경로를 찾고, JSON 값을 파싱한 결과 중 outDir 값을 가져온다.
       
       ```json
       {
@@ -102,7 +110,7 @@ Nest CLI 명령으로 실행한 어플리케이션의 성능 저하 포인트들
 <br>
 <br>
 
-즉, Nest CLI 명령어로 애플리케이션을 실행하면 여러 설정 파일들을 파싱하여 로드하고 새로이 빌드한 결과물을 새로운 프로세서로 감싸서 실행하고 있는 상황이다.
+즉, Nest CLI 명령어로 애플리케이션을 실행하면 여러 설정 파일들을 로드하며 새로이 빌드한 결과물을 새로운 프로세서로 감싸서 실행하고 있는 상황이다.
 
 <br>
 
