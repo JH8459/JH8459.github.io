@@ -139,14 +139,21 @@ CMD <span class="token punctuation">[</span><span class="token string">"node"</s
 <li>
 <p>NestJS 설정 파일 로드</p>
 <ul>
-<li><strong>commandOptions</strong>에서 config 옵션을 찾고, 이를 기반으로 <strong>this.loader.load(configFileName)</strong>을 호출하여 NestJS 설정(nestjs-cli.json)파일을 불러온다.</li>
+<li>
+<p><strong>commandOptions</strong>에서 config 옵션을 찾고, 이를 기반으로 <strong>this.loader.load(configFileName)</strong>을 호출하여 <code class="language-text">nestjs-cli.json</code> 파일을 로드한다.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://json.schemastore.org/nest-cli"</span><span class="token punctuation">,</span>
+  <span class="token property">"collection"</span><span class="token operator">:</span> <span class="token string">"@nestjs/schematics"</span><span class="token punctuation">,</span>
+  <span class="token property">"sourceRoot"</span><span class="token operator">:</span> <span class="token string">"src"</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
 </ul>
 </li>
 <li>
 <p>TS 컴파일러 설정 로드</p>
 <ul>
 <li>
-<p><strong>getTscConfigPath()</strong>를 통해 tsconfig.json 경로를 찾고, tsOptions.outDir 값을 가져온다.</p>
+<p><strong>getTscConfigPath()</strong>를 통해 <code class="language-text">tsconfig.json</code> 경로를 찾고, JSON 값을 파싱한 결과 중 outDir 값을 가져온다.</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"commonjs"</span><span class="token punctuation">,</span>
@@ -175,7 +182,7 @@ CMD <span class="token punctuation">[</span><span class="token string">"node"</s
 </ol>
 <br>
 <br>
-<p>즉, Nest CLI 명령어로 애플리케이션을 실행하면 여러 설정 파일들을 파싱하여 로드하고 새로이 빌드한 결과물을 새로운 프로세서로 감싸서 실행하고 있는 상황이다.</p>
+<p>즉, Nest CLI 명령어로 애플리케이션을 실행하면 여러 설정 파일들을 로드하며 새로이 빌드한 결과물을 새로운 프로세서로 감싸서 실행하고 있는 상황이다.</p>
 <br>
 <table>
 <thead>
