@@ -1,4 +1,285 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 19 Mar 2025 23:41:36 GMT</lastBuildDate><item><title><![CDATA[Nest CLI 뜯어보기 (nest start)]]></title><description><![CDATA[✍️ Today I Learned  파일을 작성할 때 습관처럼 큰 의심없이 아래와 같이 작성하곤한다. 에 별다른 설정을 안해두었다면 아래와 같을꺼라 npm run start:prod 명령과 같은 명령어이지만 습관(?)처럼 을 작성할 땐 “./dist…]]></description><link>https://blog.jh8459.com/2025-03-19-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-19-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 19 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Apr 2025 08:06:02 GMT</lastBuildDate><item><title><![CDATA[EC2에서 NAS로, 개인 서버 CI/CD 자동화]]></title><description><![CDATA[왜 EC2에서 NAS로 옮기게 되었는가? 사용 중인 NAS의 사용성이 DSM 7.2+ (Synology사의 DS920+ 기준) 부터 많이 달라졌다. 단순히 UI/UX만 변경된것이 아니라 (구)Docker 패키지에서 변경된 Container…]]></description><link>https://blog.jh8459.com/2025-03-31-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-31-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Mon, 31 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/banner.png&quot;&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;왜-ec2에서-nas로-옮기게-되었는가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%99%9C-ec2%EC%97%90%EC%84%9C-nas%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B2%8C-%EB%90%98%EC%97%88%EB%8A%94%EA%B0%80&quot; aria-label=&quot;왜 ec2에서 nas로 옮기게 되었는가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;왜 EC2에서 NAS로 옮기게 되었는가?&lt;/h2&gt;
+&lt;p&gt;사용 중인 NAS의 사용성이 DSM 7.2+ (Synology사의 DS920+ 기준) 부터 많이 달라졌다. 단순히 UI/UX만 변경된것이 아니라 (구)Docker 패키지에서 변경된 &lt;strong&gt;Container Manager 패키지&lt;/strong&gt;는 다중 컨테이너 환경을 지원한다.&lt;/p&gt;
+&lt;br&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/container_manager.jpg&quot;&gt;
+&lt;center&gt;Docker Compose! 😲&lt;/center&gt;&lt;br&gt;&lt;br&gt;
+&lt;p&gt;EC2 t2.micro 인스턴스로 사용 중이던 서버에 올려둔 컨테이너 기반의 &lt;a href=&quot;https://blog.jh8459.com/2024-07-01-PROJECT/&quot; target=&quot;_blank&quot;&gt;프로젝트 (LOTTERY 🍀)&lt;/a&gt;를 비용 효율적인 측면에서 마이그레이션하기 좋은 기회라 생각했다.&lt;/p&gt;
+&lt;p&gt;EC2에서 NAS로 마이그레이션하는 과정과 Github Action + Docker Hub를 사용한 CI / CD 구축한 과정 또한 간략히 남겨 보려한다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-cicd-파이프라인-구성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-cicd-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot;1 cicd 파이프라인 구성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. CI/CD 파이프라인 구성&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;전반적인 CI/CD는 &lt;strong&gt;Github Action&lt;/strong&gt; + &lt;strong&gt;Docker Hub&lt;/strong&gt; 를 활용하였으며, CI / CD 나누어 Github 저장소의 브런치를 활용해서 파이프라인을 구성하였다. (CI/CD 모두를 자동화는 아래와 같은 무중단 배포 전략까지 도입 후 수정할 예정이다.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;👉 &lt;a href=&quot;https://blog.jh8459.com/2025-03-16-TIL/&quot; target=&quot;_blank&quot;&gt;Docker Compose와 Traefik을 활용한 Blue/Green 배포 전략&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/pipeline.png&quot;&gt;
+&lt;center&gt;전반적인 CI/CD 흐름은 위 사진과 같이 진행된다. 🤖&lt;/center&gt;&lt;br&gt;&lt;br&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Local Repository에서 작업한 결과물을 Github 원격 Remote Repository의 &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브런치로 Push 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브런치로 Commit이 Push되면 아래의 조건을 갖는 Github Action &lt;strong&gt;(CI)&lt;/strong&gt; 이 동작한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build &amp;amp; Push Docker Images (CI)
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Github Action Runner를 통해서 &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브런치에 올라간 코드를 기반으로 Docker Image가 빌드되고 빌드 성공시 Docker Hub에 Push한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Github Action &lt;strong&gt;(CI)&lt;/strong&gt; 이 성공하면 배포 준비가 완료된 상태이다. 배포가 필요하다면 &lt;code class=&quot;language-text&quot;&gt;prod&lt;/code&gt; 브런치로 PR을 날린다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;prod&lt;/code&gt; 브런치로 PR이 Merge되면 아래의 조건을 갖는 Github Action &lt;strong&gt;(CD)&lt;/strong&gt; 이 동작한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Deploy to NAS (CD)
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;prod&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Github Action Runner를 통해서 NAS에 SSH접속이 이뤄지며 운영 환경에 알맞는 &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; 환경변수 파일을 생성한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Hub에 올라간 Docker Image를 기반으로 NAS 서버에 배포를 진행한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;2-nas에서-환경-구성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-nas%EC%97%90%EC%84%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot;2 nas에서 환경 구성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. NAS에서 환경 구성&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;위에서 언급한 CI/CD 파이프라인을 구성하려면 NAS에도 아래와 같은 환경 구성이 필요하다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이용 중인 NAS의 OS는 &lt;strong&gt;Ubuntu OS&lt;/strong&gt;가 아닌 Synology에서 개발된 자체 OS인 &lt;strong&gt;DSM&lt;/strong&gt;을 사용하기 때문에, &lt;code class=&quot;language-text&quot;&gt;sudo apt-get install git&lt;/code&gt; 같은 CLI 명령어가 아닌 DSM 패키지 센터를 통해 아래와 같은 환경을 구성해줘야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-1-container-manager-패키지-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-1-container-manager-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;2 1 container manager 패키지 설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-1. Container Manager 패키지 설치&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;전반적인 &lt;strong&gt;Container Manager&lt;/strong&gt;를 활용한 NAS 환경 구성은 서버 포럼의&lt;a href=&quot;https://svrforum.com/nas/695302&quot; target=&quot;_blank&quot;&gt;“이제 시놀로지에서 Docker-compose를(?) DSM 7.2의 Container Mananger”&lt;/a&gt;게시글을 보고 구성하였다. 🙏🙏🙏&lt;/p&gt;
+&lt;p&gt;volume을 설정할때 디렉토리는 추후 &lt;strong&gt;docker-compose.yml&lt;/strong&gt; 파일이 수정되는 경우에도 Github 원격 저장소의 &lt;code class=&quot;language-text&quot;&gt;prod&lt;/code&gt; 브런치의 코드를 내려받아 최신화되어야한다. (이를 염두하고 설정하자.)&lt;/p&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/volume.png&quot;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-2-git-server-패키지-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-2-git-server-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;2 2 git server 패키지 설치 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-2. Git Server 패키지 설치&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;CLI 명령으로 설치가 안되므로 DSM 패키지 센터의 &lt;strong&gt;Git Server&lt;/strong&gt; 패키지를 내려 받아야 한다.&lt;/p&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/git.png&quot;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-3-nas의-ssh-원격-접속-포트-허용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-3-nas%EC%9D%98-ssh-%EC%9B%90%EA%B2%A9-%EC%A0%91%EC%86%8D-%ED%8F%AC%ED%8A%B8-%ED%97%88%EC%9A%A9&quot; aria-label=&quot;2 3 nas의 ssh 원격 접속 포트 허용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-3. NAS의 SSH 원격 접속 포트 허용&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;CI/CD 과정에서 Github Action 통해서 NAS로 SSH 접속이 이뤄져야 하므로 해당 옵션을 허용해주자.&lt;/p&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/ssh.png&quot;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-4-nas의-역방향-프록시-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-4-nas%EC%9D%98-%EC%97%AD%EB%B0%A9%ED%96%A5-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;2 4 nas의 역방향 프록시 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-4. NAS의 역방향 프록시 설정&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;Ubuntu OS에서 웹 서버를 구성할 땐 &lt;strong&gt;traefik&lt;/strong&gt; 혹은 &lt;strong&gt;nginx&lt;/strong&gt;를 사용하여 역방향 프록시(Reverse Proxy) 서버 구성을 하였지만, DSM 기본 기능인 역방향 프록시 기능을 사용하여 도메인 소스와 NAS 내부 서비스를 맵핑 시켜주었다.&lt;/p&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/reverse.png&quot;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-4-공유기-포트포워딩-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-4-%EA%B3%B5%EC%9C%A0%EA%B8%B0-%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;2 4 공유기 포트포워딩 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-4. 공유기 포트포워딩 설정&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;홈 네트워크는 보통 공유기를 사용중일텐데 외부망을 통해 NAS에서 실행중인 어플리케이션에 도달하려면 공유기의 포트 포워딩 규칙을 허용해줘야 한다.&lt;/p&gt;
+&lt;p&gt;어플리케이션이 NAS의 1111번 포트를 사용중이라면 아래와 같은 규칙을 허용해주어야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-03-31-PROJECT/port.png&quot;&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;3-github-actions-살펴보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-github-actions-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;3 github actions 살펴보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. GitHub Actions 살펴보기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;기본적으로 &lt;strong&gt;Public&lt;/strong&gt; 저장소이기 때문에 노출되면 안되는 값들은 Github Repository에서 제공하는 환경 변수를 통해 변인 요인들을 관리하고 있.&lt;/p&gt;
+&lt;p&gt;Github Action은 CI/CD 파이프라인이 모두 자동화되고 있진 않으므로 이미지 빌드를 담당하는 &lt;strong&gt;ci.yml&lt;/strong&gt;과 NAS로 원격 접속하여 배포를 진행하는 &lt;strong&gt;cd.yml&lt;/strong&gt; 두개로 분리하여 구성하였다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;3-1-ciyml&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-1-ciyml&quot; aria-label=&quot;3 1 ciyml permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3-1. ci.yml&lt;/h4&gt;
+&lt;hr&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build &amp;amp; Push Docker Images (CI)
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CI
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Checkout Repository
+        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; actions/checkout@v4
+
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Set up Docker Buildx
+        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker/setup&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;buildx&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v3
+
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Login to DockerHub
+        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker/login&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v3
+        &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DOCKERHUB_USERNAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DOCKERHUB_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;token comment&quot;&gt;# Build and push API&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build and Push lottery_api_server Image
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/lottery_api_server:latest ./api
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/lottery_api_server:latest&lt;/span&gt;
+
+      &lt;span class=&quot;token comment&quot;&gt;# Build and push Crawler&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build and Push lottery_crawler_server Image
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/lottery_crawler_server:latest ./crawler
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/lottery_crawler_server:latest&lt;/span&gt;
+
+      &lt;span class=&quot;token comment&quot;&gt;# Build and push Website&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build and Push lottery_website Image
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/lottery_website:latest ./website
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/lottery_website:latest&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;3-2-cdyml&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-2-cdyml&quot; aria-label=&quot;3 2 cdyml permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3-2. cd.yml&lt;/h4&gt;
+&lt;hr&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Deploy to NAS (CD)
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;prod&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Deploy to NAS
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Connect to NAS via SSH and deploy
+        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; appleboy/ssh&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v0.1.6
+        &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.NAS_HOST &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.NAS_USER &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.NAS_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.NAS_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+            echo &quot;✅ NAS 접속 성공&quot;&lt;/span&gt;
+
+            cd /volume1/docker/lottery
+
+            echo &quot;📦 COMMON .env 생성&quot;
+            &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;f .env &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm .env
+            cat &amp;lt;&amp;lt;EOF &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; .env
+            NODE_ENV=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.NODE_ENV &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SERVER_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SERVER_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            CRAWLER_SERVER_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.CRAWLER_SERVER_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            WEBSITE_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.WEBSITE_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            EOF
+
+            echo &quot;📦 API .env 생성&quot;
+            mkdir &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p ./api
+            &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;f ./api/.env &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm ./api/.env
+            cat &amp;lt;&amp;lt;EOF &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; ./api/.env
+            DB_HOST=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_HOST &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_USER=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_USER &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_PASSWORD=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_DATABASE=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_DATABASE &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_NODE_ENV=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_NODE_ENV &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SERVER_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SERVER_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_EMAIL_USERNAME=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_EMAIL_USERNAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_EMAIL_PASSWORD=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_EMAIL_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_EMAIL_HOST=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_EMAIL_HOST &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_EMAIL_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_EMAIL_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_EMAIL_FROM=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_EMAIL_FROM &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_REDIS_HOST=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_REDIS_HOST &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_REDIS_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_REDIS_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SLACK_SIGNING_SECRET=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SLACK_SIGNING_SECRET &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SLACK_BOT_TOKEN=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SLACK_BOT_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SLACK_CLIENT_ID=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SLACK_CLIENT_ID &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            API_SLACK_CLIENT_SECRET=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.API_SLACK_CLIENT_SECRET &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            COMMON_GITHUB_TOKEN=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.COMMON_GITHUB_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            SWAGGER_USERNAME=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.SWAGGER_USERNAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            SWAGGER_PASSWORD=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.SWAGGER_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            EOF
+
+            echo &quot;📦 CRAWLER .env 생성&quot;
+            mkdir &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p ./crawler
+            &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;f ./crawler/.env &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm ./crawler/.env
+            cat &amp;lt;&amp;lt;EOF &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; ./crawler/.env
+            DB_HOST=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_HOST &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_USER=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_USER &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_PASSWORD=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_PASSWORD &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            DB_DATABASE=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DB_DATABASE &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            CRAWLER_SERVER_PORT=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.CRAWLER_SERVER_PORT &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            COMMON_GITHUB_TOKEN=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.COMMON_GITHUB_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            EOF
+
+            echo &quot;🌀 GitHub prod 브랜치 코드 최신화&quot;
+            git fetch origin
+            git reset &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;hard origin/prod
+
+            echo &quot;📁 필요한 디렉토리 생성&quot;
+            mkdir &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p ./api/logs ./api/public ./api/resource
+            mkdir &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p ./crawler/logs ./crawler/public ./crawler/resource
+            mkdir &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p ./redis&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;data
+
+            echo &quot;🐳 Docker 이미지 Pull&quot;
+            /usr/local/bin/docker&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;compose pull
+
+            echo &quot;🧨 기존 컨테이너 중지&quot;
+            /usr/local/bin/docker&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;compose down
+
+            echo &quot;🚀 최신 이미지로 컨테이너 재시작&quot;
+            /usr/local/bin/docker&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;compose up &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;d
+
+            echo &quot;✅ 배포 완료 🎉&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-understanding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-understanding&quot; aria-label=&quot; understanding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🤔 Understanding&lt;/h2&gt;
+&lt;p&gt;사진이나 중요 자료 백업 목적으로 구매했던 NAS를 다양하게 활용할 수 있는 방법을 알게되었다. (또한, 얼마 안되지만 EC2로 매달 나가는 비용을 아낄 수 있게 되었다.)&lt;/p&gt;
+&lt;p&gt;NAS의 스펙이 그리 좋지 않기에 훌륭한 서버까진 아니지만, 토이 프로젝트 정도는 거뜬히 소화할 수 있을거같다. (훌륭한 장난감이 생겼다 😀)&lt;/p&gt;
+&lt;p&gt;EC2에서 Synology NAS로 옮겨온 이번 과정에서 가장 크게 느낀 점은, &lt;strong&gt;결국 중요한 건 도구가 아니라 흐름에 대한 이해&lt;/strong&gt;를 하는게 가장 중요하다는 점이었다. 언어나 특정 프레임워크에 종속되지 말고 전반적인 CS 지식을 조금 더 공부해보고 싶어졌다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EC%99%9C-ec2%EC%97%90%EC%84%9C-nas%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B2%8C-%EB%90%98%EC%97%88%EB%8A%94%EA%B0%80&quot;&gt;왜 EC2에서 NAS로 옮기게 되었는가?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#1-cicd-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B5%AC%EC%84%B1&quot;&gt;1. CI/CD 파이프라인 구성&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#2-nas%EC%97%90%EC%84%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1&quot;&gt;2. NAS에서 환경 구성&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#2-1-container-manager-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98&quot;&gt;2-1. Container Manager 패키지 설치&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-2-git-server-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98&quot;&gt;2-2. Git Server 패키지 설치&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-3-nas%EC%9D%98-ssh-%EC%9B%90%EA%B2%A9-%EC%A0%91%EC%86%8D-%ED%8F%AC%ED%8A%B8-%ED%97%88%EC%9A%A9&quot;&gt;2-3. NAS의 SSH 원격 접속 포트 허용&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-4-nas%EC%9D%98-%EC%97%AD%EB%B0%A9%ED%96%A5-%ED%94%84%EB%A1%9D%EC%8B%9C-%EC%84%A4%EC%A0%95&quot;&gt;2-4. NAS의 역방향 프록시 설정&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-4-%EA%B3%B5%EC%9C%A0%EA%B8%B0-%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9-%EC%84%A4%EC%A0%95&quot;&gt;2-4. 공유기 포트포워딩 설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#3-github-actions-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot;&gt;3. GitHub Actions 살펴보기&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#3-1-ciyml&quot;&gt;3-1. ci.yml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-2-cdyml&quot;&gt;3-2. cd.yml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-understanding&quot;&gt;🤔 Understanding&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Nest CLI 뜯어보기 (nest start)]]></title><description><![CDATA[✍️ Today I Learned  파일을 작성할 때 습관처럼 큰 의심없이 아래와 같이 작성하곤한다. 에 별다른 설정을 안해두었다면 아래와 같을꺼라 npm run start:prod 명령과 같은 명령어이지만 습관(?)처럼 을 작성할 땐 “./dist…]]></description><link>https://blog.jh8459.com/2025-03-19-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-03-19-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 19 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
     &gt;
@@ -14894,132 +15175,6 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli mig
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Node.js - code: ERR_HTTP_HEADERS_SENT 에러 핸들링]]></title><description><![CDATA[✍️ Today I Learned 1. Node.js - code: ERR_HTTP_HEADERS_SENT Project 진행 중 쿠키가 강제로 삭제된 상황에서 로그아웃 API…]]></description><link>https://blog.jh8459.com/2022-02-09-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-09-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EABUBAQEAAAAAAAAAAAAAAAAAAAAF/9oADAMBAAIQAxAAAAHSaSawD//EABYQAAMAAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQIU/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CIv8A/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERIDH/2gAIAQEAAT8hGb2Ff//aAAwDAQACAAMAAAAQHD//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAgQVH/2gAIAQEAAT8QjVhju1//2Q==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog.png&quot;
-        title=&quot;github-blog.png&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;️-today-i-learned&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot; aria-label=&quot;️ today i learned permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/h2&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;1-nodejs---code-err_http_headers_sent&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-nodejs---code-err_http_headers_sent&quot; aria-label=&quot;1 nodejs   code err_http_headers_sent permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Node.js - code: ERR_HTTP_HEADERS_SENT&lt;/h3&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Project 진행 중 쿠키가 강제로 삭제된 상황에서 로그아웃 API 요청시 &lt;code class=&quot;language-text&quot;&gt;code: &apos;ERR_HTTP_HEADERS_SENT&apos;&lt;/code&gt; 에러를 겪고 서버가 죽어버리는 문제가 발생했었고 리팩토링 과정에서 해결한 과정을 짧게 글로 남겨보려 한다.&lt;/p&gt;
-&lt;p&gt;우선 해당 에러는 한번의 Request(요청)에 2개 이상의 Response(응답)이 존재하는 경우 발생하는 에러이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;생각 보다 정직(?)하게 에러 메시지를 송출해 준다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h4 id=&quot;1-1-에러발생-원인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-1-%EC%97%90%EB%9F%AC%EB%B0%9C%EC%83%9D-%EC%9B%90%EC%9D%B8&quot; aria-label=&quot;1 1 에러발생 원인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1-1. 에러발생 원인&lt;/h4&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;우선 에러가 무엇을 뜻하는지는 알았다.&lt;/p&gt;
-&lt;p&gt;그렇다면 왜 발생했는지 코드를 뜯어보았다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;controller/authentication/logout.js&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153110704-f562c05e-890a-4512-a358-f2cc3e431102.png&quot; alt=&quot;스크린샷, 2022-02-09 11-31-35&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 로그인 인증검사&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;userAuth&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;req&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; res&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;로그인 여부를 인증하는 코드에서 미들웨어 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 함수를 호출하고 있으며 이 미들웨어 함수는 다음과 같이 구성되어 있다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;middlewares/authorized/userAuth.js&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153112382-26f6e9dd-73c9-487e-bfa3-76c388d160e9.png&quot; alt=&quot;스크린샷, 2022-02-09 11-42-11&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;에러가 발생하는 시점은 로그인 상태 중 쿠키가 강제로 삭제되어(웹 브라우져에서 쿠키 초기화 등등의 이유로 인하여) 쿠키에 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;은 비어있지만 &lt;code class=&quot;language-text&quot;&gt;client&lt;/code&gt; 상태는 로그인 상태이기 때문에 로그아웃 요청은 진행이 가능하며, 로그아웃 요청시 2번의 응답결과가 발생되는 경우이다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 미들웨어의 응답결과&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;AccessToken Is Empty!&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;logout&lt;/code&gt; 컨트롤러의 응답결과&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Logout Success!&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;위 두 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt;가 서버에서 보내고 있기 때문에 발생하였다.&lt;/p&gt;
-&lt;p&gt;그렇기에 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 로그인 검증 미들웨어 함수를 수정해 주었다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;middlewares/authorized/userAuth.js&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153366836-2657fc2c-a046-4d42-9b68-9ee1b155e054.png&quot; alt=&quot;스크린샷, 2022-02-10 17-21-56&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt;문 뒤에 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt; 응답 결과를 담지 않고 유효하지 않은 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;이 담겨있는 경우에는 &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;값을 반환하며 유효한 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;이 담겨있는 경우에는 &lt;code class=&quot;language-text&quot;&gt;userInfo&lt;/code&gt; 유저 정보값을 반환해주는 함수로 변경해주었다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;controller/authentication/logout.js&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153367164-a5686917-ab22-498f-9dce-81e6542afd04.png&quot; alt=&quot;스크린샷, 2022-02-10 17-23-13&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;그 뒤 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 검증 값을 &lt;code class=&quot;language-text&quot;&gt;userInfo&lt;/code&gt; 변수에 담은 뒤 해당 변수에 담기는 값이 &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;일 경우에는 상태코드 200번과 함께 메세지를 반환해주었다.&lt;/p&gt;
-&lt;p&gt;이로써 우선 응답결과는 하나의 요청에 하나의 응답만 주어서 에러는 해결하였다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;서버 변경점에 맞춰 클라이언트 코드도 수정해보려 한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;로그인 검증이 필요한 &lt;code class=&quot;language-text&quot;&gt;axios&lt;/code&gt; API 요청의 아래에 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt; 응답값의 결과가 만약 상태코드 200번 &amp;#x26;&amp;#x26; 에러메시지가 나오는 경우, 메인페이지로 리다이렉트 &amp;#x26; 로그인 모달 팝업 상태로 변경하여 다시 로그인을 유도하는 방면으로 코드를 수정해봐야겠다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;로그아웃 외에 로그인 검증이 필요한 API 요청의 서버 &amp;#x26; 클라이언트 코드들 또한 모두 수정해봐야 겠다.&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;-understanding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-understanding&quot; aria-label=&quot; understanding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🤔 Understanding&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;기본에 충실하지 못하여서 발생한 에러라서 솔직히 부끄러운 에러라 생각이 든다.&lt;/p&gt;
-&lt;p&gt;같은 실수를 하지않게끔 글로 남겨본다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot;&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#1-nodejs---code-err_http_headers_sent&quot;&gt;1. Node.js - code: ERR_HTTP_HEADERS_SENT&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-1-%EC%97%90%EB%9F%AC%EB%B0%9C%EC%83%9D-%EC%9B%90%EC%9D%B8&quot;&gt;1-1. 에러발생 원인&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#-understanding&quot;&gt;🤔 Understanding&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링]]></title><description><![CDATA[⚒️ Refactoring 민감정보 암호화 Task는 모두 끝냈다. 다음 가져갈 Task로 로그아웃시 발생하는 에러 핸들링을 해보려한다. 문제점 현재 로그인 방식은 에 JWT Token…]]></description><link>https://blog.jh8459.com/2022-02-09-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-09-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -15146,6 +15301,132 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli mig
 &lt;li&gt;&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C%EC%A0%90&quot;&gt;문제점&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;문제 해결&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Node.js - code: ERR_HTTP_HEADERS_SENT 에러 핸들링]]></title><description><![CDATA[✍️ Today I Learned 1. Node.js - code: ERR_HTTP_HEADERS_SENT Project 진행 중 쿠키가 강제로 삭제된 상황에서 로그아웃 API…]]></description><link>https://blog.jh8459.com/2022-02-09-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-09-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EABUBAQEAAAAAAAAAAAAAAAAAAAAF/9oADAMBAAIQAxAAAAHSaSawD//EABYQAAMAAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQIU/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CIv8A/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERIDH/2gAIAQEAAT8hGb2Ff//aAAwDAQACAAMAAAAQHD//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAgQVH/2gAIAQEAAT8QjVhju1//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;github-blog.png&quot;
+        title=&quot;github-blog.png&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;️-today-i-learned&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot; aria-label=&quot;️ today i learned permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-nodejs---code-err_http_headers_sent&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-nodejs---code-err_http_headers_sent&quot; aria-label=&quot;1 nodejs   code err_http_headers_sent permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Node.js - code: ERR_HTTP_HEADERS_SENT&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Project 진행 중 쿠키가 강제로 삭제된 상황에서 로그아웃 API 요청시 &lt;code class=&quot;language-text&quot;&gt;code: &apos;ERR_HTTP_HEADERS_SENT&apos;&lt;/code&gt; 에러를 겪고 서버가 죽어버리는 문제가 발생했었고 리팩토링 과정에서 해결한 과정을 짧게 글로 남겨보려 한다.&lt;/p&gt;
+&lt;p&gt;우선 해당 에러는 한번의 Request(요청)에 2개 이상의 Response(응답)이 존재하는 경우 발생하는 에러이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;생각 보다 정직(?)하게 에러 메시지를 송출해 준다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;1-1-에러발생-원인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-1-%EC%97%90%EB%9F%AC%EB%B0%9C%EC%83%9D-%EC%9B%90%EC%9D%B8&quot; aria-label=&quot;1 1 에러발생 원인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1-1. 에러발생 원인&lt;/h4&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;우선 에러가 무엇을 뜻하는지는 알았다.&lt;/p&gt;
+&lt;p&gt;그렇다면 왜 발생했는지 코드를 뜯어보았다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;controller/authentication/logout.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153110704-f562c05e-890a-4512-a358-f2cc3e431102.png&quot; alt=&quot;스크린샷, 2022-02-09 11-31-35&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 로그인 인증검사&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;userAuth&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;req&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; res&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;로그인 여부를 인증하는 코드에서 미들웨어 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 함수를 호출하고 있으며 이 미들웨어 함수는 다음과 같이 구성되어 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;middlewares/authorized/userAuth.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153112382-26f6e9dd-73c9-487e-bfa3-76c388d160e9.png&quot; alt=&quot;스크린샷, 2022-02-09 11-42-11&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;에러가 발생하는 시점은 로그인 상태 중 쿠키가 강제로 삭제되어(웹 브라우져에서 쿠키 초기화 등등의 이유로 인하여) 쿠키에 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;은 비어있지만 &lt;code class=&quot;language-text&quot;&gt;client&lt;/code&gt; 상태는 로그인 상태이기 때문에 로그아웃 요청은 진행이 가능하며, 로그아웃 요청시 2번의 응답결과가 발생되는 경우이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 미들웨어의 응답결과&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;AccessToken Is Empty!&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;logout&lt;/code&gt; 컨트롤러의 응답결과&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Logout Success!&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;위 두 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt;가 서버에서 보내고 있기 때문에 발생하였다.&lt;/p&gt;
+&lt;p&gt;그렇기에 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 로그인 검증 미들웨어 함수를 수정해 주었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;middlewares/authorized/userAuth.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153366836-2657fc2c-a046-4d42-9b68-9ee1b155e054.png&quot; alt=&quot;스크린샷, 2022-02-10 17-21-56&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt;문 뒤에 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt; 응답 결과를 담지 않고 유효하지 않은 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;이 담겨있는 경우에는 &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;값을 반환하며 유효한 &lt;code class=&quot;language-text&quot;&gt;accessToken&lt;/code&gt;이 담겨있는 경우에는 &lt;code class=&quot;language-text&quot;&gt;userInfo&lt;/code&gt; 유저 정보값을 반환해주는 함수로 변경해주었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;controller/authentication/logout.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153367164-a5686917-ab22-498f-9dce-81e6542afd04.png&quot; alt=&quot;스크린샷, 2022-02-10 17-23-13&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;그 뒤 &lt;code class=&quot;language-text&quot;&gt;userAuth&lt;/code&gt; 검증 값을 &lt;code class=&quot;language-text&quot;&gt;userInfo&lt;/code&gt; 변수에 담은 뒤 해당 변수에 담기는 값이 &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;일 경우에는 상태코드 200번과 함께 메세지를 반환해주었다.&lt;/p&gt;
+&lt;p&gt;이로써 우선 응답결과는 하나의 요청에 하나의 응답만 주어서 에러는 해결하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;서버 변경점에 맞춰 클라이언트 코드도 수정해보려 한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;로그인 검증이 필요한 &lt;code class=&quot;language-text&quot;&gt;axios&lt;/code&gt; API 요청의 아래에 &lt;code class=&quot;language-text&quot;&gt;response&lt;/code&gt; 응답값의 결과가 만약 상태코드 200번 &amp;#x26;&amp;#x26; 에러메시지가 나오는 경우, 메인페이지로 리다이렉트 &amp;#x26; 로그인 모달 팝업 상태로 변경하여 다시 로그인을 유도하는 방면으로 코드를 수정해봐야겠다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;로그아웃 외에 로그인 검증이 필요한 API 요청의 서버 &amp;#x26; 클라이언트 코드들 또한 모두 수정해봐야 겠다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;-understanding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-understanding&quot; aria-label=&quot; understanding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🤔 Understanding&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;기본에 충실하지 못하여서 발생한 에러라서 솔직히 부끄러운 에러라 생각이 든다.&lt;/p&gt;
+&lt;p&gt;같은 실수를 하지않게끔 글로 남겨본다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot;&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#1-nodejs---code-err_http_headers_sent&quot;&gt;1. Node.js - code: ERR_HTTP_HEADERS_SENT&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-1-%EC%97%90%EB%9F%AC%EB%B0%9C%EC%83%9D-%EC%9B%90%EC%9D%B8&quot;&gt;1-1. 에러발생 원인&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#-understanding&quot;&gt;🤔 Understanding&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 2일차 - 민감정보 암호화]]></title><description><![CDATA[⚒️ Refactoring 어제 오후까지 프로젝트 리팩토링 우선순위를 정하여 각자 Task를 선별하였다. 팀 프로젝트 Repository를 이제는 더이상 수강생이 아니기 때문에 Private ⮕ Public…]]></description><link>https://blog.jh8459.com/2022-02-08-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-08-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Tue, 08 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
