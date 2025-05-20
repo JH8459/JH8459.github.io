@@ -12,7 +12,7 @@ categories: Project
 
 ## E2E 테스트 설계와 테스트 자동화
 
-이전 포스팅 중 를 통해서 개인 서버에 CI/CD 구축한 과정을 소개한적이 있다.
+이전 포스팅 중 개인 서버에 CI/CD 구축한 과정을 소개한적이 있다.
 
 > [EC2에서 NAS로, 개인 서버 CI/CD 자동화](https://blog.jh8459.com/2025-03-31-PROJECT/)에서는 EC2 환경에서 Synology NAS로 이전하며 개인 서버에서도 CI/CD 파이프라인을 자동화한 과정을 공유했었다.
 
