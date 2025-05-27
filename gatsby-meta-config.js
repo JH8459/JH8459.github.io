@@ -29,7 +29,7 @@ module.exports = {
     },
     social: {
       github: `https://github.com/JH8459`,
-      linkedIn: `https://www.linkedin.com/in/%EC%A0%95%ED%98%84-%EA%B9%80-8b7a80237/`,
+      linkedIn: `https://www.linkedin.com/in/jh8459/`,
       email: `kk_ong2233@naver.com`,
     },
   },
