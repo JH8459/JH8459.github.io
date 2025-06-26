@@ -61,19 +61,12 @@ module.exports = {
         },
       },
       {
-        date: '2022.04 ~',
+        date: '2022.04 ~ 2025.06',
         activity: '(주)ACG - 백엔드 개발자 포지션 입사',
         links: {
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
         },
-      },
-      {
-        date: '2025.03.08',
-        activity: 'AWS Solution Architect Associate (SAA-C03) 취득',
-        links: {
-          post: 'https://blog.jh8459.com/2025-03-09-RETROSPECT/',
-        },
-      },
+      }
     ],
 
     projects: [
