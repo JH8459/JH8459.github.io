@@ -62,7 +62,7 @@ module.exports = {
       },
       {
         date: '2022.04 ~ 2025.06',
-        activity: '(주)ACG - 백엔드 개발자 포지션 입사',
+        activity: '(주)ACG - 백엔드 개발자',
         links: {
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
         },
