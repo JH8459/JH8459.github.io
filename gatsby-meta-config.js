@@ -55,7 +55,7 @@ module.exports = {
       // ========================================================
       {
         date: '2021.06 ~ 2022.01',
-        activity: 'Code States - Full Immersive 34기',
+        activity: 'Code States - Full Immersive 34th',
         links: {
           homepage: 'https://www.codestates.com/',
           post: 'https://blog.jh8459.com/2022-01-28-RETROSPECT/',
@@ -71,7 +71,7 @@ module.exports = {
       },
       {
         date: '2022.04 ~ 2025.06',
-        activity: '(주)에이시지알 - 백엔드 개발자',
+        activity: '(주)에이시지알 - B.E Developer',
         links: {
           homepage: 'https://www.acghr.co.kr/',
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
@@ -79,7 +79,7 @@ module.exports = {
       },
       {
         date: '2025.07 ~ ',
-        activity: '스마일드래곤(주) - 백엔드 개발자',
+        activity: '스마일드래곤(주) - B.E Developer',
         links: {
           homepage: 'https://www.smiledragon.co.kr/',
         },
