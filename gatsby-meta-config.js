@@ -109,7 +109,7 @@ module.exports = {
         title: '🤖 프로그래머스 프로필 뱃지 자동 생성 봇',
         description:
           '알고리즘 문제 풀이 동기부여를 위해 프로그래머스에서 제공하는 API를 활용하여 프로필 뱃지를 자동으로 생성해주는 봇을 개발하였습니다. Github Action을 활용하여 백준 허브에 연동된 저장소가 변경될 때 마다 호출되어 프로필 뱃지를 자동으로 업데이트 되도록 구성하였습니다.',
-        techStack: ['NodeJS', 'NestJS', 'Github', 'Github ACtion'],
+        techStack: ['NodeJS', 'NestJS', 'Github', 'Github Action'],
         thumbnailUrl: 'project-programmers.jpg',
         links: {
           post: 'https://blog.jh8459.com/2024-12-22-PROJECT/',
@@ -120,7 +120,7 @@ module.exports = {
         title: 'LOTTERY 🍀',
         description:
           '반복되는 복권 당첨 정보를 손 쉽게 제공 할 수 없을까라는 생각으로 시작하게된 프로젝트입니다. 단순히 복권 당첨 결과만 제공하는 것이 아닌, 당첨 정보를 기반으로 한 통계 정보를 간단한 사용 방법으로 이메일 정기 구독 방식과 슬랙 앱 설치 방식으로 제공합니다.',
-        techStack: ['NodeJS', 'Express', 'NestJS', 'MySQL', 'Redis'],
+        techStack: ['NodeJS', 'Express', 'NestJS', 'React', 'Docker', 'Redis'],
         thumbnailUrl: 'project-lottery.png',
         links: {
           post: 'https://blog.jh8459.com/2024-07-01-PROJECT/',
