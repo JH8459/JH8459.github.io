@@ -7,9 +7,7 @@
   "dependencies": {
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
-    "firebase": "^10.12.2",
     "gatsby": "^4.9.3",
-    "gatsby-cli": "^4.24.0",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-feed": "^4.25.0",
@@ -20,7 +18,7 @@
     "gatsby-plugin-manifest": "^4.9.1",
     "gatsby-plugin-offline": "^5.9.1",
     "gatsby-plugin-react-helmet": "^5.9.0",
-    "gatsby-plugin-robots-txt": "^1.7.0",
+    "gatsby-plugin-robots-txt": "1.7.0",
     "gatsby-plugin-sass": "^5.9.0",
     "gatsby-plugin-sharp": "^4.9.1",
     "gatsby-remark-autolink-headers": "^5.9.0",
@@ -42,6 +40,8 @@
     "typeface-montserrat": "^1.1.13"
   },
   "devDependencies": {
+    "firebase": "^10.12.2",
+    "gatsby-cli": "^4.24.0",
     "gh-pages": "^3.2.3",
     "prettier": "2.2.1"
   },
@@ -52,14 +52,12 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "deploy": "gatsby clean && gatsby build && gh-pages -d public -x",
-    "start": "gatsby clean && gatsby develop -p 3500",
+    "build": "gatsby clean && NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
+    "develop": "CHOKIDAR_USEPOLLING=true NODE_OPTIONS=--max-old-space-size=8192 gatsby develop",
+    "deploy": "npm run build && gh-pages -d public -x",
+    "start": "gatsby clean && npm run develop -- -p 3500 -H 0.0.0.0",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
