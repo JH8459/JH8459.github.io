@@ -43,6 +43,7 @@ module.exports = {
         date: '',
         activity: '',
         links: {
+          homepage: '',
           github: '',
           post: '',
           googlePlay: '',
@@ -53,6 +54,14 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
+        date: '2021.06 ~ 2022.01',
+        activity: 'Code States - Full Immersive 34기',
+        links: {
+          homepage: 'https://www.codestates.com/',
+          post: 'https://blog.jh8459.com/2022-01-28-RETROSPECT/',
+        },
+      },
+      {
         date: '2021.07.19',
         activity: '개인 블로그 개설',
         links: {
@@ -62,9 +71,17 @@ module.exports = {
       },
       {
         date: '2022.04 ~ 2025.06',
-        activity: '(주)ACG - 백엔드 개발자',
+        activity: '(주)에이시지알 - 백엔드 개발자',
         links: {
+          homepage: 'https://www.acghr.co.kr/',
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
+        },
+      },
+      {
+        date: '2025.07 ~ ',
+        activity: '스마일드래곤(주) - 백엔드 개발자',
+        links: {
+          homepage: 'https://www.smiledragon.co.kr/',
         },
       }
     ],
@@ -78,8 +95,9 @@ module.exports = {
         techStack: ['', ''],
         thumbnailUrl: '',
         links: {
-          post: '',
+          homepage: '',
           github: '',
+          post: '',
           googlePlay: '',
           appStore: '',
           demo: '',
