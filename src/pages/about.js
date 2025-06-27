@@ -48,6 +48,7 @@ export const pageQuery = graphql`
             date
             activity
             links {
+              homepage
               post
               github
               demo
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
             techStack
             thumbnailUrl
             links {
+              homepage
               post
               github
               demo

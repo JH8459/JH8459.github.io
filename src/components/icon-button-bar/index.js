@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { IconButton, Tooltip } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
+import HomeIcon from '@mui/icons-material/Home'; 
 import DescriptionIcon from '@mui/icons-material/Description';
 import PlayIcon from '@mui/icons-material/PlayArrowOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -14,6 +15,8 @@ function IconButtonBar({ links = {} }) {
   const IconPicker = useCallback((icon) => {
     const props = { className: 'icon' };
     switch (icon) {
+      case 'homepage':
+        return <HomeIcon {...props} />;
       case 'post':
         return <DescriptionIcon {...props} />;
       case 'demo':
