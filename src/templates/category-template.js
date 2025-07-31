@@ -8,7 +8,7 @@ import CategoryPageHeader from '../components/category-page-header';
 import PostTabs from '../components/post-tabs';
 
 function CategoryTemplate({ pageContext }) {
-  const { edges, currentCategory } = pageContext;
+  const { edges, currentCategory, defaultThumbnail } = pageContext;
   const { categories } = pageContext;
   const currentTabIndex = useMemo(
     () => categories.findIndex((category) => category === currentCategory),
@@ -33,6 +33,7 @@ function CategoryTemplate({ pageContext }) {
         onChange={onTabIndexChange}
         tabs={categories}
         posts={posts}
+        defaultThumbnail={defaultThumbnail}
       />
     </Layout>
   );

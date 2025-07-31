@@ -1,17 +1,16 @@
 export default class Post {
   constructor(node) {
-    const { id, html, excerpt, frontmatter, fields } = node;
-    const { slug } = fields;
-    const { emoji, categories, title, author, date } = frontmatter;
-
-    this.id = id;
-    this.excerpt = excerpt;
-    this.emoji = emoji;
-    this.html = html;
-    this.slug = slug;
-    this.title = title;
-    this.author = author;
-    this.date = date;
-    this.categories = categories.split(' ');
+    this.id = node.id;
+    this.html = node.html;
+    this.excerpt = node.excerpt;
+    this.timeToRead = node.timeToRead;
+    this.tableOfContents = node.tableOfContents;
+    this.slug = node.fields.slug;
+    this.emoji = node.frontmatter.emoji;
+    this.categories = node.frontmatter.categories.split(' ');
+    this.title = node.frontmatter.title;
+    this.author = node.frontmatter.author;
+    this.date = node.frontmatter.date;
+    this.thumbnail = node.frontmatter.thumbnail; // This is the URL string
   }
 }

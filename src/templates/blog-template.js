@@ -14,8 +14,8 @@ function BlogTemplate({ data }) {
   const [viewCount, setViewCount] = useState(0);
 
   const curPost = new Post(data.cur);
-  const prevPost = data.prev && new Post(data.prev);
-  const nextPost = data.next && new Post(data.next);
+  const prevPost = data.prev ? new Post(data.prev) : null;
+  const nextPost = data.next ? new Post(data.next) : null;
   const { siteUrl, comments } = data.site?.siteMetadata;
   const utterancesRepo = comments?.utterances?.repo;
 
@@ -54,7 +54,7 @@ function BlogTemplate({ data }) {
   }, [siteUrl, curPost.slug]);
 
   return (
-    <Layout>
+    <Layout tableOfContents={curPost.tableOfContents}>
       <Seo title={curPost?.title} description={curPost?.excerpt} />
       <PostHeader post={curPost} viewCount={viewCount} />
       <PostContent html={curPost.html} />
@@ -72,8 +72,10 @@ export const pageQuery = graphql`
       id
       html
       excerpt(pruneLength: 500, truncate: true)
+      timeToRead
+      tableOfContents
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
 
         title
         categories
@@ -89,7 +91,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
 
         title
         categories
@@ -105,7 +107,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY.MM.DD")
 
         title
         categories
@@ -129,3 +131,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+

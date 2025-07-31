@@ -1,24 +1,22 @@
-import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 function Seo({ description, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author {
-              name
-            }
-            ogImage
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author {
+            name
           }
+          ogImage
         }
       }
-    `,
-  );
+    }
+  `);
 
   const metaDescription = description || site.siteMetadata.description;
   return (

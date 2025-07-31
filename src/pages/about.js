@@ -14,8 +14,10 @@ function AboutPage({ data }) {
     <Layout>
       <Seo title="About" />
       <Bio author={author} language={language} />
-      <TimeStampSection timestamps={timestamps} />
-      <ProjectSection projects={projects} />
+      <div className="w-[80%] mx-auto">
+        <TimeStampSection timestamps={timestamps} />
+        <ProjectSection projects={projects} />
+      </div>
     </Layout>
   );
 }

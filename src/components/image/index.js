@@ -20,16 +20,20 @@ const Image = ({ src, ...rest }) => {
     }
   `);
 
-  const match = useMemo(() => data.images.edges.find(({ node }) => src === node.relativePath), [
-    data,
-    src,
-  ]);
+  const match = useMemo(
+    () => data.images.edges.find(({ node }) => src === node.relativePath),
+    [data, src],
+  );
+
+  if (src.startsWith('/')) {
+    return <img src={src} alt={src} {...rest} />;
+  }
 
   if (!match) return null;
 
   const { node: { childImageSharp, publicURL, extension } = {} } = match;
 
-  if (extension === 'svg' || !childImageSharp) {
+  if (extension === 'svg' || extension === 'gif' || !childImageSharp) {
     return <img src={publicURL} alt={publicURL} {...rest} />;
   }
 

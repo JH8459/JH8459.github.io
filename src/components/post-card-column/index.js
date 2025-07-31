@@ -1,29 +1,25 @@
-import { Button } from '@mui/material';
 import { navigate } from 'gatsby-link';
 import React, { useCallback } from 'react';
 import PostCard from '../post-card';
-import './style.scss';
 
-function PostCardColumn({ posts, showMoreButton, moreUrl }) {
+function PostCardColumn({ posts, showMoreButton, moreUrl, defaultThumbnail }) {
   const onMoreButtonClick = useCallback(() => {
     navigate(moreUrl);
   }, [moreUrl]);
 
   return (
-    <div className="post-card-column-wrapper">
-      <div className="post-card-column">
+    <div className="flex justify-center w-full">
+      <div className="flex flex-col items-center space-y-4 w-full max-w-4xl">
         {posts.map((post, index) => (
-          <PostCard key={index} post={post} />
+          <PostCard key={index} post={post} defaultThumbnail={defaultThumbnail} />
         ))}
         {showMoreButton && (
-          <Button
-            className="more-post-card-button"
+          <button
+            className="h-10 px-4 font-medium text-[15px] bg-[var(--button-background-color)] text-[var(--tab-hover-text-color)] rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
             onClick={onMoreButtonClick}
-            variant="contained"
-            disableElevation
           >
             More
-          </Button>
+          </button>
         )}
       </div>
     </div>

@@ -133,17 +133,6 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: 'Table of Contents',
-              tight: false,
-              ordered: false,
-              fromHeading: 2,
-              toHeading: 6,
-              className: 'table-of-contents',
-            },
-          },
-          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
@@ -179,14 +168,10 @@ module.exports = {
         ],
       },
     },
-    `gatsby-theme-material-ui`,
+    `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-cname`,
   ],
 };

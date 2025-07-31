@@ -1,55 +1,49 @@
 import React, { useCallback } from 'react';
-import { IconButton, Tooltip } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import HomeIcon from '@mui/icons-material/Home'; 
-import DescriptionIcon from '@mui/icons-material/Description';
-import PlayIcon from '@mui/icons-material/PlayArrowOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import AndroidIcon from '@mui/icons-material/Android';
-import AppleIcon from '@mui/icons-material/Apple';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { MdEmail, MdHome, MdDescription, MdPlayArrow } from 'react-icons/md';
+import { FaGithub, FaAndroid, FaApple, FaLinkedin } from 'react-icons/fa';
 
-import './style.scss';
-
-function IconButtonBar({ links = {} }) {
-  const IconPicker = useCallback((icon) => {
-    const props = { className: 'icon' };
+function IconButtonBar({ links = {}, iconClass = 'text-xl text-[var(--about-link-icon-color)]' }) {
+  const IconPicker = useCallback((icon, iconClass) => {
+    const props = {};
     switch (icon) {
       case 'homepage':
-        return <HomeIcon {...props} />;
+        return <MdHome {...props} className={iconClass} />;
       case 'post':
-        return <DescriptionIcon {...props} />;
+        return <MdDescription {...props} className={iconClass} />;
       case 'demo':
-        return <PlayIcon {...props} />;
+        return <MdPlayArrow {...props} className={iconClass} />;
       case 'github':
-        return <GitHubIcon {...props} />;
+        return <FaGithub {...props} className={iconClass} />;
       case 'googlePlay':
-        return <AndroidIcon {...props} />;
+        return <FaAndroid {...props} className={iconClass} />;
       case 'appStore':
-        return <AppleIcon {...props} />;
+        return <FaApple {...props} className={iconClass} />;
       case 'email':
-        return <EmailIcon {...props} />;
+        return <MdEmail {...props} className={iconClass} />;
       case 'linkedIn':
-        return <LinkedInIcon {...props} />;
+        return <FaLinkedin {...props} className={iconClass} />;
       default:
         return <></>;
     }
   }, []);
 
   return (
-    <>
+    <div className="flex space-x-2">
       {Object.keys(links).map((link, index) => {
         return (
           links[link] && (
-            <Tooltip key={index} title={link} arrow className="icon-tooltip">
-              <IconButton size="small" href={`${link === 'email' ? `mailto:` : ``}${links[link]}`}>
-                {IconPicker(link)}
-              </IconButton>
-            </Tooltip>
+            <div key={index} className="relative group">
+              <a href={`${link === 'email' ? `mailto:` : ``}${links[link]}`}>
+                {IconPicker(link, iconClass)}
+              </a>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                {link}
+              </div>
+            </div>
           )
         );
       })}
-    </>
+    </div>
   );
 }
 

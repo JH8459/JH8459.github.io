@@ -2,7 +2,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import Post from '../../models/post';
 import PostSearch from '../post-search';
-import './style.scss';
+
 
 function PageHeader({ siteTitle }) {
   return (
@@ -25,24 +25,24 @@ function PageHeader({ siteTitle }) {
         }
       `}
       render={(data) => (
-        <header className="page-header-wrapper">
-          <div className="page-header">
-            <div className="front-section">
-              <Link className="link" to="/">
+        <header className="flex justify-center w-full h-[60px]">
+          <div className="flex items-center justify-between max-w-content w-full px-4">
+            <div className="flex-shrink-0">
+              <Link className="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]" to="/">
                 {siteTitle}
               </Link>
             </div>
-            <div className="trailing-section">
-              <Link className="link" to="/about">
+            <nav className="flex items-center">
+              <Link className="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" to="/about">
                 about
               </Link>
-              <Link className="link" to="/posts">
+              <Link className="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" to="/posts">
                 posts
               </Link>
               <PostSearch
                 posts={data.allMarkdownRemark.edges.map(({ node }) => new Post(node, true))}
               />
-            </div>
+            </nav>
           </div>
         </header>
       )}

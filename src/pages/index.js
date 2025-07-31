@@ -26,6 +26,7 @@ function HomePage({ data }) {
         tabs={categories}
         tabIndex={tabIndex}
         showMoreButton
+        defaultThumbnail={data.defaultThumbnail}
       />
     </Layout>
   );
@@ -43,12 +44,19 @@ export const pageQuery = graphql`
           frontmatter {
             categories
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY.MM.DD")
+            thumbnail # Add thumbnail here
           }
           fields {
             slug
           }
         }
+      }
+    }
+
+    defaultThumbnail: file(relativePath: { eq: "common/NO_IMAGE.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 100, height: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
     }
 
