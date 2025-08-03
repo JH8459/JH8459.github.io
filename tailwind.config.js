@@ -1,22 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./content/**/*.{md,mdx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './content/**/*.{md,mdx}'],
   darkMode: 'class',
   theme: {
     screens: {
-      'sm': '576px',
-      'md': '768px',
-      'lg': '1080px',
+      sm: '576px',
+      md: '768px',
+      lg: '1080px',
     },
     extend: {
       fontFamily: {
-        sans: ['Nanum Gothic', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji'],
+        sans: [
+          'Nanum Gothic',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+        ],
       },
       maxWidth: {
-        'content': '720px',
+        content: '720px',
       },
       padding: {
         'content-x': '15px',
@@ -24,9 +31,7 @@ module.exports = {
       maxHeight: {
         'content-image': '560px',
       },
-      typography: ({
-        theme
-      }) => ({
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
             a: {
@@ -55,10 +60,10 @@ module.exports = {
               fontSize: '85%',
               fontWeight: '600',
             },
-          }
-        }
-      })
+          },
+        },
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],
-}
+};
