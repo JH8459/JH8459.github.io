@@ -56,8 +56,7 @@ function PostSearch({ posts }) {
                       handleItemClick(post.slug);
                     }
                   }}
-                  role="button"
-                  tabIndex="0"
+                  role="presentation"
                   className="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white"
                 >
                   <div className="font-semibold text-[14px] mb-[2px] flex justify-between items-center">

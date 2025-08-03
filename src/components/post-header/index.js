@@ -24,14 +24,13 @@ function PostHeader({ post, viewCount }) {
         </span>
       </h1>
       <div className="info flex flex-wrap w-full leading-[1.5] text-[16px] font-medium text-[var(--secondary-text-color)] justify-end items-baseline">
-        <div 
-          role="tooltip"
-          className="relative mr-4 cursor-pointer p-1 transition-all duration-200 hover:scale-105"
+        <button 
+          type="button"
+          className="relative mr-4 cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)]"
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
           onFocus={() => setShowTooltip(true)}
           onBlur={() => setShowTooltip(false)}
-          tabIndex="0"
         >
           <strong>{`${post.timeToRead} min read`}</strong>
           {showTooltip && (
@@ -39,7 +38,7 @@ function PostHeader({ post, viewCount }) {
               {`이 게시글을 읽는데 ${post.timeToRead}분 정도의 시간이 소요될 것으로 예상됩니다.`}
             </div>
           )}
-        </div>
+        </button>
         <span className="mr-4">{`${viewCount} views`}</span>
         <span className="text-[14px]">Published on {post.date}</span>
       </div>
