@@ -186,6 +186,3 @@ public class Main {
 <br>
 <br>
 
-```toc
-
-```

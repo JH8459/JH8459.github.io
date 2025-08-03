@@ -100,6 +100,3 @@ categories: Retrospect
 <br>
 <br>
 
-```toc
-
-```

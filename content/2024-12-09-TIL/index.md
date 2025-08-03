@@ -128,6 +128,3 @@ function solution(picture, k) {
 <br>
 <br>
 
-```toc
-
-```

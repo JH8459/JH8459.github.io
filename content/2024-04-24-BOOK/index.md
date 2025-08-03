@@ -257,6 +257,3 @@ export enum GenderEnum {
 <br>
 <br>
 
-```toc
-
-```

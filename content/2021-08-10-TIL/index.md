@@ -262,6 +262,3 @@ console.log(output(4)); // --> 63
 <br>
 <br>
 
-```toc
-
-```

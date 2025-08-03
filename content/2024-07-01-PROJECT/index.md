@@ -228,6 +228,3 @@ API 서버는 <strong>LOTTERY🍀</strong>의 주요 기능을 모두 담당한�
 <br>
 <br>
 
-```toc
-
-```

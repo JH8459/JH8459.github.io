@@ -179,6 +179,3 @@ categories: TIL
 <br>
 <br>
 
-```toc
-
-```

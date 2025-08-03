@@ -105,6 +105,3 @@ AWS에서 기본으로 제공하는 AWS Skill Builder 강의는 전반적인 시
 <br>
 <br>
 
-```toc
-
-```

@@ -95,6 +95,3 @@ AWS Certified는 취득 비용이 만만치 않다. <del>(높은 환율 또한 �
 <br>
 <br>
 
-```toc
-
-```

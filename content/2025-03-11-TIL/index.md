@@ -141,6 +141,3 @@ var middleNode = function(head) {
 <br>
 <br>
 
-```toc
-
-```

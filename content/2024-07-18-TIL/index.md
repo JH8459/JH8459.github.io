@@ -102,6 +102,3 @@ mysqldump --single-transaction -h 000.00.00.00 -u root -p --no-data lottery > LO
 <br>
 <br>
 
-```toc
-
-```

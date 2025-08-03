@@ -292,6 +292,3 @@ anchorMaker('world');
 <br>
 <br>
 
-```toc
-
-```

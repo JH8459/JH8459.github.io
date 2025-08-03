@@ -220,6 +220,3 @@ Realtime Database 생성이 완료되었다면, 프로젝트를 생성해준다.
 <br>
 <br>
 
-```toc
-
-```

@@ -113,6 +113,3 @@ categories: Project
 <br>
 <br>
 
-```toc
-
-```

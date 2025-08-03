@@ -148,6 +148,3 @@ categories: Book
 <br>
 <br>
 
-```toc
-
-```

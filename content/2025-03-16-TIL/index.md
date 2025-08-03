@@ -492,6 +492,3 @@ echo "🎉 Rollback complete! Traffic is now routed to $TARGET_SERVICE."
 <br>
 <br>
 
-```toc
-
-```

@@ -210,6 +210,3 @@ myFun('one', 'two', 'three', 'four', 'five', 'six');
 <br>
 <br>
 
-```toc
-
-```

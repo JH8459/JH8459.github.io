@@ -143,6 +143,3 @@ GPT부터 여러 관련 자료들을 찾아본 결과 몇가지 <strong>Dead Cod
 <br>
 <br>
 
-```toc
-
-```
