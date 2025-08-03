@@ -51,6 +51,13 @@ function PostSearch({ posts }) {
                 <li
                   key={post.slug}
                   onClick={() => handleItemClick(post.slug)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleItemClick(post.slug);
+                    }
+                  }}
+                  role="button"
+                  tabIndex="0"
                   className="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white"
                 >
                   <div className="font-semibold text-[14px] mb-[2px] flex justify-between items-center">

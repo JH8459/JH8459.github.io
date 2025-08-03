@@ -14,7 +14,7 @@ function AboutPage({ data }) {
     <Layout>
       <Seo title="About" />
       <Bio author={author} language={language} />
-      <div className="w-[80%] mx-auto">
+      <div className="w-full md:w-[80%] mx-auto">
         <TimeStampSection timestamps={timestamps} />
         <ProjectSection projects={projects} />
       </div>

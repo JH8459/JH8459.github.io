@@ -89,7 +89,6 @@ export const pageQuery = graphql`
 
     next: markdownRemark(fields: { slug: { eq: $nextSlug } }) {
       id
-      html
       frontmatter {
         date(formatString: "YYYY.MM.DD")
 
@@ -105,7 +104,6 @@ export const pageQuery = graphql`
 
     prev: markdownRemark(fields: { slug: { eq: $prevSlug } }) {
       id
-      html
       frontmatter {
         date(formatString: "YYYY.MM.DD")
 

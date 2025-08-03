@@ -20,7 +20,7 @@ function ProjectSection({ projects }) {
                 <IconButtonBar links={project.links} className="inline-flex space-x-4" />
               )}
             </div>
-            <div className="flex justify-center w-full mb-[10px]">
+            <div className="hidden md:flex justify-center w-full mb-[10px]">
               <Image className="w-full max-w-content h-[260px] object-cover" src={project.thumbnailUrl} alt={project.title} />
             </div>
             {project.techStack && (

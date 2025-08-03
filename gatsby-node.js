@@ -47,7 +47,7 @@ const createPostsPages = ({ createPage, results }) => {
 
   edges.forEach(({ node }) => {
     const postCategories = node.frontmatter.categories.split(' ');
-    postCategories.forEach(category => categorySet.add(category));
+    postCategories.forEach((category) => categorySet.add(category));
   });
 
   const categories = [...categorySet];
@@ -55,19 +55,22 @@ const createPostsPages = ({ createPage, results }) => {
   createPage({
     path: `/posts`,
     component: categoryTemplate,
-    context: { currentCategory: 'All', edges, categories, defaultThumbnail: results.defaultThumbnail },
+    context: {
+      currentCategory: 'All',
+      edges,
+      categories,
+      defaultThumbnail: results.defaultThumbnail,
+    },
   });
 
-  categories.forEach(currentCategory => {
+  categories.forEach((currentCategory) => {
     createPage({
       path: `/posts/${currentCategory}`,
       component: categoryTemplate,
       context: {
         currentCategory,
         categories,
-        edges: edges.filter(({ node }) =>
-          node.frontmatter.categories.includes(currentCategory)
-        ),
+        edges: edges.filter(({ node }) => node.frontmatter.categories.includes(currentCategory)),
         defaultThumbnail: results.defaultThumbnail,
       },
     });
@@ -79,10 +82,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allMarkdownRemarkResults = await graphql(`
     query AllMarkdownRemark {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
           node {
             id
@@ -117,7 +117,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     query DefaultThumbnail {
       file(relativePath: { eq: "common/NO_IMAGE.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 100, height: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(
+            width: 100
+            height: 100
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }
@@ -129,5 +134,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   createBlogPages({ createPage, results: allMarkdownRemarkResults.data.allMarkdownRemark });
-  createPostsPages({ createPage, results: { ...allMarkdownRemarkResults.data.allMarkdownRemark, defaultThumbnail: defaultThumbnailResults.data.file } });
+  createPostsPages({
+    createPage,
+    results: {
+      ...allMarkdownRemarkResults.data.allMarkdownRemark,
+      defaultThumbnail: defaultThumbnailResults.data.file,
+    },
+  });
 };
