@@ -7,8 +7,11 @@ module.exports = {
   siteUrl: `https://blog.jh8459.com`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
-    utterances: {
+    giscus: {
       repo: `JH8459/JH8459.github.io`,
+      repoId: 'R_kgDOI03HgA',
+      category: 'Comments',
+      categoryId: 'DIC_kwDOI03HgM4CtuXL',
     },
   },
   googleTrakingId: process.env.GOOGLE_TRAKING_ID, // Google Analytics Tracking ID
@@ -83,7 +86,7 @@ module.exports = {
         links: {
           homepage: 'https://www.smiledragon.co.kr/',
         },
-      }
+      },
     ],
 
     projects: [
@@ -149,7 +152,7 @@ module.exports = {
           post: 'https://blog.jh8459.com/2023-05-01-PROJECT/',
           github: 'https://github.com/JH8459/SLACK-LUNCH-BOT',
         },
-      }
+      },
     ],
   },
 };

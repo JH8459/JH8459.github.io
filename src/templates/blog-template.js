@@ -8,7 +8,7 @@ import PostHeader from '../components/post-header';
 import PostNavigator from '../components/post-navigator';
 import Post from '../models/post';
 import PostContent from '../components/post-content';
-import Utterances from '../components/utterances';
+import Giscus from '../components/giscus';
 
 function BlogTemplate({ data }) {
   const [viewCount, setViewCount] = useState(0);
@@ -17,7 +17,7 @@ function BlogTemplate({ data }) {
   const prevPost = data.prev ? new Post(data.prev) : null;
   const nextPost = data.next ? new Post(data.next) : null;
   const { siteUrl, comments } = data.site?.siteMetadata;
-  const utterancesRepo = comments?.utterances?.repo;
+  const giscusRepo = comments?.giscus?.repo;
 
   useEffect(() => {
     if (!siteUrl) return;
@@ -59,7 +59,9 @@ function BlogTemplate({ data }) {
       <PostHeader post={curPost} viewCount={viewCount} />
       <PostContent html={curPost.html} />
       <PostNavigator prevPost={prevPost} nextPost={nextPost} />
-      {utterancesRepo && <Utterances repo={utterancesRepo} path={curPost.slug} />}
+      <div className="mt-8 w-full">
+        {giscusRepo && <Giscus repo={giscusRepo} path={curPost.slug} />}
+      </div>
     </Layout>
   );
 }
@@ -67,7 +69,7 @@ function BlogTemplate({ data }) {
 export default BlogTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String, $nextSlug: String, $prevSlug: String) {
+  query ($slug: String, $nextSlug: String, $prevSlug: String) {
     cur: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -119,15 +121,15 @@ export const pageQuery = graphql`
 
     site {
       siteMetadata {
-        siteUrl
         comments {
-          utterances {
+          giscus {
             repo
+            repoId
+            category
+            categoryId
           }
         }
       }
     }
   }
 `;
-
-
