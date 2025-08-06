@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 03 Aug 2025 09:15:51 GMT</lastBuildDate><item><title><![CDATA[내부망 도메인 접속 실패 이유와 해결 방법]]></title><description><![CDATA[✍️ Today I Learned 현재 개인 프로젝트 운영 목적으로 사용 중인 NAS…]]></description><link>https://blog.jh8459.com/2025-06-30-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-06-30-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[블로그 RSS Feed]]></title><description><![CDATA[JH 개발일기]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 06 Aug 2025 13:59:25 GMT</lastBuildDate><item><title><![CDATA[MariaDB ENUM 필드 수정시 상황별 퍼포먼스 차이]]></title><description><![CDATA[✍️ Today I Learned MariaDB(MySQL)에서  명령어를 사용하여 ENUM…]]></description><link>https://blog.jh8459.com/2025-08-06-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-08-06-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Wed, 06 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
     &gt;
@@ -10,12 +10,100 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;️-today-i-learned&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-today-i-learned&quot; aria-label=&quot;️ today i learned permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✍️ &lt;strong&gt;T&lt;/strong&gt;oday &lt;strong&gt;I&lt;/strong&gt; &lt;strong&gt;L&lt;/strong&gt;earned&lt;/h2&gt;
+&lt;p&gt;MariaDB(MySQL)에서 &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; 명령어를 사용하여 ENUM 타입의 필드를 수정하는 작업은 테이블 전체를 재구성하여 오래 걸리는 작업으로 알고 있었다. 특히 데이터가 많은 운영 환경의 테이블일수록 부담이 커, 해당 작업은 기피 대상 중 하나였다.&lt;/p&gt;
+&lt;p&gt;하지만 모든 ENUM 수정 작업이 동일한 비용을 발생시키는 것은 아니었다.&lt;/p&gt;
+&lt;p&gt;ENUM 목록의 가장 마지막에 새로운 요소를 추가하는 작업은 테이블의 메타데이터만 변경하므로 기존에 알던 것과 달리 매우 빠른 속도로 완료되었다. 반면, ENUM 목록의 중간에 값을 삽입하거나 기존 값을 변경하는 작업은 테이블 전체를 다시 쓰는 과정을 거치므로 테이블 크기에 비례하여 많은 시간이 소요되는 것이 맞았다.&lt;/p&gt;
+&lt;p&gt;이번 포스팅에서는 ENUM 타입의 내부 동작 원리를 통해 왜 이러한 성능 차이가 발생하는지에 대한 학습 내용을 기록으로 남긴다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-enum의-내부-저장-구조와-동작-원리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-enum%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%A0%80%EC%9E%A5-%EA%B5%AC%EC%A1%B0%EC%99%80-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC&quot; aria-label=&quot;1 enum의 내부 저장 구조와 동작 원리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. ENUM의 내부 저장 구조와 동작 원리&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;ENUM 타입의 &lt;code class=&quot;language-text&quot;&gt;ALTER&lt;/code&gt; 성능 차이를 이해하려면, 먼저 ENUM이 데이터베이스 내부에 어떻게 저장되는지 알아야 했다.&lt;/p&gt;
+&lt;p&gt;결론부터 말하자면, ENUM은 우리가 정의한 문자열 그대로 저장되지 않는다. 대신, 각 문자열 값은 내부적으로 &lt;strong&gt;정수 인덱스(integer index)&lt;/strong&gt;에 1:1로 매핑되어 저장된다.&lt;/p&gt;
+&lt;p&gt;예를 들어, &lt;code class=&quot;language-text&quot;&gt;ENUM(&apos;APPLE&apos;, &apos;BANANA&apos;, &apos;ORANGE&apos;)&lt;/code&gt;와 같이 컬럼을 선언했다면, 실제 데이터는 아래와 같이 정수로 변환되어 관리된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&apos;APPLE&apos;&lt;/code&gt;은 정수 &lt;strong&gt;1&lt;/strong&gt;에 매핑된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&apos;BANANA&apos;&lt;/code&gt;는 정수 &lt;strong&gt;2&lt;/strong&gt;에 매핑된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&apos;ORANGE&apos;&lt;/code&gt;는 정수 &lt;strong&gt;3&lt;/strong&gt;에 매핑된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&quot;https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-08-06-TIL/index.png&quot;&gt;
+&lt;p&gt;만약 테이블에 &lt;code class=&quot;language-text&quot;&gt;&apos;BANANA&apos;&lt;/code&gt;라는 값을 가진 행을 삽입하면, 문자열 &lt;code class=&quot;language-text&quot;&gt;&apos;BANANA&apos;&lt;/code&gt;가 아닌 정수 &lt;strong&gt;2&lt;/strong&gt;가 기록되는 방식이다.&lt;/p&gt;
+&lt;p&gt;이러한 내부 동작 방식은 저장 공간을 절약하고, 특정 상황에서 문자열 비교보다 빠른 정수 비교를 통해 성능적 이점을 얻게된다. 하지만, 이러한 인덱스 기반의 저장 구조가 &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; 명령을 실행할 때 성능 차이를 만들어내는 핵심 원인이었다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;2-빠른-alter-enum-목록-끝에-값-추가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%B9%A0%EB%A5%B8-alter-enum-%EB%AA%A9%EB%A1%9D-%EB%81%9D%EC%97%90-%EA%B0%92-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;2 빠른 alter enum 목록 끝에 값 추가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 빠른 ALTER: ENUM 목록 끝에 값 추가&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;그렇다면 ENUM 목록의 가장 마지막에 새로운 값을 추가하는 &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; 쿼리는 왜 빨랐을까?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; my_table &lt;span class=&quot;token keyword&quot;&gt;MODIFY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;COLUMN&lt;/span&gt; my_column &lt;span class=&quot;token keyword&quot;&gt;ENUM&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;APPLE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;BANANA&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ORANGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GRAPE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 기존 목록 &lt;code class=&quot;language-text&quot;&gt;(&apos;APPLE&apos;, &apos;BANANA&apos;, &apos;ORANGE&apos;)&lt;/code&gt;의 끝에 &lt;code class=&quot;language-text&quot;&gt;&apos;GRAPE&apos;&lt;/code&gt;를 추가하는 경우를 가정해 보면, 데이터베이스의 내부 동작은 매우 효율적이었다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;기존의 인덱스 매핑(&lt;code class=&quot;language-text&quot;&gt;APPLE&lt;/code&gt; = &lt;strong&gt;1&lt;/strong&gt;, &lt;code class=&quot;language-text&quot;&gt;BANANA&lt;/code&gt; = &lt;strong&gt;2&lt;/strong&gt;, &lt;code class=&quot;language-text&quot;&gt;ORANGE&lt;/code&gt; = &lt;strong&gt;3&lt;/strong&gt;)은 전혀 변경되지 않는다.&lt;/li&gt;
+&lt;li&gt;새롭게 추가된 &lt;code class=&quot;language-text&quot;&gt;&apos;GRAPE&apos;&lt;/code&gt;에 다음 순번인 정수 인덱스 &lt;strong&gt;4&lt;/strong&gt;가 새롭게 할당된다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;가장 중요한 점은, 테이블에 이미 저장되어 있던 기존 데이터(1, 2, 3)를 전혀 수정할 필요가 없다는 것이었다. 작업은 테이블의 구조 정보, 즉 메타데이터를 변경하는 선에서 마무리된다. 이는 테이블의 실제 데이터를 한 줄도 읽거나 쓰지 않는 작업이므로, 테이블의 전체 크기와 무관하게 작업이 거의 즉시 완료되는 결과를 낳았다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-understanding&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-understanding&quot; aria-label=&quot; understanding permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🤔 Understanding&lt;/h2&gt;
+&lt;p&gt;이번 학습을 통해 ENUM 타입에 대해 다시 한번 정리할 수 있었다.&lt;/p&gt;
+&lt;p&gt;먼저 ENUM을 사용함으로써 얻는 이점은 명확하다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;데이터 무결성 보장&lt;/strong&gt;: 정의된 값만 저장할 수 있으므로, 오타나 잘못된 데이터가 입력될 가능성을 원천적으로 차단한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;저장 공간 효율성&lt;/strong&gt;: 문자열이 아닌 내부 정수 인덱스로 데이터를 관리하므로, 저장 공간을 절약할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가독성 향상&lt;/strong&gt;: &lt;code class=&quot;language-text&quot;&gt;status = 1&lt;/code&gt;과 같은 코드보다 &lt;code class=&quot;language-text&quot;&gt;status = &apos;COMPLETED&apos;&lt;/code&gt;와 같이 직관적인 코드를 가능하게 하여 가독성을 높인다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;하지만 이러한 장점에도 불구하고, ENUM을 수정할 때는 반드시 기억해야 할 주의사항이 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;새로운 값은 반드시 목록의 가장 마지막에 추가해야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;이는 테이블의 실제 데이터를 변경하지 않고 메타데이터만 수정하는 빠른 작업이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;목록의 중간에 값을 추가하거나 순서를 변경하는 &lt;code class=&quot;language-text&quot;&gt;ALTER TABLE&lt;/code&gt; 쿼리는 되도록 피해야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;이 작업은 테이블 전체를 재구성하는 과정(Table Rebuild)을 유발하며, 대용량 테이블에서는 서비스 장애의 원인이 될 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;불가피하게 중간을 수정해야 한다면, 서비스 점검 시간을 확보하거나 별도의 툴을 이용한 계획이 반드시 필요하다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;결론적으로 ENUM은 데이터의 일관성과 명확성을 보장해 주는 매우 유용한 기능임이 틀림없었다. 하지만 그 내부 동작 방식을 제대로 이해하지 못하고 사용할 경우, 예상치 못한 성능 저하와 장애를 마주할 수 있는 양날의 검과 같았다.&lt;/p&gt;
+&lt;p&gt;이번 기회를 통해 ENUM의 내부 동작 원리를 이해하고 올바르게 사용하는 것이 무엇보다 중요함을 다시 한번 확인할 수 있었다.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[내부망 도메인 접속 실패 이유와 해결 방법]]></title><description><![CDATA[✍️ Today I Learned 현재 개인 프로젝트 운영 목적으로 사용 중인 NAS…]]></description><link>https://blog.jh8459.com/2025-06-30-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2025-06-30-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/2gAMAwEAAhADEAAAAdJomgf/xAAWEAADAAAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCFP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACAx/9oACAEBAAY/AiL/AP/EABgQAAIDAAAAAAAAAAAAAAAAAAABESAx/9oACAEBAAE/IRm9hX//2gAMAwEAAgADAAAAEEw//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRAAAgMBAAAAAAAAAAAAAAAAAREAIEFR/9oACAEBAAE/EI1YY7tf/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;github-blog.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -426,12 +514,12 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -902,12 +990,12 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1052,12 +1140,12 @@ CMD &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1478,12 +1566,12 @@ EOL&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1608,12 +1696,12 @@ EOL&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1739,12 +1827,12 @@ EOL&lt;/span&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2190,12 +2278,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2669,12 +2757,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2799,12 +2887,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -2926,12 +3014,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -3415,12 +3503,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -3574,12 +3662,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -3661,12 +3749,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -3831,12 +3919,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -3972,12 +4060,12 @@ dotenv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -4300,12 +4388,12 @@ speettoRule&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tz &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -4596,12 +4684,12 @@ speettoRule&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tz &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -5853,12 +5941,12 @@ speettoRule&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tz &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -6570,12 +6658,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -6706,12 +6794,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -7053,13 +7141,13 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -7666,13 +7754,13 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -7836,12 +7924,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -8239,12 +8327,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -8507,12 +8595,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -9367,12 +9455,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -10477,12 +10565,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -10586,12 +10674,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -10689,12 +10777,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -10844,12 +10932,12 @@ output {
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -11175,12 +11263,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -11292,12 +11380,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -11513,12 +11601,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -11627,12 +11715,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -11785,12 +11873,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12031,12 +12119,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12123,13 +12211,13 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12220,13 +12308,13 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12362,12 +12450,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12560,12 +12648,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12716,12 +12804,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -12854,12 +12942,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13157,13 +13245,13 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13330,11 +13418,11 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13471,12 +13559,12 @@ req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13660,11 +13748,11 @@ Foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13745,11 +13833,11 @@ Foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -13832,236 +13920,6 @@ Foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
-&lt;br&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)]]></title><description><![CDATA[⚒️ Refactoring 어제~오후까지 어제부터 이어온 Task인 로그인이 검증이 필요한 API…]]></description><link>https://blog.jh8459.com/2022-02-11-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-11-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Fri, 11 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABYBAQEBAAAAAAAAAAAAAAAAAAQAAf/aAAwDAQACEAMQAAAB71JJTVn/xAAWEAADAAAAAAAAAAAAAAAAAAAAESD/2gAIAQEAAQUCFP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACBB/9oACAEBAAY/AiL/AP/EABwQAAICAgMAAAAAAAAAAAAAAAERADEQUUFxkf/aAAgBAQABPyG+QOzHFn1G4hqIax//2gAMAwEAAgADAAAAEOMv/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBR/9oACAEDAQE/EBMn/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARUf/aAAgBAgEBPxCHV//EAB0QAQABBAMBAAAAAAAAAAAAAAEAESExgRBBYXH/2gAIAQEAAT8QBTSiaYF1uN2gdiAFQQemKZD9Jmsv5x//2Q==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog.png&quot;
-        title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;️-refactoring&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot; aria-label=&quot;️ refactoring permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;⚒️ Refactoring&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;어제~오후까지 어제부터 이어온 Task인 로그인이 검증이 필요한 API 요청시 유효하지 않은 로그인 상태라면 메인페이지로 강제 이동 후 로그인 창 팝업으로 다시 로그인을 유도하는 로직으로 서버와 클라이언트를 다시 설계하였다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;생각보다 로그인 검증이 필요한 API 요청이 많아서 작업시간이 오래걸렸다..&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;===main page===&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;알람 요청 : [post] concert/:concertid/alarm&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;알람 취소 : [delete] concert/:concertid/alarm&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;알람 조회 : [get] concert/alarm&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘서트 댓글 작성 : [post] concert/:concertid/comment&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘서트 댓글 수정 : [patch] concert/:concertid/comment/:commentid&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘서트 댓글 삭제 : [delete] concert/:concertid/comment/:commentid&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;===concert page===&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;없음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;===conchin page===&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 작성 : [post] concert/:concertid/article&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 수정 : [patch] concert/:concertid/article/:articleid&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 삭제 : [delete] concert/:concertid/article/:articleid&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 댓글 작성 : [post] concert/:concertid/article/:articleid/comment&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 댓글 수정 : [patch] concert/:concertid/article/:articleid/comment/:commentid&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;게시글 댓글 삭제 : [delete] concert/:concertid/article/:articleid/comment/:commentid&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;===my page===&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;마이페이지 진입 : [get] user/me&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;개인정보 수정 : [patch] user/me&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;닉네임 중복 확인 : [post] user/username&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;프로필사진 수정 : [patch] user/picture&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘친 인증 : [patch] user/safe&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘친 인증코드 요청 : [post] user/safe&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;콘친 인증코드 입력 : [post] user/safe/confirm&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;회원탈퇴 : [delete] user/me&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;내가 쓴 게시글 : [get] user/myarticle&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;내가 쓴 댓글 : [get] user/mycomment&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;1-추가적인-보완이-필요한-사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot; aria-label=&quot;1 추가적인 보완이 필요한 사항 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 추가적인 보완이 필요한 사항&lt;/h3&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;클라이언트를 담당하는 팀원분께서 현재 ALL-CON 프로젝트 스키마를 수정해달라는 요청을 해주셨다.&lt;/p&gt;
-&lt;p&gt;현재 콘친찾기 게시글 작성시 총 멤버수는 &lt;code class=&quot;language-text&quot;&gt;2&lt;/code&gt; 현재원 수는 &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;값으로 항상 고정을 해두었다.&lt;/p&gt;
-&lt;p&gt;처음부터 멤버수를 고정하기보다는 게시글 작성때부터 유연하게 멤버수를 수정할 수 있게 스키마를 수정해달라는 요청을 해주셨다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;사실 민감정보 암호화 리팩토링을 할 때도 &lt;code class=&quot;language-text&quot;&gt;sequelize&lt;/code&gt; 문법중 특정 컬럼만 추가하여 &lt;code class=&quot;language-text&quot;&gt;migration&lt;/code&gt;하는 방법도 열심히 구글링하여 찾아보았는데, 이번 스키마 구조 수정 후 자주쓰는 &lt;code class=&quot;language-text&quot;&gt;sequelize&lt;/code&gt; 문법은 다시 한번 복습할 겸 블로그에 학습한 내용을 남겨봐야겠다. &lt;del&gt;(매번 스키마 수정할 때마다 구글링 중..)&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;우선 클라이언트를 담당하는 팀원분께서 요청한 부분은 다음과 같다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153529646-275d910a-f7ee-43e2-8818-c2f2c9087961.png&quot; alt=&quot;스크린샷, 2022-02-11 11-09-59 (사본)&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;해당 &lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블 컬럼중 두가지값을 수정 요청하셨다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt; 디폴트값 삭제&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt; 디폴트값 삭제&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;2-문제-해결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot; aria-label=&quot;2 문제 해결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 문제 해결&lt;/h3&gt;
-&lt;h4 id=&quot;2-1-sequelize-model-파일-스키마-수정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-1-sequelize-model-%ED%8C%8C%EC%9D%BC-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%88%98%EC%A0%95&quot; aria-label=&quot;2 1 sequelize model 파일 스키마 수정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-1. Sequelize Model 파일 스키마 수정&lt;/h4&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;현재 &lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블의 모델구조는 다음과 같다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530343-c5bc09d9-9c91-4f8b-bb9b-56be132b2c22.png&quot;&gt;&lt;/center&gt;&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt; 컬럼은 &lt;code class=&quot;language-text&quot;&gt;INTEGER&lt;/code&gt; 타입의 데이터이며, &lt;code class=&quot;language-text&quot;&gt;NULL&lt;/code&gt;이 허용되지 않고 기본값들이 각각 &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;2&lt;/code&gt;로 설정이 되어 있다.&lt;/p&gt;
-&lt;p&gt;아래와 같이 불필요한 데이터 속성들을 삭제했다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530565-8e3c1057-f48a-446a-b7eb-1afcf3531e53.png&quot;&gt;&lt;/center&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h4 id=&quot;2-2-changecolumn-함수로-컬럼-데이터-속성값-변경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-2-changecolumn-%ED%95%A8%EC%88%98%EB%A1%9C-%EC%BB%AC%EB%9F%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%86%8D%EC%84%B1%EA%B0%92-%EB%B3%80%EA%B2%BD&quot; aria-label=&quot;2 2 changecolumn 함수로 컬럼 데이터 속성값 변경 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-2. changeColumn() 함수로 컬럼 데이터 속성값 변경&lt;/h4&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;우선 아래 명령어로 migration 파일을 생성해 준다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;# using npm
-npx sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli migration&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;generate &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;name 생성할 migration 이름
-# using yarn
-yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli migration&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;generate &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;name 생성할 migration 이름&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;그 뒤, 컬럼 안 데이터 속성값을 변경할 예정이기 때문에 &lt;code class=&quot;language-text&quot;&gt;changeColumn()&lt;/code&gt; 함수를 사용한다.&lt;/p&gt;
-&lt;p&gt;함수의 사용 방법은 아래와 같다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// await queryInterface.changeColumn(테이블명, 컬럼명, {&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//  컬럼 데이터 속성,&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//  컬럼 옵션&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// })&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; queryInterface&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;changeColumn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Articles&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;member_count&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token literal-property property&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Sequelize&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;INTEGER&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token literal-property property&quot;&gt;defaultValue&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token literal-property property&quot;&gt;allowNull&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;두가지 속성이 비동기로 처리되어야 하므로 아래와 같이 작성하였다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153529840-83dcc0fa-af69-4442-9395-dbc371849e23.png&quot; alt=&quot;스크린샷, 2022-02-11 11-42-54&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;해당 스키마 수정외에 &lt;code class=&quot;language-text&quot;&gt;controller&lt;/code&gt; 부분에서도 &lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt;는 고정값이 DB에 저장되므로 따로 &lt;code class=&quot;language-text&quot;&gt;req.body&lt;/code&gt;로 입력값을 전달받아 DB에 저장하지 않는 구조였다.&lt;/p&gt;
-&lt;p&gt;게시글 작성 &lt;code class=&quot;language-text&quot;&gt;controller&lt;/code&gt;까지 수정하여 게시글 작성시 멤버수를 유연하게 적용할 수 있게끔 리팩토링하였다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&quot;3-결과&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;3 결과 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 결과&lt;/h3&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블 스키마가 다음과같이 변경되었다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530932-c18c05a1-c469-413f-97da-62c00be542ea.png&quot; alt=&quot;스크린샷, 2022-02-11 11-09-59&quot;&gt;&lt;/p&gt;
-&lt;p&gt;이제 게시글 최초 작성시에도 멤버수를 유연하게 적용하여 게시글 생성이 가능하다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153531161-6c35922d-cdce-458d-ae93-04daa29ab5b9.gif&quot; alt=&quot;test&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
 &lt;br&gt;</content:encoded></item><item><title><![CDATA[Sequelize Migration]]></title><description><![CDATA[✍️ Today I Learned Sequelize ORM을 사용하며 가장 편리한 점을 꼽는다면 마이그레이션을 선택할 것 같다. 운영중인 서비스 중단없이 DB 스키마 모델을 변경한다던가 서비스 기획 및 설계단계에서 놓친 점을 나중에 추가할 때 DB…]]></description><link>https://blog.jh8459.com/2022-02-11-TIL/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-11-TIL/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Fri, 11 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -14074,12 +13932,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli mig
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14310,6 +14168,232 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;br&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)]]></title><description><![CDATA[⚒️ Refactoring 어제~오후까지 어제부터 이어온 Task인 로그인이 검증이 필요한 API…]]></description><link>https://blog.jh8459.com/2022-02-11-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-11-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Fri, 11 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABYBAQEBAAAAAAAAAAAAAAAAAAQAAf/aAAwDAQACEAMQAAAB71JJTVn/xAAWEAADAAAAAAAAAAAAAAAAAAAAESD/2gAIAQEAAQUCFP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACBB/9oACAEBAAY/AiL/AP/EABwQAAICAgMAAAAAAAAAAAAAAAERADEQUUFxkf/aAAgBAQABPyG+QOzHFn1G4hqIax//2gAMAwEAAgADAAAAEOMv/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBR/9oACAEDAQE/EBMn/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARUf/aAAgBAgEBPxCHV//EAB0QAQABBAMBAAAAAAAAAAAAAAEAESExgRBBYXH/2gAIAQEAAT8QBTSiaYF1uN2gdiAFQQemKZD9Jmsv5x//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;github-blog.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;️-refactoring&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-refactoring&quot; aria-label=&quot;️ refactoring permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;⚒️ Refactoring&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;어제~오후까지 어제부터 이어온 Task인 로그인이 검증이 필요한 API 요청시 유효하지 않은 로그인 상태라면 메인페이지로 강제 이동 후 로그인 창 팝업으로 다시 로그인을 유도하는 로직으로 서버와 클라이언트를 다시 설계하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;생각보다 로그인 검증이 필요한 API 요청이 많아서 작업시간이 오래걸렸다..&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;===main page===&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;알람 요청 : [post] concert/:concertid/alarm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;알람 취소 : [delete] concert/:concertid/alarm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;알람 조회 : [get] concert/alarm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘서트 댓글 작성 : [post] concert/:concertid/comment&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘서트 댓글 수정 : [patch] concert/:concertid/comment/:commentid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘서트 댓글 삭제 : [delete] concert/:concertid/comment/:commentid&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;===concert page===&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;===conchin page===&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 작성 : [post] concert/:concertid/article&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 수정 : [patch] concert/:concertid/article/:articleid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 삭제 : [delete] concert/:concertid/article/:articleid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 댓글 작성 : [post] concert/:concertid/article/:articleid/comment&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 댓글 수정 : [patch] concert/:concertid/article/:articleid/comment/:commentid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;게시글 댓글 삭제 : [delete] concert/:concertid/article/:articleid/comment/:commentid&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;===my page===&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;마이페이지 진입 : [get] user/me&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;개인정보 수정 : [patch] user/me&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;닉네임 중복 확인 : [post] user/username&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;프로필사진 수정 : [patch] user/picture&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘친 인증 : [patch] user/safe&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘친 인증코드 요청 : [post] user/safe&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘친 인증코드 입력 : [post] user/safe/confirm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;회원탈퇴 : [delete] user/me&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;내가 쓴 게시글 : [get] user/myarticle&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;내가 쓴 댓글 : [get] user/mycomment&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;1-추가적인-보완이-필요한-사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD&quot; aria-label=&quot;1 추가적인 보완이 필요한 사항 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 추가적인 보완이 필요한 사항&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;클라이언트를 담당하는 팀원분께서 현재 ALL-CON 프로젝트 스키마를 수정해달라는 요청을 해주셨다.&lt;/p&gt;
+&lt;p&gt;현재 콘친찾기 게시글 작성시 총 멤버수는 &lt;code class=&quot;language-text&quot;&gt;2&lt;/code&gt; 현재원 수는 &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;값으로 항상 고정을 해두었다.&lt;/p&gt;
+&lt;p&gt;처음부터 멤버수를 고정하기보다는 게시글 작성때부터 유연하게 멤버수를 수정할 수 있게 스키마를 수정해달라는 요청을 해주셨다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사실 민감정보 암호화 리팩토링을 할 때도 &lt;code class=&quot;language-text&quot;&gt;sequelize&lt;/code&gt; 문법중 특정 컬럼만 추가하여 &lt;code class=&quot;language-text&quot;&gt;migration&lt;/code&gt;하는 방법도 열심히 구글링하여 찾아보았는데, 이번 스키마 구조 수정 후 자주쓰는 &lt;code class=&quot;language-text&quot;&gt;sequelize&lt;/code&gt; 문법은 다시 한번 복습할 겸 블로그에 학습한 내용을 남겨봐야겠다. &lt;del&gt;(매번 스키마 수정할 때마다 구글링 중..)&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;우선 클라이언트를 담당하는 팀원분께서 요청한 부분은 다음과 같다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153529646-275d910a-f7ee-43e2-8818-c2f2c9087961.png&quot; alt=&quot;스크린샷, 2022-02-11 11-09-59 (사본)&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;해당 &lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블 컬럼중 두가지값을 수정 요청하셨다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt; 디폴트값 삭제&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt; 디폴트값 삭제&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;2-문제-해결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot; aria-label=&quot;2 문제 해결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 문제 해결&lt;/h3&gt;
+&lt;h4 id=&quot;2-1-sequelize-model-파일-스키마-수정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-1-sequelize-model-%ED%8C%8C%EC%9D%BC-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%88%98%EC%A0%95&quot; aria-label=&quot;2 1 sequelize model 파일 스키마 수정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-1. Sequelize Model 파일 스키마 수정&lt;/h4&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;현재 &lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블의 모델구조는 다음과 같다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530343-c5bc09d9-9c91-4f8b-bb9b-56be132b2c22.png&quot;&gt;&lt;/center&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt; 컬럼은 &lt;code class=&quot;language-text&quot;&gt;INTEGER&lt;/code&gt; 타입의 데이터이며, &lt;code class=&quot;language-text&quot;&gt;NULL&lt;/code&gt;이 허용되지 않고 기본값들이 각각 &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;2&lt;/code&gt;로 설정이 되어 있다.&lt;/p&gt;
+&lt;p&gt;아래와 같이 불필요한 데이터 속성들을 삭제했다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530565-8e3c1057-f48a-446a-b7eb-1afcf3531e53.png&quot;&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&quot;2-2-changecolumn-함수로-컬럼-데이터-속성값-변경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-2-changecolumn-%ED%95%A8%EC%88%98%EB%A1%9C-%EC%BB%AC%EB%9F%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%86%8D%EC%84%B1%EA%B0%92-%EB%B3%80%EA%B2%BD&quot; aria-label=&quot;2 2 changecolumn 함수로 컬럼 데이터 속성값 변경 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2-2. changeColumn() 함수로 컬럼 데이터 속성값 변경&lt;/h4&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;우선 아래 명령어로 migration 파일을 생성해 준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;# using npm
+npx sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli migration&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;generate &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;name 생성할 migration 이름
+# using yarn
+yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli migration&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;generate &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;name 생성할 migration 이름&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;그 뒤, 컬럼 안 데이터 속성값을 변경할 예정이기 때문에 &lt;code class=&quot;language-text&quot;&gt;changeColumn()&lt;/code&gt; 함수를 사용한다.&lt;/p&gt;
+&lt;p&gt;함수의 사용 방법은 아래와 같다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// await queryInterface.changeColumn(테이블명, 컬럼명, {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//  컬럼 데이터 속성,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//  컬럼 옵션&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// })&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; queryInterface&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;changeColumn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Articles&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;member_count&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Sequelize&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;INTEGER&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;defaultValue&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;allowNull&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;두가지 속성이 비동기로 처리되어야 하므로 아래와 같이 작성하였다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153529840-83dcc0fa-af69-4442-9395-dbc371849e23.png&quot; alt=&quot;스크린샷, 2022-02-11 11-42-54&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;해당 스키마 수정외에 &lt;code class=&quot;language-text&quot;&gt;controller&lt;/code&gt; 부분에서도 &lt;code class=&quot;language-text&quot;&gt;member_count&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;total_member&lt;/code&gt;는 고정값이 DB에 저장되므로 따로 &lt;code class=&quot;language-text&quot;&gt;req.body&lt;/code&gt;로 입력값을 전달받아 DB에 저장하지 않는 구조였다.&lt;/p&gt;
+&lt;p&gt;게시글 작성 &lt;code class=&quot;language-text&quot;&gt;controller&lt;/code&gt;까지 수정하여 게시글 작성시 멤버수를 유연하게 적용할 수 있게끔 리팩토링하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;3-결과&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B2%B0%EA%B3%BC&quot; aria-label=&quot;3 결과 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 결과&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Articles&lt;/code&gt; 테이블 스키마가 다음과같이 변경되었다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153530932-c18c05a1-c469-413f-97da-62c00be542ea.png&quot; alt=&quot;스크린샷, 2022-02-11 11-09-59&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이제 게시글 최초 작성시에도 멤버수를 유연하게 적용하여 게시글 생성이 가능하다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153531161-6c35922d-cdce-458d-ae93-04daa29ab5b9.gif&quot; alt=&quot;test&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
 &lt;br&gt;</content:encoded></item><item><title><![CDATA[ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증]]></title><description><![CDATA[⚒️ Refactoring 어제 발생한  에러는  미들웨어 함수를 수정하여 핸들링하였다. 오늘은 전반적으로 유효하지 않은 로그인 상태를 검증하여 메인페이지로 이동 후 로그인을 유도하는 방향으로 프로젝트를 리팩토링해볼 예정이다. 1. 문제점 현재 ALL…]]></description><link>https://blog.jh8459.com/2022-02-10-PROJECT/</link><guid isPermaLink="false">https://blog.jh8459.com/2022-02-10-PROJECT/</guid><dc:creator><![CDATA[JH8459]]></dc:creator><pubDate>Thu, 10 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
@@ -14322,11 +14406,11 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14468,11 +14552,11 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14585,12 +14669,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14693,11 +14777,11 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14813,11 +14897,11 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg&quot;
-        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/PROJECT.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/PROJECT.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/PROJECT.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/PROJECT.jpg 905w&quot;
+        src=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg&quot;
+        srcset=&quot;/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
+/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
+/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
+/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -14967,12 +15051,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -15207,13 +15291,13 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -16510,13 +16594,13 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -16585,13 +16669,13 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -16741,12 +16825,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -17055,13 +17139,13 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -17101,13 +17185,13 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png&quot;
-        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/RETROSPECT.png 180w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/RETROSPECT.png 360w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/RETROSPECT.png 720w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/RETROSPECT.png 1080w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/RETROSPECT.png 1440w,
-/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/RETROSPECT.png 1487w&quot;
+        src=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png&quot;
+        srcset=&quot;/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -17161,12 +17245,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -17284,12 +17368,12 @@ yarn sequelize&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli db&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -17793,12 +17877,12 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -18057,12 +18141,12 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -18752,12 +18836,12 @@ IP와 관련된 데이터들을 씌운다). ➡ TCP/IP 패킷이 생성됨.&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -19046,12 +19130,12 @@ IP와 관련된 데이터들을 씌운다). ➡ TCP/IP 패킷이 생성됨.&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -19257,12 +19341,12 @@ axios&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -19637,12 +19721,12 @@ Users&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -19832,12 +19916,12 @@ Users&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -20120,12 +20204,12 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -20426,12 +20510,12 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -20872,12 +20956,12 @@ router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21034,12 +21118,12 @@ router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21263,12 +21347,12 @@ chmod u+rwx helloworld.js # -rwx------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21396,12 +21480,12 @@ chmod u+rwx helloworld.js # -rwx------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21527,12 +21611,12 @@ chmod u+rwx helloworld.js # -rwx------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21770,12 +21854,12 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -21918,12 +22002,12 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -22208,12 +22292,12 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -22474,12 +22558,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -22721,12 +22805,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -22962,12 +23046,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23144,12 +23228,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23272,12 +23356,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23376,12 +23460,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23631,12 +23715,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23769,12 +23853,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -23947,12 +24031,12 @@ rest&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span clas
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -24280,12 +24364,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -24575,12 +24659,12 @@ input&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;type&lt;span 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -24669,12 +24753,12 @@ input&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;type&lt;span 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -24832,12 +24916,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -24942,12 +25026,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25092,12 +25176,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25143,12 +25227,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25183,12 +25267,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25315,12 +25399,12 @@ user&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25395,12 +25479,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25515,12 +25599,12 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -25712,12 +25796,12 @@ isStudent &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; isFemale&
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;github-blog.png&quot;
         title=&quot;&quot;
-        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg&quot;
-        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/TIL.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/TIL.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/TIL.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/TIL.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/TIL.jpg 1272w&quot;
+        src=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg&quot;
+        srcset=&quot;/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
+/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w&quot;
         sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
