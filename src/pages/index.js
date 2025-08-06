@@ -54,7 +54,7 @@ export const pageQuery = graphql`
       }
     }
 
-    defaultThumbnail: file(relativePath: { eq: "common/NO_IMAGE.png" }) {
+    defaultThumbnail: file(relativePath: { eq: "common/no-image.png" }) {
       childImageSharp {
         gatsbyImageData(width: 100, height: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }

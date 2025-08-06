@@ -115,7 +115,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const defaultThumbnailResults = await graphql(`
     query DefaultThumbnail {
-      file(relativePath: { eq: "common/NO_IMAGE.png" }) {
+      file(relativePath: { eq: "common/no-image.png" }) {
         childImageSharp {
           gatsbyImageData(
             width: 100

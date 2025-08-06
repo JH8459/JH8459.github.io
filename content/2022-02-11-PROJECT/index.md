@@ -6,7 +6,7 @@ author: JH8459
 categories: Project
 ---
 
-![github-blog.png](../../assets/common/PROJECT.jpeg)
+![github-blog.png](../../assets/common/project.jpeg)
 
 <br>
 
@@ -15,9 +15,7 @@ categories: Project
 - 어제~오후까지 어제부터 이어온 Task인 로그인이 검증이 필요한 API 요청시 유효하지 않은 로그인 상태라면 메인페이지로 강제 이동 후 로그인 창 팝업으로 다시 로그인을 유도하는 로직으로 서버와 클라이언트를 다시 설계하였다.
 
 - 생각보다 로그인 검증이 필요한 API 요청이 많아서 작업시간이 오래걸렸다..
-
   - **===main page===**
-
     - 알람 요청 : [post] concert/:concertid/alarm
 
     - 알람 취소 : [delete] concert/:concertid/alarm
@@ -34,14 +32,12 @@ categories: Project
 <br>
 
 - **===concert page===**
-
   - 없음
 
 <br>
 <br>
 
 - **===conchin page===**
-
   - 게시글 작성 : [post] concert/:concertid/article
 
   - 게시글 수정 : [patch] concert/:concertid/article/:articleid
@@ -58,7 +54,6 @@ categories: Project
 <br>
 
 - **===my page===**
-
   - 마이페이지 진입 : [get] user/me
 
   - 개인정보 수정 : [patch] user/me
@@ -99,7 +94,6 @@ categories: Project
   ![스크린샷, 2022-02-11 11-09-59 (사본)](https://user-images.githubusercontent.com/83164003/153529646-275d910a-f7ee-43e2-8818-c2f2c9087961.png)
 
 - 해당 `Articles` 테이블 컬럼중 두가지값을 수정 요청하셨다.
-
   - `member_count` 디폴트값 삭제
 
   - `total_member` 디폴트값 삭제
@@ -186,4 +180,3 @@ categories: Project
 
 <br>
 <br>
-

@@ -6,7 +6,7 @@ author: JH8459
 categories: Project
 ---
 
-![github-blog.png](../../assets/common/PROJECT.jpeg)
+![github-blog.png](../../assets/common/project.jpeg)
 
 <br>
 
@@ -96,4 +96,3 @@ categories: Project
 
 <br>
 <br>
-

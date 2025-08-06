@@ -6,7 +6,7 @@ author: JH8459
 categories: Project
 ---
 
-![github-blog.png](../../assets/common/PROJECT.jpeg)
+![github-blog.png](../../assets/common/project.jpeg)
 
 <br>
 
@@ -30,7 +30,6 @@ categories: Project
   > ![스크린샷, 2022-02-09 11-31-35](https://user-images.githubusercontent.com/83164003/153110704-f562c05e-890a-4512-a358-f2cc3e431102.png)
 
 - 로그아웃시 에러가 발생하는 대표적인 경우는 다음과 같다.
-
   - 웹이나 모바일 환경에서 강제로 쿠키를 삭제 후 로그아웃시 발생
 
     ![스크린샷, 2022-02-09 11-28-57](https://user-images.githubusercontent.com/83164003/153110448-62615271-8a2c-4055-b3cd-59e80b7c1dbb.png)
@@ -66,7 +65,6 @@ categories: Project
   > ![스크린샷, 2022-02-09 11-42-11](https://user-images.githubusercontent.com/83164003/153112382-26f6e9dd-73c9-487e-bfa3-76c388d160e9.png)
 
 - 코드를 살펴보니 원인은 다음과 같았다.
-
   - 쿠키를 강제로 파괴하는 경우 `client` 상태는 로그인 상태이지만 JWT 토큰값이 없는 상황.
 
   - JWT 토큰이 없는 상황에서 `userAuth` 미들웨어 함수를 거치며 `return`값으로 401번 에러코드 `json` 응답 결과를 반환함.
@@ -99,4 +97,3 @@ categories: Project
 
 <br>
 <br>
-

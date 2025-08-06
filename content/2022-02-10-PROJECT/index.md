@@ -6,7 +6,7 @@ author: JH8459
 categories: Project
 ---
 
-![github-blog.png](../../assets/common/PROJECT.jpeg)
+![github-blog.png](../../assets/common/project.jpeg)
 
 <br>
 
@@ -91,7 +91,6 @@ categories: Project
   ```
 
 - 해당 모듈의 주된 기능은 두가지 함수로 만들어주었다.
-
   - 메인페이지 상태 초기화 & 켜져있는 모든 모달창 종료이후 메인페이지로 이동하는 `goHomeHandler()` 함수
 
   - 로그인 상태 초기화, 로그인한 유저정보 초기화 이후 로그인 모달창 띄워 재 로그인 유도하는 `loginStateHandler()` 함수
@@ -137,4 +136,3 @@ categories: Project
 
 <br>
 <br>
-

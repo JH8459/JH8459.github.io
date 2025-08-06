@@ -6,7 +6,7 @@ author: JH8459
 categories: Project
 ---
 
-![github-blog.png](../../assets/common/PROJECT.jpeg)
+![github-blog.png](../../assets/common/project.jpeg)
 
 <br>
 
@@ -19,7 +19,6 @@ categories: Project
   그 과정에서 기존 Repository에서 새로운 Repository로 이전을 해야해서 오늘은 시간을 소비하였다.
 
 - 우선 어제 혼자 학습한 내용은 블로그 후기로 정리를 해두었다.
-
   - <a href="https://blog.jh8459.com/2022-02-07-TIL/" target="_blank">Crypto 모듈로 비밀번호 암호화하기</a>
 
 - 오늘은 문제점 2~3을 마저 해결해보려한다.
@@ -92,7 +91,6 @@ categories: Project
   ![스크린샷, 2022-02-08 16-33-04](https://user-images.githubusercontent.com/83164003/152939747-9b7d7cce-b433-49d2-9a45-b77f7e490c8d.png)
 
   아래의 민감정보를 다루는 영역들에서 테스트 결과 이제 더이상 DB에 비밀번호를 바로 저장하지 않는걸 확인하였다.
-
   - 회원가입시 비밀번호 입력값
 
   - 회원정보 수정시 새로운 비밀번호 입력값
@@ -107,4 +105,3 @@ categories: Project
 
 <br>
 <br>
-

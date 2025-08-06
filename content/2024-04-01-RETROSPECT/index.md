@@ -6,7 +6,7 @@ author: JH8459
 categories: Retrospect
 ---
 
-![github-blog.png](../../assets/common/RETROSPECT.png)
+![github-blog.png](../../assets/common/retrospect.png)
 
 <br>
 

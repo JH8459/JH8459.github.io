@@ -6,7 +6,7 @@ author: JH8459
 categories: TIL
 ---
 
-![github-blog.png](../../assets/common/TIL.jpeg)
+![github-blog.png](../../assets/common/til.jpeg)
 
 <br>
 
