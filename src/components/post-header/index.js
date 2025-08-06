@@ -23,16 +23,17 @@ function PostHeader({ post, viewCount }) {
           {isNew && <span className="absolute top-[-10px] right-[-15px] text-red-500 font-bold text-base" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>N</span>}
         </span>
       </h1>
-      <div className="info flex flex-wrap w-full leading-[1.5] text-[16px] font-medium text-[var(--secondary-text-color)] justify-end items-baseline">
+      <div className="info flex flex-wrap w-full leading-[1.5] text-[16px] font-medium text-[var(--secondary-text-color)] justify-end items-center">
         <button 
           type="button"
-          className="relative mr-4 cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)]"
+          className="relative mr-4 cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
           onFocus={() => setShowTooltip(true)}
           onBlur={() => setShowTooltip(false)}
         >
-          <strong>{`${post.timeToRead} min read`}</strong>
+          <img src="/CLOCK.png" alt="clock" className="w-5 h-5 mr-1" />
+          <strong>{`${post.timeToRead}분`}</strong>
           {showTooltip && (
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-max p-2 bg-black text-white text-xs rounded">
               {`이 게시글을 읽는데 ${post.timeToRead}분 정도의 시간이 소요될 것으로 예상됩니다.`}
