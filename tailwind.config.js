@@ -51,6 +51,13 @@ module.exports = {
               padding: '0 1em',
               color: '#6a737d',
               borderLeft: '0.25em solid var(--markdown-blockquote-border-color)',
+              quotes: 'none',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
             },
             'code:not(pre > code)': {
               background: 'rgba(135, 131, 120, 0.15)',
