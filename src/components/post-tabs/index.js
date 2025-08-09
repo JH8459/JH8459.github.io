@@ -10,16 +10,23 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
 
   return (
     <div className="flex flex-col items-center justify-center self-start top-0 w-full">
-      <div className="flex justify-center items-center h-[40px] w-full max-w-[760px] mb-[36px] overflow-x-auto mx-auto">
-        {tabs.map((title, index) => (
-          <button
-            key={index}
-            onClick={() => onChange(null, index)}
-            className={`h-[40px] min-h-auto min-w-auto px-[12px] py-[10px] font-sans text-[17px] font-medium leading-none transition-all duration-200 focus:outline-none ${tabIndex === index ? 'bg-[var(--tab-selected-background-color)] text-[var(--tab-hover-text-color)] rounded-[8px] font-semibold' : 'text-[var(--tab-text-color)] hover:text-[var(--tab-hover-text-color)]'}`}
-          >
-            {title}
-          </button>
-        ))}
+      <div className="flex justify-center items-center space-x-2 md:space-x-4 h-auto w-full max-w-[760px] mb-[36px] overflow-x-auto mx-auto py-2">
+        {tabs.map((title, index) => {
+          const isSelected = tabIndex === index;
+          return (
+            <button
+              key={index}
+              onClick={() => onChange(null, index)}
+              className={`px-5 py-2.5 rounded-lg text-base font-medium transition-all duration-200 whitespace-nowrap shadow-sm ${
+                isSelected
+                  ? 'bg-gray-800 text-white dark:bg-gray-100 dark:text-gray-900'
+                  : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-amber-100 hover:text-amber-900 dark:hover:text-amber-900'
+              }`}
+            >
+              {title}
+            </button>
+          );
+        })}
       </div>
       <div className="w-full max-w-[760px]">
         <PostSorter sortType={sortType} onChange={onSortChange} />
