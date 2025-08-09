@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FaEye, FaRegClock } from 'react-icons/fa';
 
 function PostCard({ post, defaultThumbnail, isLoading }) {
   if (isLoading) {
@@ -29,7 +30,7 @@ function PostCard({ post, defaultThumbnail, isLoading }) {
   }
 
   // Original PostCard content
-  const { id, slug, title, excerpt, date, categories, thumbnail } = post;
+  const { id, slug, title, excerpt, date, categories, thumbnail, views, timeToRead } = post;
   const isNew = Math.ceil((new Date().getTime() - new Date(date).getTime()) / (1000 * 3600 * 24)) <= 7;
 
   const isExternalImage = typeof thumbnail === 'string' && (thumbnail.startsWith('http://') || thumbnail.startsWith('https://'));
@@ -72,7 +73,19 @@ function PostCard({ post, defaultThumbnail, isLoading }) {
               </span>
             ))}
           </div>
-          <div className="ml-4">{date}</div>
+          <div className="flex items-center space-x-4">
+            {timeToRead && (
+              <div className="flex items-center">
+                <FaRegClock className="mr-1" /> {timeToRead} min
+              </div>
+            )}
+            {views > 0 && (
+              <div className="flex items-center">
+                <FaEye className="mr-1" /> {views}
+              </div>
+            )}
+            <div>{date}</div>
+          </div>
         </div>
       </Link>
     </div>

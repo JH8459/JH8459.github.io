@@ -95,6 +95,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             id
             excerpt(pruneLength: 500)
+            timeToRead
             fields {
               slug
             }

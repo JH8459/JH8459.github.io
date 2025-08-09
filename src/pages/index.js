@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 500, truncate: true)
+          timeToRead
           frontmatter {
             categories
             title
