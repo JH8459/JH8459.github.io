@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { FaEye, FaRegClock } from 'react-icons/fa';
+import { FaEye, FaRegClock, FaCalendarAlt } from 'react-icons/fa';
+import ViewCount from '../post-header/view';
 
 function PostCard({ post, defaultThumbnail, isLoading }) {
   if (isLoading) {
@@ -84,7 +85,9 @@ function PostCard({ post, defaultThumbnail, isLoading }) {
                 <FaEye className="mr-1" /> {views}
               </div>
             )}
-            <div>{date}</div>
+            <div className="flex items-center">
+              <FaCalendarAlt className="w-4 h-4 mr-1" /> {date}
+            </div>
           </div>
         </div>
       </Link>

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import ViewCount from './view';
+import { FaRegClock, FaCalendarAlt } from 'react-icons/fa';
 
 function PostHeader({ post, viewCount }) {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -35,27 +36,27 @@ function PostHeader({ post, viewCount }) {
           )}
         </span>
       </h1>
-      <div className="info flex flex-wrap w-full leading-[1.5] text-[16px] font-medium text-[var(--secondary-text-color)] justify-end items-center">
+      <div className="info flex flex-wrap w-full leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4">
         <button
           type="button"
-          className="relative mr-4 cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"
+          className="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
           onFocus={() => setShowTooltip(true)}
           onBlur={() => setShowTooltip(false)}
         >
-          <img src="/clock.png" alt="clock" className="w-5 h-5 mr-1" />
-          <strong>{`${post.timeToRead}분`}</strong>
+          <FaRegClock className="w-4 h-4 mr-1" />
+          <strong>{`${post.timeToRead} min`}</strong>
           {showTooltip && (
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-max p-2 bg-black text-white text-xs rounded">
               {`이 게시글을 읽는데 ${post.timeToRead}분 정도의 시간이 소요될 것으로 예상됩니다.`}
             </div>
           )}
         </button>
-        <span className="mr-4">
-          <ViewCount viewCount={viewCount} expectedDigits={4} />
-        </span>
-        <span className="text-[14px]">Published on {post.date}</span>
+        <ViewCount viewCount={viewCount} expectedDigits={4} />
+        <div className="flex items-center">
+          <FaCalendarAlt className="w-4 h-4 mr-1" /> {post.date}
+        </div>
       </div>
     </header>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSpinner } from 'react-icons/fa';
+import { FaSpinner, FaEye } from 'react-icons/fa';
 
 function useHasMounted() {
   const [mounted, setMounted] = React.useState(false);
@@ -14,14 +14,14 @@ export default function ViewCount({ viewCount, allowZero = false }) {
   const pending = !hasMounted || !hasNumber;
 
   return (
-    <span className="inline-flex items-center gap-1" aria-live="polite" aria-busy={pending}>
+    <span className="inline-flex items-center" aria-live="polite" aria-busy={pending}>
+      <FaEye className="w-4 h-4 mr-1" /> {/* Eye icon always visible */}
       {pending ? (
-        <>
-          <FaSpinner className="animate-spin text-[1em] text-[var(--secondary-text-color)]" />
-          <span>views</span>
-        </>
+        <span className="flex items-center">
+          <FaSpinner className="animate-spin text-[1em] text-[var(--secondary-text-color)] ml-1" />
+        </span>
       ) : (
-        <span>{`${n} views`}</span>
+        <span className="flex items-center ml-1">{n}</span>
       )}
     </span>
   );
