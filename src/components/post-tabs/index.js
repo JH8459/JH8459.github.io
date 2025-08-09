@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import PostCardColumn from '../post-card-column';
+import PostSorter from '../post-sorter';
 
-function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThumbnail }) {
+function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThumbnail, sortType, onSortChange }) {
   const tabPosts = useMemo(() => {
     if (tabs[tabIndex] === 'All') return posts;
     return posts.filter((post) => post.categories.includes(tabs[tabIndex]));
@@ -19,6 +20,9 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
             {title}
           </button>
         ))}
+      </div>
+      <div className="w-full max-w-[760px]">
+        <PostSorter sortType={sortType} onChange={onSortChange} />
       </div>
       <PostCardColumn
         posts={showMoreButton ? tabPosts.slice(0, 4) : tabPosts}

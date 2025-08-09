@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "jh8459 <kk_ong2233@naver.com>",
   "dependencies": {
+    "@headlessui/react": "^2.2.7",
     "@kfonts/nanum-gothic": "^0.2.0",
     "autoprefixer": "^10.4.19",
     "babel-plugin-lodash": "^3.3.4",

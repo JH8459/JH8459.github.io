@@ -1,5 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { graphql } from 'gatsby';
+import firebase from 'gatsby-plugin-firebase-v9.0';
+import { getDatabase, ref, get } from 'firebase/database';
 import Layout from '../layout';
 import Seo from '../components/seo';
 import Bio from '../components/bio';
@@ -16,17 +18,55 @@ function HomePage({ data }) {
   const [tabIndex, setTabIndex] = useState(featuredTabIndex === -1 ? 0 : featuredTabIndex);
   const onTabIndexChange = useCallback((e, value) => setTabIndex(value), []);
 
+  const [viewCounts, setViewCounts] = useState({});
+  const [sortType, setSortType] = useState('date-desc');
+
+  useEffect(() => {
+    const database = getDatabase(firebase);
+    const postsRef = ref(database, 'posts');
+    get(postsRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setViewCounts(snapshot.val());
+        }
+      })
+      .catch((error) => {
+        console.error('Firebase read failed: ', error);
+      });
+  }, []);
+
+  const sortedPosts = useMemo(() => {
+    const postsWithViews = posts.map((post) => ({
+      ...post,
+      views: viewCounts[post.slug.replace(/\//g, '')]?.views || 0,
+    }));
+
+    switch (sortType) {
+      case 'title-asc':
+        return postsWithViews.sort((a, b) => a.title.localeCompare(b.title));
+      case 'views-desc':
+        return postsWithViews.sort((a, b) => b.views - a.views);
+      case 'date-asc':
+        return postsWithViews.sort((a, b) => new Date(a.date) - new Date(b.date));
+      case 'date-desc':
+      default:
+        return postsWithViews.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+  }, [posts, viewCounts, sortType]);
+
   return (
     <Layout>
       <Seo title="JHLog" />
       <Bio author={author} language={language} />
       <PostTabs
-        posts={posts}
+        posts={sortedPosts}
         onChange={onTabIndexChange}
         tabs={categories}
         tabIndex={tabIndex}
         showMoreButton
         defaultThumbnail={data.defaultThumbnail}
+        sortType={sortType}
+        onSortChange={(e) => setSortType(e.target.value)}
       />
     </Layout>
   );
