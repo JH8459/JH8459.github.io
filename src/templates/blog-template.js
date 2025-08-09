@@ -78,7 +78,6 @@ export const pageQuery = graphql`
       tableOfContents
       frontmatter {
         date(formatString: "YYYY.MM.DD")
-
         title
         categories
         author
@@ -108,7 +107,6 @@ export const pageQuery = graphql`
       id
       frontmatter {
         date(formatString: "YYYY.MM.DD")
-
         title
         categories
         author
@@ -121,6 +119,7 @@ export const pageQuery = graphql`
 
     site {
       siteMetadata {
+        siteUrl
         comments {
           giscus {
             repo
