@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
+import { useLocation } from '@reach/router';
 import firebase from 'gatsby-plugin-firebase-v9.0';
 import { getDatabase, ref, get } from 'firebase/database';
 import Layout from '../layout';
@@ -16,12 +17,28 @@ function HomePage({ data }) {
   const categories = ['All', ...getUniqueCategories(posts)];
   const featuredTabIndex = categories.findIndex((category) => category === 'featured');
   const [tabIndex, setTabIndex] = useState(featuredTabIndex === -1 ? 0 : featuredTabIndex);
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialSortType = queryParams.get('sort') || 'date-desc';
+  const [sortType, setSortType] = useState(initialSortType);
+
   const onTabIndexChange = useCallback((e, value) => setTabIndex(value), []);
 
+  const onSortChange = useCallback((e) => {
+    const newSortType = e.target.value;
+    setSortType(newSortType);
+
+    const newQueryParams = new URLSearchParams(location.search);
+    newQueryParams.set('sort', newSortType);
+    navigate(`${location.pathname}?${newQueryParams.toString()}`, { replace: true });
+  }, [location]);
+
   const [viewCounts, setViewCounts] = useState({});
-  const [sortType, setSortType] = useState('date-desc');
+  const [loadingViews, setLoadingViews] = useState(true); // Keep loading state here
 
   useEffect(() => {
+    setLoadingViews(true); // Set loading to true when starting fetch
     const database = getDatabase(firebase);
     const postsRef = ref(database, 'posts');
     get(postsRef)
@@ -32,6 +49,9 @@ function HomePage({ data }) {
       })
       .catch((error) => {
         console.error('Firebase read failed: ', error);
+      })
+      .finally(() => {
+        setLoadingViews(false); // Set loading to false after fetch completes (success or error)
       });
   }, []);
 
@@ -66,7 +86,8 @@ function HomePage({ data }) {
         showMoreButton
         defaultThumbnail={data.defaultThumbnail}
         sortType={sortType}
-        onSortChange={(e) => setSortType(e.target.value)}
+        onSortChange={onSortChange}
+        loadingViews={loadingViews} // Pass loading state down
       />
     </Layout>
   );

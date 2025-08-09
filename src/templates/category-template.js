@@ -1,5 +1,6 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
+import { useLocation } from '@reach/router';
 import firebase from 'gatsby-plugin-firebase-v9.0';
 import { getDatabase, ref, get } from 'firebase/database';
 
@@ -12,8 +13,10 @@ import PostTabs from '../components/post-tabs';
 function CategoryTemplate({ pageContext }) {
   const { edges, currentCategory, defaultThumbnail, categories } = pageContext;
 
-  const [viewCounts, setViewCounts] = useState({});
-  const [sortType, setSortType] = useState('date-desc');
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialSortType = queryParams.get('sort') || 'date-desc';
+  const [sortType, setSortType] = useState(initialSortType);
 
   const posts = useMemo(() => edges.map(({ node }) => new Post(node)), [edges]);
 
@@ -30,7 +33,20 @@ function CategoryTemplate({ pageContext }) {
     [categories],
   );
 
+  const onSortChange = useCallback((e) => {
+    const newSortType = e.target.value;
+    setSortType(newSortType);
+
+    const newQueryParams = new URLSearchParams(location.search);
+    newQueryParams.set('sort', newSortType);
+    navigate(`${location.pathname}?${newQueryParams.toString()}`, { replace: true });
+  }, [location]);
+
+  const [viewCounts, setViewCounts] = useState({});
+  const [loadingViews, setLoadingViews] = useState(true); // Keep loading state here
+
   useEffect(() => {
+    setLoadingViews(true); // Set loading to true when starting fetch
     const database = getDatabase(firebase);
     const postsRef = ref(database, 'posts');
     get(postsRef)
@@ -41,6 +57,9 @@ function CategoryTemplate({ pageContext }) {
       })
       .catch((error) => {
         console.error('Firebase read failed: ', error);
+      })
+      .finally(() => {
+        setLoadingViews(false); // Set loading to false after fetch completes (success or error)
       });
   }, []);
 
@@ -74,7 +93,8 @@ function CategoryTemplate({ pageContext }) {
         posts={sortedPosts}
         defaultThumbnail={defaultThumbnail}
         sortType={sortType}
-        onSortChange={(e) => setSortType(e.target.value)}
+        onSortChange={onSortChange}
+        loadingViews={loadingViews} // Pass loading state down
       />
     </Layout>
   );

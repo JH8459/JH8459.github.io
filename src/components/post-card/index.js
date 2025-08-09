@@ -2,7 +2,33 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-function PostCard({ post, defaultThumbnail }) {
+function PostCard({ post, defaultThumbnail, isLoading }) {
+  if (isLoading) {
+    return (
+      <div className="min-h-[150px] w-full flex justify-center">
+        <div className="post-card flex flex-col h-auto w-full max-w-content border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] mb-[15px] md:mb-0 animate-pulse">
+          {/* Title Placeholder */}
+          <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
+          {/* Image and Excerpt Placeholder */}
+          <div className="flex flex-grow mt-[10px]">
+            <div className="w-[100px] h-[100px] min-w-[100px] mr-[15px] bg-gray-200 dark:bg-gray-700 rounded"></div>
+            <div className="flex-1 space-y-2">
+              <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+              <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+              <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-4/6"></div>
+            </div>
+          </div>
+          {/* Info Placeholder */}
+          <div className="flex justify-between mt-auto pt-[10px]">
+            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/4"></div>
+            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/6"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Original PostCard content
   const { id, slug, title, excerpt, date, categories, thumbnail } = post;
   const isNew = Math.ceil((new Date().getTime() - new Date(date).getTime()) / (1000 * 3600 * 24)) <= 7;
 

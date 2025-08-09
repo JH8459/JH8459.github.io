@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PostCardColumn from '../post-card-column';
 import PostSorter from '../post-sorter';
 
-function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThumbnail, sortType, onSortChange }) {
+function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThumbnail, sortType, onSortChange, loadingViews }) {
   const tabPosts = useMemo(() => {
     if (tabs[tabIndex] === 'All') return posts;
     return posts.filter((post) => post.categories.includes(tabs[tabIndex]));
@@ -36,6 +36,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
         showMoreButton={showMoreButton && tabPosts.length > 4}
         moreUrl={`posts/${tabIndex === 0 ? '' : tabs[tabIndex]}`}
         defaultThumbnail={defaultThumbnail}
+        loadingViews={loadingViews} // Pass loading state down
       />
     </div>
   );
