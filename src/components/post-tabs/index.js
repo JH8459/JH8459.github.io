@@ -10,7 +10,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
 
   return (
     <div className="flex flex-col items-center justify-center self-start top-0 w-full">
-      <div className="flex justify-center items-center space-x-2 md:space-x-4 h-auto w-full max-w-[760px] mb-[36px] overflow-x-auto mx-auto py-2">
+      <div className="flex justify-center items-center space-x-2 md:space-x-4 h-auto w-full max-w-[760px] mb-[18px] overflow-x-auto mx-auto py-2">
         {tabs.map((title, index) => {
           const isSelected = tabIndex === index;
           return (
@@ -20,7 +20,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
               className={`px-5 py-2.5 rounded-lg text-base font-medium transition-all duration-200 whitespace-nowrap shadow-sm ${
                 isSelected
                   ? 'bg-gray-800 text-white dark:bg-gray-100 dark:text-gray-900'
-                  : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-amber-100 hover:text-amber-900 dark:hover:text-amber-900'
+                  : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-amber-100 hover:text-amber-700 dark:hover:text-amber-700'
               }`}
             >
               {title}
@@ -28,7 +28,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
           );
         })}
       </div>
-      <div className="w-full max-w-[760px]">
+      <div className="w-full max-w-[760px] my-2">
         <PostSorter sortType={sortType} onChange={onSortChange} />
       </div>
       <PostCardColumn
