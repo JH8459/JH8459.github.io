@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
+import ViewCount from './view';
 
 function PostHeader({ post, viewCount }) {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -51,7 +52,9 @@ function PostHeader({ post, viewCount }) {
             </div>
           )}
         </button>
-        <span className="mr-4">{`${viewCount} views`}</span>
+        <span className="mr-4">
+          <ViewCount viewCount={viewCount} expectedDigits={4} />
+        </span>
         <span className="text-[14px]">Published on {post.date}</span>
       </div>
     </header>
