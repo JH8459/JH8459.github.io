@@ -4,9 +4,10 @@ title: Grafana + Prometheus + Loki 환경에서 Agents는 어떻게 설계해야
 date: '2025-05-20'
 author: JH8459
 categories: TIL
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-05-20-TIL/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-05-20-TIL/thumbnail.png"/>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-05-20-TIL/header.png"/>
 
 <br>
 
