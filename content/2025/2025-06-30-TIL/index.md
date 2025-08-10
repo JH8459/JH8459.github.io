@@ -4,6 +4,7 @@ title: 내부망 도메인 접속 실패 이유와 해결 방법
 date: '2025-06-30'
 author: JH8459
 categories: TIL
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-06-30-TIL/thumbnail.png
 ---
 
 ![github-blog.png](../../../assets/common/til.jpeg)
