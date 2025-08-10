@@ -33,14 +33,17 @@ function CategoryTemplate({ pageContext }) {
     [categories],
   );
 
-  const onSortChange = useCallback((e) => {
-    const newSortType = e.target.value;
-    setSortType(newSortType);
+  const onSortChange = useCallback(
+    (e) => {
+      const newSortType = e.target.value;
+      setSortType(newSortType);
 
-    const newQueryParams = new URLSearchParams(location.search);
-    newQueryParams.set('sort', newSortType);
-    navigate(`${location.pathname}?${newQueryParams.toString()}`, { replace: true });
-  }, [location]);
+      const newQueryParams = new URLSearchParams(location.search);
+      newQueryParams.set('sort', newSortType);
+      navigate(`${location.pathname}?${newQueryParams.toString()}`, { replace: true });
+    },
+    [location],
+  );
 
   const [viewCounts, setViewCounts] = useState({});
   const [loadingViews, setLoadingViews] = useState(true); // Keep loading state here
@@ -74,8 +77,6 @@ function CategoryTemplate({ pageContext }) {
         return postsWithViews.sort((a, b) => a.title.localeCompare(b.title));
       case 'views-desc':
         return postsWithViews.sort((a, b) => b.views - a.views);
-      case 'date-asc':
-        return postsWithViews.sort((a, b) => new Date(a.date) - new Date(b.date));
       case 'date-desc':
       default:
         return postsWithViews.sort((a, b) => new Date(b.date) - new Date(a.date));

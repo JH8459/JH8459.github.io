@@ -4,7 +4,6 @@ import { FaChevronDown } from 'react-icons/fa';
 
 const options = [
   { value: 'date-desc', label: '최신순' },
-  { value: 'date-asc', label: '오래된순' },
   { value: 'views-desc', label: '조회순' },
   { value: 'title-asc', label: '이름순' },
 ];
@@ -51,11 +50,7 @@ function PostSorter({ sortType, onChange }) {
                   value={option}
                 >
                   {({ selected }) => (
-                    <span
-                      className={`block truncate ${
-                        selected ? 'font-bold' : 'font-normal'
-                      }`}
-                    >
+                    <span className={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
                       {option.label}
                     </span>
                   )}
