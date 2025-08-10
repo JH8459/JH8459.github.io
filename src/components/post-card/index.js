@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaEye, FaRegClock, FaCalendarAlt } from 'react-icons/fa';
-import ViewCount from '../post-header/view';
+
 
 function PostCard({ post, defaultThumbnail, isLoading }) {
   if (isLoading) {
@@ -40,11 +40,16 @@ function PostCard({ post, defaultThumbnail, isLoading }) {
   return (
     <div className="min-h-[150px] w-full flex justify-center">
       <Link className="post-card flex flex-col h-auto w-full max-w-content border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] mb-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 md:mb-0" key={id} to={slug}>
-        <h2 className="title text-[18px] font-semibold mb-[7px] leading-[1.4] hover:underline">
-          <span className="relative">
-            {title}
-            {isNew && <span className="absolute top-[-5px] right-[-10px] text-red-500 font-bold text-xs" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>N</span>}
-          </span>
+        <h2 class="title text-[18px] font-semibold mb-[7px] leading-[1.4] hover:underline">
+          {title}
+          {isNew && (
+            <span
+              class="inline-block align-super text-red-500 font-bold text-xs"
+              style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)', marginLeft: '4px' }}
+            >
+              N
+            </span>
+          )}
         </h2>
 
         <div className="flex flex-grow mt-[10px]">
