@@ -10,7 +10,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
 
   return (
     <div className="flex flex-col items-center justify-center self-start top-0 w-full">
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-2 md:gap-4 h-auto w-full max-w-[760px] mb-[18px] mx-auto py-2">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 h-auto w-full max-w-[760px] mb-[18px] mx-auto py-2">
         {tabs.map((title, index) => {
           const isSelected = tabIndex === index;
           return (
