@@ -17,9 +17,9 @@ function TimeStampSection({ timestamps }) {
               <div className={`timestamp-date ml-[20px] mr-[5px] w-[115px] min-w-[115px] text-[#828282] self-center ${index === 0 ? 'text-black font-bold' : ''}`}>
                 {timestamp.date}
               </div>
-              <div className={`timestamp-activity flex flex-col md:flex-row items-start md:items-center leading-[23px] w-full ${index === 0 ? 'font-bold' : ''}`}>
-                <span className="md:mr-4 truncate">{timestamp.activity}</span>
-                {timestamp.links && <IconButtonBar links={timestamp.links} className="inline-flex mt-2 md:mt-0 md:ml-2" />}
+              <div className={`timestamp-activity flex flex-row items-center leading-[23px] w-full ${index === 0 ? 'font-bold' : ''}`}>
+                <span className="mr-4">{timestamp.activity}</span>
+                {timestamp.links && <IconButtonBar links={timestamp.links} className="inline-flex ml-auto" />}
               </div>
             </div>
           ),
