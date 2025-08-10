@@ -4,6 +4,7 @@ title: SQLD 취득 후기
 date: '2025-06-27'
 author: JH8459
 categories: Retrospect
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-06-27-RETROSPECT/thumbnail.png
 ---
 
 ![certification](https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-06-27-RETROSPECT/certification.png)
