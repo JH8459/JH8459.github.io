@@ -4,10 +4,10 @@ title: Object.groupBy / Map.groupBy (ES2024)
 date: '2025-11-08'
 author: JH8459
 categories: JavaScript
-thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/thumbnail.png
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/javascript/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/es2024.png"/>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/javascript/es2024.png"/>
 
 ## 📚 Overview
 
