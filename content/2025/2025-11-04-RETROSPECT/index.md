@@ -46,7 +46,7 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-04/retros
 
 레퍼런스를 탐색했고 그 과정에서 [`mikro-orm-cache-adapter-redis`](https://github.com/ramiel/mikro-orm-cache-adapter-redis) 라는 프로젝트를 발견하게 되었다.
 
-하지만 내부 구현을 살펴보니 간단한 내부 구조에 비해 **Promise와 Stream 이벤트를 혼용한 복잡한 비동기 로직**으로 구현되어 있었다.  
+하지만 내부 구현을 살펴보니 간단한 내부 구조에 비해 **Promise와 Stream 이벤트를 혼용한 복잡한 비동기 로직**으로 구현되어 있었다.
 
 ```ts
 // 기존 코드 (일부 발췌)
@@ -59,7 +59,7 @@ return new Promise((resolve, reject) => {
 });
 ```
 
-코드를 읽고 이해하는 데 꽤 어려움이 느껴졌고, 결국 더 명확한 흐름으로 개선할 수 있겠다는 생각이 들어 **리팩토링 PR을 올리기로 결정**했다.  
+코드를 읽고 이해하는 데 꽤 어려움이 느껴졌고, 결국 더 명확한 흐름으로 개선할 수 있겠다는 생각이 들어 **리팩토링 PR을 올리기로 결정**했다.
 
 <br>
 <br>
