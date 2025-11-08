@@ -52,6 +52,9 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/javasc
 <br>
 
 #### 2-1. `Object.groupBy`
+
+---
+
 - **문자열 / 심볼 키**를 기준으로 그룹핑
 - 결과가 일반 객체(`Record<string, T[]>`)로 반환되어 **JSON 직렬화나 API 응답 가공**에 적합
 
@@ -79,6 +82,9 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-08/javasc
 <br>
 
 #### 2-2. `Map.groupBy`
+
+---
+
 - 비문자열 키(숫자, Date, 객체 등) 그대로 사용 가능
 - 결과가 Map으로 반환되어, 정렬, 병합, 후속 연산에 유리
 
