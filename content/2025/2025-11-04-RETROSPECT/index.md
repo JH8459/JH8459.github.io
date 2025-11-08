@@ -13,6 +13,8 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-04/retros
 
 ### 1. 계기 – MikroORM의 캐시 동작 방식에 대한 궁금증 🤔
 
+---
+
 현재 사내 프로젝트들은 MikroORM을 사용하고 있다.  
 
 데이터베이스 변경 사항이 적은 항목들에 접근 시 불필요한 중복 쿼리를 줄이기 위해 **쿼리 결과 캐싱(Query Cache)** 기능을 활성화했는데, 문득 캐시가 "실제로 어디에 저장되고 있는가?" 가 궁금해졌다.
