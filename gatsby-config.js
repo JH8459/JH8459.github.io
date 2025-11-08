@@ -137,7 +137,32 @@ module.exports = {
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: {},
+              aliases: {
+                // TypeScript
+                ts: 'typescript',
+                tsx: 'tsx',
+                // JavaScript (explicit)
+                js: 'javascript',
+                // Shells
+                sh: 'bash',
+                shell: 'bash',
+                zsh: 'bash',
+                console: 'shell-session',
+                ps1: 'powershell',
+                pwsh: 'powershell',
+                // Data / Config
+                yml: 'yaml',
+                dotenv: 'properties',
+                env: 'properties',
+                // Docker
+                dockerfile: 'docker',
+                docker: 'docker',
+                // Build / Docs
+                make: 'makefile',
+                md: 'markdown',
+                // Web / APIs
+                gql: 'graphql',
+              },
               showLineNumbers: false,
               noInlineHighlight: false,
               languageExtensions: [
