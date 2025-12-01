@@ -4,10 +4,10 @@ title: MikroORM v6.6 – 무엇이 달라졌나?
 date: '2025-12-01'
 author: JH8459
 categories: Backend
-thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-16/web/thumbnail.png
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01-BACKEND/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-11-16/web/thumbnail.png"/>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01-BACKEND/thumbnail.png"/>
 
 ## 📚 Overview
 
@@ -51,6 +51,8 @@ MikroORM 6.6.0은 눈에 띄는 대규모 기능 추가는 아니지만, “엔�
 - knex: reexport raw helper that supports QueryBuilder and Knex.QueryBuilder
 - postgres: skip left joined relations from pessimistic locks automatically
 
+<br>
+
 그 중에서도 실무에서 큰 영향을 주는 건 엔티티를 정식으로 private 필드 + accessor 구조로 설계할 수 있게 된 것이라 생각한다.
 
 <br>
@@ -81,8 +83,6 @@ user.email = 'invalid@...'; // 그대로 허용됨
 ```
 
 팀 컨벤션과 코드 리뷰로 위와 같은 직접 할당을 최대한 막고 있었지만, 도메인 규칙을 강제하기 어렵다는 점이 불편함으로 존재했다.
-
-> `@Property({ persist: false })` 또는 `hidden` 등을 통해 필드를 숨길 수 있었지만, private 필드를 사용하기엔 무리가 있었다.
 
 <br>
 <br>
