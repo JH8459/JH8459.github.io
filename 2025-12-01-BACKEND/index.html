@@ -73,205 +73,234 @@
         }
       }
     })
-  </script><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="relative flex flex-col items-center justify-center w-full min-h-screen px-4 break-keep antialiased font-sans text-[var(--primary-text-color)]"><header class="flex justify-center w-full h-[60px]"><div class="flex items-center justify-between max-w-content w-full px-4"><div class="flex-shrink-0"><a class="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]" href="/">blog.jh8459.com</a></div><nav class="flex items-center"><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/about/">about</a><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/posts/">posts</a><div class="search-input-wrapper hidden md:block w-[250px] mt-[3px] relative"><div class="relative w-full"><input type="text" placeholder="검색어를 입력하세요..." class="search-input w-full h-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white" value=""/><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="search-icon absolute left-3 top-1/2 transform -translate-y-1/2 mr-[2px] text-[var(--primary-text-color)]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></div></nav></div></header><div class="flex justify-center w-full"><main class="flex flex-col items-center w-full max-w-content"><header class="flex flex-col justify-center w-full pb-[10px] border-b border-[var(--post-card-border-color)] mt-[40px] mb-[40px] break-keep"><h1 class="title font-semibold text-[32px] text-[var(--primary-text-color)] mb-[6px] leading-[1.3]">Sequelize Op</h1><div class="flex justify-between items-center w-full mt-[10px]"><div class="categories flex items-center"><div class="text-[18px] mr-[4px]">📚</div><a class="category mr-[4px] font-semibold text-[var(--primary-text-color)] hover:underline text-[18px]" href="/posts/TIL/">TIL</a></div><div class="info flex flex-wrap leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4"><button type="button" class="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><strong>2 min</strong></button><span class="inline-flex items-center" aria-live="polite" aria-busy="true"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg> <span class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="animate-spin text-[1em] text-[var(--secondary-text-color)] ml-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg></span></span><div class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg> <!-- -->2022.02.15</div></div></div></header><div class="flex flex-col justify-center w-full mb-[20px]"><div class="prose dark:prose-invert prose-img:mx-auto mx-auto w-full max-w-content"><p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/2gAMAwEAAhADEAAAAdJomgf/xAAWEAADAAAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCFP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACAx/9oACAEBAAY/AiL/AP/EABgQAAIDAAAAAAAAAAAAAAAAAAABESAx/9oACAEBAAE/IRm9hX//2gAMAwEAAgADAAAAEEw//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRAAAgMBAAAAAAAAAAAAAAAAAREAIEFR/9oACAEBAAE/EI1YY7tf/9k='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="github-blog.png"
-        title=""
-        src="/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg"
-        srcset="/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/4ec73/til.jpg 180w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/158ba/til.jpg 360w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/80e3c/til.jpg 720w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/47311/til.jpg 1080w,
-/static/7c4bbfe7d1a9d6bc02891c94bfe039dc/ac614/til.jpg 1272w"
-        sizes="(max-width: 720px) 100vw, 720px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
+  </script><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="relative flex flex-col items-center justify-center w-full min-h-screen px-4 break-keep antialiased font-sans text-[var(--primary-text-color)]"><header class="flex justify-center w-full h-[60px]"><div class="flex items-center justify-between max-w-content w-full px-4"><div class="flex-shrink-0"><a class="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]" href="/">blog.jh8459.com</a></div><nav class="flex items-center"><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/about/">about</a><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/posts/">posts</a><div class="search-input-wrapper hidden md:block w-[250px] mt-[3px] relative"><div class="relative w-full"><input type="text" placeholder="검색어를 입력하세요..." class="search-input w-full h-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white" value=""/><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="search-icon absolute left-3 top-1/2 transform -translate-y-1/2 mr-[2px] text-[var(--primary-text-color)]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></div></nav></div></header><div class="flex justify-center w-full"><main class="flex flex-col items-center w-full max-w-content"><header class="flex flex-col justify-center w-full pb-[10px] border-b border-[var(--post-card-border-color)] mt-[40px] mb-[40px] break-keep"><h1 class="title font-semibold text-[32px] text-[var(--primary-text-color)] mb-[6px] leading-[1.3]">MikroORM v6.6 – 무엇이 달라졌나?<span class="inline-block align-super text-red-500 font-bold text-base" style="text-shadow:1px 1px 2px rgba(0,0,0,0.3);margin-left:4px">N</span></h1><div class="flex justify-between items-center w-full mt-[10px]"><div class="categories flex items-center"><div class="text-[18px] mr-[4px]">📚</div><a class="category mr-[4px] font-semibold text-[var(--primary-text-color)] hover:underline text-[18px]" href="/posts/Backend/">Backend</a></div><div class="info flex flex-wrap leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4"><button type="button" class="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><strong>3 min</strong></button><span class="inline-flex items-center" aria-live="polite" aria-busy="true"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg> <span class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="animate-spin text-[1em] text-[var(--secondary-text-color)] ml-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg></span></span><div class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg> <!-- -->2025.12.01</div></div></div></header><div class="flex flex-col justify-center w-full mb-[20px]"><div class="prose dark:prose-invert prose-img:mx-auto mx-auto w-full max-w-content"><img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01-BACKEND/thumbnail.png">
+<h2 id="-overview" style="position:relative;"><a href="#-overview" aria-label=" overview permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚 Overview</h2>
+<p>MikroORM 6.6.0은 눈에 띄는 대규모 기능 추가는 아니지만, “엔티티의 캡슐화와 일관성을 지켜주는 기능”이 정식 지원되었다는 점에서 상당히 의미 있는 릴리스라 생각한다.</p>
+<p>이번 포스팅에서는 우리 팀이 채택한 컨벤션인 private 필드 + get/set accessor를 이용한 프로퍼티 관리 관점으로 이번 릴리즈 내용을 정리해보려한다.</p>
 <br>
-<h2 id="️-today-i-learned" style="position:relative;"><a href="#%EF%B8%8F-today-i-learned" aria-label="️ today i learned permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✍️ <strong>T</strong>oday <strong>I</strong> <strong>L</strong>earned</h2>
 <br>
+<h3 id="1-mikroorm-660-주요-변경점-요약" style="position:relative;"><a href="#1-mikroorm-660-%EC%A3%BC%EC%9A%94-%EB%B3%80%EA%B2%BD%EC%A0%90-%EC%9A%94%EC%95%BD" aria-label="1 mikroorm 660 주요 변경점 요약 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. MikroORM 6.6.0 주요 변경점 요약</h3>
+<hr>
+<blockquote>
+<p>공식 릴리스 노트 <a href="https://github.com/mikro-orm/mikro-orm/releases/tag/v6.6.0">https://github.com/mikro-orm/mikro-orm/releases/tag/v6.6.0</a></p>
+</blockquote>
+<p>버그 픽스가 아닌 피쳐 목록만 확인해보면 아래와 같다.</p>
 <ul>
 <li>
-<p>시퀄라이즈는 SQL문을 JavaScript 환경에서 객체로 작성할 수 있는 ORM(Object Relational Mapping)이다.</p>
+<p>core: allow control over relation filters in entity definition</p>
+<ul>
+<li>기존 MikroORM에는 글로벌/엔티티 단위 필터(SoftDeleteFilter 등)가 있었지만, 특정 relation에 필터가 어떻게 적용될지 세밀히 제어하기 어려웠다.</li>
+<li>특정 relation에 필터를 적용할지 말지 등을 엔티티 정의 단계에서 직접 지정할 수 있도록 변경되었다.</li>
+</ul>
 </li>
 <li>
-<p>여러 문법중 Op라는 연산자를 사용하는 문법에 대해 학습한 내용을 정리해 보았다.</p>
+<p>core: allow defining filters on nullable relations as strict</p>
+<ul>
+<li>nullable relation에도 필터 적용을 강제할 수 있게 변경되었다.</li>
+<li>삭제된 엔티티가 nullable이라 조인되어 버리는 문제 등을 깔끔히 해결 가능하다.</li>
+</ul>
+</li>
+<li>
+<p>core: allow disabling filters on relations</p>
+<ul>
+<li>relation 단위로 필터 끄기가 가능하게 변경되었다.</li>
+<li>글로벌 필터가 적용되어있더라도 특정 relation에 대해선 필터를 꺼버릴 수 있다.</li>
+</ul>
+</li>
+<li>
+<p><strong>core: support private properties with get/set accessors</strong></p>
+<ul>
+<li>이번 릴리즈의 핵심이라 생각한다. private 필드 + getter/setter 를 ORM이 정식 지원한다.</li>
+<li><code class="language-text">#privateField</code> 사용 가능하다. (접근은 getter/setter로 제한)</li>
+<li>도메인 규칙을 강제하고 캡슐화를 더욱더 강력하게 적용할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>entity-generator: allow generating enums as type or JS dictionary</p>
+<ul>
+<li>enum을 TS 타입 또는 JS 객체(dictionary) 로 선택 생성 가능하게 변경되었다.</li>
+</ul>
+</li>
+<li>
+<p>entity-generator: support generating defineEntity() definitions</p>
+</li>
+<li>
+<p>entity-generator: support native postgres enums</p>
+</li>
+<li>
+<p>knex: reexport raw helper that supports QueryBuilder and Knex.QueryBuilder</p>
+</li>
+<li>
+<p>postgres: skip left joined relations from pessimistic locks automatically</p>
 </li>
 </ul>
 <br>
+<p>그 중에서도 실무에서 큰 영향을 주는 건 엔티티를 정식으로 private 필드 + accessor 구조로 설계할 수 있게 된 것이라 생각한다.</p>
 <br>
-<h3 id="1-op" style="position:relative;"><a href="#1-op" aria-label="1 op permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Op</h3>
+<br>
+<h3 id="2-기존-mikroorm의-문제점" style="position:relative;"><a href="#2-%EA%B8%B0%EC%A1%B4-mikroorm%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="2 기존 mikroorm의 문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 기존 MikroORM의 문제점</h3>
 <hr>
-<ul>
-<li>
-<p>Op 연산자는 <code class="language-text">where</code>객체 안에서 쓰이는 <a href="https://developer.mozilla.org/ko/docs/Glossary/Symbol">Symbol</a> 타입의 연산자이다.</p>
-</li>
-<li>
-<p>해당 연산자를 사용하여 복잡한 비교 연산을 지원해준다.</p>
-</li>
-</ul>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">Entity</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">PrimaryKey</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  id<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Property</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  email<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Property</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  nickname<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>대부분의 위와 같이 프로퍼티들을 public으로 두기에 <code class="language-text">setEmail()</code> 같은 메서드를 모델에 추가하더라도 <code class="language-text">user.email</code>에 직접 접근하여 변경할 수 없도록 코드 레벨에서 제어할 순 없었다.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript">user<span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token string">'invalid@...'</span><span class="token punctuation">;</span> <span class="token comment">// 그대로 허용됨</span></code></pre></div>
+<p>팀 컨벤션과 코드 리뷰로 위와 같은 직접 할당을 최대한 막고 있었지만, 도메인 규칙을 강제하기 어렵다는 점이 불편함으로 존재했다.</p>
 <br>
 <br>
-<h4 id="1-1-연산자일반" style="position:relative;"><a href="#1-1-%EC%97%B0%EC%82%B0%EC%9E%90%EC%9D%BC%EB%B0%98" aria-label="1 1 연산자일반 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-1. 연산자(일반)</h4>
+<h3 id="3-변경될-mikroorm" style="position:relative;"><a href="#3-%EB%B3%80%EA%B2%BD%EB%90%A0-mikroorm" aria-label="3 변경될 mikroorm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 변경될 MikroORM</h3>
 <hr>
-<ul>
-<li>
-<p>공식문서에서 설명하는 연산자는 다음 아래와 같다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Logical operator</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>and<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">6</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// (a = 5) &amp;&amp; (b = 6)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>or<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">6</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// (a = 5) || (b = 6)</span>
+<p>이번 릴리즈 이후 이제 아래와 같은 구조가 공식 패턴으로 가능해졌다.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">Entity</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">PrimaryKey</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  #id<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Basics</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>eq<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token comment">// = 3</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>ne<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>  <span class="token comment">// != 20</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>is<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>  <span class="token comment">// IS NULL</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>not<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// IS NOT TRUE</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>or<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// (someAttribute = 5) OR (someAttribute = 6)</span>
+  #email<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Using dialect specific column identifiers (PG in the following example):</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>col<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'user.organization_id'</span><span class="token punctuation">,</span>        <span class="token comment">// = "user"."organization_id"</span>
-
-<span class="token comment">// Number comparisons</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>gt<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>  <span class="token comment">// > 6</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>gte<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>  <span class="token comment">// >= 6</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>lt<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>  <span class="token comment">// &lt; 10</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>lte<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>  <span class="token comment">// &lt;= 10</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>between<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// BETWEEN 6 AND 10</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notBetween<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// NOT BETWEEN 11 AND 15</span>
-
-<span class="token comment">// Other operators</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>all<span class="token punctuation">]</span><span class="token operator">:</span> sequelize<span class="token punctuation">.</span><span class="token function">literal</span><span class="token punctuation">(</span><span class="token string">'SELECT 1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// > ALL (SELECT 1)</span>
-
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>in<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// IN [1, 2]</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notIn<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// NOT IN [1, 2]</span>
-
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>like<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'%hat'</span><span class="token punctuation">,</span>  <span class="token comment">// LIKE '%hat'</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notLike<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'%hat'</span><span class="token punctuation">,</span>  <span class="token comment">// NOT LIKE '%hat'</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>startsWith<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'hat'</span><span class="token punctuation">,</span>  <span class="token comment">// LIKE 'hat%'</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>endsWith<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'hat'</span><span class="token punctuation">,</span>  <span class="token comment">// LIKE '%hat'</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>substring<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'hat'</span><span class="token punctuation">,</span>  <span class="token comment">// LIKE '%hat%'</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>iLike<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'%hat'</span><span class="token punctuation">,</span>  <span class="token comment">// ILIKE '%hat' (case insensitive) (PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notILike<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'%hat'</span><span class="token punctuation">,</span>  <span class="token comment">// NOT ILIKE '%hat'  (PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>regexp<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'^[h|a|t]'</span><span class="token punctuation">,</span>  <span class="token comment">// REGEXP/~ '^[h|a|t]' (MySQL/PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notRegexp<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'^[h|a|t]'</span><span class="token punctuation">,</span>  <span class="token comment">// NOT REGEXP/!~ '^[h|a|t]' (MySQL/PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>iRegexp<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'^[h|a|t]'</span><span class="token punctuation">,</span>  <span class="token comment">// ~* '^[h|a|t]' (PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>notIRegexp<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'^[h|a|t]'</span><span class="token punctuation">,</span>  <span class="token comment">// !~* '^[h|a|t]' (PG only)</span>
-
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>any<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// ANY ARRAY[2, 3]::INTEGER (PG only)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>match<span class="token punctuation">]</span><span class="token operator">:</span> Sequelize<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token string">'to_tsquery'</span><span class="token punctuation">,</span> <span class="token string">'fat &amp; rat'</span><span class="token punctuation">)</span> <span class="token comment">// match text search for strings 'fat' and 'rat' (PG only)</span>
-
-<span class="token comment">// In Postgres, Op.like/Op.iLike/Op.notLike can be combined to Op.any:</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>like<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>any<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'hat'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>  <span class="token comment">// LIKE ANY ARRAY['cat', 'hat']</span></code></pre></div>
-</li>
-</ul>
-<br>
-<br>
-<h4 id="1-2-연산자범위" style="position:relative;"><a href="#1-2-%EC%97%B0%EC%82%B0%EC%9E%90%EB%B2%94%EC%9C%84" aria-label="1 2 연산자범위 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-2. 연산자(범위)</h4>
-<hr>
-<ul>
-<li>
-<p>범위 연산자 또한 지원하여 다양한 종류의 범위를 쿼리할 수 있다.</p>
-</li>
-<li>
-<p>공식문서에서 설명하는 범위 연산자는 아래와 같다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>Op<span class="token punctuation">.</span>contains<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>            <span class="token comment">// @> '2'::integer  (PG range contains element operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>contains<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>       <span class="token comment">// @> [1, 2)        (PG range contains range operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>contained<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>      <span class="token comment">// &lt;@ [1, 2)        (PG range is contained by operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>overlap<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token comment">// &amp;&amp; [1, 2)        (PG range overlap (have points in common) operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>adjacent<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>       <span class="token comment">// -|- [1, 2)       (PG range is adjacent to operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>strictLeft<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token comment">// &lt;&lt; [1, 2)        (PG range strictly left of operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>strictRight<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>    <span class="token comment">// >> [1, 2)        (PG range strictly right of operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>noExtendRight<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// &amp;&lt; [1, 2)        (PG range does not extend to the right of operator)</span>
-<span class="token punctuation">[</span>Op<span class="token punctuation">.</span>noExtendLeft<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment">// &amp;> [1, 2)        (PG range does not extend to the left of operator)</span></code></pre></div>
-</li>
-</ul>
-<br>
-<br>
-<h4 id="1-3-연산자-조합" style="position:relative;"><a href="#1-3-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%A1%B0%ED%95%A9" aria-label="1 3 연산자 조합 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-3. 연산자 조합</h4>
-<hr>
-<ul>
-<li>
-<p><code class="language-text">where</code> 조건 객체에서 연산자들끼리의 중복 사용또한 가능하다.</p>
-</li>
-<li>
-<p>조건 객체에서 별 다른 연산자로 엮어주지 않고 속성을 나열한다면 AND로 간주된다.</p>
-</li>
-<li>
-<p>연산자안에서 여러 컬럼을 다루는 경우에는 각 컬럼에 대한 조건을 담은 객체의 배열로 작성해야 한다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> Op <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"sequelize"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-Foo<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token literal-property property">where</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token literal-property property">rank</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>or<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>lt<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
-        <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>eq<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">null</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token comment">// rank &lt; 1000 OR rank IS NULL</span>
-
-    <span class="token punctuation">{</span>
-      <span class="token literal-property property">createdAt</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>lt<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>gt<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token comment">// createdAt &lt; [timestamp] AND createdAt > [timestamp]</span>
-
-    <span class="token punctuation">{</span>
-      <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>or<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>like<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'Boat%'</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token punctuation">[</span>Op<span class="token punctuation">.</span>like<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">'%boat%'</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// title LIKE 'Boat%' OR description LIKE '%boat%'</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Property</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> accessor<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">get</span> <span class="token function">email</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#email<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-</li>
+
+  <span class="token keyword">set</span> <span class="token function">email</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#email <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>관점</th>
+<th>기존 방식</th>
+<th>v6.6 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>엔티티 필드 접근</strong></td>
+<td>누구나 public 필드를 직접 변경 가능</td>
+<td>getter/setter 로직을 강제하여 무분별한 변경 방지</td>
+</tr>
+<tr>
+<td><strong>데이터 무결성</strong></td>
+<td>규칙을 지키지 않은 값 입력 가능 → 취약</td>
+<td>setter에서 도메인 규칙을 강제 적용 가능</td>
+</tr>
+<tr>
+<td><strong>private field 활용</strong></td>
+<td>비공식적/우회적 구현 필요</td>
+<td>private 필드를 ORM이 직접 공식 지원</td>
+</tr>
+<tr>
+<td><strong>유지보수성</strong></td>
+<td>규칙이 엔티티 곳곳에 흩어짐</td>
+<td>엔티티가 캡슐화된 도메인 모델처럼 동작하여 유지보수성↑</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h3 id="4-js-private-vs-property-accessor-true-" style="position:relative;"><a href="#4-js-private-vs-property-accessor-true-" aria-label="4 js private vs property accessor true  permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. JS private vs @Property({ accessor: true })</h3>
+<hr>
+<p>MikroORM v6.6에서 <code class="language-text">private properties with get/set accessors</code>를 지원하면서 헷갈리기 쉬운 포인트가 하나 생긴다. JS의 <code class="language-text">#privateField</code>만 쓰는 것과 MikroORM의 <code class="language-text">@Property({ accessor: true })</code>를 쓰는 것은 뭐가 다를까?</p>
+<p>둘은 겹치는 부분도 있지만, 역할 / 관심사가 완전히 다르다. 아래에서 예시로 비교해보자.</p>
+<br>
+<br>
+<h4 id="4-1-js-private" style="position:relative;"><a href="#4-1-js-private" aria-label="4 1 js private permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4-1. JS private</h4>
+<hr>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  #email<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>email<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#email<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">changeEmail</span><span class="token punctuation">(</span>next<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>next<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'@'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Invalid email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#email <span class="token operator">=</span> next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> u <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">'a@b.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 외부에서 직접 접근 불가</span>
+<span class="token comment">// u.#email (Syntax Error)</span>
+u<span class="token punctuation">.</span><span class="token function">changeEmail</span><span class="token punctuation">(</span><span class="token string">'new@domain.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 도메인 규칙을 강제</span></code></pre></div>
+<p>여기서 JS의 private 필드는 오직 JS 레벨 캡슐화만 제공한다.</p>
+<ul>
+<li>클래스 외부에서 #email에 접근할 수 없고</li>
+<li>클래스 내부에서는 마음대로 읽고 쓸 수 있다</li>
+<li>“ORM이 이 필드를 DB에 어떻게 영속화할지”는 모른다 (관심 없음)</li>
 </ul>
+<p>즉, JS private은 **“언어 차원의 정보 은닉”**에 가깝다.</p>
+<br>
+<br>
+<h4 id="4-2-property-accessor-true-" style="position:relative;"><a href="#4-2-property-accessor-true-" aria-label="4 2 property accessor true  permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4-2. @Property({ accessor: true })</h4>
+<hr>
+<p>MikroORM 입장에서 중요한 건 다음과 같다.</p>
+<ul>
+<li>어떤 프로퍼티가 DB 필드에 매핑되어야할까?</li>
+<li>값을 읽고 쓸 때 어떤 경로를 통해 접근해야 해아할까?</li>
+</ul>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Entity<span class="token punctuation">,</span> PrimaryKey<span class="token punctuation">,</span> Property <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@mikro-orm/core'</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Entity</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">PrimaryKey</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  id<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+  #email<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Property</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> accessor<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">get</span> <span class="token function">email</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#email<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">email</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'@'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Invalid email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>#email <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>즉, 이 프로퍼티는 getter/setter를 통해 제어되는 프로퍼티라고 ORM에게 선언하는 것이다.</p>
 <br>
 <br>
 <h2 id="-understanding" style="position:relative;"><a href="#-understanding" aria-label=" understanding permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🤔 Understanding</h2>
+<p>MikroORM v6.6은 스펙이 크게 바뀐 릴리스는 아니지만, 엔티티 모델링의 완성도를 크게 끌어올리는 기능을 정식으로 지원했다.</p>
+<p>MSA + DDD 스타일로 개발하는 우리 팀에게는 도메인 규칙을 setter에서 강제할 수 있게 되어 불편한 점을 크게 개선할 수 있다 생각한다.</p></div></div><div class="grid w-full grid-cols-[49.3%_49.3%] gap-[1.4%] mt-[40px]"><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 mr-auto" href="/2025-11-16-WEB/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">이전 글</div><div class="title text-[16px] font-semibold leading-[1.4]">structuredClone() – Web Platform이 제공하는 표준 딥 클론</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">📚</span><span class="mr-[4px]">Web</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2025.11.16</div></div></a></div><div class="mt-8 w-full"><div id="giscus-comments"></div></div></main><div class="hidden lg:block fixed" style="top:200px;left:calc(50% + 360px + 50px);width:200px;max-height:calc(100vh - 220px);overflow-y:auto"><ul>
+<li>
+<p><a href="#-overview">📚 Overview</a></p>
 <ul>
 <li>
-<p><del>항상 느끼지만 시퀄라이즈 공식문서는 너무 불친절..</del></p>
+<p><a href="#1-mikroorm-660-%EC%A3%BC%EC%9A%94-%EB%B3%80%EA%B2%BD%EC%A0%90-%EC%9A%94%EC%95%BD">1. MikroORM 6.6.0 주요 변경점 요약</a></p>
 </li>
 <li>
-<p>공식문서에서는 자세한 사용 방식을 안내하기보다는 다양한 예시를 제공해 준 뒤, 이에 맞춰 사용자가 찾아서 써라(?)라는 느낌을 많이 받았다.</p>
+<p><a href="#2-%EA%B8%B0%EC%A1%B4-mikroorm%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90">2. 기존 MikroORM의 문제점</a></p>
 </li>
 <li>
-<p>매번 <code class="language-text">ctril + f</code> 로 검색하여 찾아 쓰기 귀찮아서 정리해보았다.</p>
+<p><a href="#3-%EB%B3%80%EA%B2%BD%EB%90%A0-mikroorm">3. 변경될 MikroORM</a></p>
 </li>
-</ul>
-<br>
-<br></div></div><div class="grid w-full grid-cols-[49.3%_49.3%] gap-[1.4%] mt-[40px]"><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 mr-auto" href="/2022-02-15-PROJECT/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">이전 글</div><div class="title text-[16px] font-semibold leading-[1.4]">ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">🔥</span><span class="mr-[4px]">Project</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2022.02.15</div></div></a><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 ml-auto" href="/2022-02-16-PROJECT/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">다음 글</div><div class="title text-[16px] font-semibold leading-[1.4]">ALL-CON Refactoring 8일차 - Timezone 수정</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">🔥</span><span class="mr-[4px]">Project</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2022.02.16</div></div></a></div><div class="mt-8 w-full"><div id="giscus-comments"></div></div></main><div class="hidden lg:block fixed" style="top:200px;left:calc(50% + 360px + 50px);width:200px;max-height:calc(100vh - 220px);overflow-y:auto"><ul>
 <li>
-<p><a href="#%EF%B8%8F-today-i-learned">✍️ <strong>T</strong>oday <strong>I</strong> <strong>L</strong>earned</a></p>
+<p><a href="#4-js-private-vs-property-accessor-true-">4. JS private vs @Property({ accessor: true })</a></p>
 <ul>
-<li>
-<p><a href="#1-op">1. Op</a></p>
-<ul>
-<li><a href="#1-1-%EC%97%B0%EC%82%B0%EC%9E%90%EC%9D%BC%EB%B0%98">1-1. 연산자(일반)</a></li>
-<li><a href="#1-2-%EC%97%B0%EC%82%B0%EC%9E%90%EB%B2%94%EC%9C%84">1-2. 연산자(범위)</a></li>
-<li><a href="#1-3-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%A1%B0%ED%95%A9">1-3. 연산자 조합</a></li>
+<li><a href="#4-1-js-private">4-1. JS private</a></li>
+<li><a href="#4-2-property-accessor-true-">4-2. @Property({ accessor: true })</a></li>
 </ul>
 </li>
 </ul>
@@ -279,7 +308,7 @@ Foo<span class="token punctuation">.</span><span class="token function">findAll<
 <li>
 <p><a href="#-understanding">🤔 Understanding</a></p>
 </li>
-</ul></div></div><footer class="flex justify-center items-center w-full h-[62px] mt-auto"><p class="max-w-content text-center text-[var(--primary-text-color)] font-sans">© <!-- -->2025<!-- --> <a href="https://github.com/JH8459" class="text-[#3A95FF]">JH8459</a> powered by<a href="https://github.com/JH8459/JH8459.github.io" class="text-[#3A95FF]"> gatsby-blog</a></p></footer><div class="fixed bottom-[20px] right-[20px] flex items-center justify-center"><button class="w-[50px] h-[50px] rounded-full bg-[#363f47] cursor-pointer shadow-xl backdrop-blur-md z-30 flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2022-02-15-TIL/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul></div></div><footer class="flex justify-center items-center w-full h-[62px] mt-auto"><p class="max-w-content text-center text-[var(--primary-text-color)] font-sans">© <!-- -->2025<!-- --> <a href="https://github.com/JH8459" class="text-[#3A95FF]">JH8459</a> powered by<a href="https://github.com/JH8459/JH8459.github.io" class="text-[#3A95FF]"> gatsby-blog</a></p></footer><div class="fixed bottom-[20px] right-[20px] flex items-center justify-center"><button class="w-[50px] h-[50px] rounded-full bg-[#363f47] cursor-pointer shadow-xl backdrop-blur-md z-30 flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2025-12-01-BACKEND/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
