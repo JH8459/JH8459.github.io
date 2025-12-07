@@ -9,6 +9,8 @@
     "@kfonts/nanum-gothic": "^0.2.0",
     "autoprefixer": "^10.4.19",
     "babel-plugin-lodash": "^3.3.4",
+    "baseline-browser-mapping": "^2.9.4",
+    "caniuse-lite": "^1.0.30001759",
     "gatsby": "^5.13.5",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-firebase-v9.0": "^1.0.3",
