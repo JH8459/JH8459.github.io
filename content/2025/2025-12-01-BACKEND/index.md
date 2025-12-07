@@ -4,10 +4,10 @@ title: MikroORM v6.6 – 무엇이 달라졌나?
 date: '2025-12-01'
 author: JH8459
 categories: Backend
-thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01-BACKEND/thumbnail.png
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01/BACKEND/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01-BACKEND/thumbnail.png"/>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01/BACKEND/thumbnail.png"/>
 
 ## 📚 Overview
 
