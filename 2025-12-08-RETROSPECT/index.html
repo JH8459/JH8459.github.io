@@ -73,23 +73,25 @@
         }
       }
     })
-  </script><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="relative flex flex-col items-center justify-center w-full min-h-screen px-4 break-keep antialiased font-sans text-[var(--primary-text-color)]"><header class="flex justify-center w-full h-[60px]"><div class="flex items-center justify-between max-w-content w-full px-4"><div class="flex-shrink-0"><a class="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]" href="/">blog.jh8459.com</a></div><nav class="flex items-center"><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/about/">about</a><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/posts/">posts</a><div class="search-input-wrapper hidden md:block w-[250px] mt-[3px] relative"><div class="relative w-full"><input type="text" placeholder="검색어를 입력하세요..." class="search-input w-full h-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white" value=""/><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="search-icon absolute left-3 top-1/2 transform -translate-y-1/2 mr-[2px] text-[var(--primary-text-color)]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></div></nav></div></header><div class="flex justify-center w-full"><main class="flex flex-col items-center w-full max-w-content"><header class="flex flex-col justify-center w-full pb-[10px] border-b border-[var(--post-card-border-color)] mt-[40px] mb-[40px] break-keep"><h1 class="title font-semibold text-[32px] text-[var(--primary-text-color)] mb-[6px] leading-[1.3]">ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)</h1><div class="flex justify-between items-center w-full mt-[10px]"><div class="categories flex items-center"><div class="text-[18px] mr-[4px]">🔥</div><a class="category mr-[4px] font-semibold text-[var(--primary-text-color)] hover:underline text-[18px]" href="/posts/Project/">Project</a></div><div class="info flex flex-wrap leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4"><button type="button" class="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><strong>1 min</strong></button><span class="inline-flex items-center" aria-live="polite" aria-busy="true"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg> <span class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="animate-spin text-[1em] text-[var(--secondary-text-color)] ml-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg></span></span><div class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg> <!-- -->2022.02.14</div></div></div></header><div class="flex flex-col justify-center w-full mb-[20px]"><div class="prose dark:prose-invert prose-img:mx-auto mx-auto w-full max-w-content"><p><span
+  </script><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="relative flex flex-col items-center justify-center w-full min-h-screen px-4 break-keep antialiased font-sans text-[var(--primary-text-color)]"><header class="flex justify-center w-full h-[60px]"><div class="flex items-center justify-between max-w-content w-full px-4"><div class="flex-shrink-0"><a class="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]" href="/">blog.jh8459.com</a></div><nav class="flex items-center"><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/about/">about</a><a class="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold" href="/posts/">posts</a><div class="search-input-wrapper hidden md:block w-[250px] mt-[3px] relative"><div class="relative w-full"><input type="text" placeholder="검색어를 입력하세요..." class="search-input w-full h-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white" value=""/><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="search-icon absolute left-3 top-1/2 transform -translate-y-1/2 mr-[2px] text-[var(--primary-text-color)]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></div></nav></div></header><div class="flex justify-center w-full"><main class="flex flex-col items-center w-full max-w-content"><header class="flex flex-col justify-center w-full pb-[10px] border-b border-[var(--post-card-border-color)] mt-[40px] mb-[40px] break-keep"><h1 class="title font-semibold text-[32px] text-[var(--primary-text-color)] mb-[6px] leading-[1.3]">첫 이직 후 회고<span class="inline-block align-super text-red-500 font-bold text-base" style="text-shadow:1px 1px 2px rgba(0,0,0,0.3);margin-left:4px">N</span></h1><div class="flex justify-between items-center w-full mt-[10px]"><div class="categories flex items-center"><div class="text-[18px] mr-[4px]">🤔</div><a class="category mr-[4px] font-semibold text-[var(--primary-text-color)] hover:underline text-[18px]" href="/posts/Retrospect/">Retrospect</a></div><div class="info flex flex-wrap leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4"><button type="button" class="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><strong>4 min</strong></button><span class="inline-flex items-center" aria-live="polite" aria-busy="true"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg> <span class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="animate-spin text-[1em] text-[var(--secondary-text-color)] ml-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path></svg></span></span><div class="flex items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="w-4 h-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg> <!-- -->2025.12.08</div></div></div></header><div class="flex flex-col justify-center w-full mb-[20px]"><div class="prose dark:prose-invert prose-img:mx-auto mx-auto w-full max-w-content"><p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABYBAQEBAAAAAAAAAAAAAAAAAAQAAf/aAAwDAQACEAMQAAAB71JJTVn/xAAWEAADAAAAAAAAAAAAAAAAAAAAESD/2gAIAQEAAQUCFP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAACBB/9oACAEBAAY/AiL/AP/EABwQAAICAgMAAAAAAAAAAAAAAAERADEQUUFxkf/aAAgBAQABPyG+QOzHFn1G4hqIax//2gAMAwEAAgADAAAAEOMv/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBR/9oACAEDAQE/EBMn/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARUf/aAAgBAgEBPxCHV//EAB0QAQABBAMBAAAAAAAAAAAAAAEAESExgRBBYXH/2gAIAQEAAT8QBTSiaYF1uN2gdiAFQQemKZD9Jmsv5x//2Q=='); background-size: cover; display: block;"
+    style="padding-bottom: 56.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/klEQVR42sVSy2rCUBD197voyp0uVNS0JbVCCwVx0wiaopGY5v0wqYnE1KbfcJx7LX1IjSBiFwfunJl75llazS2cEqWzCKbHCoZ/CGahjfWrS04bb5GDLLKJc7jNfOzT6jMmCw9UyD7EjgZTGWLpG4gsFbH7gqVnIA1MJJ6+7YDega4Qr+8XZEEsqzUdoXx5AaFehdiq4bF7g9t2A93rJu5FAe1aBR2hgburJnxtwrtIg4IZsiq05wGHqYwogQxVljCW+pB6D5gRr8pPMCZDJFQ9H0PhUiggj32O94VHcJEnWzsn+yP59u2K7d8ytf+Fufnb/sH/3x0eurWiO9wABrsN5uvhdcMAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="github-blog.png"
         title=""
-        src="/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg"
-        srcset="/static/0da0186f8f100aaab0baf6a925d3285a/4ec73/project.jpg 180w,
-/static/0da0186f8f100aaab0baf6a925d3285a/158ba/project.jpg 360w,
-/static/0da0186f8f100aaab0baf6a925d3285a/80e3c/project.jpg 720w,
-/static/0da0186f8f100aaab0baf6a925d3285a/280b9/project.jpg 905w"
+        src="/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png"
+        srcset="/static/f62c870c652e5cedc9b5bc8eab3bf881/e9ff0/retrospect.png 180w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/f21e7/retrospect.png 360w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/37523/retrospect.png 720w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/302a4/retrospect.png 1080w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/07a9c/retrospect.png 1440w,
+/static/f62c870c652e5cedc9b5bc8eab3bf881/da994/retrospect.png 1487w"
         sizes="(max-width: 720px) 100vw, 720px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -97,101 +99,149 @@
       />
     </span></p>
 <br>
-<h2 id="️-refactoring" style="position:relative;"><a href="#%EF%B8%8F-refactoring" aria-label="️ refactoring permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>⚒️ Refactoring</h2>
-<ul>
-<li>
-<p>ALL-CON에서는 한달간의 콘서트 정보만 <code class="language-text">allConcerts</code> 배열에 담아 보여주고 있다.</p>
-<p>한달이 지나게되면 콘서트 정보중 <code class="language-text">activation</code>이 <code class="language-text">0</code>으로 비활성화되어 서버에서 보여주지 않고 있다. <del>(콘서트 삭제는 관련 댓글 및 게시글들이 모두 삭제되므로 비활성화를 선택)</del></p>
-<p><img src="https://user-images.githubusercontent.com/83164003/154025834-c3427f3f-4758-4c4a-bc77-4c219faa9844.png" alt="스크린샷, 2022-02-15 17-45-59"></p>
-</li>
-<li>
-<p>기존에는 콘서트가 비활성화 될 시 관련 게시글은 조회수를 <code class="language-text">-999999</code> 음수값으로 강제로 할당하여 조회수로 검색시 맨 뒤로 나열되게끔 수정해주었으나 만약 불순한(?) 목적으로 조회수를 올리거나 시간이 오래지나 조회수가 <code class="language-text">0</code> 이상의 양수값으로 전환된다면 올바르지 않은 결과가 초래되므로 <code class="language-text">Articles</code> 테이블에도 <code class="language-text">activation</code> 컬럼값을 추가해 비활성화 해주기로 했다.</p>
-</li>
-</ul>
+<h2 id="-첫-이직-후-회고" style="position:relative;"><a href="#-%EC%B2%AB-%EC%9D%B4%EC%A7%81-%ED%9B%84-%ED%9A%8C%EA%B3%A0" aria-label=" 첫 이직 후 회고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🤔 첫 이직 후 회고</h2>
+<p>개발자가 된 지 어느덧 3년이 넘었지지만, 지금의 회사로 이직한 지는 4개월이 조금 넘어 회고글을 남기게 되었다.</p>
+<p>짧은 기간이지만 나는 이전 직장에서는 경험하지 못했던 많은 것들을 배우고 있다. 단순히 더 큰 트래픽, 더 복잡한 도메인, 더 많은 팀원이 있는 환경 때문만은 아니다. “개발자답게 일한다”는 것은 무엇인지, 그 문장이 실무에서는 어떤 의미를 갖는지 다시 이해하게 되었기 때문이다.</p>
+<p>첫 직장에서 배울 수 없었던 것들을 지금의 팀에서 채워가고 있다.</p>
 <br>
 <br>
-<h3 id="1-보완이-필요한-사항" style="position:relative;"><a href="#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD" aria-label="1 보완이 필요한 사항 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 보완이 필요한 사항</h3>
+<h3 id="1-첫-번째-직장-혼자-하는-개발의-위험성을-배우다" style="position:relative;"><a href="#1-%EC%B2%AB-%EB%B2%88%EC%A7%B8-%EC%A7%81%EC%9E%A5-%ED%98%BC%EC%9E%90-%ED%95%98%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9D%98-%EC%9C%84%ED%97%98%EC%84%B1%EC%9D%84-%EB%B0%B0%EC%9A%B0%EB%8B%A4" aria-label="1 첫 번째 직장 혼자 하는 개발의 위험성을 배우다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 첫 번째 직장, “혼자 하는 개발”의 위험성을 배우다</h3>
 <hr>
-<ul>
-<li>
-<p><code class="language-text">Articles</code> 테이블의 현재 스키마는 다음과 같다.</p>
-<p><img src="https://user-images.githubusercontent.com/83164003/154025162-0730e711-8b2f-4946-962b-b5b3ab09d166.png" alt="스크린샷, 2022-02-15 17-44-23"></p>
-<p>해당 <code class="language-text">Articles</code> 테이블 컬럼중 <code class="language-text">activation</code> 컬럼값을 추가하고, 서버에서 <code class="language-text">nodeSchedule</code>을 통하여 1일 1회 티켓 발매 후 한달이 지난 콘서트들은 비활성화를 시키는데 해당 콘서트에 종속된 게시글들 또한 모두 비활성화 진행이 필요하다.</p>
-</li>
-</ul>
-<br>
-<br>
-<h3 id="2-문제-해결" style="position:relative;"><a href="#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0" aria-label="2 문제 해결 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 문제 해결</h3>
-<h4 id="2-1-sequelize-model-파일-스키마-수정--addcolumn-함수를-통한-마이그레이션" style="position:relative;"><a href="#2-1-sequelize-model-%ED%8C%8C%EC%9D%BC-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%88%98%EC%A0%95--addcolumn-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%9C-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98" aria-label="2 1 sequelize model 파일 스키마 수정  addcolumn 함수를 통한 마이그레이션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-1. Sequelize Model 파일 스키마 수정 &#x26;&#x26; addColumn() 함수를 통한 마이그레이션</h4>
+<p>나는 비전공자에서 개발자가 되었고, 개발자로써 첫번째 직장에서는 온라인 채용 서비스를 만들었었다. 재직하는 동안 몇 번 포스팅도 남긴적이 있다.</p>
+<blockquote>
+<p><a href="https://blog.jh8459.com/2022-04-01-RETROSPECT/">백엔드 개발자 첫 출근 후기</a><br>
+<a href="https://blog.jh8459.com/2024-04-01-RETROSPECT/">백엔드 개발자 2년차 회고</a></p>
+</blockquote>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-08/RETROSPECT/online.png">
+<center>전 직장에선 온라인 인적성 검사 같은 온라인 채용 서비스를 개발했었다.</center>
+<br><br>
+<p>개발자로 처음 일을 한다는 설렘도 있었지만, 지금 돌아보면 그보다 훨씬 큰 감정은 막막함이었다.</p>
+<p>누군가에게 “이 설계가 맞는가?”, “이 코드를 이렇게 짜도 괜찮은가?”를 물어볼 대상이 없었다. 코드를 써내려가고 요구사항을 구현하는 것 자체는 가능했지만 그 코드가 왜 그렇게 되어야 하는지, 어떤 설계 원칙을 따를지는 오롯이 나 스스로 결정할 수 밖에 없었다.</p>
+<p>개발은 결국 수많은 선택의 연속인데 선택의 기준을 알지 못한 채 혼자 판단해야 하는 일은 생각보다 훨씬 고단했다.</p>
+<p>지금은 설계 방향이나 코드 구조에 대해 AI에게 물어보고, 잘못된 접근을 빠르게 되짚는 것도 가능하지만 그때는 내가 가진 경험과 검색 능력이 전부였다. 스택오버플로와 블로그 글을 뒤적이며 비슷한 사례를 찾아보는 것이 최선이었고 내가 하고 있는 방식이 옳은지 틀린지 검증해줄 도구도 사람도 없었다.</p>
+<p>그래서 더 자주 멈췄고, 더 자주 돌아갔고, 더 자주 헤맸다. “혼자 성장해야 한다”는 부담감은 지금보다 훨씬 무겁게 느껴졌다.</p>
+<p>지금 와서 돌아보면, 그 시절에 가장 부족했던 건 기술이 아니라 올바르게 선택할 수 있는 기준을 함께 고민해줄 환경이었다.</p>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-08/RETROSPECT/question.png">
+<center>가장 힘든점을 꼽자면 "혼자"라는 점 이었다.</center>
+<br><br>
+<p>그러다 보니 당연하게도 코드 리뷰 문화가 없었다. 내가 합당한 방향으로 작성했는지, 위험한 로직은 없는지, 도메인 규칙을 오해한 것은 아닌지 어떤 피드백도 받을 수 없었다.</p>
+<p>신입 개발자에게 코드 리뷰는 “검토”가 아니라 “학습”의 과정인데 그 배움을 얻을 수 없었던 건 지금 생각해도 너무 아쉬운 부분이다.</p>
+<p>PR은 하루 일과 보고서처럼 작성되었으며, 이런 식의 PR은 먼 미래에 이력을 추적하거나 변경을 이해하기 어려웠다. (기능 단위, 도메인 단위로 정돈되지 않은 변경사항은 히스토리 파악을 거의 불가능하게 만든다.)</p>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-08/RETROSPECT/review.png">
+<center>이 작은 차이가 장기적으로 얼마나 큰 생산성 손실을 만드는지 지금에 와서야 뼈저리게 깨달았다.</center>
+<br><br>
+<h3 id="2-그럼에도-불구하고-첫-직장에서-좋았던-점은" style="position:relative;"><a href="#2-%EA%B7%B8%EB%9F%BC%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EC%B2%AB-%EC%A7%81%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A2%8B%EC%95%98%EB%8D%98-%EC%A0%90%EC%9D%80" aria-label="2 그럼에도 불구하고 첫 직장에서 좋았던 점은 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 그럼에도 불구하고 첫 직장에서 좋았던 점은?</h3>
 <hr>
-<ul>
-<li>
-<p>어제 학습한 내용대로 <code class="language-text">addColumn()</code> 함수를 통해 마이그레이션으로 <code class="language-text">Articles</code> 테이블의 스키마를 수정해주었다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function-variable function">up</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">queryInterface<span class="token punctuation">,</span> Sequelize</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> queryInterface<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">'Articles'</span><span class="token punctuation">,</span> <span class="token string">'activation'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    <span class="token literal-property property">type</span><span class="token operator">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">BOOLEAN</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">allowNull</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">defaultValue</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-</li>
-<li>
-<p>초기값은 <code class="language-text">true</code>로 설정 (티켓 오픈 후 한달이 지난 콘서트 게시글은 <code class="language-text">false</code>로 비활성화 된다.) , 데이터 타입과 옵션을 설정해주었다.</p>
-<p><img src="https://user-images.githubusercontent.com/83164003/154092908-57a17a67-2d42-4d7d-9c59-b38e3439b348.png" alt="스크린샷, 2022-02-16 00-23-06"></p>
-<p>스키마를 수정했기 때문에 기존 게시글들을 수동으로 하나하나 데이터 값을 수정해줘야 하나 싶었는데, <code class="language-text">defaultValue</code>값을 <code class="language-text">true</code>로 준 탓인지 기존 게시글들도 모두 <code class="language-text">activation</code> 컬럼의 값이 <code class="language-text">true</code>로 활성화되었다. <del>(휴…)</del></p>
-</li>
-</ul>
+<p>이 외에도 기획 문서가 없다는 것도 큰 어려움이었다. 타 부서와 협업할 때마다 필요한 정보를 정리한 문서가 존재하지 않아, 이야기 형태로 전달되는 요구사항을 그 자리에서 스스로 해석해야 했다.</p>
+<p>결국 내가 직접 기획 문서를 작성하고 정리한 내용을 다시 타 부서에 설명하며 협업을 주도할 수밖에 없었다. 지금 생각하면 이 과정은 개발 업무라기보다는 기획·프로덕트 매니징·커뮤니케이션을 모두 혼자 떠안는 작업에 가까웠다. 문서를 만드는 데에 너무 많은 시간이 들었고, 요구사항을 오해해 다시 정리해야 하는 일도 적지 않았다.</p>
+<p>그런데 아이러니하게도, 이 경험이 지금의 나를 만들었다고 느낀다. 당시에는 힘들기만 했던 “요구사항을 스스로 정리하는 과정”이 어느 순간 내 사고방식을 완전히 바꾸어 놓았다.</p>
+<blockquote>
+<p>덕분에 지금의 나는 단순히 기획 문서를 받아 개발하는 것이 아니라, 문제를 먼저 스스로 정의해보며 필요하다면 기획을 재구성하는 개발자로 성장했다 생각한다.</p>
+</blockquote>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-08/RETROSPECT/plan.png">
+<center>요구사항을 그대로 받는 데서 그치지 않고, 문제를 다시 정의하는 능력이 생겼다.</center>
+<br><br>
+<p>이전 회사에서는 생존을 위해 억지로 했던 행동이었지만, 현 직장에서는 그 능력이 오히려 강점이 되었다. 대충 전달된 요구사항을 그대로 구현하는 것이 아니라 문제의 본질을 먼저 이해하고, 불명확한 부분을 직접 정의하거나 더 나은 흐름으로 바꿔 제안할 수 있는 개발자가 된 것이다.</p>
+<p>지금 와서 돌아보면, 그때의 혼란스러웠던 경험들이 결국 소통하는 방법, 문제를 정의하는 방법, 그리고 협업을 주도하는 방법을 스스로 터득하게 만든 시간이었다.</p>
 <br>
 <br>
-<h4 id="2-2-concertcleaner-함수-및-controller-변경" style="position:relative;"><a href="#2-2-concertcleaner-%ED%95%A8%EC%88%98-%EB%B0%8F-controller-%EB%B3%80%EA%B2%BD" aria-label="2 2 concertcleaner 함수 및 controller 변경 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-2. concertCleaner() 함수 및 Controller 변경</h4>
+<h3 id="3-두-번째-직장-개발자답게-일한다는-감각을-배우다" style="position:relative;"><a href="#3-%EB%91%90-%EB%B2%88%EC%A7%B8-%EC%A7%81%EC%9E%A5-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%8B%B5%EA%B2%8C-%EC%9D%BC%ED%95%9C%EB%8B%A4%EB%8A%94-%EA%B0%90%EA%B0%81%EC%9D%84-%EB%B0%B0%EC%9A%B0%EB%8B%A4" aria-label="3 두 번째 직장 개발자답게 일한다는 감각을 배우다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 두 번째 직장, “개발자답게 일한다”는 감각을 배우다</h3>
 <hr>
-<ul>
-<li>
-<p>매일 오전 09시에 서버에서는 콘서트 정보를 <code class="language-text">concertCleaner()</code> 함수를 통해서 티켓 오픈일이 한달 지난 콘서트 DB의 <code class="language-text">activation</code>을 <code class="language-text">false</code>로 바꾸어 주고 있다.</p>
-<p>여기에 더불어 해당 콘서트에 종속된 게시글 DB들의 <code class="language-text">activation</code> 또한 함께 <code class="language-text">false</code>로 바꾸어 주었다.</p>
-</li>
-<li>
-<p>또한, 이제는 Controller 또한 수정하여 게시글을 뱉어주는 요청이 들어온다면, <code class="language-text">order</code>값을 내림차순으로 주어서 <code class="language-text">activation</code>이 <code class="language-text">false</code>인 게시물은 후순위로 밀리게끔 설계하였다.</p>
-</li>
-</ul>
-<center><img src="https://user-images.githubusercontent.com/83164003/154095571-20c8416e-30e4-4e4c-b665-6a5962839808.png"></center><br>
+<p>글을 쓰는 시점은 이직 후 4개월 정도 지났다.</p>
+<p>짧은 시간이지만, 나는 여기서 개발자라는 직업의 본질을 다시 배우고 있다. 첫 회사에서 부족했던 부분들이 여기서는 모두 체계화된 문화와 프로세스로 자리 잡고 있었다.</p>
 <br>
 <br>
-<h3 id="3-결과" style="position:relative;"><a href="#3-%EA%B2%B0%EA%B3%BC" aria-label="3 결과 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 결과</h3>
+<h3 id="3-1-활발하고-건강한-코드-리뷰" style="position:relative;"><a href="#3-1-%ED%99%9C%EB%B0%9C%ED%95%98%EA%B3%A0-%EA%B1%B4%EA%B0%95%ED%95%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0" aria-label="3 1 활발하고 건강한 코드 리뷰 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3-1. 활발하고 건강한 코드 리뷰</h3>
 <hr>
+<p>현재 개발팀에서는 PR을 올리면 반드시 리뷰가 달린다. (브런치 규칙에 의해 하나 이상의 승인이 있어야한다.)</p>
+<p>그것도 단순히 “네이밍 바꿔주세요” 수준의 피드백이 아니라,</p>
 <ul>
-<li>
-<p>클라이언트에서 이제 조회수순으로 정렬을 하여도 <code class="language-text">order</code>의 우선순위가 <code class="language-text">activation</code> 내림차순이기 때문에 비활성화된 콘서트에 종속된 게시물들을 후순위로 밀리게 설계하였다.</p>
-<p><img src="https://user-images.githubusercontent.com/83164003/154096234-6ea10a8a-a7df-4501-9575-71ded1c491d6.png" alt="스크린샷, 2022-02-16 00-40-09"></p>
-<p>콘서트가 비활성화되어 목록에서는 사라졌지만 게시글은 후순위로 밀렸을 뿐이라서 조회/수정/삭제 처리는 가능한 상태이다.</p>
-<p><img src="https://user-images.githubusercontent.com/83164003/154100340-9819feb2-da3c-4216-b2e3-8e67231f199b.png" alt="스크린샷, 2022-02-16 00-59-54"></p>
-</li>
-<li>
-<p><del>위 사진과 같이 상단 콘서트 목록은 공백으로 보여지고 있다.</del></p>
-<p>빈 콘서트 목록 처리를 어떻게 해야할지 클라이언트를 담당한 팀원분과 조율해서 내일까지 Task를 가져가야 할 듯 하다.</p>
-</li>
+<li>이 로직은 도메인 규칙과 맞는지</li>
+<li>예외 케이스는 누락되지 않았는지</li>
+<li>유지보수성을 높이기 위한 더 나은 방법은 없는지</li>
+<li>데이터 흐름이 일관성을 유지하는지</li>
 </ul>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-08/RETROSPECT/merge.png">
+<center>첫 PR은 머지되는 과정에서 55개의 리뷰가 달렸다.</center>
+<br><br>
+<p>이러한 기준을 바탕으로 서로의 코드를 세심하게 검토한다. 처음엔 리뷰가 부담스러웠지만, 지금은 리뷰가 가장 빠르게 성장하는 배움의 통로라는 걸 실감하고 있다.</p>
+<p>또한, 기능 / 변경 의도 단위로 PR을 정리한다. 하루의 작업 내역을 일기처럼 적어 올리던 첫 회사와는 정반대였다. PR 제목과 커밋 내용을 보기만 해도 “왜 이 변경이 필요한지”, “무엇을 해결하려는지”를 이해할 수 있도록 컨벤션이 존재한다.</p>
+<p>이 단순한 문화적 차이가 코드를 읽는 능력, 리뷰의 질, 히스토리 관리, 유지보수성에 얼마나 큰 영향을 주는지 몸으로 느끼고 있다.</p>
 <br>
-<br></div></div><div class="grid w-full grid-cols-[49.3%_49.3%] gap-[1.4%] mt-[40px]"><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 mr-auto" href="/2022-02-11-PROJECT/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">이전 글</div><div class="title text-[16px] font-semibold leading-[1.4]">ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">🔥</span><span class="mr-[4px]">Project</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2022.02.11</div></div></a><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 ml-auto" href="/2022-02-15-PROJECT/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">다음 글</div><div class="title text-[16px] font-semibold leading-[1.4]">ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">🔥</span><span class="mr-[4px]">Project</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2022.02.15</div></div></a></div><div class="mt-8 w-full"><div id="giscus-comments"></div></div></main><div class="hidden lg:block fixed" style="top:200px;left:calc(50% + 360px + 50px);width:200px;max-height:calc(100vh - 220px);overflow-y:auto"><ul>
-<li>
-<p><a href="#%EF%B8%8F-refactoring">⚒️ Refactoring</a></p>
+<br>
+<h3 id="3-2-기획-단계의-정보가-명확하게-보인다" style="position:relative;"><a href="#3-2-%EA%B8%B0%ED%9A%8D-%EB%8B%A8%EA%B3%84%EC%9D%98-%EC%A0%95%EB%B3%B4%EA%B0%80-%EB%AA%85%ED%99%95%ED%95%98%EA%B2%8C-%EB%B3%B4%EC%9D%B8%EB%8B%A4" aria-label="3 2 기획 단계의 정보가 명확하게 보인다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3-2. 기획 단계의 정보가 명확하게 보인다</h3>
+<hr>
+<p>현 회사에서 기획은 Figma, Notion, Confluence로 구조화한다.</p>
+<p>그냥 화면만 있는 것이 아니라,</p>
 <ul>
+<li>도메인 정의</li>
+<li>예외 케이스</li>
+<li>흐름도</li>
+<li>목적과 의도</li>
+</ul>
+<p>이런 것들이 세심하게 정리되어 있다. 물론 처음부터 완벽할 순 없지만, 적어도 실시간으로 소통하며 기획안도 함께 발전되고 있음을 느끼고 있다.</p>
+<p>이러한 잦은 소통 덕분에 개발자는 기획을 수동적으로 받는 존재가 아니라, 기획의 의도를 판단하고 기술적 관점에서 피드백할 수 있는 주체가 된다.</p>
+<br>
+<br>
+<h3 id="4-배운-것-실무-적응을-가르는-다섯-가지-능력" style="position:relative;"><a href="#4-%EB%B0%B0%EC%9A%B4-%EA%B2%83-%EC%8B%A4%EB%AC%B4-%EC%A0%81%EC%9D%91%EC%9D%84-%EA%B0%80%EB%A5%B4%EB%8A%94-%EB%8B%A4%EC%84%AF-%EA%B0%80%EC%A7%80-%EB%8A%A5%EB%A0%A5" aria-label="4 배운 것 실무 적응을 가르는 다섯 가지 능력 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 배운 것: 실무 적응을 가르는 다섯 가지 능력</h3>
+<hr>
+<p>이 두 회사의 경험을 비교하며 나는 개발자가 실무에 적응하는 데 필요한 “지표”를 좀 더 명확하게 이해하게 되었다.</p>
+<br>
+<br>
+<ol>
 <li>
-<p><a href="#1-%EB%B3%B4%EC%99%84%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%82%AC%ED%95%AD">1. 보완이 필요한 사항</a></p>
+<p><strong>혼자 하지 말 것 — 학습은 피드백의 속도로 결정된다</strong></p>
+<p>혼자 개발해도 코드를 완성할 수는 있다. 하지만 “제대로 된 코드”를 만들기 위해서는 반드시 피드백이 필요하다.
+초기에는 그것이 반드시 사수여야 한다고 생각했지만, 지금은 조금 다르게 생각한다.</p>
+<p>한 명의 사수가 모든 문제를 해결해줄 수 있는 시대도 이미 지났다. 오히려 다양한 배경과 경험을 가진 사람들이 코드를 바라보고 의견을 주고받을 때, 개발자는 훨씬 빠르게 성장할 수 있다 생각한다.</p>
 </li>
 <li>
-<p><a href="#2-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0">2. 문제 해결</a></p>
+<p><strong>문제를 정의하는 능력을 키우기</strong></p>
+<p>기획이 명확하면 개발은 빠르지만, 실무에서 그런 기획은 드물다. 그래서 요구사항을 스스로 해석하고, 문제를 다시 정의할 줄 아는 능력이 필요하다.</p>
+<p>“무엇을 만들 것인가”보다 “왜 만들고 무엇을 해결하려는가”를 묻는 사람이 더 빠르게 성장한다.</p>
+</li>
+<li>
+<p><strong>흐름을 이해하는 능력</strong></p>
+<p>코드는 전체 시스템의 작은 조각일 뿐이다. 도메인, 비즈니스 흐름, 데이터 이동 경로를 이해하는 순간 버그의 원인도, 최적의 설계 방향도 훨씬 선명하게 보이기 시작한다.</p>
+<p>부분이 아니라 전체를 보는 시야가 실무형 개발자를 만든다.</p>
+</li>
+<li>
+<p><strong>일관성과 기록의 힘</strong></p>
+<p>좋은 PR, 분명한 커밋 메시지, 정리된 문서는 지금의 나뿐 아니라 미래의 우리를 위한 투자다.</p>
+<p>일관된 기록은 히스토리를 명확하게 만들고, 유지보수를 쉽게 만든다. 이는 곧, 팀의 생산성을 높이는 가장 간단한 방법이다.</p>
+</li>
+<li>
+<p><strong>협업은 기술만큼 중요한 능력</strong></p>
+<p>현직장에서 가장 크게 느낀 점은, 개발자에게 필요한 것은 기술뿐만이 아니라는 사실이다.</p>
+<p>기획·디자인·운영과의 협업에서 중요한 것은 맥락을 이해하고 명확하게 소통하는 능력이다. 문제를 설명하고 이해관계를 조율하는 힘이 있을 때, 기술은 비로소 효과적으로 활용된다.</p>
+</li>
+</ol>
+<br>
+<br>
+<h2 id="-understanding" style="position:relative;"><a href="#-understanding" aria-label=" understanding permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🤔 Understanding</h2>
+<p>입사 후 3개월은 단순히 새로운 환경에 적응하는 시간을 넘어, 그동안 놓치고 있던 개발 프로세스와 협업 방식을 다시 점검하는 기간이었다.</p>
+<p>첫 회사에서는 리뷰 문화가 부재했고, 기획 문서나 협업 구조도 체계적이지 않았다. 그 환경에서는 코드의 품질을 객관적으로 판단하기 어렵고, 개발 프로세스 자체를 스스로 정의해야 하는 상황이 반복됐다. 결과적으로 기능은 만들 수 있었지만, 더 나은 구조나 협업 방식에 대해 고민할 여지는 적었다.</p>
+<p>반면, 현 직장에서는 이러한 부분이 정반대의 방식으로 진행되고 있다. 리뷰를 통해 코드를 여러 시각에서 검토받고, 정리된 기획 문서를 기반으로 문제를 해석하고, PR과 문서화 과정에서 변경 의도를 명확하게 설명하는 것이 기본 흐름이다. 이 과정에서 자연스럽게 설계 기준, 도메인 이해, 시스템 흐름 등을 다시 익히게 되었다.</p>
+<p>3개월 동안의 경험은 단순히 새로운 도구나 기술을 배우는 것이 아니라, <strong>“개발자로서 일을 어떻게 해야 하는가”</strong> 라는 기준을 다시 세우는 과정에 가까웠다.</p>
+<p>문제를 정의하는 방식, 리뷰를 활용하는 방식, 협업 과정에서 고려해야 할 요소 등 실무에서 반복적으로 필요한 기본기를 다시 정비할 수 있었다.</p>
+<p>이 글은 단순한 이직한 회사에 대한 후기라기보다는 개발자로서 현재 어떤 기준을 갖고 일하고 있는지 그리고 앞으로 어떤 방식으로 성장해야 하는지를 스스로 정리해본 기록이다.</p>
+<br>
+<br></div></div><div class="grid w-full grid-cols-[49.3%_49.3%] gap-[1.4%] mt-[40px]"><a class="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 mr-auto" href="/2025-12-01-BACKEND/"><div class="direction text-[14px] font-medium text-gray-500 mb-[5px]">이전 글</div><div class="title text-[16px] font-semibold leading-[1.4]">MikroORM v6.6 – 무엇이 달라졌나?</div><div class="flex justify-between items-center mt-[5px]"><div class="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]"><span class="mr-[4px]">📚</span><span class="mr-[4px]">Backend</span></div><div class="text-[12px] text-[var(--secondary-text-color)]">2025.12.01</div></div></a></div><div class="mt-8 w-full"><div id="giscus-comments"></div></div></main><div class="hidden lg:block fixed" style="top:200px;left:calc(50% + 360px + 50px);width:200px;max-height:calc(100vh - 220px);overflow-y:auto"><ul>
+<li>
+<p><a href="#-%EC%B2%AB-%EC%9D%B4%EC%A7%81-%ED%9B%84-%ED%9A%8C%EA%B3%A0">🤔 첫 이직 후 회고</a></p>
 <ul>
-<li><a href="#2-1-sequelize-model-%ED%8C%8C%EC%9D%BC-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%88%98%EC%A0%95--addcolumn-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%9C-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98">2-1. Sequelize Model 파일 스키마 수정 &#x26;&#x26; addColumn() 함수를 통한 마이그레이션</a></li>
-<li><a href="#2-2-concertcleaner-%ED%95%A8%EC%88%98-%EB%B0%8F-controller-%EB%B3%80%EA%B2%BD">2-2. concertCleaner() 함수 및 Controller 변경</a></li>
+<li><a href="#1-%EC%B2%AB-%EB%B2%88%EC%A7%B8-%EC%A7%81%EC%9E%A5-%ED%98%BC%EC%9E%90-%ED%95%98%EB%8A%94-%EA%B0%9C%EB%B0%9C%EC%9D%98-%EC%9C%84%ED%97%98%EC%84%B1%EC%9D%84-%EB%B0%B0%EC%9A%B0%EB%8B%A4">1. 첫 번째 직장, “혼자 하는 개발”의 위험성을 배우다</a></li>
+<li><a href="#2-%EA%B7%B8%EB%9F%BC%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EC%B2%AB-%EC%A7%81%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A2%8B%EC%95%98%EB%8D%98-%EC%A0%90%EC%9D%80">2. 그럼에도 불구하고 첫 직장에서 좋았던 점은?</a></li>
+<li><a href="#3-%EB%91%90-%EB%B2%88%EC%A7%B8-%EC%A7%81%EC%9E%A5-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%8B%B5%EA%B2%8C-%EC%9D%BC%ED%95%9C%EB%8B%A4%EB%8A%94-%EA%B0%90%EA%B0%81%EC%9D%84-%EB%B0%B0%EC%9A%B0%EB%8B%A4">3. 두 번째 직장, “개발자답게 일한다”는 감각을 배우다</a></li>
+<li><a href="#3-1-%ED%99%9C%EB%B0%9C%ED%95%98%EA%B3%A0-%EA%B1%B4%EA%B0%95%ED%95%9C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0">3-1. 활발하고 건강한 코드 리뷰</a></li>
+<li><a href="#3-2-%EA%B8%B0%ED%9A%8D-%EB%8B%A8%EA%B3%84%EC%9D%98-%EC%A0%95%EB%B3%B4%EA%B0%80-%EB%AA%85%ED%99%95%ED%95%98%EA%B2%8C-%EB%B3%B4%EC%9D%B8%EB%8B%A4">3-2. 기획 단계의 정보가 명확하게 보인다</a></li>
+<li><a href="#4-%EB%B0%B0%EC%9A%B4-%EA%B2%83-%EC%8B%A4%EB%AC%B4-%EC%A0%81%EC%9D%91%EC%9D%84-%EA%B0%80%EB%A5%B4%EB%8A%94-%EB%8B%A4%EC%84%AF-%EA%B0%80%EC%A7%80-%EB%8A%A5%EB%A0%A5">4. 배운 것: 실무 적응을 가르는 다섯 가지 능력</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#3-%EA%B2%B0%EA%B3%BC">3. 결과</a></p>
+<p><a href="#-understanding">🤔 Understanding</a></p>
 </li>
-</ul>
-</li>
-</ul></div></div><footer class="flex justify-center items-center w-full h-[62px] mt-auto"><p class="max-w-content text-center text-[var(--primary-text-color)] font-sans">© <!-- -->2025<!-- --> <a href="https://github.com/JH8459" class="text-[#3A95FF]">JH8459</a> powered by<a href="https://github.com/JH8459/JH8459.github.io" class="text-[#3A95FF]"> gatsby-blog</a></p></footer><div class="fixed bottom-[20px] right-[20px] flex items-center justify-center"><button class="w-[50px] h-[50px] rounded-full bg-[#363f47] cursor-pointer shadow-xl backdrop-blur-md z-30 flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2022-02-14-PROJECT/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul></div></div><footer class="flex justify-center items-center w-full h-[62px] mt-auto"><p class="max-w-content text-center text-[var(--primary-text-color)] font-sans">© <!-- -->2025<!-- --> <a href="https://github.com/JH8459" class="text-[#3A95FF]">JH8459</a> powered by<a href="https://github.com/JH8459/JH8459.github.io" class="text-[#3A95FF]"> gatsby-blog</a></p></footer><div class="fixed bottom-[20px] right-[20px] flex items-center justify-center"><button class="w-[50px] h-[50px] rounded-full bg-[#363f47] cursor-pointer shadow-xl backdrop-blur-md z-30 flex items-center justify-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2025-12-08-RETROSPECT/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
