@@ -84,6 +84,7 @@ module.exports = {
         activity: '스마일드래곤(주) - B.E Developer',
         links: {
           homepage: 'https://www.smiledragon.co.kr/',
+          post: 'https://blog.jh8459.com/2025-12-08-RETROSPECT/',
         },
       },
     ],
