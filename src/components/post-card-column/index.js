@@ -1,4 +1,4 @@
-import { navigate } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import React, { useCallback } from 'react';
 import PostCard from '../post-card';
 

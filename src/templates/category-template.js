@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import firebase from 'gatsby-plugin-firebase-v9.0';
 import { getDatabase, ref, get } from 'firebase/database';
 
@@ -50,7 +50,7 @@ function CategoryTemplate({ pageContext }) {
 
   useEffect(() => {
     setLoadingViews(true); // Set loading to true when starting fetch
-    const database = getDatabase(firebase);
+const database = getDatabase(firebase);
     const postsRef = ref(database, 'posts');
     get(postsRef)
       .then((snapshot) => {

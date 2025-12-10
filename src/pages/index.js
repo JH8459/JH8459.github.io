@@ -1,13 +1,12 @@
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { graphql, navigate } from 'gatsby';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import firebase from 'gatsby-plugin-firebase-v9.0';
 import { getDatabase, ref, get } from 'firebase/database';
 import Layout from '../layout';
 import Seo from '../components/seo';
 import Bio from '../components/bio';
 import Post from '../models/post';
-
 import { getUniqueCategories } from '../utils/helpers';
 import PostTabs from '../components/post-tabs';
 
