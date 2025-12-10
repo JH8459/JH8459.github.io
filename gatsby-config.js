@@ -103,12 +103,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: metaConfig.googlePublisherId,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: metaConfig.title,
@@ -197,6 +191,5 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-offline`,
   ],
 };

@@ -15,7 +15,6 @@ module.exports = {
     },
   },
   googleTrakingId: process.env.GOOGLE_TRAKING_ID, // Google Analytics Tracking ID
-  googlePublisherId: process.env.GOOGLE_PUBLISHER_ID, // Google Adsense Publisher ID
   firebaseApiKey: process.env.FIREBASE_API_KEY, // Firebase Web API Key
   firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN, // Firebase Web Auth Domain
   firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL, // Firebase Realtime Database URL
