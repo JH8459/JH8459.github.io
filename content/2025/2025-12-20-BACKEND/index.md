@@ -1,12 +1,13 @@
 ---
 emoji: 📚
 title: NestJS Kafka emit(), 어디까지 성공했다고 말할 수 있을까?
-date: '2025-12-18'
+date: '2025-12-20'
 author: JH8459
 categories: Backend
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/thumbnail.png
 ---
 
-<!-- <img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-01/BACKEND/thumbnail.png"/> -->
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/banner.png"/>
 
 ## 📚 Overview
 
@@ -24,7 +25,7 @@ categories: Backend
 
 까지 이어지는 여러 단계의 처리 흐름이 존재한다.
 
-<!-- 삽화 필요 FLOW CHART -->
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/flow.png"/>
 
 특히, SNS 마케팅 작업은 자사에서 운영하는 서버가 직접 처리하기도 하고, 상황에 따라서는 외부 SNS 마케팅 플랫폼(공급자) 에 주문을 전달해 처리를 위임하기도 한다.
 
@@ -70,7 +71,7 @@ export class SendKafkaService {
 
 Kafka 이전에, 우리가 다루고 있는 것은 사실 Kafka 이벤트가 아니라 **Observable 객체**이다.
 
-<!-- 삽화 필요 Observable -->
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/observable.png"/>
 
 > Observable 이란?
 >
@@ -261,7 +262,7 @@ SNS 마케팅 주문 이벤트 역시 마찬가지였다. 주문 서비스는 "�
 
 우리는 이를 피하고 싶었다.
 
-<!-- 삽화 필요 -->
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/emit.png"/>
 
 그래서 선택한 방식이 emit()을 사용하되, 필요할 때만 전송 결과를 await 하는 구조였다.
 
