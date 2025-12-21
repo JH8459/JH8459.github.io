@@ -263,6 +263,7 @@ SNS 마케팅 주문 이벤트 역시 마찬가지였다. 주문 서비스는 "�
 우리는 이를 피하고 싶었다.
 
 <img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2025-12-20/BACKEND/emit.png"/>
+<br>
 
 그래서 선택한 방식이 emit()을 사용하되, 필요할 때만 전송 결과를 await 하는 구조였다.
 
