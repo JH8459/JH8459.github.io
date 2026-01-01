@@ -7,8 +7,6 @@ categories: Book
 thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/book/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/book/banner.png"/>
-
 ## 📚 Overview
 
 AI를 실무에서 자연스럽게 사용하게 된 이후 개발자의 일은 분명 빠르게 변하고 있다. 간단한 코드 작성부터 구조 제안, 테스트 코드 생성까지 이제는 AI의 도움을 받는 것이 전혀 낯설지 않다.
