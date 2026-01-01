@@ -1,15 +1,32 @@
 ---
 emoji: 📖
-title: AI 시대에 다시 떠올리게 된 '장인 정신'이라는 기준
+title: AI 시대에 다시 떠올리게 된 "장인 정신"이라는 기준
 date: '2026-01-03'
 author: JH8459
 categories: Book
-thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/BOOK/thumbnail.png
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/book/thumbnail.png
 ---
 
-<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/BOOK/banner.png"/>
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/book/banner.png"/>
 
 ## 📚 Overview
+
+AI를 실무에서 자연스럽게 사용하게 된 이후 개발자의 일은 분명 빠르게 변하고 있다. 간단한 코드 작성부터 구조 제안, 테스트 코드 생성까지 이제는 AI의 도움을 받는 것이 전혀 낯설지 않다.
+
+처음에는 생산성이 눈에 띄게 올라간다는 점이 가장 크게 와닿았다. 하지만 시간이 지날수록 일이 쉬워졌다는 느낌과는 다른 종류의 고민이 생기기 시작했다.
+
+- 이 코드가 왜 이렇게 작성되었는지 나는 지금 명확하게 설명할 수 있을까?
+- 이 선택의 결과를 끝까지 책임질 수 있을까?
+
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-03/book/overview.png"/>
+
+AI는 많은 일을 대신해주고 있지만 그만큼 개발자가 내려야 할 판단의 무게는 오히려 더 커지고 있다는 느낌을 받았다. 이런 생각을 하던 중, 예전에 읽었던 『소프트웨어 장인』을 다시 펼치게 되었다.
+
+처음 읽었을 때는 다소 이상적으로 느껴졌던 문장들이 AI와 함께 일하는 지금의 환경에서는 의외로 현실적인 기준처럼 다가왔다. 책에서 말하는 "장인 정신"은 단순히 코드를 잘 짜는 기술의 문제가 아니라, 자신이 내린 선택에 책임을 지고 결과를 끝까지 감당하려는 태도에 가까웠다.
+
+이 글은 『소프트웨어 장인』이라는 책을 다시 읽으며 느낀 점과, AI 시대에 개발자로 일하면서 체감한 변화를 함께 놓고 내가 다시 정의하게 된 "장인 정신"이라는 기준을 정리해보고자 쓰게 되었다.
+
+AI가 많은 일을 대신해주는 지금 개발자에게 여전히 남아 있는 역할은 무엇인지, 그리고 어떤 기준으로 일해야 하는지를 차분히 돌아보려 한다.
 
 <br>
 <br>
