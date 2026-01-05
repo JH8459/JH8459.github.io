@@ -77,10 +77,12 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-07/backen
 
 기본적인 구조는 비교적 명확했다.
 
-- 시스템의 상태를 직접 저장하지 않고
-- 상태를 만들어낼 이벤트들을 Event Store에 순서대로 기록한다
-- 현재 상태가 필요할 때는 이벤트들을 재생해서 계산한다.
-- 이벤트 재생 비용을 줄여야한다면, 중간 결과를 Snapshot으로 저장한다.
+- 이벤트 소싱에서는 시스템의 현재 상태를 직접 저장하지 않는다.
+- Aggregate가 내린 판단의 결과를 이벤트로 만들어 Event Store에 순서대로 기록한다.
+- 현재 상태는 이 이벤트들을 재생해 계산한다.
+- 이벤트 수가 많아질 경우를 대비해, 중간 결과를 Snapshot으로 저장해 재생 비용을 줄인다.
+
+<img src="https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-07/backend/architecture.png"/>
 
 이 구조에서 중요한 전제는 하나였다.
 
