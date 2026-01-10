@@ -13,6 +13,7 @@ import PostTabs from '../components/post-tabs';
 function HomePage({ data }) {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => new Post(node));
   const { author, language } = data.site.siteMetadata;
+  const visitorStats = data.visitorStats?.nodes?.[0];
   const categories = ['All', ...getUniqueCategories(posts)];
   const featuredTabIndex = categories.findIndex((category) => category === 'featured');
   const [tabIndex, setTabIndex] = useState(featuredTabIndex === -1 ? 0 : featuredTabIndex);
@@ -76,7 +77,7 @@ function HomePage({ data }) {
   return (
     <Layout>
       <Seo title="JHLog" />
-      <Bio author={author} language={language} />
+      <Bio author={author} language={language} visitorStats={visitorStats} />
       <PostTabs
         posts={sortedPosts}
         onChange={onTabIndexChange}
@@ -137,6 +138,15 @@ export const pageQuery = graphql`
             email
           }
         }
+      }
+    }
+
+    visitorStats: allVisitorStats {
+      nodes {
+        today
+        total
+        lastUpdated
+        source
       }
     }
   }
