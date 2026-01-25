@@ -8,13 +8,12 @@ import ProjectSection from '../components/project-section';
 
 function AboutPage({ data }) {
   const metaData = data.site.siteMetadata;
-  const visitorStats = data.visitorStats?.nodes?.[0];
   const { author, about, language } = metaData;
   const { timestamps, projects } = about;
   return (
     <Layout>
       <Seo title="About" />
-      <Bio author={author} language={language} visitorStats={visitorStats} />
+      <Bio author={author} language={language} />
       <div className="w-full md:w-[80%] mx-auto">
         <TimeStampSection timestamps={timestamps} />
         <ProjectSection projects={projects} />
@@ -75,15 +74,6 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
-    }
-
-    visitorStats: allVisitorStats {
-      nodes {
-        today
-        total
-        lastUpdated
-        source
       }
     }
   }

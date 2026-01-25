@@ -2,20 +2,11 @@ import React from 'react';
 import ReactRotatingText from 'react-rotating-text';
 import IconButtonBar from '../icon-button-bar';
 import Image from '../image';
-import VisitorStats from '../visitor-stats';
 
 
-function Bio({ author, language = 'ko', visitorStats }) {
+function Bio({ author, language = 'ko' }) {
   if (!author) return null;
   const { bio, social, name } = author;
-  const socialRow = (
-    <div className="mt-[20px] flex w-full items-start justify-between gap-4">
-      <div className="social-links flex justify-start">
-        <IconButtonBar links={social} iconClass="text-[30px] text-[var(--bio-link-icon-color)]" />
-      </div>
-      <VisitorStats stats={visitorStats} language={language} />
-    </div>
-  );
   return (
     <div className="bio flex flex-col justify-between w-full mt-[120px] mb-[120px] text-[var(--primary-text-color)] md:flex-row md:items-center">
       {language === 'ko' ? (
@@ -30,7 +21,9 @@ function Bio({ author, language = 'ko', visitorStats }) {
             {bio.role} <strong className="inline-block font-semibold">{name}</strong>입니다.
             <br />
           </p>
-          {socialRow}
+          <div className="social-links mt-[20px] flex">
+            <IconButtonBar links={social} iconClass="text-[30px] text-[var(--bio-link-icon-color)]" />
+          </div>
         </div>
       ) : (
         <div className="introduction english flex flex-col word-break-keep-all font-montserrat text-[25px] leading-[1.2] md:text-[45px] mx-auto md:mx-0">
@@ -47,7 +40,9 @@ function Bio({ author, language = 'ko', visitorStats }) {
             <br />
           </p>
           <p className="description font-extralight mt-[8px] text-[20px]"></p>
-          {socialRow}
+          <div className="social-links mt-[20px] flex">
+            <IconButtonBar links={social} iconClass="text-[30px] text-[var(--bio-link-icon-color)]" />
+          </div>
         </div>
       )}
       <div className="thumbnail-wrapper hidden md:block flex-shrink-0">
