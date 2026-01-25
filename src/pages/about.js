@@ -9,13 +9,13 @@ import ProjectSection from '../components/project-section';
 function AboutPage({ data }) {
   const metaData = data.site.siteMetadata;
   const { author, about, language } = metaData;
-  const { timestamps, projects } = about;
+  const { careers, projects } = about;
   return (
     <Layout>
       <Seo title="About" />
       <Bio author={author} language={language} />
       <div className="w-full md:w-[80%] mx-auto">
-        <TimeStampSection timestamps={timestamps} />
+        <TimeStampSection careers={careers} />
         <ProjectSection projects={projects} />
       </div>
     </Layout>
@@ -46,8 +46,10 @@ export const pageQuery = graphql`
         }
 
         about {
-          timestamps {
+          careers {
             date
+            label
+            status
             activity
             links {
               homepage

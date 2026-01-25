@@ -38,11 +38,13 @@ module.exports = {
 
   // metadata for About Page
   about: {
-    timestamps: [
-      // =====       [Timestamp Sample and Structure]      =====
+    careers: [
+      // =====       [Career Sample and Structure]      =====
       // ===== 🚫 Don't erase this sample (여기 지우지 마세요!) =====
       {
         date: '',
+        label: '',
+        status: '',
         activity: '',
         links: {
           homepage: '',
@@ -57,6 +59,7 @@ module.exports = {
       // ========================================================
       {
         date: '2021.06 ~ 2022.01',
+        label: '교육',
         activity: 'Code States - Full Immersive 34th',
         links: {
           homepage: 'https://www.codestates.com/',
@@ -64,27 +67,39 @@ module.exports = {
         },
       },
       {
-        date: '2021.07.19',
-        activity: '개인 블로그 개설',
-        links: {
-          github: 'https://github.com/JH8459',
-          demo: 'https://blog.jh8459.com',
-        },
-      },
-      {
         date: '2022.04 ~ 2025.06',
-        activity: '(주)에이시지알 - B.E Developer',
+        label: '정규직',
+        activity: '에이시지알 - B.E Developer',
         links: {
           homepage: 'https://www.acghr.co.kr/',
           post: 'https://blog.jh8459.com/2022-04-01-RETROSPECT/',
         },
       },
       {
+        date: '2023.03 ~ 2023.08',
+        label: '프리랜서',
+        activity: '코드스테이츠 - Career Mentor',
+        links: {
+          homepage: 'https://www.codestates.com/',
+        },
+      },
+      {
         date: '2025.07 ~ ',
-        activity: '스마일드래곤(주) - B.E Developer',
+        label: '정규직',
+        status: 'ongoing',
+        activity: '스마일드래곤 - B.E Developer',
         links: {
           homepage: 'https://www.smiledragon.co.kr/',
           post: 'https://blog.jh8459.com/2025-12-08-RETROSPECT/',
+        },
+      },
+      {
+        date: '2026.01 ~ ',
+        label: '프리랜서',
+        status: 'ongoing',
+        activity: '위시켓 - 요즘IT 작가',
+        links: {
+          homepage: 'https://yozm.wishket.com/magazine/@JH8459/',
         },
       },
     ],
