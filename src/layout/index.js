@@ -4,9 +4,7 @@ import PageHeader from '../components/page-header';
 import PageFooter from '../components/page-footer';
 import ThemeSwitch from '../components/theme-switch';
 
-
-
-const Layout = ({ children, tableOfContents }) => {
+const Layout = ({ children, tableOfContents, contentMaxWidth = 'max-w-content' }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +26,7 @@ const Layout = ({ children, tableOfContents }) => {
     <div className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 break-keep antialiased font-sans text-[var(--primary-text-color)]">
       <PageHeader siteTitle={title || `Title`} />
       <div className="flex justify-center w-full">
-        <main className="flex flex-col items-center w-full max-w-content">{children}</main>
+        <main className={`flex flex-col items-center w-full ${contentMaxWidth}`}>{children}</main>
         {tableOfContents && (
           <div
             className="hidden lg:block fixed"
