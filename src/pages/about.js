@@ -5,13 +5,15 @@ import Seo from '../components/seo';
 import Bio from '../components/bio';
 import SummarySection from '../components/summary-section';
 import TimeStampSection from '../components/timestamp-section';
+import EducationCertificationSection from '../components/education-certification-section';
 import ProjectSection from '../components/project-section';
 import ListSection from '../components/list-section';
 
 function AboutPage({ data }) {
   const metaData = data.site.siteMetadata;
   const { author, about, language } = metaData;
-  const { careers, projects, summary, openSource, externalActivities } = about;
+  const { careers, education, certifications, projects, summary, openSource, externalActivities } =
+    about;
   return (
     <Layout>
       <Seo title="About" />
@@ -21,6 +23,9 @@ function AboutPage({ data }) {
       </div>
       <div className="w-full">
         <TimeStampSection careers={careers} />
+      </div>
+      <div className="w-full">
+        <EducationCertificationSection education={education} certifications={certifications} />
       </div>
       <div className="w-full">
         <ListSection title="Open Source" items={openSource} />
@@ -68,6 +73,27 @@ export const pageQuery = graphql`
               demo
               googlePlay
               appStore
+            }
+          }
+
+          education {
+            date
+            title
+            institution
+            links {
+              homepage
+              post
+            }
+          }
+
+          certifications {
+            issued
+            expires
+            title
+            issuer
+            credentialId
+            links {
+              post
             }
           }
 

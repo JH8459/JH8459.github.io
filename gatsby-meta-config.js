@@ -63,15 +63,6 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        date: '2021.06 ~ 2022.01',
-        label: '교육',
-        activity: 'Code States - Full Immersive 34th',
-        links: {
-          homepage: 'https://www.codestates.com/',
-          post: 'https://blog.jh8459.com/2022-01-28-RETROSPECT/',
-        },
-      },
-      {
         date: '2022.04 ~ 2025.06',
         label: '정규직',
         activity: '에이시지알 - B.E Developer',
@@ -105,6 +96,46 @@ module.exports = {
         activity: '위시켓 - 요즘IT 작가',
         links: {
           homepage: 'https://yozm.wishket.com/magazine/@JH8459/',
+        },
+      },
+    ],
+
+    education: [
+      {
+        date: '2021.06 ~ 2022.01',
+        title: 'Full Immersive 34th',
+        institution: 'Code States',
+        links: {
+          homepage: 'https://www.codestates.com/',
+          post: 'https://blog.jh8459.com/2022-01-28-RETROSPECT/',
+        },
+      },
+    ],
+
+    certifications: [
+      {
+        issued: '2012년 6월',
+        title: '정보처리산업기사',
+        issuer: '한국산업인력공단(HRD Korea)',
+        credentialId: '12631000237D',
+      },
+      {
+        issued: '2025년 6월',
+        title: 'SQL 개발자',
+        issuer: '한국데이터산업진흥원',
+        credentialId: 'SQLD-057011200',
+        links: {
+          post: 'https://blog.jh8459.com/2025-06-27-RETROSPECT/',
+        },
+      },
+      {
+        issued: '2025년 3월',
+        expires: '2028년 3월',
+        title: 'AWS Certified Solutions Architect - Associate',
+        issuer: 'Amazon Web Services (AWS)',
+        credentialId: '498395076',
+        links: {
+          post: 'https://blog.jh8459.com/2025-03-09-RETROSPECT/',
         },
       },
     ],
