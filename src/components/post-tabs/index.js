@@ -2,7 +2,17 @@ import React, { useMemo } from 'react';
 import PostCardColumn from '../post-card-column';
 import PostSorter from '../post-sorter';
 
-function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThumbnail, sortType, onSortChange, loadingViews }) {
+function PostTabs({
+  tabIndex,
+  onChange,
+  tabs,
+  posts,
+  showMoreButton,
+  defaultThumbnail,
+  sortType,
+  onSortChange,
+  loadingViews,
+}) {
   const tabPosts = useMemo(() => {
     if (tabs[tabIndex] === 'All') return posts;
     return posts.filter((post) => post.categories.includes(tabs[tabIndex]));
@@ -10,7 +20,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
 
   return (
     <div className="flex flex-col items-center justify-center self-start top-0 w-full">
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 h-auto w-full max-w-[760px] mb-[18px] mx-auto py-2">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 h-auto w-full max-w-[720px] mb-[18px] mx-auto py-2">
         {tabs.map((title, index) => {
           const isSelected = tabIndex === index;
           return (
@@ -28,7 +38,7 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton, defaultThum
           );
         })}
       </div>
-      <div className="w-full max-w-[760px] my-2">
+      <div className="w-full max-w-[720px] my-2">
         <PostSorter sortType={sortType} onChange={onSortChange} />
       </div>
       <PostCardColumn

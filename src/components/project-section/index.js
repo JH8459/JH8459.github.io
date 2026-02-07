@@ -3,7 +3,6 @@ import SectionHeader from '../section-header';
 import IconButtonBar from '../icon-button-bar';
 import Image from '../image';
 
-
 function ProjectSection({ projects }) {
   if (!projects || projects.length < 2) return null;
   return (
@@ -21,18 +20,27 @@ function ProjectSection({ projects }) {
               )}
             </div>
             <div className="hidden md:flex justify-center w-full mb-[10px]">
-              <Image className="w-full max-w-content h-[260px] object-cover" src={project.thumbnailUrl} alt={project.title} />
+              <Image
+                className="w-full max-w-[720px] h-[260px] object-cover"
+                src={project.thumbnailUrl}
+                alt={project.title}
+              />
             </div>
             {project.techStack && (
               <div className="flex flex-wrap gap-2 mb-[10px]">
                 {project.techStack.map((tech, techIndex) => (
-                  <span key={techIndex} className="py-[5px] px-[7px] bg-[var(--chip-background-color)] rounded-[10px] text-[14px] font-medium">
+                  <span
+                    key={techIndex}
+                    className="py-[5px] px-[7px] bg-[var(--chip-background-color)] rounded-[10px] text-[14px] font-medium"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
             )}
-            <p className="text-[14px] font-normal leading-[1.4] text-gray-700 dark:text-gray-300">{project.description}</p>
+            <p className="text-[14px] font-normal leading-[1.4] text-gray-700 dark:text-gray-300">
+              {project.description}
+            </p>
           </div>
         ),
       )}

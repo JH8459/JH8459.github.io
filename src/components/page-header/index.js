@@ -25,7 +25,7 @@ function PageHeader({ siteTitle }) {
       `}
       render={(data) => (
         <header className="flex justify-center w-full h-[60px]">
-          <div className="flex items-center justify-between max-w-content w-full px-4">
+          <div className="flex items-center justify-between max-w-[720px] w-full px-4">
             <div className="flex-shrink-0">
               <Link
                 className="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]"

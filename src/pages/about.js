@@ -13,16 +13,16 @@ function AboutPage({ data }) {
   const { author, about, language } = metaData;
   const { careers, projects, summary, openSource, externalActivities } = about;
   return (
-    <Layout contentMaxWidth="max-w-[900px]">
+    <Layout>
       <Seo title="About" />
       <Bio author={author} language={language} />
-      <div className="w-full md:max-w-[800px] mx-auto">
+      <div className="w-full">
         <SummarySection summary={summary} title="Intro" />
       </div>
-      <div className="w-full md:max-w-[576px] mx-auto">
+      <div className="w-full">
         <TimeStampSection careers={careers} />
       </div>
-      <div className="w-full md:max-w-[576px] mx-auto">
+      <div className="w-full">
         <ListSection title="Open Source" items={openSource} />
         <ListSection title="External Activities" items={externalActivities} />
         <ProjectSection projects={projects} />
