@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @layer base {
   html {
@@ -68,7 +66,8 @@
     color: var(--link-text-color);
   }
 
-  button, a {
+  button,
+  a {
     outline: none !important;
     border: none !important;
   }
@@ -122,7 +121,7 @@ h6:hover .anchor .octicon-link {
   max-height: var(--content-image-max-height) !important; /* Use theme value */
 }
 
-.gatsby-resp-image-wrapper+em {
+.gatsby-resp-image-wrapper + em {
   @apply block text-center italic text-[15px] text-[#6a737d];
 }
 
@@ -135,7 +134,8 @@ h6:hover .anchor .octicon-link {
   padding-bottom: 7px;
 }
 
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .timestamp-date {
     width: 200px;
     min-width: 200px;
@@ -162,9 +162,18 @@ h6:hover .anchor .octicon-link {
 }
 
 @keyframes blink-black {
-  0% { border-color: #bdbdbd; background-color: var(--background-color); }
-  50% { border-color: black; background-color: black; }
-  100% { border-color: #bdbdbd; background-color: var(--background-color); }
+  0% {
+    border-color: #bdbdbd;
+    background-color: var(--background-color);
+  }
+  50% {
+    border-color: black;
+    background-color: black;
+  }
+  100% {
+    border-color: #bdbdbd;
+    background-color: var(--background-color);
+  }
 }
 
 .animate-blink-black {
