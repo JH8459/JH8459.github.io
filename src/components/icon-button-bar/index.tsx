@@ -58,14 +58,14 @@ function IconButtonBar({
         const value = links[key];
         return (
           value && (
-            <div key={index} className="relative group">
+            <div key={index}>
               {/* 메일 링크는 mailto로 처리 */}
-              <a href={`${key === 'email' ? `mailto:` : ``}${value}`}>
-                {IconPicker(key, iconClass)}
+              <a href={`${key === 'email' ? `mailto:` : ``}${value}`} className="group inline-flex">
+                {IconPicker(
+                  key,
+                  `${iconClass} transition-colors duration-200 group-hover:text-[var(--primary-text-color)]`,
+                )}
               </a>
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                {key}
-              </div>
             </div>
           )
         );

@@ -59,9 +59,6 @@ function TimeStampSection({ careers }: TimeStampSectionProps) {
                   className={`timestamp-date text-[12px] text-[#828282] ${isCurrent ? 'text-black font-bold' : ''}`}
                 >
                   {career.date}
-                  {institution && (
-                    <div className="mt-[4px] text-[13px] text-[#828282]">{institution}</div>
-                  )}
                 </div>
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   {career.label ? (
@@ -80,6 +77,11 @@ function TimeStampSection({ careers }: TimeStampSectionProps) {
                 {career.links ? (
                   <div className="hidden md:flex md:justify-end">
                     <IconButtonBar links={career.links} className="inline-flex" />
+                  </div>
+                ) : null}
+                {institution ? (
+                  <div className="text-[13px] text-[#828282] md:col-start-1 md:col-end-2">
+                    {institution}
                   </div>
                 ) : null}
               </div>
