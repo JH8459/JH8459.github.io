@@ -1,10 +1,3 @@
----
-name: react-gatsby
-description: React/Gatsby 개발 규칙과 프로젝트 지침
-tools: Read, Grep
-model: sonnet
----
-
 # React/Gatsby Guide
 
 ## 기본 원칙

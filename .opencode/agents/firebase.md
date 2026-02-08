@@ -1,10 +1,3 @@
----
-name: firebase
-description: Firebase 사용 규칙과 프로젝트 지침
-tools: Read, Grep
-model: sonnet
----
-
 # Firebase Guide
 
 ## 기본 원칙

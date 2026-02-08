@@ -1,10 +1,3 @@
----
-name: tailwind
-description: Tailwind CSS 사용 규칙과 스타일링 지침
-tools: Read, Grep
-model: sonnet
----
-
 # Tailwind Guide
 
 ## 기본 원칙
