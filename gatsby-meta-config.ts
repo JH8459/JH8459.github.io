@@ -201,17 +201,8 @@ const metaConfig: MetaConfig = {
       {
         issued: '2012년 6월',
         title: '정보처리산업기사',
-        issuer: '한국산업인력공단(HRD Korea)',
+        issuer: '한국산업인력공단 (HRD Korea)',
         credentialId: '12631000237D',
-      },
-      {
-        issued: '2025년 6월',
-        title: 'SQL 개발자',
-        issuer: '한국데이터산업진흥원',
-        credentialId: 'SQLD-057011200',
-        links: {
-          post: 'https://blog.jh8459.com/2025-06-27-RETROSPECT/',
-        },
       },
       {
         issued: '2025년 3월',
@@ -221,6 +212,15 @@ const metaConfig: MetaConfig = {
         credentialId: '498395076',
         links: {
           post: 'https://blog.jh8459.com/2025-03-09-RETROSPECT/',
+        },
+      },
+      {
+        issued: '2025년 6월',
+        title: 'SQL 개발자',
+        issuer: '한국데이터산업진흥원',
+        credentialId: 'SQLD-057011200',
+        links: {
+          post: 'https://blog.jh8459.com/2025-06-27-RETROSPECT/',
         },
       },
     ],
