@@ -67,7 +67,7 @@
     "lint": "eslint . --max-warnings=0",
     "develop": "gatsby develop",
     "deploy": "pnpm run build && cp CNAME public/CNAME && gh-pages -d public -x",
-    "start": "gatsby clean && pnpm run develop -- -p 3500 -H 0.0.0.0",
+    "start": "gatsby clean && pnpm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
