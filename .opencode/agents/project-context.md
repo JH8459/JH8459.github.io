@@ -8,7 +8,7 @@
 
 ## 프로젝트 컨벤션
 
-- 설정/환경 값은 `gatsby-meta-config.js`에서 매핑하고 `gatsby-config.js`에서 참조
+- 설정/환경 값은 `gatsby-meta-config.ts`에서 매핑하고 `gatsby-config.ts`에서 참조
 - 페이지는 `src/pages/`, 템플릿은 `src/templates/`, 재사용 컴포넌트는 `src/components/`에 둠
 - 콘텐츠는 `content/`에 마크다운 기반으로 관리
 - 전역 스타일은 `src/styles/global.css` 한 곳에서 관리
@@ -28,6 +28,22 @@
 - React 컴포넌트는 함수형으로 작성
 - 불필요한 주석 추가 금지, 비명확한 로직에만 최소 주석
 - 파일은 ASCII 우선, 이미 유니코드가 있는 경우만 유지
+
+## TypeScript/TSX 컨벤션
+
+- 파일 확장자: 컴포넌트는 `.tsx`, 나머지는 `.ts`
+- 공용 타입은 `src/types/`에 분리
+- `any` 사용 금지, 부득이한 경우 해당 파일에서만 예외 처리
+- 함수/훅/핸들러는 한글 JSDoc 사용
+  - `@description` 필수
+  - `@param`/`@return` 필수
+- 컴포넌트 내부 비즈니스 로직에는 `// 일반 주석`으로 의도 설명
+
+## Lint 컨벤션
+
+- 기본 린트 도구: ESLint (`.eslintrc.cjs`)
+- 명령어: `pnpm run lint`
+- 린트는 빌드/개발에서 분리 실행(개발 서버는 빌드 실패 방지 우선)
 
 ## 데이터/파이어베이스
 
@@ -51,14 +67,14 @@
 
 ## 의존성/빌드
 
-- Node LTS 기준, `npm` 사용
+- Node LTS 기준, `pnpm` 사용
 - Gatsby 5 + React 18 유지
 - 빌드/개발 스크립트는 `package.json`에 정의
 
 ## 설정 파일
 
-- `gatsby-config.js`: Gatsby 플러그인/사이트 설정
-- `gatsby-meta-config.js`: 메타 및 환경 변수 매핑
+- `gatsby-config.ts`: Gatsby 플러그인/사이트 설정
+- `gatsby-meta-config.ts`: 메타 및 환경 변수 매핑
 - `tailwind.config.js`: Tailwind 테마/플러그인 설정
 - `postcss.config.js`: Tailwind/PostCSS 플러그인
 
