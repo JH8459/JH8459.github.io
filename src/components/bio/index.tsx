@@ -1,0 +1,79 @@
+import React from 'react';
+import ReactRotatingText from 'react-rotating-text';
+import IconButtonBar from '../icon-button-bar';
+import Image from '../image';
+import type { AuthorMetadata } from '../../types/site';
+
+interface BioProps {
+  author?: AuthorMetadata;
+  language?: string;
+}
+
+/**
+ * @description 작성자 소개 섹션
+ * @param {BioProps} props 작성자 소개 props
+ * @return {JSX.Element | null}
+ */
+function Bio({ author, language = 'ko' }: BioProps) {
+  if (!author) return null;
+  const { bio, social, name } = author;
+  return (
+    <div className="bio flex flex-col justify-between w-full mt-[120px] mb-[120px] text-[var(--primary-text-color)] md:flex-row md:items-center">
+      {/* 언어에 따라 소개 문구 레이아웃 분기 */}
+      {language === 'ko' ? (
+        <div className="introduction korean flex flex-col word-break-keep-all mx-auto md:mx-0">
+          <p className="font-thin text-[32px] leading-[1.2] md:text-[40px]">
+            안녕하세요.
+            <br />
+            <span className="title">
+              <ReactRotatingText
+                items={bio.description}
+                className="react-rotating-text-cursor text-[35px] leading-[35px] md:text-[45px] md:leading-[45px]"
+              />
+            </span>
+            <br />
+            {bio.role} <strong className="inline-block font-semibold">{name}</strong>입니다.
+            <br />
+          </p>
+          <div className="social-links mt-[20px] flex">
+            <IconButtonBar
+              links={social}
+              iconClass="text-[30px] text-[var(--bio-link-icon-color)]"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="introduction english flex flex-col word-break-keep-all font-montserrat text-[25px] leading-[1.2] md:text-[45px] mx-auto md:mx-0">
+          <p className="name text-[35px] font-semibold">
+            Hello,
+            <br />
+            my name is
+            <br />
+            <strong>{name}</strong>
+            .<br />
+          </p>
+          <p className="job text-[35px] text-lg text-gray-700 dark:text-gray-300">
+            I&#39;m a {bio.role} <ReactRotatingText items={bio.description} />
+            <br />
+          </p>
+          <p className="description font-extralight mt-[8px] text-[20px]"></p>
+          <div className="social-links mt-[20px] flex">
+            <IconButtonBar
+              links={social}
+              iconClass="text-[30px] text-[var(--bio-link-icon-color)]"
+            />
+          </div>
+        </div>
+      )}
+      <div className="thumbnail-wrapper hidden md:block flex-shrink-0">
+        <Image
+          className="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover"
+          src={bio.thumbnail}
+          alt="thumbnail"
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Bio;
