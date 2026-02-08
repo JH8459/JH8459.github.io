@@ -16,14 +16,14 @@
 - Tailwind CSS, PostCSS
 - Firebase, GTag
 
-## 로컬 실행
+## 로컬 실행 (pnpm)
 
 ```
 pnpm install
 pnpm start
 ```
 
-## 스크립트
+## 스크립트 (pnpm)
 
 - `pnpm start`: 개발 서버 실행 (clean + develop)
 - `pnpm develop`: 개발 서버 실행
@@ -47,3 +47,26 @@ pnpm run deploy
 ## 환경 변수
 
 Firebase/Analytics 설정은 환경 변수로 관리합니다. 필요 변수는 `gatsby-meta-config.ts`를 참고하세요.
+
+```
+# .env.example
+GOOGLE_TRAKING_ID=
+FIREBASE_API_KEY=
+FIREBASE_AUTH_DOMAIN=
+FIREBASE_DATABASE_URL=
+FIREBASE_PROJECT_ID=
+FIREBASE_STORAGE_BUCKET=
+FIREBASE_MESSAGING_SENDER_ID=
+FIREBASE_APP_ID=
+```
+
+설명
+
+- `GOOGLE_TRAKING_ID`: Google Analytics(GA4) 측정 ID
+- `FIREBASE_API_KEY`: Firebase Web API 키
+- `FIREBASE_AUTH_DOMAIN`: Firebase Auth 도메인
+- `FIREBASE_DATABASE_URL`: Firebase Realtime Database URL
+- `FIREBASE_PROJECT_ID`: Firebase 프로젝트 ID
+- `FIREBASE_STORAGE_BUCKET`: Firebase Storage 버킷
+- `FIREBASE_MESSAGING_SENDER_ID`: Firebase 메시징 Sender ID
+- `FIREBASE_APP_ID`: Firebase App ID

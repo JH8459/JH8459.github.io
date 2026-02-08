@@ -1,5 +1,9 @@
 .cache
 node_modules/
+dist
+coverage
 package.json
-package-lock.json
+pnpm-lock.yaml
 public
+.DS_Store
+.opencode/
