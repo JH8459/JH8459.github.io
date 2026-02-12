@@ -14,14 +14,15 @@ interface ProjectSectionProps {
  * @return {JSX.Element | null}
  */
 function ProjectSection({ projects }: ProjectSectionProps) {
-  // 샘플 항목을 제외하고 보여주기 위해 2개 이상일 때만 렌더링
-  if (!projects || projects.length < 2) return null;
-
   const [activeProjectIndex, setActiveProjectIndex] = useState<number | null>(null);
   const [isDescriptionClamped, setIsDescriptionClamped] = useState<Record<number, boolean>>({});
   const descriptionRefs = useRef<Record<number, HTMLParagraphElement | null>>({});
 
   useEffect(() => {
+    if (!projects || projects.length < 2) {
+      return;
+    }
+
     const updateClampState = () => {
       const nextState: Record<number, boolean> = {};
       projects.forEach((_, index) => {
@@ -40,6 +41,9 @@ function ProjectSection({ projects }: ProjectSectionProps) {
       window.removeEventListener('resize', updateClampState);
     };
   }, [projects]);
+
+  // 샘플 항목을 제외하고 보여주기 위해 2개 이상일 때만 렌더링
+  if (!projects || projects.length < 2) return null;
 
   const getTechTone = (tech: string) => {
     const value = tech.toLowerCase();
@@ -117,7 +121,7 @@ function ProjectSection({ projects }: ProjectSectionProps) {
           if (index === 0) return null;
           return (
             <div
-              className="flex flex-col overflow-hidden border border-[var(--post-card-border-color)] rounded-[8px] bg-[var(--background-color)] p-[16px] md:aspect-square"
+              className="group flex flex-col overflow-hidden border border-[var(--post-card-border-color)] rounded-[8px] bg-[var(--background-color)] p-[16px] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#d1d5db] hover:shadow-[0_10px_24px_rgba(17,24,39,0.08)] md:aspect-square"
               key={index}
             >
               <h3 className="text-[16px] font-bold leading-[1.4] text-gray-900 dark:text-white">
@@ -131,7 +135,7 @@ function ProjectSection({ projects }: ProjectSectionProps) {
               {project.thumbnailUrl && (
                 <div className="mt-3 flex justify-center w-full h-[120px] md:h-[40%] mb-3 overflow-hidden rounded-[6px]">
                   <Image
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     src={project.thumbnailUrl}
                     alt={project.title ?? 'project'}
                   />

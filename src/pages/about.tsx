@@ -83,6 +83,12 @@ export const pageQuery = graphql`
             label
             status
             activity
+            posts {
+              title
+              thumbnail
+              publishedAt
+              url
+            }
             links {
               homepage
               post

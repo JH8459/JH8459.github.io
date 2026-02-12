@@ -20,7 +20,18 @@ export interface CareerItem {
   label?: string;
   status?: string;
   activity?: string;
+  posts?: CareerPostItem[];
   links?: LinkSet;
+}
+
+/**
+ * @description 경력 항목 하단 게시글 카드
+ */
+export interface CareerPostItem {
+  title?: string;
+  thumbnail?: string;
+  publishedAt?: string;
+  url?: string;
 }
 
 /**

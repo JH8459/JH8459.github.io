@@ -47,6 +47,12 @@ interface MetaConfig {
       label?: string;
       status?: string;
       activity?: string;
+      posts?: Array<{
+        title?: string;
+        thumbnail?: string;
+        publishedAt?: string;
+        url?: string;
+      }>;
       links?: Record<string, string>;
     }>;
     education: Array<{
@@ -182,6 +188,14 @@ const metaConfig: MetaConfig = {
         links: {
           homepage: 'https://yozm.wishket.com/magazine/@JH8459/',
         },
+        posts: [
+          {
+            title: 'AI로 코드는 빨리 나오는데, 왜 출시는 그대로일까?',
+            thumbnail: 'https://yozm.wishket.com/media/news/3600/image6.png',
+            publishedAt: '2026-02-10T09:00:17+09:00',
+            url: 'https://yozm.wishket.com/magazine/detail/3600/',
+          },
+        ],
       },
     ],
 
@@ -315,7 +329,6 @@ const metaConfig: MetaConfig = {
         thumbnailUrl: 'project-wedding.jpg',
         links: {
           github: 'https://github.com/JH8459/WEDDING-INVITATION-LETTER',
-          demo: 'https://wedding.jh8459.com/',
         },
       },
       {
