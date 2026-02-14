@@ -41,7 +41,7 @@ interface MetaConfig {
     };
   };
   about: {
-    summary: string[];
+    summary: string[] | string;
     careers: Array<{
       date?: string;
       label?: string;
@@ -130,9 +130,18 @@ const metaConfig: MetaConfig = {
   // metadata for About Page
   about: {
     summary: [
-      '안녕하세요. Node.js와 TypeScript를 중심으로 백엔드 시스템을 설계하고 운영해온 김정현입니다.',
-      '소규모 팀의 단일 구조 서비스를 도메인 단위로 분리하고, 이를 이벤트 기반 아키텍처로 확장하며 “기능을 빠르게 만드는 것”보다 “지속 가능하게 운영되는 구조”를 만드는 데 집중해 왔습니다. 실시간 처리와 B2B 환경에서 개발–배포–모니터링–장애 대응까지 전 과정을 직접 다루며, 문제를 구조적으로 정의하고 재발을 막는 개선을 즐깁니다.',
-      '그 과정에서 얻은 설계 판단과 운영 인사이트를 기술 블로그에 꾸준히 기록하고 있으며, 최근에는 요즘IT 기고를 통해 현업의 고민을 더 넓은 독자와 공유하고 있습니다.',
+      '안녕하세요. 백엔드 엔지니어 김정현입니다.',
+      '',
+      'Node.js/TypeScript 생태계를 중심으로, 단일 구조 서비스를 도메인 단위로 분리하고 이벤트 기반 아키텍처(DDD · CQRS · Kafka Outbox · 이벤트 소싱)로 확장해 왔습니다. 개발–배포–관측–장애 대응까지 전 과정을 직접 다루며, “기능을 빠르게 만드는 것”보다 “쉽게 흔들리지 않는 구조”를 좋아합니다.',
+      '',
+      '최근에는 실무에서의 시행착오와 설계 기준을 글로 구조화해 더 많은 독자에게 전달하는 일에도 힘을 쏟고 있습니다. 기술 블로그에 꾸준히 기록해 온 내용을 바탕으로, 더 넓은 독자층과 공유하고 싶어 요즘IT에도 기고하며 선택의 이유 · 트레이드오프 · 결과를 솔직하게 전하고 있습니다.',
+      '',
+      '[제가 주로 다루는 것들]',
+      '',
+      '- Event-driven architecture: Kafka Outbox, 비동기 흐름 설계, 데이터 정합성/트랜잭션 안정성',
+      '- Architecture: DDD, CQRS(조회/명령 분리), 이벤트 소싱',
+      '- Observability/Operations: 로그 · 메트릭 · 트레이스 연계, 병목/에러 지점 추적',
+      '- Delivery/Platform: Docker, GitHub Actions CI/CD, Kubernetes + Argo CD(GitOps) 운영 경험',
     ],
     careers: [
       // =====       [Career Sample and Structure]      =====

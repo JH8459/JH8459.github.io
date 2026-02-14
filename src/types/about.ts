@@ -81,7 +81,7 @@ export interface ProjectItem {
  * @description About 페이지 메타데이터 구조
  */
 export interface AboutMetadata {
-  summary?: string[];
+  summary?: string[] | string;
   careers?: CareerItem[];
   education?: EducationItem[];
   certifications?: CertificationItem[];
