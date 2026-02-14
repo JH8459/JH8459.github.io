@@ -127,7 +127,7 @@ function HomePage({ data }: HomePageProps) {
 
   return (
     <Layout>
-      <Seo title="JHLog" />
+      <Seo title="JHLog" pathname={location.pathname} />
       <Bio author={author} language={language} />
       <PostTabs
         posts={sortedPosts}

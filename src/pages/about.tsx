@@ -24,7 +24,7 @@ type AboutPageProps = PageProps<AboutPageData>;
  * @param {AboutPageProps} props Gatsby 페이지 props
  * @return {JSX.Element}
  */
-function AboutPage({ data }: AboutPageProps) {
+function AboutPage({ data, location }: AboutPageProps) {
   const metaData = data.site.siteMetadata;
   // About 페이지에서 사용되는 메타데이터 추출
   const { author, about, language } = metaData;
@@ -33,7 +33,7 @@ function AboutPage({ data }: AboutPageProps) {
 
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo title="About" pathname={location.pathname} />
       <Bio author={author} language={language} />
       <div className="w-full">
         <SummarySection summary={summary} title="Intro" />

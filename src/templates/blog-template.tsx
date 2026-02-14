@@ -28,7 +28,7 @@ type BlogTemplateProps = PageProps<BlogTemplateData>;
  * @param {BlogTemplateProps} props 페이지 props
  * @return {JSX.Element}
  */
-function BlogTemplate({ data }: BlogTemplateProps) {
+function BlogTemplate({ data, location }: BlogTemplateProps) {
   const [viewCount, setViewCount] = useState<number>(0);
 
   const curPost = new Post(data.cur);
@@ -72,7 +72,7 @@ function BlogTemplate({ data }: BlogTemplateProps) {
 
   return (
     <Layout tableOfContents={curPost.tableOfContents}>
-      <Seo title={curPost?.title} description={curPost?.excerpt} />
+      <Seo title={curPost?.title} description={curPost?.excerpt} pathname={location.pathname} />
       <PostHeader post={curPost} viewCount={viewCount} />
       <PostContent html={curPost.html} />
       <PostNavigator prevPost={prevPost} nextPost={nextPost} />

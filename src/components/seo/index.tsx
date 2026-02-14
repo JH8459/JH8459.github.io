@@ -6,6 +6,8 @@ import type { SiteMetadata } from '../../types/site';
 interface SeoProps {
   description?: string;
   title?: string;
+  pathname?: string;
+  image?: string;
 }
 
 interface SeoQueryData {
@@ -19,13 +21,15 @@ interface SeoQueryData {
  * @param {SeoProps} props SEO props
  * @return {JSX.Element}
  */
-function Seo({ description, title }: SeoProps) {
+function Seo({ description, title, pathname = '/', image }: SeoProps) {
   const { site } = useStaticQuery<SeoQueryData>(graphql`
     query {
       site {
         siteMetadata {
           title
           description
+          language
+          siteUrl
           author {
             name
           }
@@ -35,24 +39,62 @@ function Seo({ description, title }: SeoProps) {
     }
   `);
 
-  const metaDescription = description || site.siteMetadata.description;
+  const { siteMetadata } = site;
+  const pageTitle = title || siteMetadata.title;
+  const metaDescription = description || siteMetadata.description;
+  const normalizedPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const canonicalUrl = `${siteMetadata.siteUrl}${normalizedPath}`;
+  const metaImage = image || siteMetadata.ogImage;
+  const ogImageUrl = metaImage.startsWith('http')
+    ? metaImage
+    : `${siteMetadata.siteUrl}${metaImage}`;
+
   return (
     <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      title={title}
-      defaultTitle={site.siteMetadata.title}
+      htmlAttributes={{ lang: siteMetadata.language || 'ko' }}
+      title={pageTitle}
+      defaultTitle={siteMetadata.title}
+      link={[{ rel: 'canonical', href: canonicalUrl }]}
       meta={[
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:site_title`,
-          content: title,
-        },
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: pageTitle,
+        },
+        {
+          property: `og:site_name`,
+          content: siteMetadata.title,
+        },
+        {
+          property: `og:url`,
+          content: canonicalUrl,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: 'og:image',
+          content: ogImageUrl,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:title`,
+          content: pageTitle,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: ogImageUrl,
         },
         {
           property: `og:description`,
@@ -60,16 +102,7 @@ function Seo({ description, title }: SeoProps) {
         },
         {
           property: 'og:author',
-          content: site.siteMetadata.author.name,
-        },
-        {
-          property: 'og:image',
-          content: site.siteMetadata.ogImage,
-        },
-
-        {
-          property: `og:type`,
-          content: `website`,
+          content: siteMetadata.author.name,
         },
       ]}
     />

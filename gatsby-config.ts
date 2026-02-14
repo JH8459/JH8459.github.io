@@ -5,6 +5,7 @@ const config: GatsbyConfig = {
   siteMetadata: metaConfig as unknown as Record<string, unknown>,
 
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,9 +20,12 @@ const config: GatsbyConfig = {
         path: `${__dirname}/content`,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: new URL(metaConfig.siteUrl).host,
+        sitemap: `${metaConfig.siteUrl}/sitemap-index.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -109,7 +113,7 @@ const config: GatsbyConfig = {
         name: metaConfig.title,
         short_name: metaConfig.title,
         description: metaConfig.description,
-        lang: `en`,
+        lang: metaConfig.language,
         display: `standalone`,
         start_url: `/`,
         icon: `static/favicon.png`,

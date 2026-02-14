@@ -120,7 +120,7 @@ function CategoryTemplate({ pageContext }: CategoryTemplateProps) {
 
   return (
     <Layout>
-      <Seo title="Posts" />
+      <Seo title="Posts" pathname={location.pathname} />
       <CategoryPageHeader title={categories[currentTabIndex]} subtitle={`${posts.length} posts`} />
       <PostTabs
         tabIndex={currentTabIndex}
