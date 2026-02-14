@@ -11,9 +11,9 @@ interface PostContentProps {
  */
 function PostContent({ html }: PostContentProps) {
   return (
-    <div className="flex flex-col justify-center w-full mb-[20px]">
+    <div className="mb-[20px] flex w-full flex-col justify-center pt-8">
       <div
-        className="prose dark:prose-invert prose-img:mx-auto mx-auto w-full max-w-[720px]"
+        className="prose dark:prose-invert prose-img:mx-auto prose-headings:tracking-[-0.015em] prose-p:leading-[1.9] mx-auto w-full max-w-[760px]"
         dangerouslySetInnerHTML={{ __html: html ?? '' }}
       />
     </div>

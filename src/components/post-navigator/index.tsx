@@ -14,17 +14,19 @@ interface PostNavigatorProps {
  */
 function PostNavigator({ prevPost, nextPost }: PostNavigatorProps) {
   return (
-    <div className="grid w-full grid-cols-[49.3%_49.3%] gap-[1.4%] mt-[40px]">
+    <div className="mt-12 grid w-full grid-cols-1 gap-3 border-t border-[var(--post-card-border-color)] pt-8 md:grid-cols-2 md:gap-4">
       {nextPost && (
         <Link
-          className="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 mr-auto"
+          className="post-card mr-auto flex w-full flex-col rounded-md border border-[var(--post-card-border-color)] p-4 text-[var(--primary-text-color)] transition-colors duration-200 hover:border-[var(--primary-text-color)]"
           key={nextPost.id}
           to={nextPost.slug}
         >
-          <div className="direction text-[14px] font-medium text-gray-500 mb-[5px]">이전 글</div>
-          <div className="title text-[16px] font-semibold leading-[1.4]">{nextPost.title}</div>
-          <div className="flex justify-between items-center mt-[5px]">
-            <div className="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]">
+          <div className="direction mb-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[var(--secondary-text-color)]">
+            Previous
+          </div>
+          <div className="title text-[16px] font-semibold leading-[1.45]">{nextPost.title}</div>
+          <div className="mt-2 flex items-center justify-between">
+            <div className="flex items-center text-[12px] font-medium text-[var(--secondary-text-color)]">
               {nextPost.emoji && <span className="mr-[4px]">{nextPost.emoji}</span>}
               {nextPost.categories &&
                 nextPost.categories.map((category) => (
@@ -39,14 +41,16 @@ function PostNavigator({ prevPost, nextPost }: PostNavigatorProps) {
       )}
       {prevPost && (
         <Link
-          className="post-card flex flex-col w-full border border-[var(--post-card-border-color)] rounded-[6px] p-[15px] text-[var(--primary-text-color)] cursor-pointer transition-transform duration-200 hover:scale-105 ml-auto"
+          className="post-card ml-auto flex w-full flex-col rounded-md border border-[var(--post-card-border-color)] p-4 text-[var(--primary-text-color)] transition-colors duration-200 hover:border-[var(--primary-text-color)]"
           key={prevPost.id}
           to={prevPost.slug}
         >
-          <div className="direction text-[14px] font-medium text-gray-500 mb-[5px]">다음 글</div>
-          <div className="title text-[16px] font-semibold leading-[1.4]">{prevPost.title}</div>
-          <div className="flex justify-between items-center mt-[5px]">
-            <div className="flex items-center text-[14px] font-medium text-[var(--primary-text-color)]">
+          <div className="direction mb-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[var(--secondary-text-color)]">
+            Next
+          </div>
+          <div className="title text-[16px] font-semibold leading-[1.45]">{prevPost.title}</div>
+          <div className="mt-2 flex items-center justify-between">
+            <div className="flex items-center text-[12px] font-medium text-[var(--secondary-text-color)]">
               {prevPost.emoji && <span className="mr-[4px]">{prevPost.emoji}</span>}
               {prevPost.categories &&
                 prevPost.categories.map((category) => (

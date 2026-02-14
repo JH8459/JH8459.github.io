@@ -71,7 +71,7 @@ function BlogTemplate({ data, location }: BlogTemplateProps) {
   }, [siteUrl, curPost.slug]);
 
   return (
-    <Layout tableOfContents={curPost.tableOfContents}>
+    <Layout tableOfContents={curPost.tableOfContents} contentMaxWidth="max-w-[840px]">
       <Seo title={curPost?.title} description={curPost?.excerpt} pathname={location.pathname} />
       <PostHeader post={curPost} viewCount={viewCount} />
       <PostContent html={curPost.html} />

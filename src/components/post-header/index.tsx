@@ -21,24 +21,22 @@ function PostHeader({ post, viewCount }: PostHeaderProps) {
     Math.ceil((new Date().getTime() - new Date(post.date).getTime()) / (1000 * 3600 * 24)) <= 7;
 
   return (
-    <header className="flex flex-col justify-center w-full pb-[10px] border-b border-[var(--post-card-border-color)] mt-[40px] mb-[40px] break-keep">
-      <h1 className="title font-semibold text-[32px] text-[var(--primary-text-color)] mb-[6px] leading-[1.3]">
+    <header className="w-full border-b border-[var(--post-card-border-color)] pb-9 pt-10 break-keep md:pt-12">
+      <h1 className="title mb-4 text-[34px] font-extrabold leading-[1.25] tracking-[-0.02em] text-[var(--primary-text-color)] md:text-[42px]">
         {post.title}
         {isNew && (
-          <span
-            className="inline-block align-super text-red-500 font-bold text-base"
-            style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)', marginLeft: '4px' }}
-          >
-            N
+          <span className="ml-2 inline-flex rounded-md bg-red-50 px-1.5 py-[1px] align-middle text-[10px] font-bold uppercase tracking-[0.06em] text-red-500 dark:bg-red-900/30 dark:text-red-300">
+            New
           </span>
         )}
       </h1>
-      <div className="flex justify-between items-center w-full mt-[10px]">
-        <div className="categories flex items-center">
-          {post.emoji && <div className="text-[18px] mr-[4px]">{post.emoji}</div>}
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-2">
+          {post.emoji && <div className="mr-[2px] text-[18px]">{post.emoji}</div>}
           {post.categories.map((category) => (
             <Link
-              className="category mr-[4px] font-semibold text-[var(--primary-text-color)] hover:underline text-[18px]"
+              className="rounded-md bg-[var(--button-background-color)] px-1.5 py-[1px] text-[11px] font-semibold uppercase tracking-[0.05em] text-[var(--secondary-text-color)] transition-colors duration-200 hover:text-[var(--primary-text-color)]"
               key={category}
               to={`/posts/${category}`}
             >
@@ -46,26 +44,27 @@ function PostHeader({ post, viewCount }: PostHeaderProps) {
             </Link>
           ))}
         </div>
-        <div className="info flex flex-wrap leading-[1.5] text-base font-medium text-[var(--secondary-text-color)] justify-end items-center space-x-4">
+
+        <div className="info flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-[var(--secondary-text-color)] md:justify-end">
           <button
             type="button"
-            className="relative cursor-pointer p-1 transition-all duration-200 hover:scale-105 bg-transparent border-none text-left font-medium text-[var(--secondary-text-color)] flex items-center"
+            className="relative flex items-center"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
             onFocus={() => setShowTooltip(true)}
             onBlur={() => setShowTooltip(false)}
           >
-            <FaRegClock className="w-4 h-4 mr-1" />
+            <FaRegClock className="mr-1 h-4 w-4" />
             <strong>{`${post.timeToRead} min`}</strong>
             {showTooltip && (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-max p-2 bg-black text-white text-xs rounded">
+              <div className="absolute bottom-full left-1/2 z-10 mb-2 w-max -translate-x-1/2 rounded-md border border-[var(--post-card-border-color)] bg-[var(--background-color)] px-2 py-1 text-[11px] font-medium text-[var(--secondary-text-color)] shadow-lg">
                 {`이 게시글을 읽는데 ${post.timeToRead}분 정도의 시간이 소요될 것으로 예상됩니다.`}
               </div>
             )}
           </button>
           <ViewCount viewCount={viewCount} />
-          <div className="flex items-center">
-            <FaCalendarAlt className="w-4 h-4 mr-1" /> {post.date}
+          <div className="inline-flex items-center">
+            <FaCalendarAlt className="mr-1 h-4 w-4" /> {post.date}
           </div>
         </div>
       </div>

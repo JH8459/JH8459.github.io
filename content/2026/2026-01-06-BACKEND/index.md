@@ -117,7 +117,7 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-06/backen
 <br>
 <br>
 
-## 3. 이벤트 소싱은 장점만큼의 비용을 요구했다
+### 3. 이벤트 소싱은 장점만큼의 비용을 요구했다
 
 ---
 
@@ -146,7 +146,7 @@ thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-01-06/backen
 <br>
 <br>
 
-## 4. 모든 도메인에 같은 구조를 적용하지 않기로 했다
+### 4. 모든 도메인에 같은 구조를 적용하지 않기로 했다
 
 ---
 
