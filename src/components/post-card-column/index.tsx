@@ -38,8 +38,8 @@ function PostCardColumn({
     : posts;
 
   return (
-    <div className="flex justify-center w-full">
-      <div className="flex flex-col items-center space-y-4 w-full max-w-4xl">
+    <div className="mt-2 flex w-full justify-center">
+      <div className="flex w-full flex-col items-center">
         {postsToRender.map((post, index) => (
           <PostCard
             key={loadingViews ? `skeleton-${index}` : (post?.id ?? `post-${index}`)}
@@ -50,7 +50,7 @@ function PostCardColumn({
         ))}
         {showMoreButton && !loadingViews && (
           <button
-            className="h-10 px-4 font-medium text-[15px] bg-[var(--button-background-color)] text-[var(--tab-hover-text-color)] rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
+            className="mt-8 h-10 rounded-md border border-[var(--post-card-border-color)] px-4 text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--secondary-text-color)] transition-colors duration-200 hover:border-[var(--primary-text-color)] hover:text-[var(--primary-text-color)]"
             onClick={onMoreButtonClick}
           >
             More

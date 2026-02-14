@@ -41,27 +41,29 @@ function PostTabs({
   }, [posts, tabs, tabIndex]);
 
   return (
-    <div className="flex flex-col items-center justify-center self-start top-0 w-full">
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 h-auto w-full max-w-[720px] mb-[18px] mx-auto py-2">
-        {tabs.map((title, index) => {
-          const isSelected = tabIndex === index;
-          return (
-            <button
-              key={index}
-              onClick={() => onChange(null, index)}
-              className={`px-5 py-2.5 rounded-lg text-base font-medium transition-all duration-200 whitespace-nowrap shadow-sm ${
-                isSelected
-                  ? 'bg-gray-800 text-white dark:bg-gray-100 dark:text-gray-900'
-                  : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-amber-100 hover:text-amber-700 dark:hover:text-amber-700'
-              }`}
-            >
-              {title}
-            </button>
-          );
-        })}
-      </div>
-      <div className="w-full max-w-[720px] my-2">
-        <PostSorter sortType={sortType} onChange={onSortChange} />
+    <section className="w-full">
+      <div className="mt-8 flex flex-col gap-4 border-b border-[var(--post-card-border-color)] pb-3 md:flex-row md:items-end md:justify-between">
+        <div className="no-scrollbar -mb-[1px] flex items-center gap-1 overflow-x-auto pr-2">
+          {tabs.map((title, index) => {
+            const isSelected = tabIndex === index;
+            return (
+              <button
+                key={index}
+                onClick={() => onChange(null, index)}
+                className={`shrink-0 border-b-2 px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.04em] transition-colors duration-200 ${
+                  isSelected
+                    ? 'border-[var(--primary-text-color)] text-[var(--primary-text-color)]'
+                    : 'border-transparent text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)]'
+                }`}
+              >
+                {title}
+              </button>
+            );
+          })}
+        </div>
+        <div className="shrink-0 md:min-w-[124px]">
+          <PostSorter sortType={sortType} onChange={onSortChange} />
+        </div>
       </div>
       <PostCardColumn
         posts={showMoreButton ? tabPosts.slice(0, 4) : tabPosts}
@@ -70,7 +72,7 @@ function PostTabs({
         defaultThumbnail={defaultThumbnail}
         loadingViews={loadingViews} // Pass loading state down
       />
-    </div>
+    </section>
   );
 }
 export default PostTabs;

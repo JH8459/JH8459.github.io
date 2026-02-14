@@ -39,13 +39,16 @@ function PostSorter({ sortType, onChange }: PostSorterProps) {
   };
 
   return (
-    <div className="text-right my-4">
+    <div className="text-right">
       <Listbox value={selectedOption} onChange={handleChange}>
-        <div className="relative inline-block w-32">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white dark:bg-gray-800 py-2 pl-3 pr-10 text-center focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate font-bold">{selectedOption.label}</span>
+        <div className="relative inline-block w-[108px]">
+          <Listbox.Button className="relative w-full cursor-default rounded-md border border-[var(--post-card-border-color)] bg-transparent py-1.5 pl-3 pr-8 text-left text-[13px] font-semibold text-[var(--secondary-text-color)] focus:outline-none focus-visible:border-[var(--primary-text-color)] sm:text-sm">
+            <span className="block truncate">{selectedOption.label}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              <FaChevronDown className="h-5 w-5 text-gray-400" aria-hidden="true" />
+              <FaChevronDown
+                className="h-3.5 w-3.5 text-[var(--secondary-text-color)]"
+                aria-hidden="true"
+              />
             </span>
           </Listbox.Button>
           <Transition
@@ -54,7 +57,7 @@ function PostSorter({ sortType, onChange }: PostSorterProps) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm py-1 text-base border border-gray-200 dark:border-gray-700 focus:outline-none sm:text-sm z-10">
+            <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md border border-[var(--post-card-border-color)] bg-[var(--background-color)] py-1 text-base shadow-lg focus:outline-none sm:text-sm">
               {options.map((option) => (
                 <Listbox.Option
                   key={option.value}
@@ -63,9 +66,11 @@ function PostSorter({ sortType, onChange }: PostSorterProps) {
                     let stateClasses = '';
 
                     if (selected) {
-                      stateClasses = 'bg-gray-100 dark:bg-gray-700';
+                      stateClasses =
+                        'bg-[var(--button-background-color)] text-[var(--primary-text-color)]';
                     } else if (active) {
-                      stateClasses = 'bg-amber-100 text-amber-700';
+                      stateClasses =
+                        'bg-[var(--button-background-color)] text-[var(--primary-text-color)]';
                     }
 
                     return `${baseClasses} ${stateClasses}`;

@@ -45,25 +45,26 @@ function PageHeader({ siteTitle }: PageHeaderProps) {
         }
       `}
       render={(data: SearchQueryData) => (
-        <header className="flex justify-center w-full h-[60px]">
-          <div className="flex items-center justify-between max-w-[720px] w-full px-4">
+        <header className="w-full border-b border-[var(--post-card-border-color)] py-6 md:py-8">
+          <div className="flex w-full items-center justify-between">
             <div className="flex-shrink-0">
               <Link
-                className="font-bold text-[17px] text-[var(--primary-text-color)] md:text-[20px]"
+                className="text-[18px] font-extrabold tracking-[-0.02em] text-[var(--primary-text-color)] md:text-[22px]"
                 to="/"
               >
-                {siteTitle}
+                <span className="hidden sm:inline">{siteTitle}</span>
+                <span className="sm:hidden">JH&apos;s Notes</span>
               </Link>
             </div>
-            <nav className="flex items-center">
+            <nav className="flex items-center gap-1.5 sm:gap-3">
               <Link
-                className="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold"
+                className="rounded-md px-2.5 py-1.5 text-[14px] font-semibold uppercase tracking-[0.04em] text-[var(--secondary-text-color)] transition-colors duration-200 hover:text-[var(--primary-text-color)]"
                 to="/about"
               >
                 about
               </Link>
               <Link
-                className="text-[17px] text-[var(--primary-text-color)] mr-[10px] md:mr-[20px] font-bold"
+                className="rounded-md px-2.5 py-1.5 text-[14px] font-semibold uppercase tracking-[0.04em] text-[var(--secondary-text-color)] transition-colors duration-200 hover:text-[var(--primary-text-color)]"
                 to="/posts"
               >
                 posts

@@ -12,11 +12,13 @@ interface CategoryPageHeaderProps {
  */
 function CategoryPageHeader({ title, subtitle }: CategoryPageHeaderProps) {
   return (
-    <div className="flex flex-col items-center justify-center mt-[30px] mb-[30px]">
-      <h1 className="w-fit pb-[7px] mb-[15px] text-[40px] font-bold text-center border-b-[3px] border-[var(--primary-text-color)]">
+    <div className="mt-8 mb-4 w-full pb-5">
+      <h1 className="mb-2 text-[34px] font-extrabold tracking-[-0.02em] text-[var(--primary-text-color)] md:text-[40px]">
         {title}
       </h1>
-      <p className="pb-[10px] text-[20px] font-medium text-center">{subtitle}</p>
+      <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--secondary-text-color)]">
+        {subtitle}
+      </p>
     </div>
   );
 }

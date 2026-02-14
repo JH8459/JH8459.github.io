@@ -12,16 +12,22 @@ interface PageFooterProps {
  */
 function PageFooter({ author, githubUrl }: PageFooterProps) {
   return (
-    <footer className="flex justify-center items-center w-full h-[62px] mt-auto">
-      <p className="max-w-[720px] text-center text-[var(--primary-text-color)] font-sans">
+    <footer className="mt-auto border-t border-[var(--post-card-border-color)] py-6">
+      <p className="text-center text-[13px] text-[var(--secondary-text-color)] md:text-[14px]">
         © {new Date().getFullYear()}
         &nbsp;
-        <a href={githubUrl} className="text-[#3A95FF]">
+        <a
+          href={githubUrl}
+          className="font-semibold text-[var(--primary-text-color)] hover:underline"
+        >
           {author}
         </a>
-        &nbsp;powered by
-        <a href="https://github.com/JH8459/JH8459.github.io" className="text-[#3A95FF]">
-          &nbsp;gatsby-blog
+        &nbsp;· powered by
+        <a
+          href="https://github.com/JH8459/JH8459.github.io"
+          className="ml-1 font-semibold text-[var(--primary-text-color)] hover:underline"
+        >
+          gatsby-blog
         </a>
       </p>
     </footer>

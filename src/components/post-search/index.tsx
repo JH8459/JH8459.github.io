@@ -55,21 +55,21 @@ function PostSearch({ posts }: PostSearchProps) {
   }, []);
 
   return (
-    <div className="search-input-wrapper hidden md:block w-[250px] mt-[3px] relative">
+    <div className="search-input-wrapper relative hidden w-[220px] md:block">
       <div className="relative w-full">
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="검색어를 입력하세요..."
-          className="search-input w-full h-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+          className="search-input h-full w-full rounded-md border border-[var(--post-card-border-color)] bg-transparent py-2 pl-9 pr-3 text-[13px] text-[var(--primary-text-color)] placeholder:text-[var(--secondary-text-color)] focus:border-[var(--primary-text-color)] focus:outline-none"
         />
-        <FaSearch className="search-icon absolute left-3 top-1/2 transform -translate-y-1/2 mr-[2px] text-[var(--primary-text-color)]" />
+        <FaSearch className="search-icon absolute left-3 top-1/2 mr-[2px] -translate-y-1/2 text-[12px] text-[var(--secondary-text-color)]" />
       </div>
       {inputValue && (
         <div className="absolute top-full z-10 w-full mt-1">
           {filteredPosts.length > 0 ? (
-            <ul className="w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto dark:bg-gray-800 dark:border-gray-700">
+            <ul className="max-h-60 w-full overflow-y-auto rounded-md border border-[var(--post-card-border-color)] bg-[var(--background-color)] shadow-lg">
               {filteredPosts.map((post) => (
                 <li
                   key={post.slug}
@@ -80,12 +80,12 @@ function PostSearch({ posts }: PostSearchProps) {
                     }
                   }}
                   role="presentation"
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white"
+                  className="cursor-pointer px-4 py-2 transition-colors duration-200 hover:bg-[var(--button-background-color)]"
                 >
                   <div className="font-semibold text-[14px] mb-[2px] flex justify-between items-center">
                     <span>{post.title}</span>
                     {post.categories && post.categories.length > 0 && (
-                      <span className="text-[12px] text-gray-500 ml-auto">
+                      <span className="ml-auto text-[12px] text-[var(--secondary-text-color)]">
                         {post.categories[0]}
                       </span>
                     )}
@@ -94,7 +94,7 @@ function PostSearch({ posts }: PostSearchProps) {
               ))}
             </ul>
           ) : (
-            <div className="px-4 py-2 text-gray-500 bg-white border border-gray-300 rounded-md shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+            <div className="rounded-md border border-[var(--post-card-border-color)] bg-[var(--background-color)] px-4 py-2 text-[13px] text-[var(--secondary-text-color)] shadow-lg">
               해당하는 글이 없습니다.
             </div>
           )}

@@ -154,6 +154,7 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 500, truncate: true)
           timeToRead
+          tableOfContents
           frontmatter {
             categories
             title

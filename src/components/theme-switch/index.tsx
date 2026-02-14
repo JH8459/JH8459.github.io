@@ -19,15 +19,15 @@ function ThemeSwitch() {
   }, [isDarkMode]);
 
   return (
-    <div className="fixed bottom-[20px] right-[20px] flex items-center justify-center">
+    <div className="fixed bottom-[18px] right-[18px] z-30 flex items-center justify-center md:bottom-[22px] md:right-[22px]">
       <button
-        className="w-[50px] h-[50px] rounded-full bg-[#363f47] cursor-pointer shadow-xl backdrop-blur-md z-30 flex items-center justify-center"
+        className="z-30 flex h-[44px] w-[44px] cursor-pointer items-center justify-center rounded-full border border-[var(--post-card-border-color)] bg-[var(--background-color)] shadow-lg"
         onClick={() => setIsDarkMode((isDark) => !isDark)}
       >
         {isDarkMode ? (
-          <MdLightMode className="w-6 h-6 text-yellow-500" />
+          <MdLightMode className="h-5 w-5 text-yellow-500" />
         ) : (
-          <MdDarkMode className="w-6 h-6 text-white" />
+          <MdDarkMode className="h-5 w-5 text-[var(--primary-text-color)]" />
         )}
       </button>
     </div>
