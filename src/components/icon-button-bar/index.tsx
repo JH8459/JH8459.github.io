@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { MdEmail, MdHome, MdDescription, MdPlayArrow } from 'react-icons/md';
-import { FaGithub, FaAndroid, FaApple, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaAndroid, FaApple, FaLinkedin, FaPenNib } from 'react-icons/fa';
 import type { LinkSet } from '../../types/about';
 
 interface IconButtonBarProps {
@@ -46,6 +46,8 @@ function IconButtonBar({
         return <MdEmail {...props} className={iconClassName} />;
       case 'linkedIn':
         return <FaLinkedin {...props} className={iconClassName} />;
+      case 'yozmIt':
+        return <FaPenNib {...props} className={iconClassName} />;
       default:
         return <></>;
     }

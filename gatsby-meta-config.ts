@@ -37,6 +37,7 @@ interface MetaConfig {
     social: {
       github?: string;
       linkedIn?: string;
+      yozmIt?: string;
       email?: string;
     };
   };
@@ -123,6 +124,7 @@ const metaConfig: MetaConfig = {
     social: {
       github: `https://github.com/JH8459`,
       linkedIn: `https://www.linkedin.com/in/jh8459/`,
+      yozmIt: `https://yozm.wishket.com/magazine/@JH8459/`,
       email: `kk_ong2233@naver.com`,
     },
   },

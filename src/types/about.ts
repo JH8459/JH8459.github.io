@@ -10,6 +10,7 @@ export interface LinkSet {
   appStore?: string;
   email?: string;
   linkedIn?: string;
+  yozmIt?: string;
 }
 
 /**

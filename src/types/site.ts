@@ -15,6 +15,7 @@ export interface AuthorBio {
 export interface AuthorSocial {
   github?: string;
   linkedIn?: string;
+  yozmIt?: string;
   email?: string;
 }
 
