@@ -45,147 +45,91 @@ function ProjectSection({ projects }: ProjectSectionProps) {
   // 샘플 항목을 제외하고 보여주기 위해 2개 이상일 때만 렌더링
   if (!projects || projects.length < 2) return null;
 
-  const getTechTone = (tech: string) => {
-    const value = tech.toLowerCase();
-
-    const frontendKeywords = [
-      'react',
-      'next',
-      'vue',
-      'svelte',
-      'gatsby',
-      'angular',
-      'storybook',
-      'tailwind',
-      'styled-components',
-      'emotion',
-      'html',
-      'css',
-      'javascript',
-      'typescript',
-      'redux',
-    ];
-    const backendKeywords = [
-      'node',
-      'express',
-      'nest',
-      'spring',
-      'django',
-      'flask',
-      'fastapi',
-      'rails',
-      'laravel',
-      'graphql',
-      'java',
-      'kotlin',
-      'python',
-      'go',
-      'php',
-      'c#',
-      'dotnet',
-      'postgres',
-      'mysql',
-      'mongodb',
-      'redis',
-    ];
-    const infraKeywords = [
-      'aws',
-      'gcp',
-      'azure',
-      'docker',
-      'kubernetes',
-      'terraform',
-      'ansible',
-      'nginx',
-      'vercel',
-      'netlify',
-      'cloudflare',
-      'github actions',
-      'ci',
-      'cd',
-    ];
-    const mobileKeywords = ['react native', 'flutter', 'swift', 'kotlin', 'android', 'ios'];
-
-    if (mobileKeywords.some((keyword) => value.includes(keyword))) return 'mobile';
-    if (frontendKeywords.some((keyword) => value.includes(keyword))) return 'frontend';
-    if (backendKeywords.some((keyword) => value.includes(keyword))) return 'backend';
-    if (infraKeywords.some((keyword) => value.includes(keyword))) return 'infra';
-    return 'default';
-  };
-
   return (
     <div className="flex flex-col justify-center items-center w-full py-8">
       <SectionHeader title="Projects" />
-      <div className="mt-6 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="mt-4 w-full">
         {projects.map((project, index) => {
           if (index === 0) return null;
+
+          const techStack = project.techStack || [];
+          const mobileTechStack = techStack.slice(0, 3);
+          const hiddenMobileTechCount = Math.max(0, techStack.length - mobileTechStack.length);
+
           return (
             <div
-              className="group flex flex-col overflow-hidden border border-[var(--post-card-border-color)] rounded-[8px] bg-[var(--background-color)] p-[16px] transition-all duration-200 hover:-translate-y-[2px] hover:border-[#d1d5db] hover:shadow-[0_10px_24px_rgba(17,24,39,0.08)] md:aspect-square"
+              className="group w-full border-b border-[var(--post-card-border-color)] py-7"
               key={index}
             >
-              <h3 className="text-[16px] font-bold leading-[1.4] text-gray-900 dark:text-white">
-                {project.title}
-              </h3>
-              {project.links && (
-                <div className="mt-2 flex justify-end">
-                  <IconButtonBar links={project.links} className="inline-flex space-x-3" />
-                </div>
-              )}
-              {project.thumbnailUrl && (
-                <div className="mt-3 flex justify-center w-full h-[120px] md:h-[40%] mb-3 overflow-hidden rounded-[6px]">
-                  <Image
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                    src={project.thumbnailUrl}
-                    alt={project.title ?? 'project'}
-                  />
-                </div>
-              )}
-              {project.techStack && (
-                <div className="mb-2 md:mb-3">
-                  <div className="flex flex-nowrap gap-2 overflow-hidden">
-                    {project.techStack.map((tech, techIndex) => {
-                      const tone = getTechTone(tech);
-                      const toneClassName =
-                        tone === 'frontend'
-                          ? 'bg-sky-100 text-sky-800 dark:bg-sky-800/70 dark:text-sky-100'
-                          : tone === 'backend'
-                            ? 'bg-slate-200 text-slate-700 dark:bg-slate-800/80 dark:text-slate-200'
-                            : tone === 'infra'
-                              ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200'
-                              : tone === 'mobile'
-                                ? 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/60 dark:text-fuchsia-200'
-                                : 'bg-[var(--chip-background-color)] text-[var(--primary-text-color)]';
+              <div className="flex items-start gap-5">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-[20px] font-semibold leading-[1.35] text-[var(--primary-text-color)] md:text-[24px]">
+                    {project.title}
+                  </h3>
 
-                      return (
-                        <span
-                          key={techIndex}
-                          className={`py-[2px] px-[6px] rounded-[10px] text-[11px] font-medium ${toneClassName}`}
+                  <p
+                    ref={(element) => {
+                      descriptionRefs.current[index] = element;
+                    }}
+                    className="mt-3 text-[14px] font-normal leading-[1.75] text-[var(--secondary-text-color)] line-clamp-3"
+                  >
+                    {project.description}
+                  </p>
+
+                  <div className="mt-4 flex min-w-0 items-center justify-between gap-2">
+                    <div className="min-w-0 flex-1 overflow-hidden text-[11px] font-medium text-[var(--secondary-text-color)]">
+                      <div className="flex items-center gap-1.5 overflow-hidden md:hidden">
+                        {mobileTechStack.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="max-w-[90px] shrink-0 truncate rounded bg-[var(--button-background-color)] px-1.5 py-[1px]"
+                            title={tech}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {hiddenMobileTechCount > 0 && (
+                          <span className="shrink-0 text-[11px]">+{hiddenMobileTechCount}</span>
+                        )}
+                      </div>
+
+                      <div className="hidden flex-wrap items-center gap-1.5 md:flex">
+                        {techStack.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="rounded bg-[var(--button-background-color)] px-1.5 py-[1px]"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex shrink-0 items-center gap-3">
+                      {project.links && (
+                        <IconButtonBar links={project.links} className="inline-flex" />
+                      )}
+                      {isDescriptionClamped[index] && (
+                        <button
+                          type="button"
+                          onClick={() => setActiveProjectIndex(index)}
+                          className="hidden text-[12px] font-medium text-[var(--link-text-color)] hover:underline md:inline-block"
                         >
-                          {tech}
-                        </span>
-                      );
-                    })}
+                          더보기
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              )}
-              <div className="mt-2 md:mt-auto">
-                <p
-                  ref={(element) => {
-                    descriptionRefs.current[index] = element;
-                  }}
-                  className="text-[13px] font-normal leading-[1.5] text-gray-700 dark:text-gray-300 line-clamp-3 md:line-clamp-4"
-                >
-                  {project.description}
-                </p>
-                {isDescriptionClamped[index] && (
-                  <button
-                    type="button"
-                    onClick={() => setActiveProjectIndex(index)}
-                    className="mt-2 ml-auto block text-[12px] font-medium text-[var(--link-text-color)] hover:underline"
-                  >
-                    더보기
-                  </button>
+
+                {project.thumbnailUrl && (
+                  <div className="h-[92px] w-[92px] shrink-0 overflow-hidden rounded-md md:h-[140px] md:w-[140px]">
+                    <Image
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      src={project.thumbnailUrl}
+                      alt={project.title ?? 'project'}
+                    />
+                  </div>
                 )}
               </div>
             </div>
@@ -193,7 +137,7 @@ function ProjectSection({ projects }: ProjectSectionProps) {
         })}
       </div>
       {activeProjectIndex !== null && projects[activeProjectIndex] && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+        <div className="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 px-4 md:flex">
           <div className="w-full max-w-[640px] rounded-[10px] bg-[var(--background-color)] p-6 shadow-lg">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -228,28 +172,14 @@ function ProjectSection({ projects }: ProjectSectionProps) {
             )}
             {projects[activeProjectIndex].techStack && (
               <div className="mt-4 flex flex-wrap gap-2">
-                {projects[activeProjectIndex].techStack?.map((tech, techIndex) => {
-                  const tone = getTechTone(tech);
-                  const toneClassName =
-                    tone === 'frontend'
-                      ? 'bg-sky-100 text-sky-800 dark:bg-sky-800/70 dark:text-sky-100'
-                      : tone === 'backend'
-                        ? 'bg-slate-200 text-slate-700 dark:bg-slate-800/80 dark:text-slate-200'
-                        : tone === 'infra'
-                          ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200'
-                          : tone === 'mobile'
-                            ? 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/60 dark:text-fuchsia-200'
-                            : 'bg-[var(--chip-background-color)] text-[var(--primary-text-color)]';
-
-                  return (
-                    <span
-                      key={techIndex}
-                      className={`py-[2px] px-[6px] rounded-[10px] text-[11px] font-medium ${toneClassName}`}
-                    >
-                      {tech}
-                    </span>
-                  );
-                })}
+                {projects[activeProjectIndex].techStack?.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="rounded bg-[var(--button-background-color)] px-1.5 py-[1px] text-[11px] font-medium text-[var(--secondary-text-color)]"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             )}
             <p className="mt-4 text-[14px] leading-[1.6] text-gray-700 dark:text-gray-300">

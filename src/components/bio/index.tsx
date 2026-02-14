@@ -18,61 +18,68 @@ function Bio({ author, language = 'ko' }: BioProps) {
   if (!author) return null;
   const { bio, social, name } = author;
   return (
-    <div className="bio flex flex-col justify-between w-full mt-[120px] mb-[120px] text-[var(--primary-text-color)] md:flex-row md:items-center">
-      {/* 언어에 따라 소개 문구 레이아웃 분기 */}
-      {language === 'ko' ? (
-        <div className="introduction korean flex flex-col word-break-keep-all mx-auto md:mx-0">
-          <p className="font-thin text-[32px] leading-[1.2] md:text-[40px]">
-            안녕하세요.
-            <br />
-            <span className="title">
-              <ReactRotatingText
-                items={bio.description}
-                className="react-rotating-text-cursor text-[35px] leading-[35px] md:text-[45px] md:leading-[45px]"
+    <section className="bio w-full pb-10 pt-8 text-[var(--primary-text-color)] md:pb-14 md:pt-10">
+      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[1fr_220px] md:items-stretch md:gap-10">
+        {/* 언어에 따라 소개 문구 레이아웃 분기 */}
+        {language === 'ko' ? (
+          <div className="introduction korean mx-auto flex flex-col break-keep md:mx-0">
+            <p className="text-[30px] font-medium leading-[1.24] tracking-[-0.02em] md:text-[44px]">
+              안녕하세요.
+              <br />
+              <span className="title inline-block font-semibold text-[var(--primary-text-color)]">
+                <ReactRotatingText
+                  items={bio.description}
+                  className="react-rotating-text-cursor text-[33px] leading-[1.2] md:text-[46px]"
+                />
+              </span>
+              <br />
+              {bio.role}{' '}
+              <strong className="inline-block font-semibold text-[var(--primary-text-color)]">
+                {name}
+              </strong>
+              입니다.
+              <br />
+            </p>
+            <div className="social-links mt-6 flex">
+              <IconButtonBar
+                links={social}
+                className="gap-2"
+                iconClass="text-[24px] text-[var(--bio-link-icon-color)]"
               />
-            </span>
-            <br />
-            {bio.role} <strong className="inline-block font-semibold">{name}</strong>입니다.
-            <br />
-          </p>
-          <div className="social-links mt-[20px] flex">
-            <IconButtonBar
-              links={social}
-              iconClass="text-[30px] text-[var(--bio-link-icon-color)]"
-            />
+            </div>
           </div>
-        </div>
-      ) : (
-        <div className="introduction english flex flex-col word-break-keep-all font-montserrat text-[25px] leading-[1.2] md:text-[45px] mx-auto md:mx-0">
-          <p className="name text-[35px] font-semibold">
-            Hello,
-            <br />
-            my name is
-            <br />
-            <strong>{name}</strong>
-            .<br />
-          </p>
-          <p className="job text-[35px] text-lg text-gray-700 dark:text-gray-300">
-            I&#39;m a {bio.role} <ReactRotatingText items={bio.description} />
-            <br />
-          </p>
-          <p className="description font-extralight mt-[8px] text-[20px]"></p>
-          <div className="social-links mt-[20px] flex">
-            <IconButtonBar
-              links={social}
-              iconClass="text-[30px] text-[var(--bio-link-icon-color)]"
-            />
+        ) : (
+          <div className="introduction english mx-auto flex flex-col break-keep text-[25px] leading-[1.2] md:mx-0 md:text-[45px]">
+            <p className="name text-[34px] font-semibold tracking-[-0.02em]">
+              Hello,
+              <br />
+              my name is
+              <br />
+              <strong>{name}</strong>
+              .<br />
+            </p>
+            <p className="job mt-1 text-[31px] text-[var(--content-text-color)] md:text-[40px]">
+              I&#39;m a {bio.role} <ReactRotatingText items={bio.description} />
+              <br />
+            </p>
+            <div className="social-links mt-6 flex">
+              <IconButtonBar
+                links={social}
+                className="gap-2"
+                iconClass="text-[24px] text-[var(--bio-link-icon-color)]"
+              />
+            </div>
           </div>
+        )}
+        <div className="thumbnail-wrapper mx-auto hidden h-full shrink-0 overflow-hidden rounded-2xl md:block md:w-[220px]">
+          <Image
+            className="h-full w-full rounded-2xl object-cover"
+            src={bio.thumbnail}
+            alt="thumbnail"
+          />
         </div>
-      )}
-      <div className="thumbnail-wrapper hidden md:block flex-shrink-0">
-        <Image
-          className="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover"
-          src={bio.thumbnail}
-          alt="thumbnail"
-        />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -147,7 +147,7 @@ function TimeStampSection({ careers }: TimeStampSectionProps) {
                         </span>
                       ) : null}
                       <button
-                        className="inline-flex items-center gap-1 rounded-full border border-[#d4d4d8] bg-transparent px-3 py-[6px] text-[12px] font-semibold text-[#4b5563] transition-colors duration-200 hover:border-[#9ca3af] hover:text-[#111827] dark:border-[#52525b] dark:text-[#d4d4d8] dark:hover:border-[#a1a1aa] dark:hover:text-[#f5f5f5]"
+                        className="inline-flex items-center gap-1 px-1 py-[6px] text-[12px] font-semibold text-[#4b5563] transition-colors duration-200 hover:text-[#111827] dark:text-[#d4d4d8] dark:hover:text-[#f5f5f5]"
                         onClick={() => togglePostView(index)}
                         type="button"
                       >
