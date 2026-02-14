@@ -97,7 +97,7 @@ const metaConfig: MetaConfig = {
   description: `JH 개발일기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://blog.jh8459.com`,
-  ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  ogImage: `/og-image-v2.png`, // Path to your in the 'static' folder
   comments: {
     giscus: {
       repo: `JH8459/JH8459.github.io`,
