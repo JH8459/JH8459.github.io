@@ -93,8 +93,8 @@ interface MetaConfig {
 }
 
 const metaConfig: MetaConfig = {
-  title: `blog.jh8459.com`,
-  description: `JH 개발일기`,
+  title: `JH's Engineering Notes`,
+  description: `Architecture decisions, event-driven systems, observability, and knowledge sharing`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://blog.jh8459.com`,
   ogImage: `/og-image-v2.png`, // Path to your in the 'static' folder
