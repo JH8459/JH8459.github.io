@@ -31,12 +31,13 @@ module.exports = {
       maxHeight: {
         'content-image': '560px',
       },
-      typography: ({ theme }) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             a: {
               borderBottom: '0.05em solid',
               borderColor: 'var(--link-text-color)',
+              textDecoration: 'none',
               '&.anchor': {
                 borderBottom: 'none',
               },

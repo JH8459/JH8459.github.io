@@ -22,10 +22,10 @@ function PostHeader({ post, viewCount }: PostHeaderProps) {
 
   return (
     <header className="w-full border-b border-[var(--post-card-border-color)] pb-9 pt-10 break-keep md:pt-12">
-      <h1 className="title mb-4 text-[34px] font-extrabold leading-[1.25] tracking-[-0.02em] text-[var(--primary-text-color)] md:text-[42px]">
+      <h1 className="title mb-4 text-[29px] font-extrabold leading-[1.25] tracking-[-0.02em] text-[var(--primary-text-color)] md:text-[35px]">
         {post.title}
         {isNew && (
-          <span className="ml-2 inline-flex rounded-md bg-red-50 px-1.5 py-[1px] align-middle text-[10px] font-bold uppercase tracking-[0.06em] text-red-500 dark:bg-red-900/30 dark:text-red-300">
+          <span className="ml-2 inline-flex rounded-md bg-red-50 px-2.5 py-[2px] align-middle text-[12px] font-bold uppercase tracking-[0.05em] text-red-500 dark:bg-red-900/30 dark:text-red-300 md:text-[13px]">
             New
           </span>
         )}

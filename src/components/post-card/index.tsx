@@ -145,7 +145,7 @@ function PostCard({ post, defaultThumbnail, isLoading }: PostCardProps) {
             <h2 className="mb-3 text-[20px] font-bold leading-[1.35] tracking-[-0.015em] transition-colors duration-200 group-hover:text-[var(--tab-hover-text-color)] md:text-[25px]">
               {title}
               {isNew && (
-                <span className="ml-2 inline-flex rounded-md bg-red-50 px-1.5 py-[1px] align-middle text-[10px] font-bold uppercase tracking-[0.06em] text-red-500 dark:bg-red-900/30 dark:text-red-300">
+                <span className="ml-2 inline-flex rounded-md bg-red-50 px-2 py-[2px] align-middle text-[11px] font-bold uppercase tracking-[0.05em] text-red-500 dark:bg-red-900/30 dark:text-red-300 md:text-[12px]">
                   New
                 </span>
               )}
