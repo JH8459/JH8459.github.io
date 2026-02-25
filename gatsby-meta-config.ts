@@ -201,6 +201,12 @@ const metaConfig: MetaConfig = {
         },
         posts: [
           {
+            title: "AI로 빨리 만드는 팀보다 '덜 흔들리는' 팀이 이기는 이유",
+            thumbnail: 'https://yozm.wishket.com/media/news/3625/thumbnail.png',
+            publishedAt: '2026-02-25T14:00:17+09:00',
+            url: 'https://yozm.wishket.com/magazine/detail/3625/',
+          },
+          {
             title: 'AI로 코드는 빨리 나오는데, 왜 출시는 그대로일까?',
             thumbnail: 'https://yozm.wishket.com/media/news/3600/image6.png',
             publishedAt: '2026-02-10T09:00:17+09:00',
