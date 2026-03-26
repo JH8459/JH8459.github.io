@@ -201,6 +201,12 @@ const metaConfig: MetaConfig = {
         },
         posts: [
           {
+            title: 'cURL은 왜 버그 바운티를 끝냈을까?',
+            thumbnail: 'https://yozm.wishket.com/media/news/3668/thumbnail.jpg',
+            publishedAt: '2026-03-23T09:00:17+09:00',
+            url: 'https://yozm.wishket.com/magazine/detail/3668/',
+          },
+          {
             title: "AI로 빨리 만드는 팀보다 '덜 흔들리는' 팀이 이기는 이유",
             thumbnail: 'https://yozm.wishket.com/media/news/3625/thumbnail.png',
             publishedAt: '2026-02-25T14:00:17+09:00',
@@ -213,6 +219,15 @@ const metaConfig: MetaConfig = {
             url: 'https://yozm.wishket.com/magazine/detail/3600/',
           },
         ],
+      },
+      {
+        date: '2026.03 ~ ',
+        label: '프리랜서',
+        status: 'ongoing',
+        activity: '코드잇 - Career Mentor',
+        links: {
+          homepage: 'https://sprint-page.codeit.kr/career_program',
+        },
       },
     ],
 
