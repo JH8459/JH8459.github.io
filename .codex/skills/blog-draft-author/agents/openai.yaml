@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Draft Author"
+  short_description: "블로그 원고 초안과 frontmatter를 생성"
+  default_prompt: "원고 초안 작성해줘."
