@@ -6,6 +6,12 @@
 - `pnpm run start`: `gatsby clean && pnpm run develop`
 - `pnpm run deploy`: 빌드 후 `CNAME`을 `public/CNAME`으로 복사하고 `gh-pages -d public -x`를 실행합니다.
 
+## CI
+
+- `.github/workflows/ci.yml`은 `master` 대상 PR과 `master` push에서 실행됩니다.
+- CI는 `pnpm install --frozen-lockfile`, `pnpm run lint`, `pnpm run build`만 수행합니다.
+- CI는 GitHub Pages 배포를 실행하지 않습니다.
+
 ## 배포 대상
 
 - 배포 결과물은 `public/` 디렉터리입니다.
