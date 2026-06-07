@@ -14,6 +14,7 @@ description: "이 Gatsby 블로그 저장소에서 사용자가 명시적으로 
 1. 작업 전 관련 저장소 규칙을 읽습니다.
    - `.codex/rules/git-convention.md`
    - `.codex/rules/project-context.md`
+   - `.codex/rules/remote-operations.md`
    - 빌드, 배포, Gatsby, 메타데이터, 콘텐츠 동작에 영향이 있으면 `.codex/rules/deployment.md`
 2. 저장소 상태를 확인합니다.
    - `git status --short --branch`
@@ -38,6 +39,8 @@ description: "이 Gatsby 블로그 저장소에서 사용자가 명시적으로 
 사용자가 "커밋 해줘"만 요청하면 로컬 커밋까지만 수행하고, 커밋 해시와 검증 결과를 요약합니다.
 
 사용자가 push, `master` 반영, 병합, PR 없는 워크플로우를 요청하면 검증과 커밋 성공 후 아래 순서로 처리합니다.
+
+아래 원격 변경 명령을 실행하기 직전에는 `.codex/rules/remote-operations.md` 형식으로 사용자 승인을 받습니다.
 
 ```bash
 git fetch origin

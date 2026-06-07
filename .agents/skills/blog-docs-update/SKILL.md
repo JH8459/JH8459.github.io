@@ -16,6 +16,7 @@ description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포
 - staged change가 있으면 `git diff --cached --name-only`
 - `.codex/README.md`
 - `.codex/rules/project-context.md`
+- `.codex/rules/remote-operations.md`
 - 변경 범위에 맞는 `.codex/rules/*`
 
 ## Doc Surfaces
@@ -35,6 +36,7 @@ description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포
 - `gatsby-meta-config.ts`, `.env.example`, `src/types/site.ts`, `src/types/about.ts`: `.codex/rules/site-metadata.md`, 필요하면 `.codex/rules/firebase.md`
 - `package.json`, `pnpm-lock.yaml`, `CNAME`, 배포 스크립트: `.codex/rules/deployment.md`
 - `.codex/**`, `AGENTS.md`, `conductor.json`, `.github/PULL_REQUEST_TEMPLATE.md`: `.codex/README.md`와 관련 skill 문서
+- 원격 저장소 작업 정책 변경: `.codex/rules/remote-operations.md`, 관련 PR/리뷰/커밋 skill 문서
 
 ## Workflow
 
