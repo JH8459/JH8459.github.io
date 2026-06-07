@@ -1,11 +1,11 @@
 ---
 name: blog-pr-workflow
-description: "이 Gatsby 블로그 저장소의 변경을 PR 기반으로 정리합니다. 사용자가 'PR 작성해줘', 'PR 만들어줘', '커밋하고 PR 올려줘', 'push 하고 PR 준비해줘', 'PR 기반 워크플로우', '커밋 해줘'라고 요청하거나 PR 제목/본문, 커밋 분리, 브랜치 상태, push 전 검증을 원할 때 사용합니다."
+description: "이 Gatsby 블로그 저장소의 변경을 커밋, push, PR 준비 단위로 정리합니다. 사용자가 '커밋 해줘', 'push 해줘', 'PR 작성해줘', 'PR 만들어줘', '커밋하고 PR 올려줘', 'PR 기반 워크플로우'라고 요청하거나 PR 제목/본문, 커밋 분리, 브랜치 상태, push 전 검증을 원할 때 사용합니다. PR 생성은 사용자가 명시적으로 요청하고, 생성 직전 최종 확인을 받은 뒤에만 실행합니다."
 ---
 
 # Blog PR Workflow
 
-이 스킬은 블로그 변경을 reviewable commit으로 정리하고 PR까지 올리는 기본 절차다.
+이 스킬은 블로그 변경을 reviewable commit으로 정리하고, 요청 범위에 따라 push 또는 PR 준비까지 처리하는 기본 절차다.
 사용자가 명시적으로 "PR 없이" 또는 "master에 바로 반영"을 요청하면 `blog-commit-workflow`를 사용한다.
 
 ## Required Context
@@ -57,6 +57,17 @@ description: "이 Gatsby 블로그 저장소의 변경을 PR 기반으로 정리
 
 사용자가 배포를 명시하지 않으면 `pnpm run deploy`는 실행하지 않는다.
 
+## Requested Scope
+
+사용자 요청을 먼저 아래 중 하나로 분류한다.
+
+- `commit-only`: "커밋 해줘"처럼 로컬 커밋만 요청한 경우. 커밋 후 멈추고 push/PR은 만들지 않는다.
+- `push-only`: "push 해줘"처럼 원격 push까지만 요청한 경우. push 후 멈추고 PR은 만들지 않는다.
+- `pr-prepare`: "PR 준비", "PR 제목/본문 작성"처럼 PR 내용을 준비하지만 생성을 명시하지 않은 경우. PR title/body를 작성하고 사용자 확인을 기다린다.
+- `pr-create`: "PR 만들어줘", "PR 올려줘"처럼 PR 생성을 명시한 경우. 그래도 생성 직전에 title/body/base/head를 보여주고 사용자 확인을 받는다.
+
+요청 범위가 애매하면 더 큰 side effect를 선택하지 않는다. 예를 들어 "커밋 해줘"는 `commit-only`로 처리한다.
+
 ## Commit And PR Flow
 
 1. diff를 work unit으로 분류한다.
@@ -66,9 +77,18 @@ description: "이 Gatsby 블로그 저장소의 변경을 PR 기반으로 정리
    - 형식: `<type>(<scope>): <subject>`
    - 허용 타입: `feat`, `refac`, `fix`, `docs`, `chore`, `test`, `style`, `perf`
    - 제목은 한글, 50자 이내, 마침표 없음.
-5. 사용자가 push/PR을 요청했으면 `git push -u origin HEAD`로 현재 브랜치를 올린다.
-6. PR 본문은 `.github/PULL_REQUEST_TEMPLATE.md`가 있으면 그대로 채우고, 없으면 `.context/pr-body.md`에 `요약`, `변경 사항`, `검증`, `배포 영향`을 작성한다.
-7. `gh pr create --base master --title "<title>" --body-file .context/pr-body.md`로 PR을 만든다.
+5. `commit-only`이면 커밋 결과와 검증 결과를 보고하고 멈춘다.
+6. `push-only`, `pr-prepare`, `pr-create`이면 `git push -u origin HEAD`로 현재 브랜치를 올린다.
+7. `push-only`이면 push 결과를 보고하고 멈춘다.
+8. PR 본문은 `.github/PULL_REQUEST_TEMPLATE.md`가 있으면 그대로 채우고, 없으면 `.context/pr-body.md`에 `요약`, `변경 사항`, `검증`, `배포 영향`을 작성한다.
+9. PR 생성 전 아래 정보를 사용자에게 보여주고 확인을 받는다.
+   - base branch
+   - head branch
+   - PR title
+   - PR body file path
+   - 실행할 `gh pr create` 명령
+10. 사용자가 명확히 승인한 경우에만 `gh pr create --base master --title "<title>" --body-file .context/pr-body.md`로 PR을 만든다.
+11. 사용자가 승인하지 않거나 응답이 없으면 PR을 만들지 않고, 준비된 title/body와 다음 명령만 보고한다.
 
 ## Reporting
 
