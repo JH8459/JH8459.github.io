@@ -7,7 +7,7 @@ description: "이 Gatsby 블로그 저장소에서 사용자가 명시적으로 
 
 ## 작업 흐름
 
-이 스킬은 개인 Gatsby 블로그를 PR 없이 직접 반영해야 할 때만 쓰는 예외 워크플로우입니다. 일반적인 커밋, push, PR 준비는 `.codex/skills/blog-pr-workflow/SKILL.md`를 사용합니다.
+이 스킬은 개인 Gatsby 블로그를 PR 없이 직접 반영해야 할 때만 쓰는 예외 워크플로우입니다. 일반적인 커밋, push, PR 준비는 `.agents/skills/blog-pr-workflow/SKILL.md`를 사용합니다.
 
 사용자가 "커밋 해줘"처럼 PR 없는 반영을 명시하지 않은 경우 이 스킬을 사용하지 않습니다.
 

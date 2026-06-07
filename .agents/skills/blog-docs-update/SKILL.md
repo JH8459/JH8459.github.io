@@ -1,6 +1,6 @@
 ---
 name: blog-docs-update
-description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포, 메타데이터, 스킬, 워크플로우 변경으로 문서가 stale해질 수 있을 때 사용합니다. README, AGENTS.md, .codex/rules, .codex/skills, PR 템플릿의 source-of-truth 정합성을 현재 diff 기준으로 갱신합니다."
+description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포, 메타데이터, 스킬, 워크플로우 변경으로 문서가 stale해질 수 있을 때 사용합니다. README, AGENTS.md, .codex/rules, .agents/skills, PR 템플릿의 source-of-truth 정합성을 현재 diff 기준으로 갱신합니다."
 ---
 
 # Blog Docs Update
@@ -23,7 +23,7 @@ description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포
 - `AGENTS.md`: Codex가 먼저 읽는 경로 안내와 상위 원칙
 - `.codex/README.md`: `.codex` 문서/스킬 인덱스
 - `.codex/rules/*`: source-of-truth 규칙
-- `.codex/skills/*/SKILL.md`: 반복 워크플로우
+- `.agents/skills/*/SKILL.md`: 반복 워크플로우
 - `.github/PULL_REQUEST_TEMPLATE.md`: PR 기반 리뷰/검증 체크리스트
 - `README.md`: 사용자-facing 프로젝트 개요
 

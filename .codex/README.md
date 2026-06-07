@@ -12,19 +12,19 @@
 - `rules/content-authoring.md`: 블로그 포스트 작성과 콘텐츠 구조 규칙
 - `rules/site-metadata.md`: 사이트 메타데이터, SEO, About 데이터 규칙
 - `rules/deployment.md`: 빌드와 GitHub Pages 배포 규칙
-- `skills/blog-draft-author/SKILL.md`: 포스트 원고 초안 작성 스킬
-- `skills/blog-pr-workflow/SKILL.md`: PR 기반 커밋, push, PR 작성 스킬
-- `skills/blog-review-workflow/SKILL.md`: 통합 리뷰 스킬
-- `skills/blog-critical-review/SKILL.md`: 위험 중심 리뷰 스킬
-- `skills/blog-docs-update/SKILL.md`: diff 기준 문서 정합성 갱신 스킬
-- `skills/blog-publish-workflow/SKILL.md`: Gatsby 블로그 공개면/게시 흐름 수정 스킬
-- `skills/blog-commit-workflow/SKILL.md`: 명시 요청 시 PR 없이 직접 반영하는 예외 스킬
+- `../.agents/skills/blog-draft-author/SKILL.md`: 포스트 원고 초안 작성 스킬
+- `../.agents/skills/blog-pr-workflow/SKILL.md`: PR 기반 커밋, push, PR 작성 스킬
+- `../.agents/skills/blog-review-workflow/SKILL.md`: 통합 리뷰 스킬
+- `../.agents/skills/blog-critical-review/SKILL.md`: 위험 중심 리뷰 스킬
+- `../.agents/skills/blog-docs-update/SKILL.md`: diff 기준 문서 정합성 갱신 스킬
+- `../.agents/skills/blog-publish-workflow/SKILL.md`: Gatsby 블로그 공개면/게시 흐름 수정 스킬
+- `../.agents/skills/blog-commit-workflow/SKILL.md`: 명시 요청 시 PR 없이 직접 반영하는 예외 스킬
 
 루트 `AGENTS.md`는 Codex가 먼저 읽는 진입점이며, 세부 규칙은 이 디렉터리의 문서를 참조합니다.
 
 ## 스킬 판단
 
-현재 추가된 포스트 초안 작성, PR, 리뷰, 문서 갱신, 게시 워크플로우는 이 저장소에 강하게 묶인 스킬입니다. 전역 Codex 스킬로 분리하기보다는 `.codex/skills/` 안에서 프로젝트 로컬 스킬로 관리합니다.
+현재 추가된 포스트 초안 작성, PR, 리뷰, 문서 갱신, 게시 워크플로우는 이 저장소에 강하게 묶인 스킬입니다. Codex 공식 repo-local skill discovery 경로인 `.agents/skills/` 안에서 프로젝트 로컬 스킬로 관리합니다.
 
 `programmers-badge-v2`의 `.agents/skills`를 검토한 결과, 범용 절차는 블로그 규칙에 맞춰 아래처럼 이식했습니다.
 
