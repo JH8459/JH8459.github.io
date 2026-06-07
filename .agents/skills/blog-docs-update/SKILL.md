@@ -50,7 +50,10 @@ description: "이 Gatsby 블로그 저장소의 코드, 콘텐츠 구조, 배포
 ## Validation
 
 - 문서 경로가 실제 파일과 맞는지 확인한다.
-- skill 변경 시 `quick_validate.py`로 해당 skill을 검증한다.
+- skill 변경 시 현재 환경에서 사용 가능한 검증을 실행한다.
+  - `skill-creator`의 `quick_validate.py`를 사용할 수 있으면 해당 skill을 검증한다.
+  - 사용할 수 없으면 `SKILL.md` frontmatter의 `name`/`description`, `agents/openai.yaml` YAML 파싱, 참조 경로 정합성을 대체 검증으로 확인한다.
+  - 대체 검증을 사용한 경우 그 이유와 실행한 확인 항목을 보고한다.
 - 코드 변경 없이 문서만 바꾼 경우에도 가능하면 `pnpm run lint`를 실행한다.
 
 ## Reporting
