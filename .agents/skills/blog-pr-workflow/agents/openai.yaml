@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog PR Workflow"
+  short_description: "커밋, push, PR 준비를 요청 범위별로 처리"
+  default_prompt: "$blog-pr-workflow 스킬로 현재 변경을 커밋하고 PR 생성 전 확인까지 준비해줘."

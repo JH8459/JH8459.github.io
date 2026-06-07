@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Publish Workflow"
+  short_description: "Gatsby 공개면과 게시 흐름을 수정합니다"
+  default_prompt: "$blog-publish-workflow 스킬로 Gatsby 블로그 공개면 변경을 진행해줘."

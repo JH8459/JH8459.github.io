@@ -8,7 +8,7 @@ description: Create Korean blog post draft frontmatter and body templates for th
 ## Workflow
 
 1. Load project posting rules when needed:
-   - `../../rules/content-authoring.md`
+   - `.codex/rules/content-authoring.md`
    - `references/posting-workflow.md`
    - `assets/draft-template.md`
 2. Gather missing inputs in one concise Korean question:

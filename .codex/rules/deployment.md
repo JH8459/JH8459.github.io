@@ -6,6 +6,12 @@
 - `pnpm run start`: `gatsby clean && pnpm run develop`
 - `pnpm run deploy`: 빌드 후 `CNAME`을 `public/CNAME`으로 복사하고 `gh-pages -d public -x`를 실행합니다.
 
+## CI
+
+- `.github/workflows/ci.yml`은 `master` 대상 PR과 `master` push에서 실행됩니다.
+- CI는 `pnpm install --frozen-lockfile`, `pnpm run lint`, `pnpm run build`만 수행합니다.
+- CI는 GitHub Pages 배포를 실행하지 않습니다.
+
 ## 배포 대상
 
 - 배포 결과물은 `public/` 디렉터리입니다.
@@ -16,7 +22,7 @@
 
 - 문서만 변경한 경우 최소 `pnpm run lint`를 실행합니다.
 - Gatsby 설정, GraphQL 쿼리, 콘텐츠 구조, 메타데이터를 바꾼 경우 `pnpm run build`를 우선 실행합니다.
-- 배포 명령은 원격 브랜치에 영향을 주므로 사용자가 배포를 명시적으로 요청했을 때 실행합니다.
+- 배포 명령은 원격 브랜치에 영향을 주므로 사용자가 배포를 명시적으로 요청하고, `.codex/rules/remote-operations.md` 기준으로 실행 직전 승인했을 때만 실행합니다.
 
 ## 주의사항
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Review Workflow"
+  short_description: "블로그 diff를 품질과 위험 관점으로 리뷰"
+  default_prompt: "$blog-review-workflow 스킬로 현재 diff를 리뷰해줘."

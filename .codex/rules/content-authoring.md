@@ -9,7 +9,7 @@
 
 ## 초안 작성 스킬
 
-- 사용자가 "원고 초안 작성해줘"라고 요청하면 `.codex/skills/blog-draft-author/SKILL.md`를 사용합니다.
+- 사용자가 "원고 초안 작성해줘"라고 요청하면 `.agents/skills/blog-draft-author/SKILL.md`를 사용합니다.
 - 이 스킬은 날짜, 카테고리, 썸네일 입력을 받은 뒤 frontmatter와 기본 본문 구조를 생성합니다.
 - 파일 생성까지 요청받은 경우에만 `content/<YYYY>/<YYYY-MM-DD-CATEGORY>/index.md`에 작성합니다.
 

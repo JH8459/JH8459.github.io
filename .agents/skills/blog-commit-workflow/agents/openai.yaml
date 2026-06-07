@@ -1,0 +1,4 @@
+interface:
+  display_name: "커밋 워크플로우"
+  short_description: "명시 요청 시 PR 없이 master에 직접 반영"
+  default_prompt: "$blog-commit-workflow 스킬로 PR 없이 master에 반영해줘."

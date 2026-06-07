@@ -1,4 +1,0 @@
-interface:
-  display_name: "커밋 워크플로우"
-  short_description: "PR 없이 커밋하고 master에 반영하는 워크플로우"
-  default_prompt: "$blog-commit-workflow 스킬로 커밋 해줘."

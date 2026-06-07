@@ -79,3 +79,4 @@
 - 콘텐츠 작성 지침: `.codex/rules/content-authoring.md`
 - 사이트 메타데이터 지침: `.codex/rules/site-metadata.md`
 - 배포 지침: `.codex/rules/deployment.md`
+- 원격 저장소 작업 지침: `.codex/rules/remote-operations.md`
