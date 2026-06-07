@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Docs Update"
+  short_description: "현재 diff에 맞춰 블로그 문서를 갱신"
+  default_prompt: "$blog-docs-update 스킬로 현재 diff에 맞는 문서 정합성을 확인해줘."

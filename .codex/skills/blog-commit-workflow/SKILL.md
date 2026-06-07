@@ -1,13 +1,15 @@
 ---
 name: blog-commit-workflow
-description: "이 저장소의 PR 없는 커밋 워크플로우를 실행합니다. 변경 사항을 점검하고, 한국어 컨벤셔널 커밋을 만들고, 필요한 pnpm 검증을 실행하며, 요청 시 PR 없이 origin/master로 반영합니다. 사용자가 '커밋 해줘', '커밋하고 push 해줘', 'master에 반영해줘', 'PR 없이 병합해줘'라고 말하거나 개인 Gatsby 블로그에서 커밋/push를 요청할 때 사용합니다."
+description: "이 Gatsby 블로그 저장소에서 사용자가 명시적으로 'PR 없이', 'master에 바로 반영', 'PR 없이 병합해줘', '직접 origin/master로 push해줘'라고 요청할 때만 PR 없는 커밋/반영 워크플로우를 실행합니다. 일반적인 커밋, push, PR 준비 요청은 blog-pr-workflow를 사용합니다."
 ---
 
 # 커밋 워크플로우
 
 ## 작업 흐름
 
-이 스킬은 개인 Gatsby 블로그를 혼자 관리할 때 쓰는 커밋 워크플로우용입니다. 현재 작업 브랜치에서 변경을 정리하고, `master`를 반영 대상으로 유지하며, 사용자가 명시적으로 요청하지 않는 한 GitHub PR은 만들지 않습니다.
+이 스킬은 개인 Gatsby 블로그를 PR 없이 직접 반영해야 할 때만 쓰는 예외 워크플로우입니다. 일반적인 커밋, push, PR 준비는 `.codex/skills/blog-pr-workflow/SKILL.md`를 사용합니다.
+
+사용자가 "커밋 해줘"처럼 PR 없는 반영을 명시하지 않은 경우 이 스킬을 사용하지 않습니다.
 
 1. 작업 전 관련 저장소 규칙을 읽습니다.
    - `.codex/rules/git-convention.md`

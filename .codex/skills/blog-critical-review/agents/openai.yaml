@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Critical Review"
+  short_description: "블로그 변경의 회귀와 배포 위험을 점검"
+  default_prompt: "$blog-critical-review 스킬로 현재 diff를 위험 중심으로 리뷰해줘."

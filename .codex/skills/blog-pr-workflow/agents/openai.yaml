@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog PR Workflow"
+  short_description: "블로그 변경을 커밋하고 PR로 준비합니다"
+  default_prompt: "$blog-pr-workflow 스킬로 현재 변경을 커밋하고 PR을 준비해줘."
