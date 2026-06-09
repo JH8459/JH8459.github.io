@@ -1,8 +1,8 @@
 {
   "scripts": {
     "setup": "pnpm install",
-    "run": "pnpm run develop",
+    "run": "pnpm run develop -- --port \"$CONDUCTOR_PORT\"",
     "archive": "pnpm run clean"
   },
-  "runScriptMode": "nonconcurrent"
+  "runScriptMode": "concurrent"
 }
