@@ -182,6 +182,14 @@ const metaConfig: MetaConfig = {
         },
       },
       {
+        date: '2026.03 ~ 2026.05',
+        label: '프리랜서',
+        activity: '코드잇 - Career Mentor',
+        links: {
+          homepage: 'https://sprint-page.codeit.kr/career_program',
+        },
+      },
+      {
         date: '2025.07 ~ ',
         label: '정규직',
         status: 'ongoing',
@@ -219,15 +227,6 @@ const metaConfig: MetaConfig = {
             url: 'https://yozm.wishket.com/magazine/detail/3600/',
           },
         ],
-      },
-      {
-        date: '2026.03 ~ ',
-        label: '프리랜서',
-        status: 'ongoing',
-        activity: '코드잇 - Career Mentor',
-        links: {
-          homepage: 'https://sprint-page.codeit.kr/career_program',
-        },
       },
     ],
 
@@ -331,7 +330,26 @@ const metaConfig: MetaConfig = {
       // ========================================================
       // ========================================================
       {
-        title: '프로그래머스 프로필 뱃지 자동 생성 봇',
+        title: 'PROGRAMMERS-BADGE-V2',
+        description:
+          '크롬 확장 프로그램을 통해 프로그래머스 프로필 정보를 불러오고, 별도 저장소 연동이나 액션 설정 없이 사용할 수 있는 뱃지 이미지 주소와 마크다운 코드를 제공하는 서비스입니다. 생성된 뱃지는 깃허브 프로필이나 리드미에 그대로 붙여 넣어 사용할 수 있습니다.',
+        techStack: [
+          '타입스크립트',
+          '모노레포',
+          '서버',
+          '웹',
+          '브라우저 확장',
+          '깃허브 액션',
+          '코덱스 AI 하네스',
+        ],
+        thumbnailUrl: 'project-programmers.jpg',
+        links: {
+          homepage: 'https://programmers-badge.jh8459.com/',
+          demo: 'https://chromewebstore.google.com/detail/programmers-badge-v2/nfaknmfniiemabicmcbdkajapapdglaf?authuser=0&hl=ko',
+        },
+      },
+      {
+        title: '프로그래머스 프로필 뱃지 자동 생성 봇 V1',
         description:
           '알고리즘 문제 풀이 동기부여를 위해 프로그래머스에서 제공하는 API를 활용하여 프로필 뱃지를 자동으로 생성해주는 봇을 개발하였습니다. Github Action을 활용하여 백준 허브에 연동된 저장소가 변경될 때 마다 호출되어 프로필 뱃지를 자동으로 업데이트 되도록 구성하였습니다.',
         techStack: ['NodeJS', 'NestJS', 'Github', 'Github Action'],
