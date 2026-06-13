@@ -110,7 +110,6 @@ git commit -m "fix(auth): 누락된 타입 추가"
 | 상황 | 형식 | 예시 |
 | --- | --- | --- |
 | 일반 작업 | `<type>-<description>` | `feat-search-page` |
-| JIRA 티켓 기반 | `<JIRA-ID>-<description>` | `SD-1234-add-user-api` |
 | 긴급 수정 | `hotfix-<description>` | `hotfix-build-error` |
 
 ### 허용 prefix
@@ -134,6 +133,6 @@ git commit -m "fix(auth): 누락된 타입 추가"
 - kebab-case를 사용합니다.
 - 하이픈 `-`만 사용하고 슬래시 `/`는 사용하지 않습니다.
 - 영어로 간결하게 작성합니다.
-- JIRA 티켓이 있으면 티켓 ID를 우선 사용합니다.
 - PR용 head 브랜치는 `master`이면 안 됩니다. `master` 변경은 PR base로만 사용합니다.
 - PR 제목의 type은 브랜치 prefix와 일치해야 합니다. 예: `refac-*` 브랜치의 PR 제목은 `refac: ...`로 작성합니다.
+- `hotfix-*` 브랜치의 PR 제목 type은 `fix`로 작성합니다.
