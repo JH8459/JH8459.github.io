@@ -11,6 +11,8 @@
 - `.github/workflows/ci.yml`은 `master` 대상 PR과 `master` push에서 실행됩니다.
 - CI의 `validate` job은 `pnpm install --frozen-lockfile`, `pnpm run lint`, `pnpm run build`를 수행합니다.
 - CI의 `deploy` job은 `master` push에서만 실행되며, `validate` 성공 후 `pnpm run build`, `CNAME` 복사, `public/` 디렉터리의 GitHub Pages artifact 업로드와 배포를 수행합니다.
+- `deploy` job의 production build는 GitHub Secrets의 Firebase/Analytics 환경 변수를 주입합니다.
+- `deploy` job은 Firebase 런타임 설정에 필요한 `FIREBASE_*` secret이 비어 있으면 build 전에 실패해야 합니다.
 
 ## 배포 대상
 
@@ -28,7 +30,7 @@
 ## 주의사항
 
 - `.env`는 커밋하지 않습니다.
-- Firebase와 Google Analytics 값은 환경 변수로 주입합니다.
+- Firebase와 Google Analytics 값은 로컬에서는 `.env`, CI 배포에서는 GitHub Secrets로 주입합니다.
 - `public/`과 `.cache/`는 생성 산출물로 취급하고 직접 수정하지 않습니다.
 - Gatsby 캐시로 인해 이상 동작이 보이면 `pnpm run clean` 또는 `pnpm run start`를 사용합니다.
 - GitHub Pages Actions 기반 자동 배포는 deploy job의 `contents: read`, `pages: write`, `id-token: write` 권한이 필요합니다.
