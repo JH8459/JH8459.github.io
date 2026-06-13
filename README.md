@@ -47,6 +47,7 @@ pnpm run deploy
 ## 환경 변수
 
 Firebase/Analytics 설정은 환경 변수로 관리합니다. 필요 변수는 `gatsby-meta-config.ts`를 참고하세요.
+GitHub Actions 배포에서는 같은 이름의 GitHub Secrets를 설정해야 하며, Firebase secret이 비어 있으면 deploy job이 빌드 전에 실패합니다.
 
 ```
 # .env.example
