@@ -16,6 +16,7 @@
 - `.codex/rules/deployment.md`: 빌드와 GitHub Pages 배포 규칙
 - `.codex/rules/remote-operations.md`: 원격 저장소 쓰기/수정/삭제 승인 규칙
 - `.agents/skills/blog-draft-author/SKILL.md`: "원고 초안 작성해줘" 요청 시 사용할 포스트 초안 작성 스킬
+- `.agents/skills/blog-essay-draft-author/SKILL.md`: 도구 비교, 작업 방식 정착기, 주장형 기술 에세이 초안 작성 스킬
 - `.agents/skills/blog-pr-workflow/SKILL.md`: PR 기반 커밋, push, PR 작성 워크플로우
 - `.agents/skills/blog-review-workflow/SKILL.md`: 리뷰 요청 시 사용할 통합 리뷰 워크플로우
 - `.agents/skills/blog-docs-update/SKILL.md`: 변경 사항에 맞춘 문서 정합성 갱신 스킬
@@ -29,6 +30,7 @@
 - 포스트/카테고리/slug 변경은 `gatsby-node.ts`, `src/models/post.ts`, `src/templates/`의 영향까지 함께 확인합니다.
 - 사이트 소개, SEO, 댓글, 외부 링크 정보는 우선 `gatsby-meta-config.ts`에서 관리합니다.
 - 사용자가 "원고 초안 작성해줘"라고 요청하면 `.agents/skills/blog-draft-author/SKILL.md`를 먼저 읽고 진행합니다.
+- 사용자가 도구 비교나 작업 방식 정착기를 원고로 요청하면 `.agents/skills/blog-essay-draft-author/SKILL.md`를 먼저 읽고 진행합니다.
 - 커밋, push, PR 작성은 기본적으로 `.agents/skills/blog-pr-workflow/SKILL.md`의 PR 기반 절차를 따릅니다.
 - 사용자가 명시적으로 PR 없는 직접 반영을 요청할 때만 `.agents/skills/blog-commit-workflow/SKILL.md`를 사용합니다.
 - 원격 저장소에 쓰기, 수정, 삭제 side effect가 있는 명령은 `.codex/rules/remote-operations.md`에 따라 실행 직전 사용자 승인을 받습니다.

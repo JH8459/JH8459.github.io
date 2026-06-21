@@ -12,6 +12,8 @@
 - 사용자가 "원고 초안 작성해줘"라고 요청하면 `.agents/skills/blog-draft-author/SKILL.md`를 사용합니다.
 - 이 스킬은 날짜, 카테고리, 썸네일 입력을 받은 뒤 frontmatter와 기본 본문 구조를 생성합니다.
 - 파일 생성까지 요청받은 경우에만 `content/<YYYY>/<YYYY-MM-DD-CATEGORY>/index.md`에 작성합니다.
+- 사용자가 도구 비교, 작업 방식 정착기, 개인적인 기술 에세이 형태의 초안을 요청하면 `.agents/skills/blog-essay-draft-author/SKILL.md`를 사용합니다.
+- 이 스킬은 기존 포스트 톤을 확인한 뒤 주장, 비교 기준, 선택 이유, 회고를 포함한 원고 구조를 생성합니다.
 
 ## Frontmatter
 
