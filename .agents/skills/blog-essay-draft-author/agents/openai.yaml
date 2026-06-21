@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Essay Draft Author"
+  short_description: "주장형 기술 블로그 원고 초안 작성"
+  default_prompt: "Use $blog-essay-draft-author to draft a Korean technical essay post for this Gatsby blog."

@@ -14,6 +14,7 @@
 - `rules/deployment.md`: 빌드와 GitHub Pages 배포 규칙
 - `rules/remote-operations.md`: 원격 저장소 쓰기/수정/삭제 승인 규칙
 - `../.agents/skills/blog-draft-author/SKILL.md`: 포스트 원고 초안 작성 스킬
+- `../.agents/skills/blog-essay-draft-author/SKILL.md`: 주장형 기술 에세이 초안 작성 스킬
 - `../.agents/skills/blog-pr-workflow/SKILL.md`: PR 기반 커밋, push, PR 작성 스킬
 - `../.agents/skills/blog-review-workflow/SKILL.md`: 통합 리뷰 스킬
 - `../.agents/skills/blog-critical-review/SKILL.md`: 위험 중심 리뷰 스킬
