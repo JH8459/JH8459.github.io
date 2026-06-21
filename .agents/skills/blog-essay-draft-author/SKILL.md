@@ -21,8 +21,8 @@ description: Create Korean opinionated technical essay drafts for this Gatsby bl
    - thumbnail URL/path, allowing blank
 4. Convert the user's raw points into a thesis-driven outline.
    - Start from the personal problem.
-   - Define comparison criteria.
-   - Compare alternatives with concrete friction.
+   - Define decision criteria or an evaluation lens.
+   - Compare alternatives, tradeoffs, or turning points only when the topic calls for them.
    - End with the author's current operating rule.
 5. Produce a Markdown draft using `assets/essay-template.md`.
 6. If the user asks to create a file, write it to:
@@ -50,14 +50,14 @@ description: Create Korean opinionated technical essay drafts for this Gatsby bl
 
 ## Essay Shape
 
-Use this default shape unless the user's topic clearly needs another structure:
+Use these as adaptable slots, not fixed headings. Do not force a tool-vs-tool structure when the topic is about architecture, team process, a book, or a single workflow decision.
 
-1. `Overview`: what changed in the author's workflow and why the topic matters.
-2. `Before`: the old way of working and its friction.
-3. `Comparison criteria`: what matters in the decision.
-4. `Tool A`: what worked and what got in the way.
-5. `Tool B`: why it fit better.
-6. `Understanding`: the general lesson, not just the tool choice.
+1. `Overview`: what changed, what question is being answered, and why it matters.
+2. `Context`: the previous approach, working constraint, or concrete trigger.
+3. `Criteria`: what mattered in the decision or interpretation.
+4. `Tradeoffs`: alternatives, tensions, or examples relevant to the topic.
+5. `Current stance`: what the author now prefers, practices, or believes.
+6. `Understanding`: the general lesson, not just the chosen tool or example.
 
 ## Validation
 
