@@ -3,6 +3,7 @@ import React from 'react';
 interface PageFooterProps {
   author: string;
   githubUrl: string;
+  year: string;
 }
 
 /**
@@ -10,11 +11,11 @@ interface PageFooterProps {
  * @param {PageFooterProps} props 푸터 props
  * @return {JSX.Element}
  */
-function PageFooter({ author, githubUrl }: PageFooterProps) {
+function PageFooter({ author, githubUrl, year }: PageFooterProps) {
   return (
     <footer className="mt-auto border-t border-[var(--post-card-border-color)] py-6">
       <p className="text-center text-[13px] text-[var(--secondary-text-color)] md:text-[14px]">
-        © {new Date().getFullYear()}
+        © {year}
         &nbsp;
         <a
           href={githubUrl}

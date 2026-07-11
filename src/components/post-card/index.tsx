@@ -6,30 +6,11 @@ import type { PostModel } from '../../types/post';
 import type { GatsbyImageFile } from '../../types/image';
 
 interface PostCardProps {
-  post?: PostModel;
+  post: PostModel;
   defaultThumbnail?: GatsbyImageFile;
-  isLoading?: boolean;
 }
 
-function PostCard({ post, defaultThumbnail, isLoading }: PostCardProps) {
-  if (isLoading) {
-    return (
-      <div className="w-full border-b border-[var(--post-card-border-color)] py-7 animate-pulse">
-        <div className="mb-3 h-4 w-1/3 rounded bg-gray-200 dark:bg-gray-700"></div>
-        <div className="mb-4 h-7 w-3/4 rounded bg-gray-200 dark:bg-gray-700"></div>
-        <div className="mb-4 h-4 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
-        <div className="mb-4 h-4 w-5/6 rounded bg-gray-200 dark:bg-gray-700"></div>
-        <div className="flex items-center gap-3">
-          <div className="h-3 w-20 rounded bg-gray-200 dark:bg-gray-700"></div>
-          <div className="h-3 w-14 rounded bg-gray-200 dark:bg-gray-700"></div>
-          <div className="h-3 w-16 rounded bg-gray-200 dark:bg-gray-700"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!post) return null;
-
+function PostCard({ post, defaultThumbnail }: PostCardProps) {
   const {
     id,
     slug,
@@ -41,9 +22,8 @@ function PostCard({ post, defaultThumbnail, isLoading }: PostCardProps) {
     views,
     timeToRead,
     tableOfContents,
+    isNew,
   } = post;
-  const isNew =
-    Math.ceil((new Date().getTime() - new Date(date).getTime()) / (1000 * 3600 * 24)) <= 7;
 
   const isExternalImage =
     typeof thumbnail === 'string' &&

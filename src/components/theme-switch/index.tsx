@@ -7,28 +7,36 @@ import { getValueFromLocalStorage, setValueToLocalStorage } from '../../utils/lo
  * @return {JSX.Element}
  */
 function ThemeSwitch() {
-  // 로컬스토리지 초기값을 안전하게 파싱
-  const storedValue = getValueFromLocalStorage('isDarkMode');
-  const initialIsDarkMode = typeof storedValue === 'boolean' ? storedValue : false;
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(initialIsDarkMode);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
+    () => getValueFromLocalStorage('isDarkMode') === true,
+  );
 
   useEffect(() => {
-    // 테마 상태를 로컬스토리지와 DOM 클래스에 반영
     setValueToLocalStorage('isDarkMode', isDarkMode);
     document.documentElement.classList.toggle('dark', isDarkMode);
   }, [isDarkMode]);
 
+  /**
+   * @description 다크모드 상태를 전환하고 브라우저에 저장
+   * @return {void}
+   */
+  const onThemeToggle = () => {
+    setIsDarkMode((currentIsDarkMode) => !currentIsDarkMode);
+  };
+
   return (
     <div className="fixed bottom-[18px] right-[18px] z-30 flex items-center justify-center md:bottom-[22px] md:right-[22px]">
       <button
+        aria-label="테마 전환"
         className="z-30 flex h-[44px] w-[44px] cursor-pointer items-center justify-center rounded-full border border-[var(--post-card-border-color)] bg-[var(--background-color)] shadow-lg"
-        onClick={() => setIsDarkMode((isDark) => !isDark)}
+        onClick={onThemeToggle}
+        type="button"
       >
-        {isDarkMode ? (
-          <MdLightMode className="h-5 w-5 text-yellow-500" />
-        ) : (
-          <MdDarkMode className="h-5 w-5 text-[var(--primary-text-color)]" />
-        )}
+        <MdLightMode aria-hidden="true" className="hidden h-5 w-5 text-yellow-500 dark:block" />
+        <MdDarkMode
+          aria-hidden="true"
+          className="block h-5 w-5 text-[var(--primary-text-color)] dark:hidden"
+        />
       </button>
     </div>
   );

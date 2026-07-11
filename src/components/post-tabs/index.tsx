@@ -15,7 +15,6 @@ interface PostTabsProps {
   defaultThumbnail?: GatsbyImageFile;
   sortType: SortType;
   onSortChange: (event: { target: { value: SortType } }) => void;
-  loadingViews?: boolean;
 }
 
 /**
@@ -32,7 +31,6 @@ function PostTabs({
   defaultThumbnail,
   sortType,
   onSortChange,
-  loadingViews,
 }: PostTabsProps) {
   const tabPosts = useMemo(() => {
     // 선택 탭에 맞는 포스트만 필터링
@@ -70,7 +68,6 @@ function PostTabs({
         showMoreButton={showMoreButton && tabPosts.length > 4}
         moreUrl={`posts/${tabIndex === 0 ? '' : tabs[tabIndex]}`}
         defaultThumbnail={defaultThumbnail}
-        loadingViews={loadingViews} // Pass loading state down
       />
     </section>
   );
