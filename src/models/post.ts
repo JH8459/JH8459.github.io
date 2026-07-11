@@ -17,6 +17,7 @@ export default class Post implements PostModel {
   date: string;
   thumbnail?: string;
   views?: number;
+  isNew?: boolean;
 
   /**
    * @description 포스트 모델 생성자
@@ -36,5 +37,6 @@ export default class Post implements PostModel {
     this.author = node.frontmatter.author;
     this.date = node.frontmatter.date;
     this.thumbnail = node.frontmatter.thumbnail;
+    this.isNew = node.fields.isNew ?? false;
   }
 }

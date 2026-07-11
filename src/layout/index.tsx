@@ -6,6 +6,7 @@ import ThemeSwitch from '../components/theme-switch';
 
 interface LayoutQueryData {
   site: {
+    buildTime: string;
     siteMetadata: {
       title: string;
       author: {
@@ -33,6 +34,7 @@ const Layout = ({ children, tableOfContents, contentMaxWidth = 'max-w-[960px]' }
   const data = useStaticQuery<LayoutQueryData>(graphql`
     query SiteTitleQuery {
       site {
+        buildTime(formatString: "YYYY")
         siteMetadata {
           title
           author {
@@ -101,6 +103,7 @@ const Layout = ({ children, tableOfContents, contentMaxWidth = 'max-w-[960px]' }
         <PageFooter
           author={author.name || `Author`}
           githubUrl={author.social?.github || `https://www.github.com`}
+          year={data.site.buildTime}
         />
       </div>
       <ThemeSwitch />

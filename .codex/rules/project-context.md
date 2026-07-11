@@ -38,6 +38,7 @@
 - 페이지는 `src/pages/`, 템플릿은 `src/templates/`, 재사용 컴포넌트는 `src/components/`에 둡니다.
 - 콘텐츠는 `content/`에 마크다운 기반으로 관리합니다.
 - 포스트 slug는 `gatsby-node.ts`에서 마크다운 파일의 상위 디렉터리 basename으로 생성합니다.
+- 포스트 신규 여부는 `gatsby-node.ts`에서 빌드 시점 기준 7일 이내인지 계산한 `fields.isNew`로 생성합니다.
 - 카테고리는 frontmatter의 `categories` 문자열을 공백으로 분리해 사용합니다.
 - 전역 스타일은 `src/styles/global.css` 한 곳에서 관리합니다.
 - Tailwind 유틸리티 클래스를 우선하고, 필요한 경우에만 CSS 커스텀 규칙을 추가합니다.

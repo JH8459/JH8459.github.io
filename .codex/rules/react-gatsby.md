@@ -19,6 +19,7 @@
 
 - 콘텐츠 소스는 `content/`의 마크다운 구조를 기준으로 합니다.
 - `gatsby-node.ts`는 마크다운 상위 디렉터리 basename을 slug로 사용합니다. 포스트 디렉터리명을 바꾸면 URL이 바뀝니다.
+- `gatsby-node.ts`는 빌드 시점 기준 7일 이내 포스트를 `fields.isNew`로 표시하며, 카드와 상세 헤더는 이 값을 사용해 Hydration 결과를 일치시킵니다.
 - 카테고리 목록 페이지는 `createPostsPages`에서 생성하며, `All` 카테고리를 기본으로 포함합니다.
 - 카테고리 필터는 `frontmatter.categories.includes(currentCategory)`를 사용하므로 부분 문자열 충돌 가능성을 고려합니다.
 - 이미지와 정적 자산은 기존 `assets/`와 `static/` 사용 방식을 따릅니다.

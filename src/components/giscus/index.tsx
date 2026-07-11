@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { getValueFromLocalStorage } from '../../utils/localStorage';
 import type { SiteMetadata } from '../../types/site';
 
 const src = 'https://giscus.app/client.js';
@@ -53,7 +54,7 @@ function Giscus({ repo, path }: GiscusProps) {
     if (!repoFromMeta || !repoId || !category || !categoryId) return;
 
     // 테마 정보를 읽어 Giscus 테마를 결정
-    const storedIsDarkMode = localStorage.getItem('isDarkMode');
+    const storedIsDarkMode = getValueFromLocalStorage('isDarkMode') === true;
     const giscus = document.createElement('script');
     const giscusConfig: Record<string, string> = {
       src,
@@ -66,7 +67,7 @@ function Giscus({ repo, path }: GiscusProps) {
       'data-reactions-enabled': '1',
       'data-emit-metadata': '0',
       'data-input-position': 'bottom',
-      'data-theme': JSON.parse(storedIsDarkMode || 'false') ? 'dark' : 'light',
+      'data-theme': storedIsDarkMode ? 'dark' : 'light',
       'data-lang': 'ko',
       crossorigin: 'anonymous',
       async: 'true',

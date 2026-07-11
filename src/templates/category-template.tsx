@@ -1,18 +1,35 @@
-import React, { useMemo, useCallback, useState, useEffect } from 'react';
+import React, { useMemo, useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 import { navigate, type PageProps } from 'gatsby';
 import { useLocation } from '@gatsbyjs/reach-router';
-import firebase from 'gatsby-plugin-firebase-v9.0';
-import { getDatabase, ref, get } from 'firebase/database';
 
 import Layout from '../layout';
 import Seo from '../components/seo';
 import Post from '../models/post';
 import CategoryPageHeader from '../components/category-page-header';
 import PostTabs from '../components/post-tabs';
-import type { PostNode, PostModel } from '../types/post';
+import { getPostViewCounts } from '../utils/viewCounts';
+import type { PostNode, PostModel, PostViewCounts } from '../types/post';
 import type { GatsbyImageFile } from '../types/image';
 
 type SortType = 'date-desc' | 'date-asc' | 'title-asc' | 'views-desc';
+
+const sortTypes: SortType[] = ['date-desc', 'date-asc', 'title-asc', 'views-desc'];
+
+/**
+ * @description Hydration 이후 클라이언트 스냅샷 재확인을 위한 빈 구독
+ * @return {() => void} 구독 해제 함수
+ */
+const subscribeToSortType = () => () => undefined;
+
+/**
+ * @description 쿼리스트링에서 유효한 포스트 정렬 타입을 반환
+ * @param {string} search 쿼리스트링
+ * @return {SortType} 포스트 정렬 타입
+ */
+const getSortType = (search: string): SortType => {
+  const sortType = new URLSearchParams(search).get('sort');
+  return sortTypes.includes(sortType as SortType) ? (sortType as SortType) : 'date-desc';
+};
 
 interface CategoryPageContext {
   edges: Array<{ node: PostNode }>;
@@ -32,10 +49,11 @@ function CategoryTemplate({ pageContext }: CategoryTemplateProps) {
   const { edges, currentCategory, defaultThumbnail, categories } = pageContext;
 
   const location = useLocation();
-  // 쿼리스트링에서 초기 정렬 타입을 결정
-  const queryParams = new URLSearchParams(location.search);
-  const initialSortType = (queryParams.get('sort') as SortType) || 'date-desc';
-  const [sortType, setSortType] = useState<SortType>(initialSortType);
+  const sortType = useSyncExternalStore<SortType>(
+    subscribeToSortType,
+    () => getSortType(location.search),
+    () => 'date-desc',
+  );
 
   const posts: PostModel[] = useMemo(() => edges.map(({ node }) => new Post(node)), [edges]);
 
@@ -67,7 +85,6 @@ function CategoryTemplate({ pageContext }: CategoryTemplateProps) {
   const onSortChange = useCallback(
     (event: { target: { value: SortType } }) => {
       const newSortType = event.target.value;
-      setSortType(newSortType);
 
       // 정렬 값을 URL에 동기화
       const newQueryParams = new URLSearchParams(location.search);
@@ -77,25 +94,22 @@ function CategoryTemplate({ pageContext }: CategoryTemplateProps) {
     [location],
   );
 
-  const [viewCounts, setViewCounts] = useState<Record<string, { views?: number }>>({});
-  const [loadingViews, setLoadingViews] = useState<boolean>(true);
+  const [viewCounts, setViewCounts] = useState<PostViewCounts>({});
 
   useEffect(() => {
-    const database = getDatabase(firebase);
-    const postsRef = ref(database, 'posts');
-    get(postsRef)
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          setViewCounts(snapshot.val() as Record<string, { views?: number }>);
-        }
+    let isActive = true;
+
+    getPostViewCounts()
+      .then((counts) => {
+        if (isActive) setViewCounts(counts);
       })
       .catch((error) => {
         console.error('Firebase read failed: ', error);
-      })
-      .finally(() => {
-        // 조회수 로딩 종료 처리
-        setLoadingViews(false);
       });
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   const sortedPosts = useMemo(() => {
@@ -130,7 +144,6 @@ function CategoryTemplate({ pageContext }: CategoryTemplateProps) {
         defaultThumbnail={defaultThumbnail}
         sortType={sortType}
         onSortChange={onSortChange}
-        loadingViews={loadingViews} // Pass loading state down
       />
     </Layout>
   );

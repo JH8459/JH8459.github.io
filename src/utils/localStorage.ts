@@ -5,8 +5,13 @@
  */
 export function getValueFromLocalStorage(key: string): unknown {
   if (typeof window === 'undefined') return undefined;
-  const rawValue = window.localStorage.getItem(key);
-  return rawValue ? JSON.parse(rawValue) : undefined;
+
+  try {
+    const rawValue = window.localStorage.getItem(key);
+    return rawValue ? JSON.parse(rawValue) : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 /**
@@ -17,5 +22,13 @@ export function getValueFromLocalStorage(key: string): unknown {
  */
 export function setValueToLocalStorage(key: string, value: unknown): void {
   if (typeof window === 'undefined') return;
-  window.localStorage.setItem(key, JSON.stringify(value));
+
+  try {
+    const serializedValue = JSON.stringify(value);
+    if (serializedValue === undefined) return;
+
+    window.localStorage.setItem(key, serializedValue);
+  } catch {
+    return;
+  }
 }

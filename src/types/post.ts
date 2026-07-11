@@ -15,6 +15,7 @@ export interface PostFrontmatter {
  */
 export interface PostFields {
   slug: string;
+  isNew?: boolean;
 }
 
 /**
@@ -47,4 +48,10 @@ export interface PostModel {
   date: string;
   thumbnail?: string;
   views?: number;
+  isNew?: boolean;
 }
+
+/**
+ * @description Firebase에 저장된 포스트별 조회수 정보
+ */
+export type PostViewCounts = Record<string, { views?: number }>;

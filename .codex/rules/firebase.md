@@ -9,11 +9,11 @@
 
 ## 사용 위치
 
-- Firebase 초기화와 Realtime Database 접근은 페이지 또는 템플릿에서 명시적으로 구성합니다.
-- 현재 조회수 기능은 `src/templates/blog-template.tsx`와 `src/templates/category-template.tsx`에서 Realtime Database를 직접 읽습니다.
+- Firebase 초기화와 Realtime Database 접근은 페이지 또는 템플릿에서 명시적으로 구성하고, 동일한 읽기 로직을 여러 화면에서 사용할 때만 `src/utils/`로 분리합니다.
+- 포스트 목록 조회수 읽기는 `src/utils/viewCounts.ts`를 통해 홈과 카테고리 템플릿에서 공유하며, 상세 페이지의 조회수 읽기/쓰기는 `src/templates/blog-template.tsx`에서 처리합니다.
 - 조회수 경로는 `posts/<slug에서 슬래시를 제거한 키>` 형식입니다.
 - 개발 환경에서는 상세 페이지 조회수를 증가시키지 않습니다.
-- 여러 위치에서 재사용되는 로직만 `src/utils/` 등 공용 유틸로 분리합니다.
+- 조회수 읽기는 포스트 목록 렌더링을 차단하지 않으며, 실패 시 조회수 없는 기본 UI를 유지합니다.
 - 클라이언트에서 노출되면 안 되는 값은 Gatsby 공개 환경 변수로 전달하지 않습니다.
 
 ## 확장 규칙

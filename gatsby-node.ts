@@ -10,6 +10,7 @@ interface MarkdownRemarkNode {
   tableOfContents?: string;
   fields: {
     slug: string;
+    isNew: boolean;
   };
   frontmatter: {
     categories: string;
@@ -40,7 +41,7 @@ interface DefaultThumbnailData {
 type CreatePageFn = CreatePagesArgs['actions']['createPage'];
 
 /**
- * @description 마크다운 노드에 slug 필드를 추가
+ * @description 마크다운 노드에 slug와 신규 여부 필드를 추가
  * @param {GatsbyNode['onCreateNode']} args Gatsby 노드 생성 인자
  * @return {void}
  */
@@ -55,6 +56,18 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       node,
       name: `slug`,
       value: `/${dirName}/`,
+    });
+
+    const markdownNode = node as unknown as Pick<MarkdownRemarkNode, 'frontmatter'>;
+    const publishedAt = markdownNode.frontmatter.date
+      ? new Date(markdownNode.frontmatter.date).getTime()
+      : Number.NaN;
+    const ageInDays = Math.ceil((Date.now() - publishedAt) / (1000 * 60 * 60 * 24));
+
+    createNodeField({
+      node,
+      name: `isNew`,
+      value: Number.isFinite(publishedAt) && ageInDays <= 7,
     });
   }
 };
@@ -177,6 +190,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql,
             timeToRead
             fields {
               slug
+              isNew
             }
             frontmatter {
               categories
