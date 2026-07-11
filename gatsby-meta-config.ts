@@ -209,6 +209,12 @@ const metaConfig: MetaConfig = {
         },
         posts: [
           {
+            title: '이벤트 기반 MSA, AI 시대엔 더 비싸진다고요?',
+            thumbnail: 'https://yozm.wishket.com/media/news/3839/thumbnail.png',
+            publishedAt: '2026-07-08T09:00:17+09:00',
+            url: 'https://yozm.wishket.com/magazine/detail/3839/',
+          },
+          {
             title: 'cURL은 왜 버그 바운티를 끝냈을까?',
             thumbnail: 'https://yozm.wishket.com/media/news/3668/thumbnail.jpg',
             publishedAt: '2026-03-23T09:00:17+09:00',
