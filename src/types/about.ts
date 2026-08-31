@@ -8,6 +8,7 @@ export interface LinkSet {
   demo?: string;
   googlePlay?: string;
   appStore?: string;
+  chromeExtension?: string;
   email?: string;
   linkedIn?: string;
   yozmIt?: string;
@@ -72,10 +73,83 @@ export interface ActivityItem {
  */
 export interface ProjectItem {
   title?: string;
+  period?: string;
   description?: string;
   techStack?: string[];
   thumbnailUrl?: string;
+  thumbnailFit?: 'cover' | 'contain';
+  thumbnailBackground?: string;
   links?: LinkSet;
+}
+
+/**
+ * @description 이력서 외부 링크
+ */
+export interface ResumeLink {
+  label?: string;
+  url?: string;
+}
+
+/**
+ * @description 이력서 경력 프로젝트
+ */
+export interface ResumeProject {
+  period?: string;
+  title?: string;
+  summary?: string;
+  bullets?: string[];
+}
+
+/**
+ * @description 이력서 경력 회사
+ */
+export interface ResumeExperience {
+  mark?: string;
+  logo?: string;
+  logoBackground?: string;
+  company?: string;
+  period?: string;
+  duration?: string;
+  employmentType?: string;
+  role?: string;
+  level?: string;
+  current?: boolean;
+  projects?: ResumeProject[];
+}
+
+/**
+ * @description 이력서 기술 스택 그룹
+ */
+export interface ResumeSkillGroup {
+  category?: string;
+  items?: string[];
+}
+
+/**
+ * @description 이력서 자격증
+ */
+export interface ResumeCertification {
+  issued?: string;
+  title?: string;
+  type?: string;
+  issuer?: string;
+  credentialId?: string;
+}
+
+/**
+ * @description About 페이지에서 사용하는 이력서 데이터
+ */
+export interface ResumeMetadata {
+  role?: string;
+  experience?: string;
+  phone?: string;
+  email?: string;
+  introduction?: string[];
+  projects?: ProjectItem[];
+  experiences?: ResumeExperience[];
+  skills?: ResumeSkillGroup[];
+  certifications?: ResumeCertification[];
+  links?: ResumeLink[];
 }
 
 /**
@@ -83,6 +157,7 @@ export interface ProjectItem {
  */
 export interface AboutMetadata {
   summary?: string[] | string;
+  resume?: ResumeMetadata;
   careers?: CareerItem[];
   education?: EducationItem[];
   certifications?: CertificationItem[];
