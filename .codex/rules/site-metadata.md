@@ -18,8 +18,10 @@
 ## About 데이터
 
 - About 페이지 데이터는 `gatsby-meta-config.ts`의 `about` 아래에서 관리합니다.
+- 이력서형 About 화면의 경력·프로젝트·학력·스킬·자격증·링크 데이터는 `about.resume` 아래에서 관리합니다.
 - `careers`, `openSource`, `externalActivities`, `projects`에는 샘플 구조가 포함되어 있습니다. 새 항목을 추가할 때 샘플 블록은 삭제하지 않습니다.
-- About GraphQL 쿼리는 `src/pages/about.tsx`에 있습니다. 필드를 추가하면 쿼리와 타입을 함께 갱신합니다.
+- About GraphQL 쿼리는 `src/pages/about.tsx`에 있습니다. `about.resume` 필드를 추가하면 쿼리와 `src/types/about.ts` 타입을 함께 갱신합니다.
+- `/about`은 독립형 이력서 페이지로 제공하며, 브라우저 인쇄 시 이력서 전용 인쇄 스타일을 적용합니다.
 - 프로젝트 카드 이미지는 `assets/`의 파일명을 `thumbnailUrl`에 넣는 기존 방식을 따릅니다.
 
 ## 댓글과 외부 서비스

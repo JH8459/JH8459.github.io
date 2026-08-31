@@ -219,3 +219,56 @@ h6:hover .anchor .octicon-link {
 .animate-blink-black {
   animation: blink-black 2s infinite ease-in-out;
 }
+
+/* Resume print layout */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body:has(.resume-page) {
+    background: #fff;
+  }
+
+  body:has(.resume-page) .resume-page {
+    min-height: auto;
+    padding: 0;
+    background: #fff;
+  }
+
+  body:has(.resume-page) .resume-toolbar {
+    display: none;
+  }
+
+  body:has(.resume-page) .resume-paper {
+    max-width: none;
+    padding: 0;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  body:has(.resume-page) .resume-paper,
+  body:has(.resume-page) .resume-paper * {
+    color: #17191c !important;
+  }
+
+  body:has(.resume-page) .resume-paper [class*='dark\\:'] {
+    background: transparent;
+  }
+
+  body:has(.resume-page) .resume-profile-image {
+    background: #eef1f4 !important;
+  }
+
+  body:has(.resume-page) .resume-avoid-break,
+  body:has(.resume-page) .resume-project,
+  body:has(.resume-page) .resume-section-compact {
+    break-inside: avoid;
+  }
+
+  body:has(.resume-page) .resume-footer {
+    break-inside: avoid;
+  }
+}

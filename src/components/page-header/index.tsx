@@ -60,6 +60,8 @@ function PageHeader({ siteTitle }: PageHeaderProps) {
               <Link
                 className="rounded-md px-2.5 py-1.5 text-[14px] font-semibold uppercase tracking-[0.04em] text-[var(--secondary-text-color)] transition-colors duration-200 hover:text-[var(--primary-text-color)]"
                 to="/about"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 about
               </Link>
