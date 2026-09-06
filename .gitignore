@@ -21,6 +21,7 @@ node_modules/
 # gatsby files
 .cache/
 public
+output/
 
 # Mac files
 .DS_Store
