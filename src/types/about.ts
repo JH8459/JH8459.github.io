@@ -75,6 +75,7 @@ export interface ProjectItem {
   title?: string;
   period?: string;
   description?: string;
+  bullets?: string[];
   techStack?: string[];
   thumbnailUrl?: string;
   thumbnailFit?: 'cover' | 'contain';
@@ -137,6 +138,25 @@ export interface ResumeCertification {
 }
 
 /**
+ * @description 이력서 교육 이력
+ */
+export interface ResumeEducation {
+  period?: string;
+  course?: string;
+  institution?: string;
+}
+
+/**
+ * @description 이력서 외부 활동
+ */
+export interface ResumeActivity {
+  period?: string;
+  title?: string;
+  description?: string;
+  links?: ResumeLink[];
+}
+
+/**
  * @description About 페이지에서 사용하는 이력서 데이터
  */
 export interface ResumeMetadata {
@@ -147,7 +167,9 @@ export interface ResumeMetadata {
   introduction?: string[];
   projects?: ProjectItem[];
   experiences?: ResumeExperience[];
+  activities?: ResumeActivity[];
   skills?: ResumeSkillGroup[];
+  education?: ResumeEducation[];
   certifications?: ResumeCertification[];
   links?: ResumeLink[];
 }
