@@ -552,7 +552,13 @@ function AboutPage({ data, location }: AboutPageProps) {
                       </time>
                     </div>
                     <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
-                      {item.issuer} <span className="text-[#a0a5ab]">·</span> {item.type}
+                      {item.issuer}
+                      {item.type ? (
+                        <>
+                          {' '}
+                          <span className="text-[#a0a5ab]">·</span> {item.type}
+                        </>
+                      ) : null}
                     </p>
                   </article>
                 ))}
