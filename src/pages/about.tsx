@@ -38,6 +38,7 @@ interface ExperienceProps {
 
 interface ProjectProps {
   project: ResumeProject;
+  className?: string;
 }
 
 interface ActivityProps {
@@ -90,7 +91,9 @@ function ResumeSection({ number, title, children, className = '' }: ResumeSectio
   return (
     <section className={`resume-section ${className}`.trim()} id={title.toLowerCase()}>
       <div className="mb-7 flex items-end gap-3 border-b border-[#1d1f22] pb-3 dark:border-[#e4e4e7]">
-        <span className="text-[12px] font-bold tracking-[0.16em] text-[#71767d]">{number}</span>
+        <span className="text-[12px] font-bold tracking-[0.16em] text-[#71767d]">
+          {number}&nbsp;
+        </span>
         <h2 className="text-[24px] font-extrabold tracking-[-0.04em] text-[#17191c] dark:text-[#f4f4f5] md:text-[28px]">
           {title}
         </h2>
@@ -105,9 +108,11 @@ function ResumeSection({ number, title, children, className = '' }: ResumeSectio
  * @param {ProjectProps} props 프로젝트 props
  * @return {JSX.Element}
  */
-function ResumeProjectItem({ project }: ProjectProps) {
+function ResumeProjectItem({ project, className = '' }: ProjectProps) {
   return (
-    <article className="resume-project border-t border-[#e5e7eb] py-6 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
+    <article
+      className={`resume-project border-t border-[#e5e7eb] py-6 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248] ${className}`.trim()}
+    >
       <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
         <h4 className="text-[17px] font-extrabold leading-[1.45] tracking-[-0.025em] text-[#181a1d] dark:text-[#f4f4f5]">
           {project.title}
@@ -301,7 +306,11 @@ function ResumeExperienceItem({ experience }: ExperienceProps) {
       </div>
       <div className="ml-16 mt-6">
         {experience.projects?.map((project, index) => (
-          <ResumeProjectItem key={`${experience.company}-project-${index}`} project={project} />
+          <ResumeProjectItem
+            className={project.title?.startsWith('진콘') ? 'resume-page-break-before' : ''}
+            key={`${experience.company}-project-${index}`}
+            project={project}
+          />
         ))}
       </div>
     </article>
@@ -400,7 +409,7 @@ function AboutPage({ data, location }: AboutPageProps) {
               {author.name}
             </h1>
             <p className="resume-tagline mt-4 max-w-[620px] text-[16px] font-bold leading-[1.65] tracking-[-0.025em] text-[#4f555c] dark:text-[#d1d3d6] sm:text-[18px]">
-              서비스의 흐름을 이해하고, 쉽게 흔들리지 않는 백엔드 구조를 만듭니다.
+              제품의 흐름을 이해하고, AI 기능까지 안정적인 서비스로 연결합니다.
             </p>
             <div className="resume-contact-primary mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] font-semibold text-[#737980] dark:text-[#b5b8be]">
               {phoneHref && resume.phone ? (
@@ -449,7 +458,7 @@ function AboutPage({ data, location }: AboutPageProps) {
         </header>
 
         <div className="mt-10 grid gap-10 md:mt-12 md:gap-14">
-          <ResumeSection number="01" title="소개">
+          <ResumeSection className="resume-introduction-section" number="01" title="소개">
             <div className="grid gap-7">
               <div className="space-y-5 text-[15px] leading-[1.85] text-[#4f555c] dark:text-[#c9cbd0]">
                 {resume.introduction?.map((paragraph, index) => (
@@ -459,7 +468,7 @@ function AboutPage({ data, location }: AboutPageProps) {
             </div>
           </ResumeSection>
 
-          <ResumeSection number="02" title="경력">
+          <ResumeSection className="resume-career-section" number="02" title="경력">
             <div>
               {resume.experiences?.map((experience, index) => (
                 <ResumeExperienceItem
@@ -478,9 +487,9 @@ function AboutPage({ data, location }: AboutPageProps) {
             >
               <div className="space-y-6">
                 {resume.skills?.map((group: ResumeSkillGroup, index) => (
-                  <div key={`${group.category}-${index}`}>
+                  <div className="resume-skill-group" key={`${group.category}-${index}`}>
                     <h3 className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#737980]">
-                      {group.category}
+                      {group.category}&nbsp;
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {group.items?.map((skill) => (
@@ -499,7 +508,7 @@ function AboutPage({ data, location }: AboutPageProps) {
           </div>
 
           {projects.length ? (
-            <ResumeSection number="04" title="프로젝트" className="resume-print-page-break">
+            <ResumeSection number="04" title="프로젝트" className="resume-page-break-before">
               <div>
                 {projects.map((project, index) => (
                   <ResumePortfolioProjectItem key={`${project.title}-${index}`} project={project} />
@@ -509,7 +518,11 @@ function AboutPage({ data, location }: AboutPageProps) {
           ) : null}
 
           {resume.activities?.length ? (
-            <ResumeSection number="05" title="외부 활동" className="resume-section-compact">
+            <ResumeSection
+              number="05"
+              title="외부 활동"
+              className="resume-section-compact"
+            >
               <div>
                 {resume.activities.map((activity, index) => (
                   <ResumeActivityItem activity={activity} key={`${activity.title}-${index}`} />
@@ -522,18 +535,29 @@ function AboutPage({ data, location }: AboutPageProps) {
             <ResumeSection number="06" title="교육" className="resume-section-compact">
               <div className="space-y-5">
                 {resume.education?.map((item: ResumeEducation, index) => (
-                  <article className="resume-avoid-break" key={`${item.course}-${index}`}>
+                  <article className="resume-avoid-break" key={`${item.institution}-${index}`}>
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="text-[16px] font-extrabold leading-[1.45] text-[#202328] dark:text-[#f4f4f5]">
-                        {item.course}
+                        {item.institution}
                       </h3>
                       <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">
                         {item.period}
                       </time>
                     </div>
                     <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
-                      {item.institution}
+                      {item.course}
+                      {item.status ? (
+                        <>
+                          {' '}
+                          <span className="text-[#a0a5ab]">·</span> {item.status}
+                        </>
+                      ) : null}
                     </p>
+                    {item.description ? (
+                      <p className="mt-1 text-[12px] leading-[1.55] text-[#737980] dark:text-[#b5b8be]">
+                        {item.description}
+                      </p>
+                    ) : null}
                   </article>
                 ))}
               </div>
@@ -650,6 +674,8 @@ export const pageQuery = graphql`
               period
               course
               institution
+              status
+              description
             }
             certifications {
               issued

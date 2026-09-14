@@ -144,6 +144,8 @@ export interface ResumeEducation {
   period?: string;
   course?: string;
   institution?: string;
+  status?: string;
+  description?: string;
 }
 
 /**
