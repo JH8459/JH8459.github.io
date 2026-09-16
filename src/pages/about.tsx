@@ -38,7 +38,6 @@ interface ExperienceProps {
 
 interface ProjectProps {
   project: ResumeProject;
-  className?: string;
 }
 
 interface ActivityProps {
@@ -108,11 +107,9 @@ function ResumeSection({ number, title, children, className = '' }: ResumeSectio
  * @param {ProjectProps} props 프로젝트 props
  * @return {JSX.Element}
  */
-function ResumeProjectItem({ project, className = '' }: ProjectProps) {
+function ResumeProjectItem({ project }: ProjectProps) {
   return (
-    <article
-      className={`resume-project border-t border-[#e5e7eb] py-6 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248] ${className}`.trim()}
-    >
+    <article className="resume-project border-t border-[#e5e7eb] py-6 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
       <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
         <h4 className="text-[17px] font-extrabold leading-[1.45] tracking-[-0.025em] text-[#181a1d] dark:text-[#f4f4f5]">
           {project.title}
@@ -306,11 +303,7 @@ function ResumeExperienceItem({ experience }: ExperienceProps) {
       </div>
       <div className="ml-16 mt-6">
         {experience.projects?.map((project, index) => (
-          <ResumeProjectItem
-            className={project.title?.startsWith('진콘') ? 'resume-page-break-before' : ''}
-            key={`${experience.company}-project-${index}`}
-            project={project}
-          />
+          <ResumeProjectItem key={`${experience.company}-project-${index}`} project={project} />
         ))}
       </div>
     </article>
@@ -507,32 +500,8 @@ function AboutPage({ data, location }: AboutPageProps) {
             </ResumeSection>
           </div>
 
-          {projects.length ? (
-            <ResumeSection number="04" title="프로젝트" className="resume-page-break-before">
-              <div>
-                {projects.map((project, index) => (
-                  <ResumePortfolioProjectItem key={`${project.title}-${index}`} project={project} />
-                ))}
-              </div>
-            </ResumeSection>
-          ) : null}
-
-          {resume.activities?.length ? (
-            <ResumeSection
-              number="05"
-              title="외부 활동"
-              className="resume-section-compact"
-            >
-              <div>
-                {resume.activities.map((activity, index) => (
-                  <ResumeActivityItem activity={activity} key={`${activity.title}-${index}`} />
-                ))}
-              </div>
-            </ResumeSection>
-          ) : null}
-
-          <div className="resume-credentials-grid grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
-            <ResumeSection number="06" title="교육" className="resume-section-compact">
+          <div className="resume-credentials-grid resume-page-break-before grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
+            <ResumeSection number="04" title="교육" className="resume-section-compact">
               <div className="space-y-5">
                 {resume.education?.map((item: ResumeEducation, index) => (
                   <article className="resume-avoid-break" key={`${item.institution}-${index}`}>
@@ -563,7 +532,7 @@ function AboutPage({ data, location }: AboutPageProps) {
               </div>
             </ResumeSection>
 
-            <ResumeSection number="07" title="자격증" className="resume-section-compact">
+            <ResumeSection number="05" title="자격증" className="resume-section-compact">
               <div className="space-y-5">
                 {resume.certifications?.map((item: ResumeCertification, index) => (
                   <article className="resume-avoid-break" key={`${item.title}-${index}`}>
@@ -589,11 +558,35 @@ function AboutPage({ data, location }: AboutPageProps) {
               </div>
             </ResumeSection>
           </div>
+
+          {resume.activities?.length ? (
+            <ResumeSection
+              number="06"
+              title="외부 활동"
+              className="resume-section-compact"
+            >
+              <div>
+                {resume.activities.map((activity, index) => (
+                  <ResumeActivityItem activity={activity} key={`${activity.title}-${index}`} />
+                ))}
+              </div>
+            </ResumeSection>
+          ) : null}
+
+          {projects.length ? (
+            <ResumeSection number="07" title="개인 프로젝트">
+              <div>
+                {projects.map((project, index) => (
+                  <ResumePortfolioProjectItem key={`${project.title}-${index}`} project={project} />
+                ))}
+              </div>
+            </ResumeSection>
+          ) : null}
         </div>
 
         <footer className="resume-footer mt-14 border-t border-[#dfe2e6] pt-5 text-[11px] font-semibold text-[#8a9096] dark:border-[#41444a] dark:text-[#989da5]">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span>Last updated · 2026.09</span>
+            <span>Resume v1.2.0 · 2026.09</span>
           </div>
         </footer>
       </main>

@@ -298,6 +298,7 @@ h6:hover .anchor .octicon-link {
 
   body:has(.resume-page) .resume-tagline {
     margin-top: 8px;
+    white-space: nowrap;
   }
 
   body:has(.resume-page) .resume-contact-primary {
@@ -359,13 +360,22 @@ h6:hover .anchor .octicon-link {
     margin-left: 42px;
   }
 
-  body:has(.resume-page) .resume-career-section > div > .resume-company:first-child > div:last-child {
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    > div:last-child {
     margin-top: 4px;
   }
 
-  body:has(.resume-page) .resume-career-section > div > .resume-company:first-child .resume-project {
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    .resume-project {
     padding-top: 4px;
     padding-bottom: 4px;
+    break-inside: auto;
   }
 
   body:has(.resume-page) .resume-project {
@@ -401,10 +411,32 @@ h6:hover .anchor .octicon-link {
     line-height: 1.28;
   }
 
-  body:has(.resume-page) .resume-career-section > div > .resume-company:first-child .resume-project p,
-  body:has(.resume-page) .resume-career-section > div > .resume-company:first-child .resume-project ul {
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    .resume-project
+    p,
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    .resume-project
+    ul {
     margin-top: 2px;
-    line-height: 1.22;
+    font-size: 9.5px;
+    line-height: 1.18;
+  }
+
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    .resume-project
+    ul
+    > li
+    + li {
+    margin-top: 2px;
   }
 
   body:has(.resume-page) .resume-project ul > li + li {
