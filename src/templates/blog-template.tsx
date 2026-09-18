@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import firebase from 'gatsby-plugin-firebase-v9.0';
-import { getDatabase, ref, set, get, child, update } from 'firebase/database';
+import { ref, set, get, child, update } from 'firebase/database';
 import { graphql, type PageProps } from 'gatsby';
 import Layout from '../layout';
 import Seo from '../components/seo';
@@ -9,6 +8,7 @@ import PostNavigator from '../components/post-navigator';
 import Post from '../models/post';
 import PostContent from '../components/post-content';
 import Giscus from '../components/giscus';
+import { getOptionalDatabase } from '../utils/firebase-database';
 import type { PostNode } from '../types/post';
 import type { SiteMetadata } from '../types/site';
 
@@ -40,10 +40,14 @@ function BlogTemplate({ data, location }: BlogTemplateProps) {
   useEffect(() => {
     if (!siteUrl) return;
 
+    const database = getOptionalDatabase();
+
+    // Realtime Database 설정이 없으면 조회수 집계만 건너뛴다
+    if (!database) return;
+
     // Firebase 키는 slug에서 '/'를 제거해 사용
     const key = curPost.slug.replace(/\//g, '');
 
-    const database = getDatabase(firebase);
     const postRef = ref(database, 'posts/' + key);
 
     get(child(ref(database), `posts/${key}`))
