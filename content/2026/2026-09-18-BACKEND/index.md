@@ -4,10 +4,10 @@ title: "조용히 비어버린 값 하나에서 시작한 ORM 메이저 업그�
 date: '2026-09-18'
 author: JH8459
 categories: Backend
-thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-09-18/TIL/thumbnail.png
+thumbnail: https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-09-18/BACKEND/thumbnail.png
 ---
 
-<img src = "https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-09-18/TIL/banner.png"/>
+<img src = "https://jh8459.s3.ap-northeast-2.amazonaws.com/blog/2026-09-18/BACKEND/banner.png"/>
 
 ## 📚 Overview
 
