@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSpinner, FaEye } from 'react-icons/fa';
+import { isViewCountEnabled } from '../../../utils/firebase-database';
 
 /**
  * @description 클라이언트 마운트 여부 체크
@@ -23,6 +24,10 @@ interface ViewCountProps {
  */
 export default function ViewCount({ viewCount, allowZero = false }: ViewCountProps) {
   const hasMounted = useHasMounted();
+
+  // Realtime Database 설정이 없는 환경에서는 조회수 영역 자체를 노출하지 않는다
+  if (!isViewCountEnabled()) return null;
+
   const n = viewCount == null ? null : Number(viewCount);
   // 값이 유효하고 표시 조건을 만족하는지 판단
   const hasNumber = typeof n === 'number' && Number.isFinite(n) && (allowZero ? true : n > 0);

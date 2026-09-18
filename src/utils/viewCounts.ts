@@ -1,5 +1,5 @@
-import firebase from 'gatsby-plugin-firebase-v9.0';
-import { get, getDatabase, ref } from 'firebase/database';
+import { get, ref } from 'firebase/database';
+import { getOptionalDatabase } from './firebase-database';
 import type { PostViewCounts } from '../types/post';
 
 /**
@@ -7,7 +7,11 @@ import type { PostViewCounts } from '../types/post';
  * @return {Promise<PostViewCounts>} 포스트별 조회수 정보
  */
 export async function getPostViewCounts(): Promise<PostViewCounts> {
-  const database = getDatabase(firebase);
+  const database = getOptionalDatabase();
+
+  // Realtime Database 설정이 없으면 조회수 없이 진행한다
+  if (!database) return {};
+
   const snapshot = await get(ref(database, 'posts'));
 
   if (!snapshot.exists()) return {};
