@@ -402,7 +402,7 @@ function AboutPage({ data, location }: AboutPageProps) {
               {author.name}
             </h1>
             <p className="resume-tagline mt-4 max-w-[620px] text-[16px] font-bold leading-[1.65] tracking-[-0.025em] text-[#4f555c] dark:text-[#d1d3d6] sm:text-[18px]">
-              제품의 흐름을 이해하고, AI 기능까지 안정적인 서비스로 연결합니다.
+              실시간 기능부터 변경 검증과 장애 대응까지 책임집니다.
             </p>
             <div className="resume-contact-primary mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] font-semibold text-[#737980] dark:text-[#b5b8be]">
               {phoneHref && resume.phone ? (
@@ -586,7 +586,7 @@ function AboutPage({ data, location }: AboutPageProps) {
 
         <footer className="resume-footer mt-14 border-t border-[#dfe2e6] pt-5 text-[11px] font-semibold text-[#8a9096] dark:border-[#41444a] dark:text-[#989da5]">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span>Resume v1.2.0 · 2026.09</span>
+            <span>Resume v1.3.0 · 2026.09</span>
           </div>
         </footer>
       </main>

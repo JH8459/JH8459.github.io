@@ -378,6 +378,15 @@ h6:hover .anchor .octicon-link {
     break-inside: auto;
   }
 
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    > div:last-child
+    > .resume-project:nth-child(3) {
+    break-before: page;
+  }
+
   body:has(.resume-page) .resume-project {
     padding-top: 6px;
     padding-bottom: 6px;
