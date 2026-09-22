@@ -402,7 +402,7 @@ function AboutPage({ data, location }: AboutPageProps) {
               {author.name}
             </h1>
             <p className="resume-tagline mt-4 max-w-[620px] text-[16px] font-bold leading-[1.65] tracking-[-0.025em] text-[#4f555c] dark:text-[#d1d3d6] sm:text-[18px]">
-              실시간 기능부터 변경 검증과 장애 대응까지 책임집니다.
+              복잡한 제품 요구를 서비스 구조로 풀어내고, 안정적인 운영까지 책임집니다.
             </p>
             <div className="resume-contact-primary mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] font-semibold text-[#737980] dark:text-[#b5b8be]">
               {phoneHref && resume.phone ? (
