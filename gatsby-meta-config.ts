@@ -236,7 +236,8 @@ const metaConfig: MetaConfig = {
             {
               title: '온라인 화상 감독 인적성 검사 플랫폼 신규 개발 및 비용 최적화',
               bullets: [
-                '외부 화상 솔루션으로는 비대면 검사의 감독 정책과 운영 요구를 맞추기 어려워 WebSocket·WebRTC 기반 실시간 감독 기능을 자체 개발했습니다. 핵심 기능을 내재화해 변경 주도권을 확보하고 연간 약 8,000만 원의 라이선스 비용을 절감했습니다.',
+                '외부 화상 솔루션으로는 비대면 검사의 감독 정책과 운영 요구를 맞추기 어려워 WebSocket 기반 실시간 처리와 WebRTC P2P 화상 연결을 직접 구현하고, 필요한 감독 흐름을 자체 플랫폼에 구축했습니다.',
+                '외부 솔루션에 의존하며 제한되던 기능 변경과 운영의 주도권을 확보하고, 핵심 기능을 내재화해 연간 약 8,000만 원의 라이선스 비용을 절감했습니다.',
                 '교시 종료 시 녹화 업로드가 집중되어 애플리케이션 서버 부하가 높아지자 S3 presigned URL 직접 업로드로 경로를 분리하고 Lambda·EventBridge로 보관 작업을 자동화했습니다. winston 로그로 원인을 추적하고 Grafana 임계 알림을 구성해 같은 유형의 부하를 조기에 감지할 수 있게 했습니다.',
               ],
             },
@@ -258,26 +259,6 @@ const metaConfig: MetaConfig = {
         },
       ],
       activities: [
-        {
-          period: '2026.09',
-          title: 'MikroORM v7 런타임 회귀 제보',
-          description:
-            'MikroORM 메이저 업그레이드 중 joined populate의 컬럼 매핑 회귀를 버전·DB별 최소 테스트로 재현해 업스트림에 제보했으며, 다른 기여자의 수정 PR과 회귀 테스트로 이어졌습니다.',
-          links: [
-            {
-              label: 'Issue #8292',
-              url: 'https://github.com/mikro-orm/mikro-orm/issues/8292',
-            },
-            {
-              label: 'PR #8293',
-              url: 'https://github.com/mikro-orm/mikro-orm/pull/8293',
-            },
-            {
-              label: 'Reproduction',
-              url: 'https://github.com/JH8459/reproduction',
-            },
-          ],
-        },
         {
           period: '2026.01 - 현재',
           title: '요즘IT 작가',
