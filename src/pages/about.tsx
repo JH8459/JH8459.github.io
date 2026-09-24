@@ -164,7 +164,7 @@ function ResumePortfolioProjectItem({ project }: PortfolioProjectProps) {
       : 'h-full w-full object-cover';
 
   return (
-    <article className="resume-project resume-avoid-break border-t border-[#e5e7eb] py-7 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
+    <article className="resume-project resume-portfolio-project resume-avoid-break border-t border-[#e5e7eb] py-7 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
         {project.thumbnailUrl ? (
           <div
@@ -179,8 +179,8 @@ function ResumePortfolioProjectItem({ project }: PortfolioProjectProps) {
           </div>
         ) : null}
         <div className="min-w-0 flex-1">
-          <div className="flex items-start justify-between gap-4">
-            <div className="min-w-0">
+          <div className="resume-portfolio-header flex items-start justify-between gap-4">
+            <div className="resume-portfolio-heading min-w-0">
               <h3 className="text-[17px] font-extrabold leading-[1.45] tracking-[-0.025em] text-[#181a1d] dark:text-[#f4f4f5]">
                 {project.title}
               </h3>
@@ -191,7 +191,7 @@ function ResumePortfolioProjectItem({ project }: PortfolioProjectProps) {
               ) : null}
             </div>
             {links.length ? (
-              <div className="flex shrink-0 items-center gap-2">
+              <div className="resume-portfolio-links flex shrink-0 items-center gap-2">
                 {links.map(([key, url]) => {
                   const Icon = getProjectLinkIcon(key);
 
@@ -317,13 +317,15 @@ function ResumeExperienceItem({ experience }: ExperienceProps) {
  */
 function ResumeActivityItem({ activity }: ActivityProps) {
   return (
-    <article className="resume-avoid-break border-t border-[#e5e7eb] py-5 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
+    <article className="resume-activity resume-avoid-break border-t border-[#e5e7eb] py-5 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
+      <div className="resume-activity-header flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
         <h3 className="text-[16px] font-extrabold text-[#202328] dark:text-[#f4f4f5]">
           {activity.title}
         </h3>
         {activity.period ? (
-          <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">{activity.period}</time>
+          <time className="shrink-0 whitespace-pre-line text-[11px] font-bold leading-[1.6] text-[#7d838a] sm:text-right">
+            {activity.period}
+          </time>
         ) : null}
       </div>
       {activity.description ? (

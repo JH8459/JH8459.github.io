@@ -40,7 +40,7 @@ const portfolioProjects: ProjectItem[] = [
     description:
       '복권 정보를 직접 확인해야 하는 번거로움을 줄이기 위해 당첨 결과와 통계를 이메일 정기 구독과 Slack 앱으로 제공한 개인 프로젝트입니다.',
     bullets: [
-      '수집 작업이 API 장애와 무관하게 정해진 시간에 실행되어야 했습니다. Express 크롤링 서버와 NestJS API 서버의 실행 경계를 분리하고, 최신 회차 정보는 Redis에 캐싱해 반복적인 DB 조회를 줄였습니다.',
+      'API 서버 장애 중에도 정기 수집이 이어지도록 Express 크롤링 서버와 NestJS API 서버를 분리했습니다. 최신 회차 정보는 Redis에 캐싱해 반복적인 DB 조회를 줄였습니다.',
       'MariaDB·Redis 테스트 컨테이너로 사용자 알림 직전까지 E2E로 검증하고, GitHub Actions와 Docker Hub 배포 파이프라인을 구성해 Docker Compose 서비스를 EC2에서 Synology NAS로 이전했습니다.',
     ],
     techStack: ['Node.js', 'NestJS', 'React', 'Docker', 'Redis'],
@@ -156,7 +156,7 @@ const metaConfig: MetaConfig = {
       email: 'kk_ong2233@naver.com',
       introduction: [
         'Node.js와 TypeScript를 기반으로 B2B와 B2C 서비스를 개발해 온 5년 차 백엔드 엔지니어입니다. 사용자와 운영자의 실제 흐름을 이해하고, 요구사항을 데이터 모델과 API, 도메인 규칙으로 구체화해 안정적으로 운영되는 제품을 만드는 데 집중합니다.',
-        '운영 환경의 로그·메트릭·트레이스와 실행 계획을 근거로 병목과 장애를 찾고, 데이터베이스와 비동기 처리 구조를 개선해 서비스의 운영 안정성을 높여 왔습니다. 외부 연동은 실패를 전제로 Outbox·멱등 처리·재시도 예산·서킷 브레이커를 적용해 장애가 인접한 흐름으로 번지지 않도록 설계합니다.',
+        '운영 환경의 로그·메트릭·트레이스와 실행 계획을 근거로 병목과 장애를 찾고, 데이터베이스와 비동기 처리 구조를 개선해 서비스의 운영 안정성을 높여 왔습니다. 사용 중인 오픈 소스 라이브러리에서 문제가 발생하면 최소 재현 사례와 버전별 증상·검증 결과를 정리해 이슈를 작성하고, 외부 서비스 연동에는 실패를 전제로 Outbox·멱등 처리·재시도 예산·서킷 브레이커를 적용해 장애가 인접한 흐름으로 번지지 않도록 설계합니다.',
         '서비스를 분리할 때는 경계와 데이터 소유권, 이벤트 계약, 실패 복구 경로를 함께 설계합니다. 새로운 기술은 문제 해결에 필요한 만큼 선택하고, AI 기능과 개발 과정에도 사람이 검증하고 운영 지표로 개선할 수 있는 흐름을 남깁니다.',
       ],
       projects: portfolioProjects,
@@ -246,9 +246,9 @@ const metaConfig: MetaConfig = {
               period: '2022.04 - 2024.12',
               title: '온라인 화상 감독 인적성 검사 플랫폼 신규 개발 및 비용 최적화',
               bullets: [
-                '자체 WebSocket 서버를 개발해 감독자·응시자 간 감독 메시지를 양방향으로 전달하고, WebRTC P2P로 화상 스트림을 연결하는 실시간 감독 흐름을 구현했습니다.',
-                'uPrism 외부 솔루션에 의존하던 화상 감독과 녹화 기능을 자체 플랫폼으로 전환해 녹화 영상의 보관·폐기 생명 주기를 자체 정책으로 관리하고, 연간 약 8,000만 원의 라이선스 비용을 절감했습니다.',
-                '교시 종료 시 집중되는 녹화 업로드를 S3 presigned URL 직접 업로드로 분리하고 Lambda·EventBridge로 보관을 자동화했습니다. winston 로그와 Grafana 임계 알림으로 원인 추적과 조기 감지 체계도 마련했습니다.',
+                'uPrism에 의존하던 화상 감독·녹화 기능을 자체 플랫폼으로 전환하고, WebSocket 서버로 감독자와 응시자 간 메시지를 양방향으로 전달하며 WebRTC P2P 화상 스트림을 연결하는 실시간 감독 흐름을 구현해 연간 약 8,000만 원의 라이선스 비용을 절감했습니다.',
+                '교시 종료 시 집중되는 녹화 파일 업로드 병목을 발견해 S3 presigned URL 기반 직접 업로드로 전환하고, Lambda·EventBridge로 고객사별 계약 조건에 맞춘 영상 보관·폐기 생명주기를 관리했습니다.',
+                '서버별 로그를 개별 확인하던 불편을 개선하기 위해 Promtail·Loki로 로그를 중앙 수집하고, Prometheus·Grafana 기반 대시보드와 임계치 알림으로 장애 원인 추적과 이상 징후 조기 감지를 지원했습니다.',
               ],
             },
             {
@@ -267,7 +267,7 @@ const metaConfig: MetaConfig = {
           period: '2026.01 - 현재',
           title: '요즘IT 작가',
           description:
-            '요즘IT과 기술 블로그에 이벤트 기반 시스템과 AI 개발 워크플로의 비용·검증 기준, 기술 선택의 트레이드오프를 기록합니다.',
+            '요즘IT에 실무에서 마주친 복잡한 문제를 더 단순한 기준과 구조로 정리하고, 선택의 이유와 트레이드오프, 결과를 기록해 독자가 자신의 상황에 맞는 판단 기준을 세우도록 돕는 글을 씁니다.',
           links: [
             {
               label: '요즘IT 작가 페이지',
@@ -276,13 +276,17 @@ const metaConfig: MetaConfig = {
           ],
         },
         {
-          period: '2023.03 - 2023.08 · 2026.03 - 현재',
-          title: '백엔드 커리어 멘토',
+          period: '2026.03 - 현재 · 2023.03 - 2023.08',
+          title: '커리어 멘토',
           description:
-            '코드스테이츠와 코드잇의 부트캠프 수료생을 대상으로 백엔드 개발자 취업에 필요한 이력서·포트폴리오·기술 면접을 코칭했습니다.',
+            '코드잇과 코드스테이츠에서 부트캠프 수료생과 백엔드 취업 준비생의 이력서·포트폴리오 검토와 기술·직무 면접을 멘토링합니다. 프로젝트의 강점을 지원 직무와 채용 공고에 맞게 정리해 바로 적용할 피드백을 제공합니다.',
           links: [
             {
-              label: '코드잇 멘토 소개 페이지',
+              label: '멘토 소개 페이지',
+              url: 'https://app.notion.com/p/514bf92a6e9c825786c08191bec90409',
+            },
+            {
+              label: '코드잇 커리어 프로그램',
               url: 'https://sprint-page.codeit.kr/career_program',
             },
           ],
@@ -297,31 +301,29 @@ const metaConfig: MetaConfig = {
             'NestJS',
             'Express',
             'REST API',
-            'WebSocket·WebRTC',
           ],
         },
         {
           category: 'Data & Messaging',
           items: [
-            'Apache Kafka',
-            'RabbitMQ',
             'MySQL·MariaDB',
             'PostgreSQL',
-            'Redis',
-            'Elasticsearch',
             'MikroORM',
+            'Redis',
+            'Apache Kafka',
+            'RabbitMQ',
+            'Elasticsearch',
           ],
         },
         {
           category: 'Reliability',
           items: [
-            'Outbox',
-            'Inbox',
+            'Outbox·Inbox',
             'Idempotency',
             'Retry Budget',
             'Circuit Breaker',
-            'State Machine',
             'Observability',
+            'State Machine',
           ],
         },
         {
