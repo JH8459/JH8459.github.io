@@ -534,10 +534,15 @@ h6:hover .anchor .octicon-link {
     font-size: 13px;
   }
 
-  body:has(.resume-page) .resume-section-compact article p {
+  body:has(.resume-page) .resume-section-compact article p,
+  body:has(.resume-page) .resume-activity ul {
     margin-top: 3px;
     font-size: 9.5px;
     line-height: 1.28;
+  }
+
+  body:has(.resume-page) .resume-activity li > span:first-child {
+    margin-top: 5px;
   }
 
   body:has(.resume-page) .resume-skills-grid {

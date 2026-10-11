@@ -152,6 +152,7 @@ export interface ResumeEducation {
  * @description 이력서 외부 활동
  */
 export interface ResumeActivity {
+  bullets?: { text?: string; label?: string; url?: string }[];
   period?: string;
   title?: string;
   description?: string;

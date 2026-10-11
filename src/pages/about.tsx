@@ -316,6 +316,11 @@ function ResumeExperienceItem({ experience }: ExperienceProps) {
  * @return {JSX.Element}
  */
 function ResumeActivityItem({ activity }: ActivityProps) {
+  const bullets: NonNullable<ResumeActivity['bullets']> = [
+    ...(activity.description ? [{ text: activity.description }] : []),
+    ...(activity.bullets ?? []),
+  ];
+
   return (
     <article className="resume-activity resume-avoid-break border-t border-[#e5e7eb] py-5 first:border-t-0 first:pt-0 last:pb-0 dark:border-[#3f4248]">
       <div className="resume-activity-header flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
@@ -328,10 +333,26 @@ function ResumeActivityItem({ activity }: ActivityProps) {
           </time>
         ) : null}
       </div>
-      {activity.description ? (
-        <p className="mt-2 text-[13px] leading-[1.7] text-[#5e646b] dark:text-[#c5c7cb]">
-          {activity.description}
-        </p>
+      {bullets.length ? (
+        <ul className="mt-2 space-y-2 text-[13px] leading-[1.7] text-[#5e646b] dark:text-[#c5c7cb]">
+          {bullets.map((bullet, index) => (
+            <li className="flex items-start gap-2" key={`${activity.title}-bullet-${index}`}>
+              <span className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-[#9298a0]" />
+              <span>
+                {bullet.text}
+                {bullet.label && bullet.url ? (
+                  <>
+                    {' '}(
+                    <a className="font-bold" href={bullet.url} {...externalLinkProps}>
+                      {bullet.label}
+                    </a>
+                    )
+                  </>
+                ) : null}
+              </span>
+            </li>
+          ))}
+        </ul>
       ) : null}
       {activity.links?.length ? (
         <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
@@ -588,7 +609,7 @@ function AboutPage({ data, location }: AboutPageProps) {
 
         <footer className="resume-footer mt-14 border-t border-[#dfe2e6] pt-5 text-[11px] font-semibold text-[#8a9096] dark:border-[#41444a] dark:text-[#989da5]">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span>Resume v1.3.0 · 2026.09</span>
+            <span>Resume v1.4.0 · 2026.10</span>
           </div>
         </footer>
       </main>
@@ -653,6 +674,11 @@ export const pageQuery = graphql`
               }
             }
             activities {
+              bullets {
+                text
+                label
+                url
+              }
               period
               title
               description
