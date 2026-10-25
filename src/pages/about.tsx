@@ -609,7 +609,7 @@ function AboutPage({ data, location }: AboutPageProps) {
 
         <footer className="resume-footer mt-14 border-t border-[#dfe2e6] pt-5 text-[11px] font-semibold text-[#8a9096] dark:border-[#41444a] dark:text-[#989da5]">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span>Resume v1.4.0 · 2026.10</span>
+            <span>Resume v1.5.0 · 2026.10</span>
           </div>
         </footer>
       </main>
