@@ -481,7 +481,7 @@ h6:hover .anchor .octicon-link {
     > div:last-child
     > .resume-project:first-child
     > p {
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   body:has(.resume-page)
@@ -492,7 +492,7 @@ h6:hover .anchor .octicon-link {
     ul
     > li
     + li {
-    margin-block-start: 8px;
+    margin-block-start: 6px;
   }
 
   body:has(.resume-page) .resume-project ul > li + li {
@@ -506,9 +506,20 @@ h6:hover .anchor .octicon-link {
     > div:last-child
     > .resume-project:first-child
     > ul
+    > li {
+    margin-block-end: 0;
+  }
+
+  body:has(.resume-page)
+    .resume-career-section
+    > div
+    > .resume-company:first-child
+    > div:last-child
+    > .resume-project:first-child
+    > ul
     > li
     + li {
-    margin-block-start: 10px;
+    margin-block-start: 6px;
   }
 
   body:has(.resume-page) .resume-project-tech-stack {
