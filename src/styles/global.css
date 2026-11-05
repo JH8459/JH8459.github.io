@@ -227,13 +227,18 @@ h6:hover .anchor .octicon-link {
     margin: 0;
   }
 
+  @page resume {
+    size: A4;
+    margin: 0;
+  }
+
   body:has(.resume-page) {
     background: #fff;
   }
 
   body:has(.resume-page) .resume-page {
     min-height: auto;
-    padding: 10mm 12mm;
+    padding: 0;
     background: #fff;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
@@ -244,11 +249,37 @@ h6:hover .anchor .octicon-link {
   }
 
   body:has(.resume-page) .resume-paper {
+    display: block;
     max-width: none;
     padding: 0;
     background: #fff;
     border-radius: 0;
     box-shadow: none;
+  }
+
+  body:has(.resume-page) .resume-sheet {
+    page: resume;
+    display: block;
+    position: relative;
+    min-height: 297mm;
+    padding: 10mm 12mm;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    break-after: page;
+  }
+
+  body:has(.resume-page) .resume-sheet:last-child {
+    break-after: auto;
+  }
+
+  body:has(.resume-page) .resume-sheet-number {
+    position: absolute;
+    right: 12mm;
+    bottom: 10mm;
+    margin-top: 0;
+    padding-top: 8px;
+    font-size: 8px;
   }
 
   body:has(.resume-page) .resume-paper,
@@ -308,9 +339,17 @@ h6:hover .anchor .octicon-link {
     margin-top: 6px;
   }
 
-  body:has(.resume-page) .resume-paper > div {
+  body:has(.resume-page) .resume-sheet-content {
+    display: block;
+    margin-top: 0;
+  }
+
+  body:has(.resume-page) .resume-hero + .resume-sheet-content {
     margin-top: 22px;
-    gap: 20px;
+  }
+
+  body:has(.resume-page) .resume-sheet-content > * + * {
+    margin-top: 24px;
   }
 
   body:has(.resume-page) .resume-section > div:first-child {
@@ -322,13 +361,13 @@ h6:hover .anchor .octicon-link {
     font-size: 19px;
   }
 
-  body:has(.resume-page) .resume-section:first-child p {
+  body:has(.resume-page) .resume-introduction p {
     font-size: 10.5px;
     line-height: 1.55;
   }
 
-  body:has(.resume-page) .resume-section:first-child p + p {
-    margin-top: 8px;
+  body:has(.resume-page) .resume-introduction p + p {
+    margin-top: 10px;
   }
 
   body:has(.resume-page) .resume-company {
@@ -379,13 +418,59 @@ h6:hover .anchor .octicon-link {
 
   body:has(.resume-page) .resume-project p,
   body:has(.resume-page) .resume-project ul {
-    margin-top: 6px;
+    margin-top: 8px;
     font-size: 9.5px;
     line-height: 1.5;
   }
 
+  body:has(.resume-page) .resume-project ul > li {
+    margin: 0;
+  }
+
   body:has(.resume-page) .resume-project ul > li + li {
-    margin-top: 4px;
+    margin-top: 14px;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project ul > li + li {
+    margin-top: 8px;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project p,
+  body:has(.resume-page) .resume-career-projects .resume-project ul {
+    margin-top: 6px;
+  }
+
+  body:has(.resume-page) .resume-career-continuation > div:first-child {
+    margin-bottom: 14px;
+    margin-left: 48px;
+  }
+
+  body:has(.resume-page) .resume-career-continuation {
+    padding-top: 10px;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  body:has(.resume-page) .resume-career-continuation .resume-company {
+    margin-bottom: 0;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project > div:first-child {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project time {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  body:has(.resume-page) .resume-career-projects .resume-project h4 {
+    font-size: 12px;
   }
 
   body:has(.resume-page) .resume-project-tech-stack {
@@ -403,8 +488,8 @@ h6:hover .anchor .octicon-link {
   }
 
   body:has(.resume-page) .resume-section-compact article {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   body:has(.resume-page) .resume-section-compact article h3 {
@@ -419,12 +504,18 @@ h6:hover .anchor .octicon-link {
 
   body:has(.resume-page) .resume-skills-grid .space-y-6 {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: 12px;
+    gap: 10px;
+  }
+
+  body:has(.resume-page) .resume-skill-group {
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 10px;
+    align-items: baseline;
+    margin: 0;
   }
 
   body:has(.resume-page) .resume-skills-grid h3 {
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-size: 9px;
   }
 
@@ -434,9 +525,9 @@ h6:hover .anchor .octicon-link {
   }
 
   body:has(.resume-page) .resume-skills-grid .flex {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   body:has(.resume-page) .resume-credentials-grid {
@@ -444,6 +535,20 @@ h6:hover .anchor .octicon-link {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     break-inside: avoid;
+  }
+
+  body:has(.resume-page) .resume-credentials-grid .space-y-5 {
+    display: grid;
+    gap: 6px;
+  }
+
+  body:has(.resume-page) .resume-credentials-grid article {
+    margin: 0;
+    padding: 0;
+  }
+
+  body:has(.resume-page) .resume-credentials-grid article h3 {
+    font-size: 11px;
   }
 
   body:has(.resume-page) .resume-footer {

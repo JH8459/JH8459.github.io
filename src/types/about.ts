@@ -154,6 +154,11 @@ export interface ResumeActivity {
   title?: string;
   description?: string;
   links?: ResumeLink[];
+  projects?: {
+    title: string;
+    bullets: string[];
+    links?: ResumeLink[];
+  }[];
 }
 
 /**

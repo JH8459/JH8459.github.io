@@ -32,6 +32,28 @@ interface ResumeSectionProps {
   className?: string;
 }
 
+interface ResumeSheetProps {
+  page: number;
+  children: React.ReactNode;
+}
+
+/**
+ * @description 화면과 A4 인쇄에서 동일한 내용 묶음을 한 페이지로 구분합니다.
+ */
+function ResumeSheet({ page, children }: ResumeSheetProps) {
+  return (
+    <section
+      aria-label={`이력서 ${page}페이지`}
+      className="resume-sheet flex flex-col rounded-[24px] bg-white px-6 py-8 shadow-[0_20px_70px_rgba(26,31,36,0.09)] dark:bg-[#212327] dark:shadow-[0_20px_70px_rgba(0,0,0,0.22)] sm:px-10 sm:py-12 md:min-h-[1470px] md:px-16 md:py-14"
+    >
+      <div className="resume-sheet-body">{children}</div>
+      <div className="resume-sheet-number mt-auto pt-8 text-right text-[11px] font-semibold tracking-[0.12em] text-[#8a9096]">
+        {page} / 4
+      </div>
+    </section>
+  );
+}
+
 interface ExperienceProps {
   experience: ResumeExperience;
 }
@@ -119,12 +141,12 @@ function ResumeProjectItem({ project }: ProjectProps) {
         ) : null}
       </div>
       {project.summary ? (
-        <p className="mt-3 text-[14px] leading-[1.75] text-[#555b63] dark:text-[#c5c7cb]">
+        <p className="mt-4 text-[14px] leading-[1.75] text-[#555b63] dark:text-[#c5c7cb]">
           {project.summary}
         </p>
       ) : null}
       {project.bullets?.length ? (
-        <ul className="mt-3 space-y-2 text-[14px] leading-[1.75] text-[#555b63] dark:text-[#c5c7cb]">
+        <ul className="mt-4 space-y-3 text-[14px] leading-[1.75] text-[#555b63] dark:text-[#c5c7cb]">
           {project.bullets.map((bullet, index) => (
             <li className="flex items-start gap-2" key={`${project.title}-bullet-${index}`}>
               <span
@@ -329,6 +351,39 @@ function ResumeActivityItem({ activity }: ActivityProps) {
           {activity.description}
         </p>
       ) : null}
+      {activity.projects?.length ? (
+        <ul className="ml-2 mt-3 list-disc space-y-3 pl-5 text-[13px] leading-[1.7] text-[#5e646b] marker:text-[#7d838a] dark:text-[#c5c7cb]">
+          {activity.projects.map((project) => (
+            <li key={project.title}>
+              {project.bullets.map((bullet, index) => (
+                <p className="mt-1 first:mt-0" key={bullet}>
+                  {index === 0 ? (
+                    <strong className="font-bold text-[#202328] dark:text-[#f4f4f5]">
+                      {project.title}:{' '}
+                    </strong>
+                  ) : null}
+                  {bullet}
+                </p>
+              ))}
+              {project.links?.length ? (
+                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                  {project.links.map((item) => (
+                    <a
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#5f6670] hover:text-[#17191c] dark:text-[#b5b8be] dark:hover:text-white"
+                      href={item.url}
+                      {...externalLinkProps}
+                      key={`${item.label}-${item.url}`}
+                    >
+                      {item.label}
+                      <MdOpenInNew className="text-[13px]" />
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      ) : null}
       {activity.links?.length ? (
         <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
           {activity.links.map((item, index) =>
@@ -359,6 +414,8 @@ function AboutPage({ data, location }: AboutPageProps) {
   const { siteMetadata } = data.site;
   const { author, about } = siteMetadata;
   const resume = about.resume;
+  const primaryExperience = resume.experiences?.[0];
+  const otherExperiences = resume.experiences?.slice(1) ?? [];
   const phoneHref = resume.phone?.replace(/[^+\d]/g, '');
   const projects = resume.projects?.filter((project) => project.title && project.description) ?? [];
 
@@ -390,188 +447,213 @@ function AboutPage({ data, location }: AboutPageProps) {
         </div>
       </div>
 
-      <main className="resume-paper mx-auto w-full max-w-[1040px] rounded-[24px] bg-white px-6 py-8 shadow-[0_20px_70px_rgba(26,31,36,0.09)] dark:bg-[#212327] dark:shadow-[0_20px_70px_rgba(0,0,0,0.22)] sm:px-10 sm:py-12 md:px-16 md:py-16">
-        <header className="resume-hero flex flex-col justify-between gap-10 border-b border-[#dfe2e6] pb-10 dark:border-[#41444a] md:flex-row md:items-end md:gap-12 md:pb-12">
-          <div className="min-w-0">
-            <p className="mb-4 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#737980]">
-              {resume.role}
-            </p>
-            <h1 className="text-[46px] font-black tracking-[-0.08em] text-[#131518] dark:text-[#fafafa] sm:text-[60px]">
-              {author.name}
-            </h1>
-            <p className="resume-tagline mt-4 max-w-[620px] text-[16px] font-bold leading-[1.65] tracking-[-0.025em] text-[#4f555c] dark:text-[#d1d3d6] sm:text-[18px]">
-              서비스의 흐름을 이해하고, 쉽게 흔들리지 않는 백엔드 구조를 만듭니다.
-            </p>
-            <div className="resume-contact-primary mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] font-semibold text-[#737980] dark:text-[#b5b8be]">
-              {phoneHref && resume.phone ? (
-                <a
-                  className="inline-flex items-center gap-1.5 hover:text-[#17191c] dark:hover:text-white"
-                  href={`tel:${phoneHref}`}
-                >
-                  <MdPhone className="text-[16px]" />
-                  {resume.phone}
-                </a>
-              ) : null}
-              {resume.email ? (
-                <a
-                  className="inline-flex items-center gap-1.5 hover:text-[#17191c] dark:hover:text-white"
-                  href={`mailto:${resume.email}`}
-                >
-                  <MdEmail className="text-[16px]" />
-                  {resume.email}
-                </a>
-              ) : null}
-            </div>
-            <div className="resume-contact-links mt-3 flex flex-wrap gap-x-4 gap-y-1">
-              {resume.links?.map((item, index) =>
-                item.label && item.url ? (
+      <main className="resume-paper mx-auto grid w-full max-w-[1040px] gap-6 md:gap-10">
+        <ResumeSheet page={1}>
+          <header className="resume-hero flex flex-col justify-between gap-10 border-b border-[#dfe2e6] pb-10 dark:border-[#41444a] md:flex-row md:items-end md:gap-12 md:pb-12">
+            <div className="min-w-0">
+              <p className="mb-4 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#737980]">
+                {resume.role}
+              </p>
+              <h1 className="text-[46px] font-black tracking-[-0.08em] text-[#131518] dark:text-[#fafafa] sm:text-[60px]">
+                {author.name}
+              </h1>
+              <p className="resume-tagline mt-4 max-w-[620px] text-[16px] font-bold leading-[1.65] tracking-[-0.025em] text-[#4f555c] dark:text-[#d1d3d6] sm:text-[18px]">
+                서비스의 흐름을 이해하고, 쉽게 흔들리지 않는 백엔드 구조를 만듭니다.
+              </p>
+              <div className="resume-contact-primary mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] font-semibold text-[#737980] dark:text-[#b5b8be]">
+                {phoneHref && resume.phone ? (
                   <a
-                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#666c73] hover:text-[#17191c] dark:text-[#b5b8be] dark:hover:text-white"
-                    href={item.url}
-                    {...externalLinkProps}
-                    key={`${item.label}-${index}`}
+                    className="inline-flex items-center gap-1.5 hover:text-[#17191c] dark:hover:text-white"
+                    href={`tel:${phoneHref}`}
                   >
-                    {item.label}
-                    <MdOpenInNew className="text-[12px]" />
+                    <MdPhone className="text-[16px]" />
+                    {resume.phone}
                   </a>
-                ) : null,
-              )}
-            </div>
-          </div>
-          <div className="resume-profile-image h-32 w-32 shrink-0 overflow-hidden rounded-[28px] bg-[#eef1f4] dark:bg-[#30343a] md:h-40 md:w-40">
-            <img
-              alt="김정현 프로필 사진"
-              className="h-full w-full object-cover"
-              loading="eager"
-              src="/profile.jpeg"
-            />
-          </div>
-        </header>
-
-        <div className="mt-10 grid gap-10 md:mt-12 md:gap-14">
-          <ResumeSection number="01" title="소개">
-            <div className="grid gap-7">
-              <div className="space-y-5 text-[15px] leading-[1.85] text-[#4f555c] dark:text-[#c9cbd0]">
-                {resume.introduction?.map((paragraph, index) => (
-                  <p key={`introduction-${index}`}>{paragraph}</p>
-                ))}
+                ) : null}
+                {resume.email ? (
+                  <a
+                    className="inline-flex items-center gap-1.5 hover:text-[#17191c] dark:hover:text-white"
+                    href={`mailto:${resume.email}`}
+                  >
+                    <MdEmail className="text-[16px]" />
+                    {resume.email}
+                  </a>
+                ) : null}
+              </div>
+              <div className="resume-contact-links mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                {resume.links?.map((item, index) =>
+                  item.label && item.url ? (
+                    <a
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#666c73] hover:text-[#17191c] dark:text-[#b5b8be] dark:hover:text-white"
+                      href={item.url}
+                      {...externalLinkProps}
+                      key={`${item.label}-${index}`}
+                    >
+                      {item.label}
+                      <MdOpenInNew className="text-[12px]" />
+                    </a>
+                  ) : null,
+                )}
               </div>
             </div>
-          </ResumeSection>
+            <div className="resume-profile-image h-32 w-32 shrink-0 overflow-hidden rounded-[28px] bg-[#eef1f4] dark:bg-[#30343a] md:h-40 md:w-40">
+              <img
+                alt="김정현 프로필 사진"
+                className="h-full w-full object-cover"
+                loading="eager"
+                src="/profile.jpeg"
+              />
+            </div>
+          </header>
 
-          <ResumeSection number="02" title="경력">
-            <div>
-              {resume.experiences?.map((experience, index) => (
+          <div className="resume-sheet-content mt-10 grid gap-10 md:mt-12 md:gap-14">
+            <ResumeSection number="01" title="소개" className="resume-introduction">
+              <div className="grid gap-7">
+                <div className="space-y-6 text-[15px] leading-[1.85] text-[#4f555c] dark:text-[#c9cbd0]">
+                  {resume.introduction?.map((paragraph, index) => (
+                    <p key={`introduction-${index}`}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </ResumeSection>
+
+            <ResumeSection number="02" title="경력" className="resume-career-projects">
+              {primaryExperience ? (
                 <ResumeExperienceItem
-                  key={`${experience.company}-${index}`}
-                  experience={experience}
+                  experience={{
+                    ...primaryExperience,
+                    projects: primaryExperience.projects?.slice(0, 1),
+                  }}
                 />
+              ) : null}
+            </ResumeSection>
+          </div>
+        </ResumeSheet>
+
+        <ResumeSheet page={2}>
+          <div className="resume-career-continuation resume-career-projects pt-4">
+            <div className="mb-8 ml-16 md:mb-10">
+              {primaryExperience?.projects?.slice(1).map((project, index) => (
+                <ResumeProjectItem key={`continued-project-${index}`} project={project} />
               ))}
             </div>
-          </ResumeSection>
-
-          <div className="resume-skills-grid grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
-            <ResumeSection
-              number="03"
-              title="스킬"
-              className="resume-section-compact lg:col-span-2"
-            >
-              <div className="space-y-6">
-                {resume.skills?.map((group: ResumeSkillGroup, index) => (
-                  <div key={`${group.category}-${index}`}>
-                    <h3 className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#737980]">
-                      {group.category}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {group.items?.map((skill) => (
-                        <span
-                          className="rounded-full border border-[#dfe2e6] px-3 py-1.5 text-[12px] font-bold text-[#4d535a] dark:border-[#50545b] dark:text-[#d5d7da]"
-                          key={skill}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ResumeSection>
+            {otherExperiences.map((experience, index) => (
+              <ResumeExperienceItem
+                key={`${experience.company}-${index}`}
+                experience={experience}
+              />
+            ))}
           </div>
+        </ResumeSheet>
 
-          {projects.length ? (
-            <ResumeSection number="04" title="프로젝트" className="resume-print-page-break">
-              <div>
-                {projects.map((project, index) => (
-                  <ResumePortfolioProjectItem key={`${project.title}-${index}`} project={project} />
-                ))}
-              </div>
-            </ResumeSection>
-          ) : null}
+        <ResumeSheet page={3}>
+          <div className="resume-sheet-content grid gap-10 md:gap-14">
+            {projects.length ? (
+              <ResumeSection number="03" title="프로젝트">
+                <div>
+                  {projects.map((project, index) => (
+                    <ResumePortfolioProjectItem
+                      key={`${project.title}-${index}`}
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </ResumeSection>
+            ) : null}
 
-          {resume.activities?.length ? (
-            <ResumeSection number="05" title="외부 활동" className="resume-section-compact">
-              <div>
-                {resume.activities.map((activity, index) => (
-                  <ResumeActivityItem activity={activity} key={`${activity.title}-${index}`} />
-                ))}
-              </div>
-            </ResumeSection>
-          ) : null}
-
-          <div className="resume-credentials-grid grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
-            <ResumeSection number="06" title="교육" className="resume-section-compact">
-              <div className="space-y-5">
-                {resume.education?.map((item: ResumeEducation, index) => (
-                  <article className="resume-avoid-break" key={`${item.course}-${index}`}>
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-[16px] font-extrabold leading-[1.45] text-[#202328] dark:text-[#f4f4f5]">
+            <div className="resume-skills-grid grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
+              <ResumeSection
+                number="04"
+                title="스킬"
+                className="resume-section-compact lg:col-span-2"
+              >
+                <div className="space-y-6">
+                  {resume.skills?.map((group: ResumeSkillGroup, index) => (
+                    <div
+                      className="resume-skill-group grid gap-2 sm:grid-cols-[220px_minmax(0,1fr)] sm:items-start"
+                      key={`${group.category}-${index}`}
+                    >
+                      <h3 className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#737980]">
+                        {group.category}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {group.items?.map((skill) => (
+                          <span
+                            className="whitespace-nowrap rounded-full border border-[#dfe2e6] px-3 py-1.5 text-[12px] font-bold text-[#4d535a] dark:border-[#50545b] dark:text-[#d5d7da]"
+                            key={skill}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </ResumeSection>
+            </div>
+            <div className="resume-credentials-grid grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
+              <ResumeSection number="05" title="교육" className="resume-section-compact">
+                <div className="space-y-5">
+                  {resume.education?.map((item: ResumeEducation, index) => (
+                    <article className="resume-avoid-break" key={`${item.course}-${index}`}>
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-[16px] font-extrabold leading-[1.45] text-[#202328] dark:text-[#f4f4f5]">
+                          {item.institution}
+                        </h3>
+                        <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">
+                          {item.period}
+                        </time>
+                      </div>
+                      <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
                         {item.course}
-                      </h3>
-                      <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">
-                        {item.period}
-                      </time>
-                    </div>
-                    <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
-                      {item.institution}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </ResumeSection>
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </ResumeSection>
 
-            <ResumeSection number="07" title="자격증" className="resume-section-compact">
-              <div className="space-y-5">
-                {resume.certifications?.map((item: ResumeCertification, index) => (
-                  <article className="resume-avoid-break" key={`${item.title}-${index}`}>
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-[16px] font-extrabold leading-[1.45] text-[#202328] dark:text-[#f4f4f5]">
-                        {item.title}
-                      </h3>
-                      <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">
-                        {item.issued}
-                      </time>
-                    </div>
-                    <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
-                      {item.issuer}
-                      {item.type ? (
-                        <>
-                          {' '}
-                          <span className="text-[#a0a5ab]">·</span> {item.type}
-                        </>
-                      ) : null}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </ResumeSection>
+              <ResumeSection number="06" title="자격증" className="resume-section-compact">
+                <div className="space-y-5">
+                  {resume.certifications?.map((item: ResumeCertification, index) => (
+                    <article className="resume-avoid-break" key={`${item.title}-${index}`}>
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-[16px] font-extrabold leading-[1.45] text-[#202328] dark:text-[#f4f4f5]">
+                          {item.title}
+                        </h3>
+                        <time className="shrink-0 text-[11px] font-bold text-[#7d838a]">
+                          {item.issued}
+                        </time>
+                      </div>
+                      <p className="mt-1 text-[13px] font-semibold text-[#5e646b] dark:text-[#c5c7cb]">
+                        {item.issuer}
+                        {item.type ? (
+                          <>
+                            {' '}
+                            <span className="text-[#a0a5ab]">·</span> {item.type}
+                          </>
+                        ) : null}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </ResumeSection>
+            </div>
           </div>
-        </div>
+        </ResumeSheet>
 
-        <footer className="resume-footer mt-14 border-t border-[#dfe2e6] pt-5 text-[11px] font-semibold text-[#8a9096] dark:border-[#41444a] dark:text-[#989da5]">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <span>Last updated · 2026.09</span>
+        <ResumeSheet page={4}>
+          <div className="resume-sheet-content grid gap-10 md:gap-14">
+            {resume.activities?.length ? (
+              <ResumeSection number="07" title="외부 활동" className="resume-section-compact">
+                <div>
+                  {resume.activities.map((activity, index) => (
+                    <ResumeActivityItem activity={activity} key={`${activity.title}-${index}`} />
+                  ))}
+                </div>
+              </ResumeSection>
+            ) : null}
           </div>
-        </footer>
+        </ResumeSheet>
       </main>
     </div>
   );
@@ -637,6 +719,14 @@ export const pageQuery = graphql`
               period
               title
               description
+              projects {
+                title
+                bullets
+                links {
+                  label
+                  url
+                }
+              }
               links {
                 label
                 url
